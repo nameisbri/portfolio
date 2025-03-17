@@ -5,33 +5,38 @@
   top: 0;
   width: 100%;
   background-color: var(--background-secondary);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-  padding: $spacing-sm $spacing-md;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.04); // Reduced shadow
+  padding: $spacing-xs $spacing-sm; // Reduced from $spacing-sm $spacing-md
   z-index: 100;
   @include transition(background-color, box-shadow);
 
   &__container {
-    max-width: 1200px;
+    max-width: 1100px; // Reduced from 1200px
     margin: 0 auto;
     @include flex(row, space-between, center);
   }
 
   &__logo {
     font-family: $font-family-secondary;
-    font-size: 1.5rem;
+    font-size: 1.3rem; // Reduced from 1.5rem
     font-weight: $font-weight-bold;
     @include text-gradient(var(--accent-primary), var(--accent-secondary));
     text-decoration: none;
   }
 
   &__menu {
-    @include flex(row, flex-end, center, $spacing-md);
+    @include flex(
+      row,
+      flex-end,
+      center,
+      $spacing-sm
+    ); // Reduced from $spacing-md
     list-style: none;
     margin: 0;
     padding: 0;
 
     @include respond-to(md) {
-      gap: $spacing-lg;
+      gap: $spacing-md; // Reduced from $spacing-lg
     }
   }
 
@@ -42,14 +47,15 @@
       color: var(--text-primary);
       text-decoration: none;
       font-weight: $font-weight-medium;
-      padding: $spacing-xs $spacing-xs;
+      padding: $spacing-xs/2 $spacing-xs/2; // Reduced from $spacing-xs $spacing-xs
       position: relative;
       @include transition(color);
+      font-size: 0.9rem; // Added to reduce size
 
       &::after {
         content: "";
         position: absolute;
-        bottom: -3px;
+        bottom: -2px; // Reduced from -3px
         left: 0;
         width: 0;
         height: 2px;
@@ -78,18 +84,18 @@
     border: none;
     color: var(--text-primary);
     cursor: pointer;
-    padding: $spacing-xs;
+    padding: $spacing-xs/2; // Reduced from $spacing-xs
     border-radius: $border-radius-sm;
-    @include flex(row, center, center, $spacing-xs);
+    @include flex(row, center, center, $spacing-xs/2); // Reduced gap
     @include transition(background-color, transform);
 
     &:hover {
       background-color: rgba(var(--accent-primary), 0.1);
-      transform: translateY(-2px);
+      transform: translateY(-1px); // Reduced from -2px
     }
 
     svg {
-      font-size: 1.2rem;
+      font-size: 1.1rem; // Reduced from 1.2rem
     }
   }
 
@@ -100,7 +106,7 @@
     border: none;
     color: var(--text-primary);
     cursor: pointer;
-    padding: $spacing-xs;
+    padding: $spacing-xs/2; // Reduced from $spacing-xs
 
     @include respond-to(md-down) {
       display: block;
@@ -115,9 +121,14 @@
       left: 0;
       width: 100%;
       background-color: var(--background-secondary);
-      @include flex(column, flex-start, flex-start, $spacing-sm);
-      padding: $spacing-md;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      @include flex(
+        column,
+        flex-start,
+        flex-start,
+        $spacing-xs
+      ); // Reduced from $spacing-sm
+      padding: $spacing-sm; // Reduced from $spacing-md
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); // Reduced shadow
       transform: translateY(-10px);
       opacity: 0;
       visibility: hidden;
@@ -135,7 +146,7 @@
 
       a {
         display: block;
-        padding: $spacing-sm;
+        padding: $spacing-xs; // Reduced from $spacing-sm
       }
     }
   }
@@ -143,17 +154,17 @@
   // Add subtle glass effect
   &--glass {
     background-color: rgba(var(--background-secondary), 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px); // Reduced from 10px
+    -webkit-backdrop-filter: blur(8px); // Reduced from 10px
   }
 
   // Navbar when scrolled
   &--scrolled {
-    padding: $spacing-xs $spacing-md;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: $spacing-xs/2 $spacing-sm; // Reduced from $spacing-xs $spacing-md
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); // Reduced shadow
 
     .navbar__logo {
-      font-size: 1.3rem;
+      font-size: 1.2rem; // Reduced from 1.3rem
     }
   }
 }

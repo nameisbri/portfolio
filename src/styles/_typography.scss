@@ -10,33 +10,41 @@ h5,
 h6 {
   font-family: $font-family-secondary;
   font-weight: $font-weight-bold;
-  line-height: 1.2;
+  line-height: 1.15; // Reduced from 1.2
   margin-top: 0;
   color: var(--text-primary);
 }
 
 h1 {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  letter-spacing: -0.03em;
-  margin-bottom: $spacing-md;
+  font-size: clamp(
+    2.25rem,
+    4.5vw,
+    3rem
+  ); // Reduced from clamp(2.5rem, 5vw, 3.5rem)
+  letter-spacing: -0.02em; // Reduced from -0.03em
+  margin-bottom: $spacing-sm; // Reduced from $spacing-md
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 2.5rem);
-  margin-bottom: $spacing-md;
+  font-size: clamp(
+    1.75rem,
+    3.5vw,
+    2.25rem
+  ); // Reduced from clamp(2rem, 4vw, 2.5rem)
+  margin-bottom: $spacing-sm; // Reduced from $spacing-md
   position: relative;
 
   &.section__heading {
     display: inline-block;
-    margin-bottom: $spacing-lg;
+    margin-bottom: $spacing-md; // Reduced from $spacing-lg
 
     &::after {
       content: "";
       position: absolute;
       left: 0;
-      bottom: -8px;
-      width: 60px;
-      height: 4px;
+      bottom: -6px; // Reduced from -8px
+      width: 50px; // Reduced from 60px
+      height: 3px; // Reduced from 4px
       background: linear-gradient(
         to right,
         var(--accent-primary),
@@ -48,25 +56,33 @@ h2 {
 }
 
 h3 {
-  font-size: clamp(1.5rem, 3vw, 1.8rem);
-  margin-bottom: $spacing-sm;
+  font-size: clamp(
+    1.35rem,
+    2.5vw,
+    1.6rem
+  ); // Reduced from clamp(1.5rem, 3vw, 1.8rem)
+  margin-bottom: $spacing-xs; // Reduced from $spacing-sm
 }
 
 h4 {
-  font-size: clamp(1.25rem, 2vw, 1.5rem);
-  margin-bottom: $spacing-sm;
+  font-size: clamp(
+    1.15rem,
+    1.8vw,
+    1.35rem
+  ); // Reduced from clamp(1.25rem, 2vw, 1.5rem)
+  margin-bottom: $spacing-xs; // Reduced from $spacing-sm
 }
 
 // Body text
 p {
   font-family: $font-family-primary;
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: $spacing-md;
+  font-size: 0.95rem; // Reduced from 1rem
+  line-height: 1.5; // Reduced from 1.6
+  margin-bottom: $spacing-sm; // Reduced from $spacing-md
   color: var(--text-secondary);
 
   @include respond-to(md) {
-    font-size: 1.125rem;
+    font-size: 1rem; // Reduced from 1.125rem
   }
 }
 
@@ -81,18 +97,18 @@ a {
   &:hover,
   &:focus {
     color: var(--accent-secondary);
-    transform: translateY(-2px);
+    transform: translateY(-1px); // Reduced from -2px
   }
 }
 
 // Lists
 ul,
 ol {
-  margin-bottom: $spacing-md;
-  padding-left: $spacing-lg;
+  margin-bottom: $spacing-sm; // Reduced from $spacing-md
+  padding-left: $spacing-md; // Reduced from $spacing-lg
 
   li {
-    margin-bottom: $spacing-xs;
+    margin-bottom: $spacing-xs/2; // Reduced from $spacing-xs
     font-family: $font-family-primary;
     color: var(--text-secondary);
   }
@@ -105,25 +121,26 @@ ol {
 
 .text-highlight {
   background: linear-gradient(
-    transparent 70%,
-    rgba(var(--accent-primary), 0.2) 30%
+    transparent 75%,
+    // Reduced highlight area
+    rgba(var(--accent-primary), 0.15) 25% // Reduced opacity
   );
-  padding: 0 4px;
+  padding: 0 3px; // Reduced from 4px
 }
 
 .text-large {
-  font-size: 1.25rem;
+  font-size: 1.15rem; // Reduced from 1.25rem
 
   @include respond-to(md) {
-    font-size: 1.5rem;
+    font-size: 1.3rem; // Reduced from 1.5rem
   }
 }
 
 .text-small {
-  font-size: 0.875rem;
+  font-size: 0.8rem; // Reduced from 0.875rem
 
   @include respond-to(md) {
-    font-size: 1rem;
+    font-size: 0.9rem; // Reduced from 1rem
   }
 }
 
@@ -137,11 +154,11 @@ ol {
 
 .subtitle {
   font-family: $font-family-secondary;
-  font-size: 1.25rem;
+  font-size: 1.15rem; // Reduced from 1.25rem
   color: var(--text-secondary);
-  margin-bottom: $spacing-lg;
+  margin-bottom: $spacing-md; // Reduced from $spacing-lg
 
   @include respond-to(md) {
-    font-size: 1.5rem;
+    font-size: 1.3rem; // Reduced from 1.5rem
   }
 }
