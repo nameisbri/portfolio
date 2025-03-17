@@ -62,7 +62,7 @@ const Experience = () => {
   const [activeTab, setActiveTab] = useState<ExperienceType>("work");
 
   return (
-    <section className="experience">
+    <section className="experience" id="experience">
       <h2 className="section__heading">Experience</h2>
 
       <div className="experience__tabs">

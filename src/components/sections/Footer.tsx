@@ -7,7 +7,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer" id="contact">
       <div className="footer__content">
         <div className="footer__info">
           <h3 className="footer__name">Gabriela Barreira</h3>

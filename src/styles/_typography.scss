@@ -1,0 +1,147 @@
+// Import Google fonts
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap");
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-secondary;
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+  margin-top: 0;
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  letter-spacing: -0.03em;
+  margin-bottom: $spacing-md;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: $spacing-md;
+  position: relative;
+
+  &.section__heading {
+    display: inline-block;
+    margin-bottom: $spacing-lg;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(
+        to right,
+        var(--accent-primary),
+        var(--accent-secondary)
+      );
+      border-radius: $border-radius-full;
+    }
+  }
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 1.8rem);
+  margin-bottom: $spacing-sm;
+}
+
+h4 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  margin-bottom: $spacing-sm;
+}
+
+// Body text
+p {
+  font-family: $font-family-primary;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: $spacing-md;
+  color: var(--text-secondary);
+
+  @include respond-to(md) {
+    font-size: 1.125rem;
+  }
+}
+
+// Links
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  font-weight: $font-weight-medium;
+  @include transition(color, transform);
+  display: inline-block;
+
+  &:hover,
+  &:focus {
+    color: var(--accent-secondary);
+    transform: translateY(-2px);
+  }
+}
+
+// Lists
+ul,
+ol {
+  margin-bottom: $spacing-md;
+  padding-left: $spacing-lg;
+
+  li {
+    margin-bottom: $spacing-xs;
+    font-family: $font-family-primary;
+    color: var(--text-secondary);
+  }
+}
+
+// Special text styles
+.text-gradient {
+  @include text-gradient(var(--accent-primary), var(--accent-secondary));
+}
+
+.text-highlight {
+  background: linear-gradient(
+    transparent 70%,
+    rgba(var(--accent-primary), 0.2) 30%
+  );
+  padding: 0 4px;
+}
+
+.text-large {
+  font-size: 1.25rem;
+
+  @include respond-to(md) {
+    font-size: 1.5rem;
+  }
+}
+
+.text-small {
+  font-size: 0.875rem;
+
+  @include respond-to(md) {
+    font-size: 1rem;
+  }
+}
+
+.text-bold {
+  font-weight: $font-weight-bold;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.subtitle {
+  font-family: $font-family-secondary;
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: $spacing-lg;
+
+  @include respond-to(md) {
+    font-size: 1.5rem;
+  }
+}

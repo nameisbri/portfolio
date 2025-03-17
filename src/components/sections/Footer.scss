@@ -1,0 +1,102 @@
+@use "../../index.scss" as *;
+
+.footer {
+  background-color: var(--background-secondary);
+  padding: $spacing-lg 0;
+  margin-top: $spacing-xxl;
+  position: relative;
+  overflow: hidden;
+
+  // Gradient overlay at the top of the footer
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(
+      to right,
+      var(--accent-primary),
+      var(--accent-secondary)
+    );
+  }
+
+  // Decorative background pattern
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  &__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+    @include flex(column, space-between, flex-start, $spacing-lg);
+    position: relative;
+    z-index: 1;
+
+    @include respond-to(md) {
+      @include flex(row, space-between, center);
+      padding: 0 $spacing-lg;
+    }
+  }
+
+  &__info {
+    max-width: 400px;
+  }
+
+  &__name {
+    font-size: 1.5rem;
+    margin-bottom: $spacing-xs;
+    @include text-gradient(var(--accent-primary), var(--accent-secondary));
+  }
+
+  &__tagline {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: $spacing-md;
+  }
+
+  &__socials {
+    @include flex(row, flex-start, center, $spacing-md);
+  }
+
+  &__social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(var(--text-primary), 0.05);
+    @include flex(row, center, center);
+    color: var(--text-primary);
+    @include transition(background-color, color, transform);
+
+    &:hover {
+      background-color: var(--accent-primary);
+      color: white;
+      transform: translateY(-3px);
+    }
+  }
+
+  &__bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: $spacing-md;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    margin-top: $spacing-lg;
+
+    p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+  }
+}

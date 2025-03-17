@@ -1,0 +1,53 @@
+// Import variables first
+@import "./styles/variables";
+
+// Import mixins second
+@import "./styles/mixins";
+
+// Import typography
+@import "./styles/typography";
+
+// Import global styles
+@import "./styles/globals";
+
+// Main app styles
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__content {
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: $spacing-md;
+
+    @include respond-to(md) {
+      padding: $spacing-lg;
+    }
+  }
+}
+
+// Section common styles
+.section {
+  &__heading {
+    position: relative;
+    margin-bottom: $spacing-xl;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(
+        to right,
+        var(--accent-primary),
+        var(--accent-secondary)
+      );
+      border-radius: $border-radius-full;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-// Mixins
+// Theme colors mixin
 @mixin theme-colors(
   $text-primary,
   $text-secondary,
@@ -8,7 +8,8 @@
   $accent-secondary,
   $button-bg,
   $button-hover,
-  $border
+  $border,
+  $card-shadow
 ) {
   --text-primary: #{$text-primary};
   --text-secondary: #{$text-secondary};
@@ -19,9 +20,124 @@
   --button-background: #{$button-bg};
   --button-hover: #{$button-hover};
   --border-color: #{$border};
+  --card-shadow: #{$card-shadow};
 }
 
+// Transition mixin for smooth animations
 @mixin transition($properties...) {
-  transition-property: $properties;
-  transition-duration: 0.25s;
+  $values: ();
+  @each $prop in $properties {
+    $values: append($values, $prop $transition-normal, comma);
+  }
+  transition: $values;
+}
+
+// Flex helpers
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  @if $gap != 0 {
+    gap: $gap;
+  }
+}
+
+// Grid helpers
+@mixin grid($cols: 1, $rows: auto, $gap: 0) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  @if $rows != auto {
+    grid-template-rows: repeat($rows, 1fr);
+  }
+  @if $gap != 0 {
+    gap: $gap;
+  }
+}
+
+// Media query mixins
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (min-width: $breakpoint-xs) {
+      @content;
+    }
+  } @else if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) {
+      @content;
+    }
+  }
+}
+
+// Text gradient
+@mixin text-gradient($from, $to, $direction: to right) {
+  background: linear-gradient($direction, $from, $to);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+// Button styles
+@mixin button-styles($type: "primary") {
+  border-radius: $border-radius-md;
+  font-family: $font-family-primary;
+  font-weight: $font-weight-medium;
+  padding: $spacing-xs $spacing-md;
+  cursor: pointer;
+  @include transition(transform, background-color, color, box-shadow);
+
+  @if $type == "primary" {
+    background-color: var(--accent-primary);
+    color: white;
+    border: none;
+
+    &:hover,
+    &:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+  } @else if $type == "secondary" {
+    background-color: transparent;
+    color: var(--accent-primary);
+    border: 1px solid var(--accent-primary);
+
+    &:hover,
+    &:focus {
+      background-color: var(--accent-primary);
+      color: white;
+    }
+  }
+}
+
+// Card styles
+@mixin card-styles {
+  background-color: var(--background-secondary);
+  border-radius: $border-radius-md;
+  padding: $spacing-md;
+  box-shadow: var(--card-shadow);
+  @include transition(transform, box-shadow);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Section styles
+@mixin section-spacing {
+  padding: $spacing-xl 0;
+  margin-bottom: $spacing-xl;
 }
