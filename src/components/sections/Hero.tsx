@@ -3,7 +3,6 @@ import { ArrowRight } from "@phosphor-icons/react";
 import "./Hero.scss";
 
 const Hero = () => {
-  // Animation variants for staggered fade-in of tags
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

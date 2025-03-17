@@ -1,16 +1,13 @@
 @use "../../index.scss" as *;
 
 .tech {
-  margin: 2rem 0; // Reduced from 4rem
+  margin: 2rem 0;
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(120px, 1fr)
-    ); // Reduced from 140px
-    gap: 0.75rem; // Reduced from 1rem
-    margin: 1.5rem 0; // Reduced from 2rem
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0;
   }
 
   &__item {
@@ -18,10 +15,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem 0.75rem; // Reduced from 1.25rem 1rem
-    border-radius: 6px; // Reduced from 8px
+    padding: 1rem 0.75rem;
+    border-radius: 6px;
     background-color: var(--background-secondary);
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.06); // Reduced shadow
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -31,18 +28,18 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 3px; // Reduced from 4px
+      width: 3px;
       height: 100%;
       transition: width 0.3s ease;
     }
 
     &:hover {
-      transform: translateY(-3px); // Reduced from -5px
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); // Reduced shadow
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 
       &::before {
         width: 100%;
-        opacity: 0.12; // Reduced from 0.15
+        opacity: 0.12;
       }
     }
 
@@ -51,33 +48,33 @@
     }
 
     &--frontend::before {
-      background-color: #e0ff4f; // Chartreuse
+      background-color: #e0ff4f;
     }
 
     &--backend::before {
-      background-color: #522b47; // Violet
+      background-color: #522b47;
     }
 
     &--database::before {
-      background-color: #041f1e; // Dark Green
+      background-color: #041f1e;
     }
 
     &--tool::before,
     &--methodology::before {
-      background-color: #eadeda; // Timberwolf
+      background-color: #eadeda;
     }
   }
 
   &__name {
     font-weight: 600;
-    font-size: 0.9rem; // Reduced from 1rem
-    margin-bottom: 0.4rem; // Reduced from 0.5rem
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
     position: relative;
     z-index: 1;
   }
 
   &__category {
-    font-size: 0.7rem; // Reduced from 0.8rem
+    font-size: 0.7rem;
     color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -86,11 +83,11 @@
   }
 
   &__info {
-    max-width: 650px; // Reduced from 700px
-    margin: 1.5rem auto; // Reduced from 2rem
+    max-width: 650px;
+    margin: 1.5rem auto;
     text-align: center;
     color: var(--text-secondary);
-    font-size: 1rem; // Reduced from 1.1rem
-    line-height: 1.5; // Reduced from 1.6
+    font-size: 1rem;
+    line-height: 1.5;
   }
 }

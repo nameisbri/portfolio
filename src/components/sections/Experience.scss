@@ -1,30 +1,25 @@
 @use "../../index.scss" as *;
 
 .experience {
-  padding: $spacing-lg 0; // Reduced from $spacing-xl
+  padding: $spacing-lg 0;
   position: relative;
 
   &__tabs {
-    @include flex(
-      row,
-      flex-start,
-      center,
-      $spacing-xs
-    ); // Reduced from $spacing-sm
-    margin-bottom: $spacing-md; // Reduced from $spacing-lg
+    @include flex(row, flex-start, center, $spacing-xs);
+    margin-bottom: $spacing-md;
     border-bottom: 1px solid var(--border-color);
-    padding-bottom: $spacing-xs; // Reduced from $spacing-sm
+    padding-bottom: $spacing-xs;
   }
 
   &__tab {
-    @include flex(row, center, center, $spacing-xs/2); // Reduced gap
+    @include flex(row, center, center, $spacing-xs/2);
     background: none;
     border: none;
-    padding: $spacing-xs $spacing-xs; // Reduced right padding from $spacing-sm
+    padding: $spacing-xs $spacing-xs;
     color: var(--text-secondary);
     font-family: $font-family-primary;
     font-weight: $font-weight-medium;
-    font-size: 0.9rem; // Reduced from 1rem
+    font-size: 0.9rem;
     cursor: pointer;
     position: relative;
     @include transition(color);
@@ -32,10 +27,10 @@
     &::after {
       content: "";
       position: absolute;
-      bottom: $spacing-xs - 0.3rem; // Reduced from $spacing-sm - 0.5rem
+      bottom: $spacing-xs - 0.3rem;
       left: 0;
       width: 0;
-      height: 2px; // Reduced from 3px
+      height: 2px;
       background: linear-gradient(
         to right,
         var(--accent-primary),
@@ -62,7 +57,7 @@
   }
 
   &__content {
-    margin-top: $spacing-md; // Reduced from $spacing-lg
+    margin-top: $spacing-md;
   }
 
   &__timeline {
@@ -81,21 +76,21 @@
         var(--accent-secondary),
         transparent
       );
-      opacity: 0.25; // Reduced from 0.3
+      opacity: 0.25;
 
       @include respond-to(md) {
-        left: 16px; // Reduced from 20px
+        left: 16px;
       }
     }
   }
 
   &__item {
     position: relative;
-    padding-left: $spacing-lg; // Reduced from $spacing-xl
-    margin-bottom: $spacing-md; // Reduced from $spacing-lg
+    padding-left: $spacing-lg;
+    margin-bottom: $spacing-md;
 
     @include respond-to(md) {
-      padding-left: $spacing-xl; // Reduced from $spacing-xxl
+      padding-left: $spacing-xl;
     }
 
     &::before {
@@ -103,52 +98,42 @@
       position: absolute;
       left: 0;
       top: 8px;
-      width: 10px; // Reduced from 12px
-      height: 10px; // Reduced from 12px
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
       background-color: var(--accent-primary);
       z-index: 1;
 
       @include respond-to(md) {
-        left: 12px; // Reduced from 15px
+        left: 12px;
       }
     }
   }
 
   &__header {
-    margin-bottom: $spacing-xs; // Reduced from $spacing-sm
+    margin-bottom: $spacing-xs;
   }
 
   &__title {
-    font-size: 1.15rem; // Reduced from 1.25rem
-    margin-bottom: $spacing-xs/2; // Reduced from $spacing-xs
+    font-size: 1.15rem;
+    margin-bottom: $spacing-xs/2;
     color: var(--text-primary);
   }
 
   &__company {
     font-weight: $font-weight-medium;
-    margin-bottom: $spacing-xs/2; // Reduced from $spacing-xs
+    margin-bottom: $spacing-xs/2;
     color: var(--accent-primary);
   }
 
   &__period {
-    @include flex(
-      row,
-      flex-start,
-      center,
-      $spacing-sm
-    ); // Reduced from $spacing-md
-    font-size: 0.85rem; // Reduced from 0.9rem
+    @include flex(row, flex-start, center, $spacing-sm);
+    font-size: 0.85rem;
     color: var(--text-secondary);
-    margin-bottom: $spacing-xs/2; // Reduced from $spacing-xs
+    margin-bottom: $spacing-xs/2;
 
     @include respond-to(md) {
-      @include flex(
-        row,
-        flex-start,
-        center,
-        $spacing-md
-      ); // Reduced from $spacing-lg
+      @include flex(row, flex-start, center, $spacing-md);
     }
   }
 
@@ -158,21 +143,21 @@
     &::before {
       content: "•";
       position: absolute;
-      left: -$spacing-xs - 0.25rem; // Reduced from -$spacing-xs - 0.5rem
+      left: -$spacing-xs - 0.25rem;
     }
   }
 
   &__description {
     list-style-type: none;
     padding-left: 0;
-    margin-top: $spacing-xs/2; // Added to give a little space after header
+    margin-top: $spacing-xs/2;
 
     li {
       position: relative;
-      padding-left: $spacing-sm; // Reduced from $spacing-md
-      margin-bottom: $spacing-xs/2; // Reduced from $spacing-xs
-      font-size: 0.9rem; // Added to reduce size
-      line-height: 1.4; // Added to make text more compact
+      padding-left: $spacing-sm;
+      margin-bottom: $spacing-xs/2;
+      font-size: 0.9rem;
+      line-height: 1.4;
 
       &::before {
         content: "→";
@@ -185,9 +170,9 @@
 
   &__edu-description {
     position: relative;
-    padding-left: $spacing-sm; // Reduced from $spacing-md
-    font-size: 0.9rem; // Added to reduce size
-    line-height: 1.4; // Added to make text more compact
+    padding-left: $spacing-sm;
+    font-size: 0.9rem;
+    line-height: 1.4;
 
     &::before {
       content: "";
@@ -195,7 +180,7 @@
       left: 0;
       top: 0;
       height: 100%;
-      width: 2px; // Reduced from 3px
+      width: 2px;
       background: linear-gradient(
         to bottom,
         var(--accent-primary),

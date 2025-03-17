@@ -1,16 +1,11 @@
-// Import variables first
 @import "./styles/variables";
 
-// Import mixins second
 @import "./styles/mixins";
 
-// Import typography
 @import "./styles/typography";
 
-// Import global styles
 @import "./styles/globals";
 
-// Main app styles
 .app {
   display: flex;
   flex-direction: column;
@@ -18,30 +13,29 @@
 
   &__content {
     flex: 1;
-    max-width: 1100px; // Reduced from 1200px
+    max-width: 1100px;
     width: 100%;
     margin: 0 auto;
-    padding: $spacing-sm; // Reduced from $spacing-md
+    padding: $spacing-sm;
 
     @include respond-to(md) {
-      padding: $spacing-md; // Reduced from $spacing-lg
+      padding: $spacing-md;
     }
   }
 }
 
-// Section common styles
 .section {
   &__heading {
     position: relative;
-    margin-bottom: $spacing-lg; // Reduced from $spacing-xl
+    margin-bottom: $spacing-lg;
 
     &::after {
       content: "";
       position: absolute;
       left: 0;
-      bottom: -8px; // Reduced from -10px
-      width: 50px; // Reduced from 60px
-      height: 3px; // Reduced from 4px
+      bottom: -8px;
+      width: 50px;
+      height: 3px;
       background: linear-gradient(
         to right,
         var(--accent-primary),

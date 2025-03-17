@@ -1,16 +1,11 @@
-// Import variables first
 @import "./styles/variables";
 
-// Import mixins second
 @import "./styles/mixins";
 
-// Import typography
 @import "./styles/typography";
 
-// Import global styles
 @import "./styles/globals";
 
-// Main app styles
 .app {
   display: flex;
   flex-direction: column;
@@ -29,7 +24,6 @@
   }
 }
 
-// Section common styles
 .section {
   &__heading {
     position: relative;

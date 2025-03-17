@@ -1,4 +1,3 @@
-// Reset
 *,
 *::before,
 *::after {
@@ -7,7 +6,6 @@
   padding: 0;
 }
 
-// Root styles
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,7 +16,6 @@
   font-weight: $font-weight-regular;
   scroll-behavior: smooth;
 
-  /* Base theme colors - will be overridden by theme-specific values */
   @include theme-colors(
     $light-text-primary,
     $light-text-secondary,
@@ -33,7 +30,6 @@
   );
 }
 
-/* Light theme (default) */
 [data-theme="light"] {
   @include theme-colors(
     $light-text-primary,
@@ -49,7 +45,6 @@
   );
 }
 
-/* Dark theme */
 [data-theme="dark"] {
   @include theme-colors(
     $dark-text-primary,
@@ -65,7 +60,6 @@
   );
 }
 
-// Element styles
 body {
   margin: 0;
   min-width: 320px;
@@ -75,7 +69,6 @@ body {
   @include transition(background-color, color);
 }
 
-// Container
 .container {
   width: 100%;
   max-width: 1200px;
@@ -87,7 +80,6 @@ body {
   }
 }
 
-// Button styles
 .button {
   display: inline-flex;
   align-items: center;
@@ -105,12 +97,10 @@ body {
   }
 }
 
-// Card
 .card {
   @include card-styles;
 }
 
-// Section styles
 .section {
   @include section-spacing;
 
@@ -119,7 +109,6 @@ body {
   }
 }
 
-// Utility classes
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -155,7 +144,6 @@ body {
   }
 }
 
-// Theme toggle
 .theme-toggle {
   position: fixed;
   bottom: $spacing-md;
@@ -185,7 +173,6 @@ body {
   }
 }
 
-// Focus styles
 :focus {
   outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
