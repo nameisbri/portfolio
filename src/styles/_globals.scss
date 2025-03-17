@@ -1,0 +1,134 @@
+// Root styles
+:root {
+  /* Common styles */
+  font-family: $font-family;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Base theme colors - will be overridden by theme-specific values */
+  @include theme-colors(
+    $light-text-primary,
+    $light-text-secondary,
+    $light-background-primary,
+    $light-background-secondary,
+    $light-accent-primary,
+    $light-accent-secondary,
+    $light-button-background,
+    $light-button-hover,
+    $light-border-color
+  );
+}
+
+/* Light theme (default) */
+[data-theme="light"] {
+  @include theme-colors(
+    $light-text-primary,
+    $light-text-secondary,
+    $light-background-primary,
+    $light-background-secondary,
+    $light-accent-primary,
+    $light-accent-secondary,
+    $light-button-background,
+    $light-button-hover,
+    $light-border-color
+  );
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  @include theme-colors(
+    $dark-text-primary,
+    $dark-text-secondary,
+    $dark-background-primary,
+    $dark-background-secondary,
+    $dark-accent-primary,
+    $dark-accent-secondary,
+    $dark-button-background,
+    $dark-button-hover,
+    $dark-border-color
+  );
+}
+
+// Element styles
+a {
+  font-weight: 500;
+  color: var(--accent-primary);
+  text-decoration: inherit;
+
+  &:hover {
+    color: var(--accent-secondary);
+  }
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--text-primary);
+  background-color: var(--background-primary);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--button-background);
+  color: var(--text-primary);
+  cursor: pointer;
+  @include transition(border-color, background-color);
+
+  &:hover {
+    border-color: var(--button-hover);
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+}
+
+/* Additional theme-specific component styles */
+.card-block {
+  background-color: var(--background-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Theme toggle button specific styles */
+.theme__toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--background-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

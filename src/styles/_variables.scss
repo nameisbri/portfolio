@@ -1,0 +1,26 @@
+// Theme variables
+$font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+$line-height: 1.5;
+$font-weight: 400;
+
+// Light theme colors
+$light-text-primary: #041f1e;
+$light-text-secondary: #522b47;
+$light-background-primary: #eadeda;
+$light-background-secondary: #ffffff;
+$light-accent-primary: #f25757;
+$light-accent-secondary: #522b47;
+$light-button-background: #eadeda;
+$light-button-hover: #f25757;
+$light-border-color: #522b47;
+
+// Dark theme colors
+$dark-text-primary: #eadeda;
+$dark-text-secondary: rgba(234, 222, 218, 0.7);
+$dark-background-primary: #041f1e;
+$dark-background-secondary: #0a2a28;
+$dark-accent-primary: #f25757;
+$dark-accent-secondary: #e0ff4f;
+$dark-button-background: #522b47;
+$dark-button-hover: #e0ff4f;
+$dark-border-color: #eadeda;

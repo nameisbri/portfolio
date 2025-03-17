@@ -1,0 +1,27 @@
+// Mixins
+@mixin theme-colors(
+  $text-primary,
+  $text-secondary,
+  $bg-primary,
+  $bg-secondary,
+  $accent-primary,
+  $accent-secondary,
+  $button-bg,
+  $button-hover,
+  $border
+) {
+  --text-primary: #{$text-primary};
+  --text-secondary: #{$text-secondary};
+  --background-primary: #{$bg-primary};
+  --background-secondary: #{$bg-secondary};
+  --accent-primary: #{$accent-primary};
+  --accent-secondary: #{$accent-secondary};
+  --button-background: #{$button-bg};
+  --button-hover: #{$button-hover};
+  --border-color: #{$border};
+}
+
+@mixin transition($properties...) {
+  transition-property: $properties;
+  transition-duration: 0.25s;
+}
