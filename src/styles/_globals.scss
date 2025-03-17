@@ -1,13 +1,22 @@
+// Reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 // Root styles
 :root {
-  /* Common styles */
-  font-family: $font-family;
-  line-height: $line-height;
-  font-weight: $font-weight;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: $font-family-primary;
+  line-height: $line-height;
+  font-weight: $font-weight-regular;
+  scroll-behavior: smooth;
 
   /* Base theme colors - will be overridden by theme-specific values */
   @include theme-colors(
@@ -19,7 +28,8 @@
     $light-accent-secondary,
     $light-button-background,
     $light-button-hover,
-    $light-border-color
+    $light-border-color,
+    $light-card-shadow
   );
 }
 
@@ -34,7 +44,8 @@
     $light-accent-secondary,
     $light-button-background,
     $light-button-hover,
-    $light-border-color
+    $light-border-color,
+    $light-card-shadow
   );
 }
 
@@ -49,86 +60,137 @@
     $dark-accent-secondary,
     $dark-button-background,
     $dark-button-hover,
-    $dark-border-color
+    $dark-border-color,
+    $dark-card-shadow
   );
 }
 
 // Element styles
-a {
-  font-weight: 500;
-  color: var(--accent-primary);
-  text-decoration: inherit;
-
-  &:hover {
-    color: var(--accent-secondary);
-  }
-}
-
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
   color: var(--text-primary);
   background-color: var(--background-primary);
+  @include transition(background-color, color);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+// Container
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: var(--button-background);
-  color: var(--text-primary);
-  cursor: pointer;
-  @include transition(border-color, background-color);
-
-  &:hover {
-    border-color: var(--button-hover);
-  }
-
-  &:focus,
-  &:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
+  @include respond-to(lg) {
+    padding: 0 $spacing-lg;
   }
 }
 
-/* Additional theme-specific component styles */
-.card-block {
-  background-color: var(--background-secondary);
-  border: 1px solid var(--border-color);
-  color: var(--text-primary);
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+// Button styles
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  gap: $spacing-xs;
+  font-size: 1rem;
+
+  &--primary {
+    @include button-styles("primary");
+  }
+
+  &--secondary {
+    @include button-styles("secondary");
+  }
 }
 
-/* Theme toggle button specific styles */
-.theme__toggle {
+// Card
+.card {
+  @include card-styles;
+}
+
+// Section styles
+.section {
+  @include section-spacing;
+
+  &__heading {
+    margin-bottom: $spacing-lg;
+  }
+}
+
+// Utility classes
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.gradient-bg {
+  background: linear-gradient(
+    135deg,
+    var(--background-primary),
+    var(--background-secondary),
+    var(--background-primary)
+  );
+  background-size: 200% 200%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// Theme toggle
+.theme-toggle {
   position: fixed;
-  top: 1rem;
-  right: 1rem;
+  bottom: $spacing-md;
+  right: $spacing-md;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   background-color: var(--background-secondary);
   border: 1px solid var(--border-color);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  color: var(--text-primary);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 1000;
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  @include transition(transform, box-shadow);
 
   &:hover {
-    transform: scale(1.1);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+// Focus styles
+:focus {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
 }

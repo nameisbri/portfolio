@@ -1,26 +1,70 @@
-// Theme variables
-$font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+// Typography
+$font-family-primary: "Outfit", system-ui, sans-serif;
+$font-family-secondary: "Space Grotesk", monospace;
 $line-height: 1.5;
-$font-weight: 400;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// Color palette
+$color-dark-green: #041f1e;
+$color-bittersweet: #f25757;
+$color-violet: #522b47;
+$color-chartreuse: #e0ff4f;
+$color-timberwolf: #eadeda;
 
 // Light theme colors
-$light-text-primary: #041f1e;
-$light-text-secondary: #522b47;
-$light-background-primary: #eadeda;
+$light-text-primary: $color-dark-green;
+$light-text-secondary: $color-violet;
+$light-background-primary: $color-timberwolf;
 $light-background-secondary: #ffffff;
-$light-accent-primary: #f25757;
-$light-accent-secondary: #522b47;
-$light-button-background: #eadeda;
-$light-button-hover: #f25757;
-$light-border-color: #522b47;
+$light-accent-primary: $color-bittersweet;
+$light-accent-secondary: $color-violet;
+$light-button-background: rgba($color-timberwolf, 0.7);
+$light-button-hover: $color-bittersweet;
+$light-border-color: rgba($color-violet, 0.2);
+$light-card-shadow: 0 4px 20px rgba($color-dark-green, 0.05);
 
 // Dark theme colors
-$dark-text-primary: #eadeda;
-$dark-text-secondary: rgba(234, 222, 218, 0.7);
-$dark-background-primary: #041f1e;
-$dark-background-secondary: #0a2a28;
-$dark-accent-primary: #f25757;
-$dark-accent-secondary: #e0ff4f;
-$dark-button-background: #522b47;
-$dark-button-hover: #e0ff4f;
-$dark-border-color: #eadeda;
+$dark-text-primary: $color-timberwolf;
+$dark-text-secondary: rgba($color-timberwolf, 0.7);
+$dark-background-primary: $color-dark-green;
+$dark-background-secondary: lighten($color-dark-green, 3%);
+$dark-accent-primary: $color-bittersweet;
+$dark-accent-secondary: $color-chartreuse;
+$dark-button-background: rgba($color-violet, 0.7);
+$dark-button-hover: $color-chartreuse;
+$dark-border-color: rgba($color-timberwolf, 0.2);
+$dark-card-shadow: 0 4px 20px rgba(black, 0.2);
+
+// Breakpoints
+$breakpoint-xs: 480px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Spacing
+$spacing-xs: 0.5rem; // 8px
+$spacing-sm: 1rem; // 16px
+$spacing-md: 1.5rem; // 24px
+$spacing-lg: 2rem; // 32px
+$spacing-xl: 3rem; // 48px
+$spacing-xxl: 4rem; // 64px
+
+// Animations
+$transition-fast: 0.15s ease;
+$transition-normal: 0.25s ease;
+$transition-slow: 0.4s ease;
+
+// Borders
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 24px;
+$border-radius-full: 9999px;
+
+// Project type colors
+$project-capstone: $color-bittersweet;
+$project-team: $color-violet;
+$project-hackathon: $color-chartreuse;

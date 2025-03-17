@@ -1,79 +1,138 @@
 @use "../../index.scss" as *;
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-  margin: 2rem 0 4rem;
+  @include flex(column, center, flex-start, $spacing-xl);
+  min-height: 90vh;
   position: relative;
+  padding: $spacing-xl 0;
   overflow: hidden;
 
-  @media (min-width: 768px) {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+  @include respond-to(md) {
+    @include flex(row, space-between, center, $spacing-xl);
+    padding: 0;
   }
 
   &__content {
-    text-align: left;
     max-width: 600px;
     z-index: 1;
   }
 
   &__title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    background: linear-gradient(
-      to right,
-      var(--accent-primary),
-      var(--accent-secondary)
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-weight: $font-weight-bold;
+    line-height: 1.1;
+    margin-bottom: $spacing-xs;
     position: relative;
-
-    @media (min-width: 768px) {
-      font-size: 3.5rem;
-    }
+    @include text-gradient(var(--accent-primary), var(--accent-secondary));
   }
 
   &__subtitle {
     display: block;
-    font-size: 1.25rem;
-    font-weight: 400;
+    font-family: $font-family-primary;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-weight: $font-weight-medium;
     color: var(--text-secondary);
-    margin-top: 0.5rem;
+    margin-top: $spacing-xs;
+    margin-bottom: $spacing-md;
   }
 
   &__description {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
     line-height: 1.6;
-    margin: 1.5rem 0;
+    margin-bottom: $spacing-lg;
     color: var(--text-secondary);
+    position: relative;
+
+    // Add subtle accent line
+    &::before {
+      content: "";
+      position: absolute;
+      left: -$spacing-md;
+      top: 0;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        var(--accent-primary),
+        transparent
+      );
+      border-radius: $border-radius-full;
+
+      @include respond-to(md) {
+        left: -$spacing-lg;
+      }
+    }
   }
 
   &__cta {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
+    @include flex(row, flex-start, center, $spacing-md);
+    margin-top: $spacing-lg;
     flex-wrap: wrap;
+
+    .button {
+      min-width: 140px;
+    }
+
+    .button--primary {
+      background: linear-gradient(
+        to right,
+        var(--accent-primary),
+        darken(#f25757, 10%)
+      );
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to right,
+          var(--accent-secondary),
+          var(--accent-primary)
+        );
+        transition: left 0.3s ease;
+        z-index: -1;
+      }
+
+      &:hover::before {
+        left: 0;
+      }
+    }
   }
 
   &__visual {
     position: relative;
-    height: 300px;
-    width: 300px;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1;
     background-color: var(--background-secondary);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: $border-radius-lg;
+    @include flex(column, center, center);
+    box-shadow: var(--card-shadow);
     overflow: hidden;
 
+    @include respond-to(md) {
+      width: 400px;
+    }
+
+    // Add decorative elements
     &::before {
       content: "";
       position: absolute;
@@ -82,10 +141,11 @@
       width: 100%;
       height: 100%;
       background: linear-gradient(
-        45deg,
-        rgba(242, 87, 87, 0.05),
-        rgba(224, 255, 79, 0.05)
-      );
+          135deg,
+          rgba($color-bittersweet, 0.1),
+          transparent 50%
+        ),
+        linear-gradient(225deg, rgba($color-chartreuse, 0.05), transparent 50%);
       z-index: 0;
     }
 
@@ -106,17 +166,27 @@
 
   &__accent {
     position: absolute;
-    width: 60px;
-    height: 60px;
-    background-color: var(--accent-primary);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex(row, center, center);
+    z-index: 1;
 
     &:nth-child(1) {
+      width: 60px;
+      height: 60px;
       top: 30px;
       right: 40px;
+      background-color: var(--accent-primary);
+      box-shadow: 0 4px 20px rgba($color-bittersweet, 0.3);
+    }
+
+    &:nth-child(2) {
+      width: 40px;
+      height: 40px;
+      bottom: 40px;
+      left: 30px;
+      background-color: var(--accent-secondary);
+      opacity: 0.8;
+      box-shadow: 0 4px 20px rgba($color-violet, 0.3);
     }
   }
 
@@ -124,16 +194,37 @@
     color: white;
     animation: pulse 3s infinite ease-in-out;
   }
-}
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
+  // Background decorative elements
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba($color-chartreuse, 0.2),
+      transparent 70%
+    );
+    z-index: 0;
   }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba($color-violet, 0.1),
+      transparent 70%
+    );
+    z-index: 0;
   }
 }

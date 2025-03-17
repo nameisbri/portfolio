@@ -1,0 +1,187 @@
+@use "../../index.scss" as *;
+
+.experience {
+  padding: $spacing-xl 0;
+  position: relative;
+
+  &__tabs {
+    @include flex(row, flex-start, center, $spacing-sm);
+    margin-bottom: $spacing-lg;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: $spacing-sm;
+  }
+
+  &__tab {
+    @include flex(row, center, center, $spacing-xs);
+    background: none;
+    border: none;
+    padding: $spacing-xs $spacing-sm;
+    color: var(--text-secondary);
+    font-family: $font-family-primary;
+    font-weight: $font-weight-medium;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    @include transition(color);
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: $spacing-sm - 0.5rem;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(
+        to right,
+        var(--accent-primary),
+        var(--accent-secondary)
+      );
+      @include transition(width);
+    }
+
+    &:hover {
+      color: var(--text-primary);
+
+      &::after {
+        width: 50%;
+      }
+    }
+
+    &--active {
+      color: var(--text-primary);
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__content {
+    margin-top: $spacing-lg;
+  }
+
+  &__timeline {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 2px;
+      background: linear-gradient(
+        to bottom,
+        var(--accent-primary),
+        var(--accent-secondary),
+        transparent
+      );
+      opacity: 0.3;
+
+      @include respond-to(md) {
+        left: 20px;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding-left: $spacing-xl;
+    margin-bottom: $spacing-lg;
+
+    @include respond-to(md) {
+      padding-left: $spacing-xxl;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--accent-primary);
+      z-index: 1;
+
+      @include respond-to(md) {
+        left: 15px;
+      }
+    }
+  }
+
+  &__header {
+    margin-bottom: $spacing-sm;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    margin-bottom: $spacing-xs;
+    color: var(--text-primary);
+  }
+
+  &__company {
+    font-weight: $font-weight-medium;
+    margin-bottom: $spacing-xs;
+    color: var(--accent-primary);
+  }
+
+  &__period {
+    @include flex(row, flex-start, center, $spacing-md);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: $spacing-xs;
+
+    @include respond-to(md) {
+      @include flex(row, flex-start, center, $spacing-lg);
+    }
+  }
+
+  &__location {
+    position: relative;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: -$spacing-xs - 0.5rem;
+    }
+  }
+
+  &__description {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+      position: relative;
+      padding-left: $spacing-md;
+      margin-bottom: $spacing-xs;
+
+      &::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--accent-primary);
+      }
+    }
+  }
+
+  &__edu-description {
+    position: relative;
+    padding-left: $spacing-md;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 3px;
+      background: linear-gradient(
+        to bottom,
+        var(--accent-primary),
+        transparent
+      );
+      border-radius: $border-radius-sm;
+    }
+  }
+}
