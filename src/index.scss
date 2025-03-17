@@ -4,30 +4,39 @@ $line-height: 1.5;
 $font-weight: 400;
 
 // Light theme colors
-$light-text-primary: #213547;
-$light-text-secondary: #4a5568;
-$light-background-primary: #ffffff;
-$light-background-secondary: #f9f9f9;
-$light-accent-primary: #646cff;
-$light-accent-secondary: #535bf2;
-$light-button-background: #f9f9f9;
-$light-button-hover: #646cff;
-$light-border-color: #e2e8f0;
+$light-text-primary: #041f1e;
+$light-text-secondary: #522b47;
+$light-background-primary: #eadeda;
+$light-background-secondary: #ffffff;
+$light-accent-primary: #f25757;
+$light-accent-secondary: #522b47;
+$light-button-background: #eadeda;
+$light-button-hover: #f25757;
+$light-border-color: #522b47;
 
 // Dark theme colors
-$dark-text-primary: rgba(255, 255, 255, 0.87);
-$dark-text-secondary: rgba(255, 255, 255, 0.6);
-$dark-background-primary: #242424;
-$dark-background-secondary: #1a1a1a;
-$dark-accent-primary: #646cff;
-$dark-accent-secondary: #747bff;
-$dark-button-background: #1a1a1a;
-$dark-button-hover: #646cff;
-$dark-border-color: #2d3748;
+$dark-text-primary: #eadeda;
+$dark-text-secondary: rgba(234, 222, 218, 0.7);
+$dark-background-primary: #041f1e;
+$dark-background-secondary: #0a2a28;
+$dark-accent-primary: #f25757;
+$dark-accent-secondary: #e0ff4f;
+$dark-button-background: #522b47;
+$dark-button-hover: #e0ff4f;
+$dark-border-color: #eadeda;
 
 // Mixins
-@mixin theme-colors($text-primary, $text-secondary, $bg-primary, $bg-secondary, 
-                   $accent-primary, $accent-secondary, $button-bg, $button-hover, $border) {
+@mixin theme-colors(
+  $text-primary,
+  $text-secondary,
+  $bg-primary,
+  $bg-secondary,
+  $accent-primary,
+  $accent-secondary,
+  $button-bg,
+  $button-hover,
+  $border
+) {
   --text-primary: #{$text-primary};
   --text-secondary: #{$text-secondary};
   --background-primary: #{$bg-primary};
@@ -54,7 +63,7 @@ $dark-border-color: #2d3748;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+
   /* Base theme colors - will be overridden by theme-specific values */
   @include theme-colors(
     $light-text-primary,
@@ -104,7 +113,7 @@ a {
   font-weight: 500;
   color: var(--accent-primary);
   text-decoration: inherit;
-  
+
   &:hover {
     color: var(--accent-secondary);
   }
@@ -136,11 +145,11 @@ button {
   color: var(--text-primary);
   cursor: pointer;
   @include transition(border-color, background-color);
-  
+
   &:hover {
     border-color: var(--button-hover);
   }
-  
+
   &:focus,
   &:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
@@ -173,9 +182,8 @@ button {
   cursor: pointer;
   z-index: 1000;
   transition: all 0.3s ease;
-  
+
   &:hover {
     transform: scale(1.1);
   }
 }
-
