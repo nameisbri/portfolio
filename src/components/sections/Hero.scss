@@ -1,230 +1,263 @@
 @use "../../index.scss" as *;
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
 .hero {
-  @include flex(column, center, flex-start, $spacing-xl);
-  min-height: 90vh;
+  padding: $spacing-lg 0;
   position: relative;
-  padding: $spacing-xl 0;
   overflow: hidden;
 
-  @include respond-to(md) {
-    @include flex(row, space-between, center, $spacing-xl);
-    padding: 0;
+  &__wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+    padding: 0 $spacing-sm;
+
+    @include respond-to(md) {
+      grid-template-columns: 3fr 2fr;
+      gap: $spacing-xl;
+      padding: $spacing-md;
+      min-height: 40vh;
+      align-items: center;
+    }
   }
 
-  &__content {
-    max-width: 600px;
-    z-index: 1;
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__intro {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    margin-bottom: $spacing-xs;
+    display: block;
+    font-family: $font-family-secondary;
+    font-weight: $font-weight-medium;
   }
 
   &__title {
-    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-family: $font-family-secondary;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
     font-weight: $font-weight-bold;
-    line-height: 1.1;
-    margin-bottom: $spacing-xs;
-    position: relative;
-    @include text-gradient(var(--accent-primary), var(--accent-secondary));
+    line-height: 1.2;
+    margin-bottom: $spacing-sm;
+    color: var(--text-primary);
+
+    .text-gradient {
+      @include text-gradient(var(--accent-primary), var(--accent-secondary));
+    }
   }
 
   &__subtitle {
-    display: block;
-    font-family: $font-family-primary;
-    font-size: clamp(1.2rem, 2vw, 1.5rem);
-    font-weight: $font-weight-medium;
     color: var(--text-secondary);
-    margin-top: $spacing-xs;
+    font-size: 1rem;
+    line-height: 1.5;
     margin-bottom: $spacing-md;
+    max-width: 450px;
   }
 
-  &__description {
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
-    line-height: 1.6;
-    margin-bottom: $spacing-lg;
-    color: var(--text-secondary);
-    position: relative;
-
-    // Add subtle accent line
-    &::before {
-      content: "";
-      position: absolute;
-      left: -$spacing-md;
-      top: 0;
-      width: 3px;
-      height: 100%;
-      background: linear-gradient(
-        to bottom,
-        var(--accent-primary),
-        transparent
-      );
-      border-radius: $border-radius-full;
-
-      @include respond-to(md) {
-        left: -$spacing-lg;
-      }
-    }
-  }
-
-  &__cta {
-    @include flex(row, flex-start, center, $spacing-md);
-    margin-top: $spacing-lg;
+  &__links {
+    display: flex;
     flex-wrap: wrap;
-
-    .button {
-      min-width: 140px;
-    }
-
-    .button--primary {
-      background: linear-gradient(
-        to right,
-        var(--accent-primary),
-        darken(#f25757, 10%)
-      );
-      position: relative;
-      z-index: 1;
-      overflow: hidden;
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          to right,
-          var(--accent-secondary),
-          var(--accent-primary)
-        );
-        transition: left 0.3s ease;
-        z-index: -1;
-      }
-
-      &:hover::before {
-        left: 0;
-      }
-    }
+    gap: $spacing-md;
+    margin-top: $spacing-md;
   }
 
-  &__visual {
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-xs;
     position: relative;
-    width: 100%;
-    max-width: 400px;
-    aspect-ratio: 1;
-    background-color: var(--background-secondary);
-    border-radius: $border-radius-lg;
-    @include flex(column, center, center);
-    box-shadow: var(--card-shadow);
-    overflow: hidden;
-
-    @include respond-to(md) {
-      width: 400px;
-    }
-
-    // Add decorative elements
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-          135deg,
-          rgba($color-bittersweet, 0.1),
-          transparent 50%
-        ),
-        linear-gradient(225deg, rgba($color-chartreuse, 0.05), transparent 50%);
-      z-index: 0;
-    }
+    color: var(--text-primary);
+    font-weight: $font-weight-medium;
+    transition: color 0.2s ease;
+    font-size: 1rem;
 
     &::after {
       content: "";
       position: absolute;
-      bottom: 0;
+      width: 0;
+      height: 1px;
+      bottom: -2px;
       left: 0;
-      width: 100%;
-      height: 5px;
-      background: linear-gradient(
-        to right,
-        var(--accent-primary),
-        var(--accent-secondary)
-      );
-    }
-  }
-
-  &__accent {
-    position: absolute;
-    border-radius: 50%;
-    @include flex(row, center, center);
-    z-index: 1;
-
-    &:nth-child(1) {
-      width: 60px;
-      height: 60px;
-      top: 30px;
-      right: 40px;
       background-color: var(--accent-primary);
-      box-shadow: 0 4px 20px rgba($color-bittersweet, 0.3);
+      transition: width 0.3s ease;
     }
 
-    &:nth-child(2) {
-      width: 40px;
-      height: 40px;
-      bottom: 40px;
-      left: 30px;
-      background-color: var(--accent-secondary);
-      opacity: 0.8;
-      box-shadow: 0 4px 20px rgba($color-violet, 0.3);
+    &:hover {
+      color: var(--accent-primary);
+
+      &::after {
+        width: 100%;
+      }
     }
   }
 
-  &__star {
-    color: white;
-    animation: pulse 3s infinite ease-in-out;
+  &__tag-cloud {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    max-width: 350px;
+
+    @include respond-to(md) {
+      height: 300px;
+    }
   }
 
-  // Background decorative elements
+  &__tag {
+    position: absolute;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $border-radius-full;
+    font-size: 0.9rem;
+    font-weight: $font-weight-medium;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    &--react {
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #61dafb33;
+      color: #61dafb;
+      padding: $spacing-xs $spacing-lg;
+      font-size: 1.3rem;
+      z-index: 2;
+
+      [data-theme="dark"] & {
+        color: #61dafb;
+        background-color: rgba(97, 218, 251, 0.15);
+      }
+    }
+
+    &--js {
+      top: 20%;
+      left: 60%;
+      background-color: #f7df1e33;
+      color: darken(#f7df1e, 30%);
+
+      [data-theme="dark"] & {
+        color: #f7df1e;
+        background-color: rgba(247, 223, 30, 0.15);
+      }
+    }
+
+    &--ts {
+      top: 15%;
+      left: 25%;
+      background-color: #3178c633;
+      color: #3178c6;
+
+      [data-theme="dark"] & {
+        color: #3178c6;
+        background-color: rgba(49, 120, 198, 0.15);
+      }
+    }
+
+    &--node {
+      top: 60%;
+      left: 35%;
+      background-color: #3c873a33;
+      color: #3c873a;
+
+      [data-theme="dark"] & {
+        color: #6cc24a;
+        background-color: rgba(108, 194, 74, 0.15);
+      }
+    }
+
+    &--css {
+      top: 30%;
+      left: 40%;
+      background-color: #264de433;
+      color: #264de4;
+
+      [data-theme="dark"] & {
+        color: #264de4;
+        background-color: rgba(38, 77, 228, 0.15);
+      }
+    }
+
+    &--sass {
+      top: 75%;
+      left: 60%;
+      background-color: #cd669933;
+      color: #cd6699;
+
+      [data-theme="dark"] & {
+        color: #cd6699;
+        background-color: rgba(205, 102, 153, 0.15);
+      }
+    }
+
+    &--mysql {
+      top: 45%;
+      left: 20%;
+      background-color: #00618a33;
+      color: #00618a;
+
+      [data-theme="dark"] & {
+        color: #00618a;
+        background-color: rgba(0, 97, 138, 0.15);
+      }
+    }
+
+    &--express {
+      top: 70%;
+      left: 30%;
+      background-color: #00000033;
+      color: #000000;
+
+      [data-theme="dark"] & {
+        color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+    }
+
+    &--html {
+      top: 25%;
+      left: 75%;
+      background-color: #e34c2633;
+      color: #e34c26;
+
+      [data-theme="dark"] & {
+        color: #e34c26;
+        background-color: rgba(227, 76, 38, 0.15);
+      }
+    }
+
+    &--ux {
+      top: 65%;
+      left: 65%;
+      background-color: rgba($color-violet, 0.2);
+      color: $color-violet;
+
+      [data-theme="dark"] & {
+        color: lighten($color-violet, 20%);
+        background-color: rgba(lighten($color-violet, 20%), 0.15);
+      }
+    }
+  }
+
   &::before {
     content: "";
     position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+    top: -50%;
+    right: -10%;
+    width: 70%;
+    height: 200%;
     background: radial-gradient(
-      circle,
-      rgba($color-chartreuse, 0.2),
+      circle at center,
+      rgba($color-chartreuse, 0.05),
       transparent 70%
     );
-    z-index: 0;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -100px;
-    left: -100px;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: radial-gradient(
-      circle,
-      rgba($color-violet, 0.1),
-      transparent 70%
-    );
-    z-index: 0;
+    z-index: -1;
   }
 }

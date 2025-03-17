@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { GithubLogo, Globe } from "@phosphor-icons/react";
 import "./Projects.scss";
 
-// Simplified Project interface
 interface Project {
   id: string;
   title: string;
@@ -17,7 +16,6 @@ interface Project {
 }
 
 const Projects = () => {
-  // Simplified project data
   const projects: Project[] = [
     {
       id: "discloser",

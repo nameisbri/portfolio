@@ -1,4 +1,3 @@
-// Theme colors mixin
 @mixin theme-colors(
   $text-primary,
   $text-secondary,
@@ -23,7 +22,6 @@
   --card-shadow: #{$card-shadow};
 }
 
-// Transition mixin for smooth animations
 @mixin transition($properties...) {
   $values: ();
   @each $prop in $properties {
@@ -32,7 +30,6 @@
   transition: $values;
 }
 
-// Flex helpers
 @mixin flex($direction: row, $justify: flex-start, $align: stretch, $gap: 0) {
   display: flex;
   flex-direction: $direction;
@@ -43,7 +40,6 @@
   }
 }
 
-// Grid helpers
 @mixin grid($cols: 1, $rows: auto, $gap: 0) {
   display: grid;
   grid-template-columns: repeat($cols, 1fr);
@@ -55,7 +51,6 @@
   }
 }
 
-// Media query mixins
 @mixin respond-to($breakpoint) {
   @if $breakpoint == xs {
     @media (min-width: $breakpoint-xs) {
@@ -80,7 +75,6 @@
   }
 }
 
-// Text gradient
 @mixin text-gradient($from, $to, $direction: to right) {
   background: linear-gradient($direction, $from, $to);
   -webkit-background-clip: text;
@@ -90,7 +84,6 @@
   display: inline-block;
 }
 
-// Button styles
 @mixin button-styles($type: "primary") {
   border-radius: $border-radius-md;
   font-family: $font-family-primary;
@@ -122,7 +115,6 @@
   }
 }
 
-// Card styles
 @mixin card-styles {
   background-color: var(--background-secondary);
   border-radius: $border-radius-md;
@@ -136,7 +128,6 @@
   }
 }
 
-// Section styles
 @mixin section-spacing {
   padding: $spacing-xl 0;
   margin-bottom: $spacing-xl;

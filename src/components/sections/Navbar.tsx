@@ -8,7 +8,6 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Handle scroll event to change navbar appearance
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -20,13 +19,11 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
 
-    // Clean up event listener
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  // Toggle mobile menu
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };

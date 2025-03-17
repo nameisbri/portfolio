@@ -1,19 +1,16 @@
-// Typography
 $font-family-primary: "Outfit", system-ui, sans-serif;
 $font-family-secondary: "Space Grotesk", monospace;
-$line-height: 1.5;
+$line-height: 1.45;
 $font-weight-regular: 400;
 $font-weight-medium: 500;
 $font-weight-bold: 700;
 
-// Color palette
 $color-dark-green: #041f1e;
 $color-bittersweet: #f25757;
 $color-violet: #522b47;
 $color-chartreuse: #e0ff4f;
 $color-timberwolf: #eadeda;
 
-// Light theme colors
 $light-text-primary: $color-dark-green;
 $light-text-secondary: $color-violet;
 $light-background-primary: $color-timberwolf;
@@ -23,9 +20,8 @@ $light-accent-secondary: $color-violet;
 $light-button-background: rgba($color-timberwolf, 0.7);
 $light-button-hover: $color-bittersweet;
 $light-border-color: rgba($color-violet, 0.2);
-$light-card-shadow: 0 4px 20px rgba($color-dark-green, 0.05);
+$light-card-shadow: 0 3px 15px rgba($color-dark-green, 0.04);
 
-// Dark theme colors
 $dark-text-primary: $color-timberwolf;
 $dark-text-secondary: rgba($color-timberwolf, 0.7);
 $dark-background-primary: $color-dark-green;
@@ -35,36 +31,31 @@ $dark-accent-secondary: $color-chartreuse;
 $dark-button-background: rgba($color-violet, 0.7);
 $dark-button-hover: $color-chartreuse;
 $dark-border-color: rgba($color-timberwolf, 0.2);
-$dark-card-shadow: 0 4px 20px rgba(black, 0.2);
+$dark-card-shadow: 0 3px 15px rgba(black, 0.15);
 
-// Breakpoints
 $breakpoint-xs: 480px;
 $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
 
-// Spacing
-$spacing-xs: 0.5rem; // 8px
-$spacing-sm: 1rem; // 16px
-$spacing-md: 1.5rem; // 24px
-$spacing-lg: 2rem; // 32px
-$spacing-xl: 3rem; // 48px
-$spacing-xxl: 4rem; // 64px
+$spacing-xs: 0.4rem;
+$spacing-sm: 0.8rem;
+$spacing-md: 1.2rem;
+$spacing-lg: 1.6rem;
+$spacing-xl: 2.4rem;
+$spacing-xxl: 3.2rem;
 
-// Animations
 $transition-fast: 0.15s ease;
 $transition-normal: 0.25s ease;
 $transition-slow: 0.4s ease;
 
-// Borders
 $border-radius-sm: 4px;
 $border-radius-md: 8px;
 $border-radius-lg: 12px;
 $border-radius-xl: 24px;
 $border-radius-full: 9999px;
 
-// Project type colors
 $project-capstone: $color-bittersweet;
 $project-team: $color-violet;
 $project-hackathon: $color-chartreuse;
