@@ -1,8 +1,28 @@
-import { motion } from "framer-motion";
-import { ArrowRight, FileArrowDown } from "@phosphor-icons/react";
+import { motion, useAnimationControls } from "framer-motion";
+import {
+  ArrowRight,
+  FileArrowDown,
+  Code,
+  Database,
+  PaintBucket,
+  Layout,
+  GitBranch,
+  ChartLine,
+  FileHtml,
+  Globe,
+  Coffee,
+  LightbulbFilament,
+  BracketsCurly,
+  Stack,
+  DeviceMobile,
+  FigmaLogo,
+  BracketsSquare,
+  Cloud,
+} from "@phosphor-icons/react";
 import "./Hero.scss";
 
 const Hero = () => {
+  // Original animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -15,16 +35,97 @@ const Hero = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 20, scale: 0.9 },
     visible: {
       opacity: 1,
       y: 0,
+      scale: 1,
       transition: {
         type: "spring",
         stiffness: 100,
         damping: 10,
       },
     },
+  };
+
+  const floatVariants = {
+    animate: (i: number) => ({
+      y: [0, i % 2 === 0 ? -8 : -12, 0],
+      transition: {
+        duration: i % 2 === 0 ? 3 : 4,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: i * 0.2,
+      },
+    }),
+  };
+
+  // Create individual animation controls for each skill bubble
+  const skillControls = Array(19)
+    .fill(null)
+    .map(() => useAnimationControls());
+
+  // Function to handle hover effect with repulsion
+  const handleHover = (index: number) => {
+    // Calculate repulsion for each skill based on its position relative to the hovered skill
+    skillControls.forEach((control, i) => {
+      if (i === index) {
+        // Scale up the hovered element and bring it to the front with a wiggle
+        control.start({
+          scale: 1.15,
+          rotate: [0, -3, 3, -2, 2, 0],
+          zIndex: 10, // Higher z-index to bring to front
+          transition: {
+            scale: { duration: 0.3 },
+            rotate: { duration: 0.5, ease: "easeInOut" },
+          },
+        });
+      } else {
+        // For other elements, calculate a repulsion effect
+        // Create a more pronounced and consistent repulsion effect
+        // Calculate direction based on relative position to create a radial push
+
+        // Determine the relative position (simplistic approach)
+        const positionFactor = (i % 5) - 2; // Creates values -2, -1, 0, 1, 2
+        const distanceFactor = ((i + index) % 3) + 1; // Creates values 1, 2, 3
+
+        // Create a more dynamic repulsion with slight rotation
+        const xOffset = positionFactor * 12 * (distanceFactor / 2);
+        const yOffset = positionFactor * -1 * 10 * (distanceFactor / 2);
+        const rotateVal = positionFactor * 2;
+
+        control.start({
+          x: xOffset,
+          y: yOffset,
+          rotate: rotateVal,
+          transition: {
+            type: "spring",
+            stiffness: 100,
+            damping: 8,
+          },
+        });
+      }
+    });
+  };
+
+  // Function to handle hover end and return to original positions
+  const handleHoverEnd = () => {
+    // Return all skills to their original positions with a gentle bounce
+    skillControls.forEach((control) => {
+      control.start({
+        x: 0,
+        y: 0,
+        scale: 1,
+        rotate: 0,
+        zIndex: 1, // Return to normal z-index
+        transition: {
+          type: "spring",
+          stiffness: 50,
+          damping: 10,
+          duration: 2,
+        },
+      });
+    });
   };
 
   return (
@@ -92,71 +193,357 @@ const Hero = () => {
 
         <div className="hero__right">
           <motion.div
-            className="hero__tag-cloud"
+            className="hero__skill-cloud"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
-            <motion.span
-              className="hero__tag hero__tag--react"
+            {/* Core Skills */}
+            <motion.div
+              className="hero__skill hero__skill--react"
               variants={itemVariants}
+              custom={0}
+              animate={skillControls[0]}
+              initial="visible"
+              onHoverStart={() => handleHover(0)}
+              onHoverEnd={handleHoverEnd}
             >
-              React
-            </motion.span>
-            <motion.span
-              className="hero__tag hero__tag--js"
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={0}
+                initial="animate"
+              >
+                <BracketsCurly size={24} weight="duotone" />
+                <span>React</span>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              className="hero__skill hero__skill--js"
               variants={itemVariants}
+              custom={1}
+              animate={skillControls[1]}
+              initial="visible"
+              onHoverStart={() => handleHover(1)}
+              onHoverEnd={handleHoverEnd}
             >
-              JavaScript
-            </motion.span>
-            <motion.span
-              className="hero__tag hero__tag--ts"
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={1}
+              >
+                <Code size={20} weight="duotone" />
+                <span>JavaScript</span>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              className="hero__skill hero__skill--ts"
               variants={itemVariants}
+              custom={2}
+              animate={skillControls[2]}
+              initial="visible"
+              onHoverStart={() => handleHover(2)}
+              onHoverEnd={handleHoverEnd}
             >
-              TypeScript
-            </motion.span>
-            <motion.span
-              className="hero__tag hero__tag--node"
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={2}
+              >
+                <BracketsCurly size={20} weight="duotone" />
+                <span>TypeScript</span>
+              </motion.div>
+            </motion.div>
+
+            {/* Backend Skills */}
+            <motion.div
+              className="hero__skill hero__skill--node"
               variants={itemVariants}
+              custom={3}
+              animate={skillControls[3]}
+              initial="visible"
+              onHoverStart={() => handleHover(3)}
+              onHoverEnd={handleHoverEnd}
             >
-              Node.js
-            </motion.span>
-            <motion.span
-              className="hero__tag hero__tag--css"
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={3}
+              >
+                <Coffee size={20} weight="duotone" />
+                <span>Node.js</span>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              className="hero__skill hero__skill--express"
               variants={itemVariants}
+              custom={4}
+              animate={skillControls[4]}
+              initial="visible"
+              onHoverStart={() => handleHover(4)}
+              onHoverEnd={handleHoverEnd}
             >
-              CSS
-            </motion.span>
-            <motion.span
-              className="hero__tag hero__tag--sass"
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={4}
+              >
+                <GitBranch size={20} weight="duotone" />
+                <span>Express.js</span>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              className="hero__skill hero__skill--mysql"
               variants={itemVariants}
+              custom={5}
+              animate="animate"
+              whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
             >
-              SASS
-            </motion.span>
-            <motion.span
-              className="hero__tag hero__tag--mysql"
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={5}
+              >
+                <Database size={20} weight="duotone" />
+                <span>MySQL</span>
+              </motion.div>
+            </motion.div>
+
+            {/* Frontend Skills */}
+            <motion.div
+              className="hero__skill hero__skill--css"
               variants={itemVariants}
+              custom={6}
+              animate={skillControls[5]}
+              initial="visible"
+              onHoverStart={() => handleHover(5)}
+              onHoverEnd={handleHoverEnd}
             >
-              MySQL
-            </motion.span>
-            <motion.span
-              className="hero__tag hero__tag--express"
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={6}
+              >
+                <PaintBucket size={20} weight="duotone" />
+                <span>CSS</span>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              className="hero__skill hero__skill--sass"
               variants={itemVariants}
+              custom={7}
+              animate={skillControls[6]}
+              initial="visible"
+              onHoverStart={() => handleHover(6)}
+              onHoverEnd={handleHoverEnd}
             >
-              Express.js
-            </motion.span>
-            <motion.span
-              className="hero__tag hero__tag--html"
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={7}
+              >
+                <PaintBucket size={20} weight="duotone" />
+                <span>SASS</span>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              className="hero__skill hero__skill--html"
               variants={itemVariants}
+              custom={8}
+              animate={skillControls[8]}
+              initial="visible"
+              onHoverStart={() => handleHover(8)}
+              onHoverEnd={handleHoverEnd}
             >
-              HTML
-            </motion.span>
-            <motion.span
-              className="hero__tag hero__tag--ux"
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={8}
+              >
+                <FileHtml size={20} weight="duotone" />
+                <span>HTML</span>
+              </motion.div>
+            </motion.div>
+
+            {/* Design/UX Skills */}
+            <motion.div
+              className="hero__skill hero__skill--ux"
               variants={itemVariants}
+              custom={9}
+              animate={skillControls[9]}
+              initial="visible"
+              onHoverStart={() => handleHover(9)}
+              onHoverEnd={handleHoverEnd}
             >
-              UI/UX
-            </motion.span>
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={9}
+              >
+                <Layout size={20} weight="duotone" />
+                <span>UI/UX</span>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              className="hero__skill hero__skill--figma"
+              variants={itemVariants}
+              custom={10}
+              animate={skillControls[10]}
+              initial="visible"
+              onHoverStart={() => handleHover(10)}
+              onHoverEnd={handleHoverEnd}
+            >
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={10}
+              >
+                <FigmaLogo size={20} weight="duotone" />
+                <span>Figma</span>
+              </motion.div>
+            </motion.div>
+
+            {/* Marketing Skills */}
+            <motion.div
+              className="hero__skill hero__skill--analytics"
+              variants={itemVariants}
+              custom={11}
+              animate={skillControls[11]}
+              initial="visible"
+              onHoverStart={() => handleHover(11)}
+              onHoverEnd={handleHoverEnd}
+            >
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={11}
+              >
+                <ChartLine size={20} weight="duotone" />
+                <span>Analytics</span>
+              </motion.div>
+            </motion.div>
+
+            {/* Additional Tech Skills */}
+            <motion.div
+              className="hero__skill hero__skill--mobile"
+              variants={itemVariants}
+              custom={13}
+              animate={skillControls[13]}
+              initial="visible"
+              onHoverStart={() => handleHover(13)}
+              onHoverEnd={handleHoverEnd}
+            >
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={13}
+              >
+                <DeviceMobile size={20} weight="duotone" />
+                <span>Mobile</span>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              className="hero__skill hero__skill--cloud"
+              variants={itemVariants}
+              custom={14}
+              animate={skillControls[14]}
+              initial="visible"
+              onHoverStart={() => handleHover(14)}
+              onHoverEnd={handleHoverEnd}
+            >
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={14}
+              >
+                <Cloud size={20} weight="duotone" />
+                <span>Cloud</span>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              className="hero__skill hero__skill--api"
+              variants={itemVariants}
+              custom={15}
+              animate={skillControls[15]}
+              initial="visible"
+              onHoverStart={() => handleHover(15)}
+              onHoverEnd={handleHoverEnd}
+            >
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={15}
+              >
+                <BracketsSquare size={20} weight="duotone" />
+                <span>REST API</span>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              className="hero__skill hero__skill--stack"
+              variants={itemVariants}
+              custom={16}
+              animate={skillControls[16]}
+              initial="visible"
+              onHoverStart={() => handleHover(16)}
+              onHoverEnd={handleHoverEnd}
+            >
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={16}
+              >
+                <Stack size={20} weight="duotone" />
+                <span>Full Stack</span>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              className="hero__skill hero__skill--creative"
+              variants={itemVariants}
+              custom={17}
+              animate={skillControls[17]}
+              initial="visible"
+              onHoverStart={() => handleHover(17)}
+              onHoverEnd={handleHoverEnd}
+            >
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={17}
+              >
+                <LightbulbFilament size={20} weight="duotone" />
+                <span>Creative</span>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              className="hero__skill hero__skill--global"
+              variants={itemVariants}
+              custom={18}
+              animate={skillControls[18]}
+              initial="visible"
+              onHoverStart={() => handleHover(18)}
+              onHoverEnd={handleHoverEnd}
+            >
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={18}
+              >
+                <Globe size={20} weight="duotone" />
+                <span>Global</span>
+              </motion.div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
