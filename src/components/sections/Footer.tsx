@@ -5,7 +5,6 @@ import {
   EnvelopeSimple,
   FileArrowDown,
   MapPin,
-  Phone,
 } from "@phosphor-icons/react";
 
 const Footer = () => {

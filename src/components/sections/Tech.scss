@@ -54,34 +54,32 @@
       }
     }
 
-    // Category styles
     &--language::before {
-      background-color: #3178c6; // TypeScript blue
+      background-color: #3178c6;
     }
 
     &--frontend::before {
-      background-color: #61dafb; // React blue
+      background-color: #61dafb;
     }
 
     &--backend::before {
-      background-color: #68a063; // Node.js green
+      background-color: #68a063;
     }
 
     &--database::before {
-      background-color: #00758f; // MySQL blue
+      background-color: #00758f;
     }
 
     &--tool::before,
     &--methodology::before {
-      background-color: #f1e05a; // JavaScript yellow
+      background-color: #f1e05a;
     }
 
     &--design::before,
     &--marketing::before {
-      background-color: #ff7e63; // Design/Marketing coral
+      background-color: #ff7e63;
     }
 
-    // Level styles
     &--advanced {
       .tech__name {
         font-weight: 700;
