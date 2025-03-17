@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { GithubLogo, Globe } from "@phosphor-icons/react";
 import "./Projects.scss";
 
-// Import project images
 import discloserImage from "../../assets/images/projects/discloser.jpg";
 import instockImage from "../../assets/images/projects/instock.jpg";
 import microsoftImage from "../../assets/images/projects/microsoft.jpg";
