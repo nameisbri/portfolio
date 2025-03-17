@@ -2,6 +2,12 @@ import { motion } from "framer-motion";
 import { GithubLogo, Globe } from "@phosphor-icons/react";
 import "./Projects.scss";
 
+// Import project images
+import discloserImage from "../../assets/images/projects/discloser.jpg";
+import instockImage from "../../assets/images/projects/instock.jpg";
+import microsoftImage from "../../assets/images/projects/microsoft.jpg";
+import animalTriviaImage from "../../assets/images/projects/animal-trivia.jpg";
+
 interface Project {
   id: string;
   title: string;
@@ -10,6 +16,7 @@ interface Project {
   type: string;
   tech: string[];
   role: string;
+  image: string;
   links?: {
     github?: string;
     live?: string;
@@ -36,6 +43,7 @@ const Projects = () => {
         "SCSS",
       ],
       role: "Full Stack Developer",
+      image: discloserImage,
       links: {
         github: "https://github.com/nameisbri/discloser",
       },
@@ -50,6 +58,7 @@ const Projects = () => {
       type: "Team Project",
       tech: ["React", "Node.js", "Express", "SASS/BEM", "Axios", "REST API"],
       role: "Full Stack Developer",
+      image: instockImage,
       links: {
         github: "https://github.com/nameisbri/bug-busters-instock",
       },
@@ -64,6 +73,7 @@ const Projects = () => {
       type: "Hackathon",
       tech: ["React.js", "SCSS", "JavaScript", "GitHub Pages"],
       role: "Frontend Developer",
+      image: microsoftImage,
       links: {
         github: "https://github.com/nameisbri/microsoft-industry-project",
         live: "https://nameisbri.github.io/microsoft-industry-project",
@@ -79,22 +89,9 @@ const Projects = () => {
       type: "Hackathon",
       tech: ["JavaScript", "React", "REST API", "CSS"],
       role: "JavaScript Lead",
+      image: animalTriviaImage,
       links: {
         github: "https://github.com/nameisbri/animal-trivia",
-      },
-    },
-    {
-      id: "event-management",
-      title: "Event Management App",
-      description:
-        "A responsive web application for browsing, creating, and managing local events across the Greater Toronto Area.",
-      highlightedSkills:
-        "Component architecture, API integration, responsive design patterns",
-      type: "Hackathon",
-      tech: ["React", "SCSS", "Axios", "REST API"],
-      role: "Frontend Developer",
-      links: {
-        github: "https://github.com/nameisbri/event-management-app",
       },
     },
   ];
@@ -124,7 +121,7 @@ const Projects = () => {
           >
             <div className="projects__image-container">
               <img
-                src={`/api/placeholder/500/300`}
+                src={project.image}
                 alt={project.title}
                 className="projects__image"
               />
