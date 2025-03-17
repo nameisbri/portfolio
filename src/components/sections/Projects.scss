@@ -112,6 +112,17 @@
     line-height: 1.4;
   }
 
+  &__card-skills {
+    padding: 0 $spacing-sm;
+    font-size: 0.8rem;
+    margin-bottom: $spacing-xs;
+    color: var(--text-secondary);
+
+    strong {
+      color: var(--accent-primary);
+    }
+  }
+
   &__card-role {
     padding: 0 $spacing-sm;
     font-size: 0.8rem;
@@ -127,12 +138,15 @@
     padding: $spacing-sm;
     border-top: 1px solid var(--border-color);
     @include flex(row, flex-start, center, $spacing-sm);
+    margin-top: auto;
   }
 
   &__link {
     @include flex(row, center, center, $spacing-xs/2);
     font-size: 0.8rem;
     color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
 
     &:hover {
       color: var(--accent-primary);

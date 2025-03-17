@@ -6,6 +6,7 @@ interface Project {
   id: string;
   title: string;
   description: string;
+  highlightedSkills: string;
   type: string;
   tech: string[];
   role: string;
@@ -21,7 +22,9 @@ const Projects = () => {
       id: "discloser",
       title: "Discloser - Health Information Platform",
       description:
-        "A secure platform that allows users to manage and share their sexual health information privately and efficiently. Features OCR extraction from medical documents, risk-based testing reminders, and private sharing capabilities.",
+        "A secure platform that allows users to manage and share sensitive information privately. Features OCR extraction from documents, automated reminders, and private sharing capabilities.",
+      highlightedSkills:
+        "Full-stack development, database design, OCR integration, user authentication",
       type: "Capstone",
       tech: [
         "JavaScript",
@@ -42,6 +45,8 @@ const Projects = () => {
       title: "InStock - Inventory Management System",
       description:
         "A full-stack inventory management application built for a fictional Fortune 500 client. Addresses scalability issues with warehouse management and inventory tracking across multiple locations.",
+      highlightedSkills:
+        "API development, relational database management, collaborative Git workflow",
       type: "Team Project",
       tech: ["React", "Node.js", "Express", "SASS/BEM", "Axios", "REST API"],
       role: "Full Stack Developer",
@@ -54,6 +59,8 @@ const Projects = () => {
       title: "AI Business Consultant",
       description:
         "An interactive web application designed to help small businesses integrate AI into their operations, developed during a 24-hour hackathon organized by Microsoft and BrainStation.",
+      highlightedSkills:
+        "Rapid prototyping, agile development, UX design, interactive data visualization",
       type: "Hackathon",
       tech: ["React.js", "SCSS", "JavaScript", "GitHub Pages"],
       role: "Frontend Developer",
@@ -67,6 +74,8 @@ const Projects = () => {
       title: "Animal Trivia - Interactive Quiz Game",
       description:
         "An educational quiz application focused on animal facts, developed during a BrainStation hackathon with dynamic scoring and interactive elements.",
+      highlightedSkills:
+        "JavaScript logic, API integration, state management, responsive design",
       type: "Hackathon",
       tech: ["JavaScript", "React", "REST API", "CSS"],
       role: "JavaScript Lead",
@@ -79,6 +88,8 @@ const Projects = () => {
       title: "Event Management App",
       description:
         "A responsive web application for browsing, creating, and managing local events across the Greater Toronto Area.",
+      highlightedSkills:
+        "Component architecture, API integration, responsive design patterns",
       type: "Hackathon",
       tech: ["React", "SCSS", "Axios", "REST API"],
       role: "Frontend Developer",
@@ -92,8 +103,9 @@ const Projects = () => {
     <section className="projects" id="projects">
       <h2 className="section__heading">Projects</h2>
       <p className="projects__subtitle">
-        Recent work from my BrainStation Software Engineering program and
-        hackathons.
+        Recent work showcasing my full-stack development skills, collaboration
+        abilities, and problem-solving approach. Each project highlights
+        different technical competencies applicable across industries.
       </p>
 
       <motion.div
@@ -130,6 +142,10 @@ const Projects = () => {
             </div>
 
             <p className="projects__card-description">{project.description}</p>
+
+            <div className="projects__card-skills">
+              <strong>Key Skills:</strong> {project.highlightedSkills}
+            </div>
 
             <div className="projects__card-role">
               <strong>Role:</strong> {project.role}

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "@phosphor-icons/react";
+import { ArrowRight, FileArrowDown } from "@phosphor-icons/react";
 import "./Hero.scss";
 
 const Hero = () => {
@@ -45,8 +45,21 @@ const Hero = () => {
 
             <p className="hero__subtitle">
               I transform complex problems into elegant, user-centric
-              applications with a focus on accessibility and performance.
+              applications with a focus on accessibility and performance. My
+              background in marketing gives me a unique perspective on user
+              needs.
             </p>
+
+            <div className="hero__buttons">
+              <a
+                href="/Gabriela_Barreira_Resume.pdf"
+                download
+                className="button button--primary hero__resume-btn"
+              >
+                <FileArrowDown weight="bold" />
+                <span>Download Resume</span>
+              </a>
+            </div>
 
             <div className="hero__links">
               <a href="#projects" className="hero__link">

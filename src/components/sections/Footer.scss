@@ -2,7 +2,6 @@
 
 .footer {
   background-color: var(--background-secondary);
-  padding: $spacing-md 0;
   margin-top: $spacing-xl;
   position: relative;
   overflow: hidden;
@@ -33,17 +32,90 @@
     pointer-events: none;
   }
 
-  &__content {
+  &__contact-wrapper {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 $spacing-sm;
-    @include flex(column, space-between, flex-start, $spacing-md);
+    padding: $spacing-lg $spacing-sm;
     position: relative;
     z-index: 1;
 
     @include respond-to(md) {
+      padding: $spacing-xl $spacing-md;
+    }
+  }
+
+  &__contact {
+    background-color: var(--background-primary);
+    border-radius: $border-radius-lg;
+    padding: $spacing-lg;
+    box-shadow: var(--card-shadow);
+    max-width: 700px;
+    margin: 0 auto;
+
+    @include respond-to(md) {
+      padding: $spacing-xl;
+    }
+  }
+
+  &__contact-title {
+    font-size: 1.8rem;
+    margin-bottom: $spacing-sm;
+    @include text-gradient(var(--accent-primary), var(--accent-secondary));
+  }
+
+  &__contact-text {
+    margin-bottom: $spacing-md;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  &__contact-info {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: $spacing-md;
+
+    li {
+      @include flex(row, flex-start, center, $spacing-xs);
+      margin-bottom: $spacing-xs;
+      font-size: 1rem;
+      color: var(--text-secondary);
+
+      svg {
+        color: var(--accent-primary);
+      }
+
+      a {
+        color: var(--text-primary);
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: var(--accent-primary);
+        }
+      }
+    }
+  }
+
+  &__cta {
+    margin-top: $spacing-md;
+  }
+
+  &__resume-btn {
+    @include flex(row, center, center, $spacing-xs);
+  }
+
+  &__content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: $spacing-md $spacing-sm;
+    @include flex(column, space-between, flex-start, $spacing-md);
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--border-color);
+
+    @include respond-to(md) {
       @include flex(row, space-between, center);
-      padding: 0 $spacing-md;
+      padding: $spacing-md;
     }
   }
 
@@ -89,7 +161,6 @@
     padding: $spacing-sm;
     text-align: center;
     border-top: 1px solid var(--border-color);
-    margin-top: $spacing-md;
 
     p {
       font-size: 0.8rem;
