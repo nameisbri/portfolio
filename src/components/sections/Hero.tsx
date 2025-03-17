@@ -21,6 +21,9 @@ import {
 } from "@phosphor-icons/react";
 import "./Hero.scss";
 
+// Define core skills that should always be prominent
+const CORE_SKILLS = [0, 1, 2, 3]; // React, JavaScript, TypeScript, Node.js
+
 const Hero = () => {
   // Original animation variants
   const containerVariants = {
@@ -36,23 +39,26 @@ const Hero = () => {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20, scale: 0.9 },
-    visible: {
+    visible: (i: number) => ({
       opacity: 1,
       y: 0,
-      scale: 1,
+      scale: CORE_SKILLS.includes(i) ? 1.1 : 1, // Make core skills slightly larger by default
+      zIndex: CORE_SKILLS.includes(i) ? 5 : 1, // Give core skills higher z-index
       transition: {
         type: "spring",
         stiffness: 100,
         damping: 10,
       },
-    },
+    }),
   };
 
   const floatVariants = {
     animate: (i: number) => ({
-      y: [0, i % 2 === 0 ? -8 : -12, 0],
+      y: CORE_SKILLS.includes(i)
+        ? [0, -6, 0] // Smaller float animation for core skills to keep them more stable
+        : [0, i % 2 === 0 ? -8 : -12, 0],
       transition: {
-        duration: i % 2 === 0 ? 3 : 4,
+        duration: CORE_SKILLS.includes(i) ? 4 : i % 2 === 0 ? 3 : 4,
         repeat: Infinity,
         ease: "easeInOut",
         delay: i * 0.2,
@@ -78,6 +84,30 @@ const Hero = () => {
           transition: {
             scale: { duration: 0.3 },
             rotate: { duration: 0.5, ease: "easeInOut" },
+          },
+        });
+      } else if (CORE_SKILLS.includes(i)) {
+        // For core skills, apply minimal movement to keep them visible
+        const positionFactor = (i % 5) - 2;
+        const distanceFactor = ((i + index) % 3) + 1;
+
+        // Apply more subtle movement to core skills
+        const xOffset = positionFactor * 6 * (distanceFactor / 2);
+        const yOffset = positionFactor * -1 * 5 * (distanceFactor / 2);
+        const rotateVal = positionFactor * 1;
+
+        control.start({
+          x: xOffset,
+          y: yOffset,
+          rotate: rotateVal,
+          // Maintain high visibility and scale for core skills
+          opacity: 1,
+          scale: 1.05,
+          zIndex: 5,
+          transition: {
+            type: "spring",
+            stiffness: 100,
+            damping: 8,
           },
         });
       } else {
@@ -111,13 +141,15 @@ const Hero = () => {
   // Function to handle hover end and return to original positions
   const handleHoverEnd = () => {
     // Return all skills to their original positions with a gentle bounce
-    skillControls.forEach((control) => {
+    skillControls.forEach((control, i) => {
       control.start({
         x: 0,
         y: 0,
-        scale: 1,
+        // Return core skills to their slightly larger size
+        scale: CORE_SKILLS.includes(i) ? 1.1 : 1,
         rotate: 0,
-        zIndex: 1, // Return to normal z-index
+        // Maintain higher z-index for core skills
+        zIndex: CORE_SKILLS.includes(i) ? 5 : 1,
         transition: {
           type: "spring",
           stiffness: 50,
@@ -200,7 +232,7 @@ const Hero = () => {
           >
             {/* Core Skills */}
             <motion.div
-              className="hero__skill hero__skill--react"
+              className="hero__skill hero__skill--react hero__skill--core"
               variants={itemVariants}
               custom={0}
               animate={skillControls[0]}
@@ -220,7 +252,7 @@ const Hero = () => {
             </motion.div>
 
             <motion.div
-              className="hero__skill hero__skill--js"
+              className="hero__skill hero__skill--js hero__skill--core"
               variants={itemVariants}
               custom={1}
               animate={skillControls[1]}
@@ -232,6 +264,7 @@ const Hero = () => {
                 className="hero__skill-inner"
                 variants={floatVariants}
                 custom={1}
+                initial="animate"
               >
                 <Code size={20} weight="duotone" />
                 <span>JavaScript</span>
@@ -239,7 +272,7 @@ const Hero = () => {
             </motion.div>
 
             <motion.div
-              className="hero__skill hero__skill--ts"
+              className="hero__skill hero__skill--ts hero__skill--core"
               variants={itemVariants}
               custom={2}
               animate={skillControls[2]}
@@ -251,6 +284,7 @@ const Hero = () => {
                 className="hero__skill-inner"
                 variants={floatVariants}
                 custom={2}
+                initial="animate"
               >
                 <BracketsCurly size={20} weight="duotone" />
                 <span>TypeScript</span>
@@ -259,7 +293,7 @@ const Hero = () => {
 
             {/* Backend Skills */}
             <motion.div
-              className="hero__skill hero__skill--node"
+              className="hero__skill hero__skill--node hero__skill--core"
               variants={itemVariants}
               custom={3}
               animate={skillControls[3]}
@@ -271,6 +305,7 @@ const Hero = () => {
                 className="hero__skill-inner"
                 variants={floatVariants}
                 custom={3}
+                initial="animate"
               >
                 <Coffee size={20} weight="duotone" />
                 <span>Node.js</span>
@@ -290,6 +325,7 @@ const Hero = () => {
                 className="hero__skill-inner"
                 variants={floatVariants}
                 custom={4}
+                initial="animate"
               >
                 <GitBranch size={20} weight="duotone" />
                 <span>Express.js</span>
@@ -300,13 +336,16 @@ const Hero = () => {
               className="hero__skill hero__skill--mysql"
               variants={itemVariants}
               custom={5}
-              animate="animate"
-              whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
+              animate={skillControls[5]}
+              initial="visible"
+              onHoverStart={() => handleHover(5)}
+              onHoverEnd={handleHoverEnd}
             >
               <motion.div
                 className="hero__skill-inner"
                 variants={floatVariants}
                 custom={5}
+                initial="animate"
               >
                 <Database size={20} weight="duotone" />
                 <span>MySQL</span>
@@ -318,15 +357,16 @@ const Hero = () => {
               className="hero__skill hero__skill--css"
               variants={itemVariants}
               custom={6}
-              animate={skillControls[5]}
+              animate={skillControls[6]}
               initial="visible"
-              onHoverStart={() => handleHover(5)}
+              onHoverStart={() => handleHover(6)}
               onHoverEnd={handleHoverEnd}
             >
               <motion.div
                 className="hero__skill-inner"
                 variants={floatVariants}
                 custom={6}
+                initial="animate"
               >
                 <PaintBucket size={20} weight="duotone" />
                 <span>CSS</span>
@@ -337,15 +377,16 @@ const Hero = () => {
               className="hero__skill hero__skill--sass"
               variants={itemVariants}
               custom={7}
-              animate={skillControls[6]}
+              animate={skillControls[7]}
               initial="visible"
-              onHoverStart={() => handleHover(6)}
+              onHoverStart={() => handleHover(7)}
               onHoverEnd={handleHoverEnd}
             >
               <motion.div
                 className="hero__skill-inner"
                 variants={floatVariants}
                 custom={7}
+                initial="animate"
               >
                 <PaintBucket size={20} weight="duotone" />
                 <span>SASS</span>
@@ -365,6 +406,7 @@ const Hero = () => {
                 className="hero__skill-inner"
                 variants={floatVariants}
                 custom={8}
+                initial="animate"
               >
                 <FileHtml size={20} weight="duotone" />
                 <span>HTML</span>
@@ -385,6 +427,7 @@ const Hero = () => {
                 className="hero__skill-inner"
                 variants={floatVariants}
                 custom={9}
+                initial="animate"
               >
                 <Layout size={20} weight="duotone" />
                 <span>UI/UX</span>
@@ -404,6 +447,7 @@ const Hero = () => {
                 className="hero__skill-inner"
                 variants={floatVariants}
                 custom={10}
+                initial="animate"
               >
                 <FigmaLogo size={20} weight="duotone" />
                 <span>Figma</span>
@@ -424,6 +468,7 @@ const Hero = () => {
                 className="hero__skill-inner"
                 variants={floatVariants}
                 custom={11}
+                initial="animate"
               >
                 <ChartLine size={20} weight="duotone" />
                 <span>Analytics</span>
@@ -444,6 +489,7 @@ const Hero = () => {
                 className="hero__skill-inner"
                 variants={floatVariants}
                 custom={13}
+                initial="animate"
               >
                 <DeviceMobile size={20} weight="duotone" />
                 <span>Mobile</span>
@@ -463,6 +509,7 @@ const Hero = () => {
                 className="hero__skill-inner"
                 variants={floatVariants}
                 custom={14}
+                initial="animate"
               >
                 <Cloud size={20} weight="duotone" />
                 <span>Cloud</span>
@@ -482,6 +529,7 @@ const Hero = () => {
                 className="hero__skill-inner"
                 variants={floatVariants}
                 custom={15}
+                initial="animate"
               >
                 <BracketsSquare size={20} weight="duotone" />
                 <span>REST API</span>
@@ -501,6 +549,7 @@ const Hero = () => {
                 className="hero__skill-inner"
                 variants={floatVariants}
                 custom={16}
+                initial="animate"
               >
                 <Stack size={20} weight="duotone" />
                 <span>Full Stack</span>
@@ -520,6 +569,7 @@ const Hero = () => {
                 className="hero__skill-inner"
                 variants={floatVariants}
                 custom={17}
+                initial="animate"
               >
                 <LightbulbFilament size={20} weight="duotone" />
                 <span>Creative</span>
@@ -539,6 +589,7 @@ const Hero = () => {
                 className="hero__skill-inner"
                 variants={floatVariants}
                 custom={18}
+                initial="animate"
               >
                 <Globe size={20} weight="duotone" />
                 <span>Global</span>

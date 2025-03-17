@@ -171,11 +171,29 @@
       backdrop-filter: blur(4px);
     }
 
+    // New style for core skills to make them more prominent
+    &--core {
+      z-index: 5 !important; // Always keep core skills on top
+
+      .hero__skill-inner {
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+        font-weight: $font-weight-bold;
+        padding: $spacing-xs $spacing-sm;
+      }
+    }
+
     &--react {
       top: 40%;
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 2;
+
+      // Apply stronger shadow and emphasis to React if it's one of your core skills
+      &.hero__skill--core .hero__skill-inner {
+        padding: $spacing-xs $spacing-md;
+        font-size: 1.15rem;
+        box-shadow: 0 4px 16px rgba(97, 218, 251, 0.3);
+      }
 
       .hero__skill-inner {
         background-color: rgba(97, 218, 251, 0.15);
@@ -196,6 +214,10 @@
       top: 20%;
       left: 60%;
 
+      &.hero__skill--core .hero__skill-inner {
+        box-shadow: 0 4px 16px rgba(247, 223, 30, 0.25);
+      }
+
       .hero__skill-inner {
         background-color: rgba(247, 223, 30, 0.15);
         border: 1px solid rgba(247, 223, 30, 0.3);
@@ -213,6 +235,10 @@
       top: 15%;
       left: 25%;
 
+      &.hero__skill--core .hero__skill-inner {
+        box-shadow: 0 4px 16px rgba(49, 120, 198, 0.25);
+      }
+
       .hero__skill-inner {
         background-color: rgba(49, 120, 198, 0.15);
         border: 1px solid rgba(49, 120, 198, 0.3);
@@ -229,6 +255,10 @@
     &--node {
       top: 60%;
       left: 35%;
+
+      &.hero__skill--core .hero__skill-inner {
+        box-shadow: 0 4px 16px rgba(60, 135, 58, 0.25);
+      }
 
       .hero__skill-inner {
         background-color: rgba(60, 135, 58, 0.15);

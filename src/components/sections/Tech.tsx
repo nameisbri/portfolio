@@ -1,32 +1,115 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import {
+  Code,
+  Database,
+  Globe,
+  BracketsSquare,
+  PaintBrush,
+  Lightning,
+  ChartBar,
+  Gear,
+  Lightbulb,
+  TreeStructure,
+  BracketsCurly,
+  Brain,
+  DeviceMobile,
+} from "@phosphor-icons/react";
 import "./Tech.scss";
 
 interface TechSkill {
   name: string;
   category: string;
-  level?: string;
+  icon: JSX.Element;
 }
 
-const technologies: TechSkill[] = [
-  { name: "JavaScript", category: "language", level: "advanced" },
-  { name: "TypeScript", category: "language", level: "intermediate" },
-  { name: "React", category: "frontend", level: "advanced" },
-  { name: "Node.js", category: "backend", level: "intermediate" },
-  { name: "Express.js", category: "backend", level: "intermediate" },
-  { name: "HTML5", category: "frontend", level: "advanced" },
-  { name: "CSS/SASS", category: "frontend", level: "advanced" },
-  { name: "MySQL", category: "database", level: "intermediate" },
-  { name: "REST APIs", category: "backend", level: "intermediate" },
-  { name: "Git/GitHub", category: "tool", level: "intermediate" },
-  { name: "Responsive Design", category: "frontend", level: "advanced" },
-  { name: "UI/UX", category: "design", level: "intermediate" },
-  { name: "Agile/Kanban", category: "methodology", level: "intermediate" },
-  { name: "SQL", category: "database", level: "intermediate" },
-  { name: "Google Analytics", category: "tool", level: "advanced" },
-  { name: "SEO", category: "marketing", level: "advanced" },
-];
-
 const Tech = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, amount: 0.2 });
+
+  const technologies: TechSkill[] = [
+    {
+      name: "JavaScript",
+      category: "language",
+      icon: <Code weight="duotone" />,
+    },
+    {
+      name: "TypeScript",
+      category: "language",
+      icon: <BracketsCurly weight="duotone" />,
+    },
+    {
+      name: "React",
+      category: "frontend",
+      icon: <BracketsSquare weight="duotone" />,
+    },
+    {
+      name: "Node.js",
+      category: "backend",
+      icon: <TreeStructure weight="duotone" />,
+    },
+    {
+      name: "Express.js",
+      category: "backend",
+      icon: <Lightning weight="duotone" />,
+    },
+    {
+      name: "HTML5",
+      category: "frontend",
+      icon: <Code weight="duotone" />,
+    },
+    {
+      name: "CSS/SASS",
+      category: "frontend",
+      icon: <PaintBrush weight="duotone" />,
+    },
+    {
+      name: "MySQL",
+      category: "database",
+      icon: <Database weight="duotone" />,
+    },
+    {
+      name: "REST APIs",
+      category: "backend",
+      icon: <Globe weight="duotone" />,
+    },
+    {
+      name: "Git/GitHub",
+      category: "tool",
+      icon: <Gear weight="duotone" />,
+    },
+    {
+      name: "Responsive Design",
+      category: "frontend",
+      icon: <DeviceMobile weight="duotone" />,
+    },
+    {
+      name: "UI/UX",
+      category: "design",
+      icon: <Lightbulb weight="duotone" />,
+    },
+    {
+      name: "Agile/Kanban",
+      category: "methodology",
+      icon: <TreeStructure weight="duotone" />,
+    },
+    {
+      name: "SQL",
+      category: "database",
+      icon: <Database weight="duotone" />,
+    },
+    {
+      name: "Google Analytics",
+      category: "tool",
+      icon: <ChartBar weight="duotone" />,
+    },
+    {
+      name: "SEO",
+      category: "marketing",
+      icon: <Globe weight="duotone" />,
+    },
+  ];
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -52,7 +135,7 @@ const Tech = () => {
   };
 
   return (
-    <section className="tech" id="skills">
+    <section className="tech" id="skills" ref={ref}>
       <h2 className="section__heading">Technical Skills</h2>
 
       <div className="tech__intro">
@@ -66,20 +149,23 @@ const Tech = () => {
 
       <motion.div
         className="tech__grid"
-        variants={containerVariants}
         initial="hidden"
-        animate="visible"
+        animate={isInView ? "visible" : "hidden"}
+        variants={containerVariants}
       >
         {technologies.map((tech) => (
           <motion.div
             key={tech.name}
-            className={`tech__item tech__item--${tech.category} ${
-              tech.level ? `tech__item--${tech.level}` : ""
-            }`}
+            className={`tech__item tech__item--${tech.category}`}
             variants={itemVariants}
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)",
+              transition: { duration: 0.2 },
+            }}
           >
+            <div className="tech__icon">{tech.icon}</div>
             <span className="tech__name">{tech.name}</span>
-            <span className="tech__category">{tech.category}</span>
           </motion.div>
         ))}
       </motion.div>
@@ -118,14 +204,52 @@ const Tech = () => {
         </div>
       </div>
 
-      <div className="tech__learning">
+      <motion.div
+        className="tech__learning"
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ delay: 0.6, duration: 0.5 }}
+      >
         <h3>Currently Learning</h3>
         <div className="tech__learning-items">
-          <span className="tech__learning-item">Next.js</span>
-          <span className="tech__learning-item">React Native</span>
-          <span className="tech__learning-item">Advanced TypeScript</span>
+          <motion.span
+            className="tech__learning-item"
+            whileHover={{
+              scale: 1.1,
+              backgroundColor: "var(--accent-primary)",
+              color: "white",
+            }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
+            <Brain weight="duotone" size={20} />
+            Next.js
+          </motion.span>
+          <motion.span
+            className="tech__learning-item"
+            whileHover={{
+              scale: 1.1,
+              backgroundColor: "var(--accent-primary)",
+              color: "white",
+            }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
+            <DeviceMobile weight="duotone" size={20} />
+            React Native
+          </motion.span>
+          <motion.span
+            className="tech__learning-item"
+            whileHover={{
+              scale: 1.1,
+              backgroundColor: "var(--accent-primary)",
+              color: "white",
+            }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
+            <BracketsCurly weight="duotone" size={20} />
+            Advanced TypeScript
+          </motion.span>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
