@@ -1,13 +1,24 @@
 @use "../../index.scss" as *;
 
 .tech {
-  margin: 2rem 0;
+  margin: $spacing-xl 0;
+
+  &__intro {
+    max-width: 700px;
+    margin-bottom: $spacing-lg;
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+  }
 
   &__grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 0.75rem;
-    margin: 1.5rem 0;
+    margin: $spacing-lg 0;
   }
 
   &__item {
@@ -16,9 +27,9 @@
     align-items: center;
     justify-content: center;
     padding: 1rem 0.75rem;
-    border-radius: 6px;
+    border-radius: $border-radius-md;
     background-color: var(--background-secondary);
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--card-shadow);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -30,38 +41,57 @@
       left: 0;
       width: 3px;
       height: 100%;
-      transition: width 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     &:hover {
       transform: translateY(-3px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 
       &::before {
         width: 100%;
-        opacity: 0.12;
+        opacity: 0.08;
       }
     }
 
+    // Category styles
     &--language::before {
-      background-color: var(--accent-primary);
+      background-color: #3178c6; // TypeScript blue
     }
 
     &--frontend::before {
-      background-color: #e0ff4f;
+      background-color: #61dafb; // React blue
     }
 
     &--backend::before {
-      background-color: #522b47;
+      background-color: #68a063; // Node.js green
     }
 
     &--database::before {
-      background-color: #041f1e;
+      background-color: #00758f; // MySQL blue
     }
 
     &--tool::before,
     &--methodology::before {
-      background-color: #eadeda;
+      background-color: #f1e05a; // JavaScript yellow
+    }
+
+    &--design::before,
+    &--marketing::before {
+      background-color: #ff7e63; // Design/Marketing coral
+    }
+
+    // Level styles
+    &--advanced {
+      .tech__name {
+        font-weight: 700;
+      }
+    }
+
+    &--intermediate {
+      .tech__name {
+        font-weight: 600;
+      }
     }
   }
 
@@ -71,6 +101,7 @@
     margin-bottom: 0.4rem;
     position: relative;
     z-index: 1;
+    color: var(--text-primary);
   }
 
   &__category {
@@ -82,12 +113,76 @@
     z-index: 1;
   }
 
-  &__info {
-    max-width: 650px;
-    margin: 1.5rem auto;
-    text-align: center;
-    color: var(--text-secondary);
-    font-size: 1rem;
-    line-height: 1.5;
+  &__categories {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+    margin: $spacing-lg 0;
+
+    @include respond-to(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to(lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__category-group {
+    background-color: var(--background-secondary);
+    border-radius: $border-radius-md;
+    padding: $spacing-md;
+    box-shadow: var(--card-shadow);
+  }
+
+  &__category-title {
+    position: relative;
+    font-size: 1.1rem;
+    margin-bottom: $spacing-sm;
+    padding-bottom: $spacing-xs;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background-color: var(--accent-primary);
+    }
+  }
+
+  &__learning {
+    margin-top: $spacing-xl;
+    background-color: rgba(var(--accent-primary), 0.05);
+    border-radius: $border-radius-md;
+    padding: $spacing-md;
+
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: $spacing-sm;
+      color: var(--accent-primary);
+    }
+  }
+
+  &__learning-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+  }
+
+  &__learning-item {
+    display: inline-block;
+    padding: $spacing-xs $spacing-sm;
+    background-color: var(--background-secondary);
+    border-radius: $border-radius-full;
+    font-size: 0.9rem;
+    font-weight: $font-weight-medium;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
   }
 }

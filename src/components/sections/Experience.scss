@@ -189,4 +189,74 @@
       border-radius: $border-radius-sm;
     }
   }
+
+  // Skills tab styles
+  &__skills {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+
+    @include respond-to(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__skill-group {
+    background-color: var(--background-secondary);
+    border-radius: $border-radius-md;
+    padding: $spacing-md;
+    box-shadow: var(--card-shadow);
+    height: 100%;
+  }
+
+  &__skill-category {
+    margin-bottom: $spacing-sm;
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background-color: var(--accent-primary);
+    }
+  }
+
+  &__skill-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  &__skill-item {
+    position: relative;
+    padding-left: $spacing-sm;
+    margin-bottom: $spacing-xs;
+    font-size: 0.9rem;
+    line-height: 1.4;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent-primary);
+    }
+  }
+
+  &__skills-note {
+    grid-column: 1 / -1;
+    margin-top: $spacing-md;
+    padding: $spacing-md;
+    background-color: rgba(var(--accent-primary), 0.05);
+    border-left: 3px solid var(--accent-primary);
+    border-radius: $border-radius-sm;
+
+    p {
+      font-style: italic;
+      margin-bottom: 0;
+    }
+  }
 }
