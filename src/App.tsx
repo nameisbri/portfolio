@@ -13,7 +13,6 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time and check if assets are loaded
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1000);

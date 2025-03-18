@@ -66,30 +66,24 @@ const Hero = () => {
     .fill(null)
     .map(() => useAnimationControls());
 
-  // Function to handle hover effect with optimized repulsion
   const handleHover = (index: number) => {
-    // Optimize by only applying animations to a subset of skills
-    // Limiting the number of simultaneous animations improves performance
     const MAX_ANIMATED_SKILLS = 10;
 
-    // First, animate the hovered item
     skillControls[index].start({
       scale: 1.15,
       rotate: [0, -3, 3, -2, 2, 0],
-      zIndex: 10, // Higher z-index to bring to front
+      zIndex: 10,
       transition: {
         scale: { duration: 0.3 },
         rotate: { duration: 0.5, ease: "easeInOut" },
       },
     });
 
-    // Then prioritize core skills
     CORE_SKILLS.forEach((coreIndex) => {
       if (coreIndex !== index) {
         const positionFactor = (coreIndex % 5) - 2;
         const distanceFactor = ((coreIndex + index) % 3) + 1;
 
-        // Apply more subtle movement to core skills
         const xOffset = positionFactor * 6 * (distanceFactor / 2);
         const yOffset = positionFactor * -1 * 5 * (distanceFactor / 2);
         const rotateVal = positionFactor * 1;
@@ -110,18 +104,15 @@ const Hero = () => {
       }
     });
 
-    // Calculate which non-core skills to animate based on proximity or importance
     const nonCoreSkills = Array.from(
       { length: skillControls.length },
       (_, i) => i
     ).filter((i) => i !== index && !CORE_SKILLS.includes(i));
 
-    // Select a subset of non-core skills (closest or most relevant ones)
     const skillsToAnimate = nonCoreSkills
-      .sort(() => 0.5 - Math.random()) // Simple way to randomize which skills move
+      .sort(() => 0.5 - Math.random())
       .slice(0, MAX_ANIMATED_SKILLS - CORE_SKILLS.length);
 
-    // Animate the selected non-core skills
     skillsToAnimate.forEach((i) => {
       const positionFactor = (i % 5) - 2;
       const distanceFactor = ((i + index) % 3) + 1;
