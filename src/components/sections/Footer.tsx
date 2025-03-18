@@ -12,6 +12,13 @@ const Footer = () => {
     <footer className="footer" id="contact">
       <div className="footer__contact-wrapper">
         <div className="footer__contact">
+          <div className="footer__image-container">
+            <img
+              src="/headshot.jpg"
+              alt="Gabriela Barreira"
+              className="footer__image"
+            />
+          </div>
           <h2 className="footer__contact-title">Get In Touch</h2>
           <p className="footer__contact-text">
             I'm currently open to new opportunities and would love to discuss
