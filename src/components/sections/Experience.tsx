@@ -9,7 +9,7 @@ const workExperience = [
   {
     title: "Web Content Manager",
     company: "Precision Nutrition",
-    period: "Jul 2020 - Nov 2024",
+    period: "Jul 2020 - Mar 2025",
     location: "Remote",
     description: [
       "Engineered and implemented optimization strategies that increased conversion rates by 12% and drove organic traffic growth of 23%, demonstrating strong analytical and problem-solving abilities",
