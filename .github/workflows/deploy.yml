@@ -19,10 +19,13 @@ jobs:
       - name: 🏗️ Build Project
         run: npm run build
 
+      - name: 🔍 Verify Build Output
+        run: ls -la dist/
+
       - name: 📂 Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ftp://31.170.161.131
+          server: 31.170.161.131
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/ # Upload the built files
