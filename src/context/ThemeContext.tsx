@@ -6,7 +6,7 @@ import {
   ReactNode,
 } from "react";
 
-type ThemeMode = "light" | "dark";
+type ThemeMode = "dark" | "light";
 
 interface ThemeContextType {
   theme: ThemeMode;
@@ -27,7 +27,7 @@ interface ThemeProviderProps {
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [theme, setTheme] = useState<ThemeMode>(() => {
     const savedTheme = localStorage.getItem("theme");
-    return (savedTheme as ThemeMode) || "light";
+    return (savedTheme as ThemeMode) || "dark";
   });
 
   useEffect(() => {
