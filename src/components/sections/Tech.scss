@@ -138,12 +138,13 @@
     gap: $spacing-md;
     margin: $spacing-xl 0;
 
-    @media (max-width: $breakpoint-sm) {
-      grid-template-columns: 1fr;
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: repeat(2, 1fr);
     }
 
-    @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
-      grid-template-columns: repeat(2, 1fr);
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: $spacing-sm;
     }
   }
 
