@@ -103,13 +103,25 @@
       }
     }
   }
-
   &__cta {
     margin-top: $spacing-md;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+
+    @include respond-to(md) {
+      flex-wrap: nowrap;
+    }
   }
 
   &__resume-btn {
     @include flex(row, center, center, $spacing-xs);
+    flex: 1;
+  }
+
+  &__contact-btn {
+    @include flex(row, center, center, $spacing-xs);
+    flex: 1;
   }
 
   &__content {

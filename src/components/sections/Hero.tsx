@@ -21,11 +21,9 @@ import {
 } from "@phosphor-icons/react";
 import "./Hero.scss";
 
-// Define core skills that should always be prominent
-const CORE_SKILLS = [0, 1, 2, 3]; // React, JavaScript, TypeScript, Node.js
+const CORE_SKILLS = [0, 1, 2, 3];
 
 const Hero = () => {
-  // Original animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -42,8 +40,8 @@ const Hero = () => {
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
-      scale: CORE_SKILLS.includes(i) ? 1.1 : 1, // Make core skills slightly larger by default
-      zIndex: CORE_SKILLS.includes(i) ? 5 : 1, // Give core skills higher z-index
+      scale: CORE_SKILLS.includes(i) ? 1.1 : 1,
+      zIndex: CORE_SKILLS.includes(i) ? 5 : 1,
       transition: {
         type: "spring",
         stiffness: 100,
@@ -54,9 +52,7 @@ const Hero = () => {
 
   const floatVariants = {
     animate: (i: number) => ({
-      y: CORE_SKILLS.includes(i)
-        ? [0, -6, 0] // Smaller float animation for core skills to keep them more stable
-        : [0, i % 2 === 0 ? -8 : -12, 0],
+      y: CORE_SKILLS.includes(i) ? [0, -6, 0] : [0, i % 2 === 0 ? -8 : -12, 0],
       transition: {
         duration: CORE_SKILLS.includes(i) ? 4 : i % 2 === 0 ? 3 : 4,
         repeat: Infinity,
@@ -66,41 +62,42 @@ const Hero = () => {
     }),
   };
 
-  // Create individual animation controls for each skill bubble
   const skillControls = Array(19)
     .fill(null)
     .map(() => useAnimationControls());
 
-  // Function to handle hover effect with repulsion
+  // Function to handle hover effect with optimized repulsion
   const handleHover = (index: number) => {
-    // Calculate repulsion for each skill based on its position relative to the hovered skill
-    skillControls.forEach((control, i) => {
-      if (i === index) {
-        // Scale up the hovered element and bring it to the front with a wiggle
-        control.start({
-          scale: 1.15,
-          rotate: [0, -3, 3, -2, 2, 0],
-          zIndex: 10, // Higher z-index to bring to front
-          transition: {
-            scale: { duration: 0.3 },
-            rotate: { duration: 0.5, ease: "easeInOut" },
-          },
-        });
-      } else if (CORE_SKILLS.includes(i)) {
-        // For core skills, apply minimal movement to keep them visible
-        const positionFactor = (i % 5) - 2;
-        const distanceFactor = ((i + index) % 3) + 1;
+    // Optimize by only applying animations to a subset of skills
+    // Limiting the number of simultaneous animations improves performance
+    const MAX_ANIMATED_SKILLS = 10;
+
+    // First, animate the hovered item
+    skillControls[index].start({
+      scale: 1.15,
+      rotate: [0, -3, 3, -2, 2, 0],
+      zIndex: 10, // Higher z-index to bring to front
+      transition: {
+        scale: { duration: 0.3 },
+        rotate: { duration: 0.5, ease: "easeInOut" },
+      },
+    });
+
+    // Then prioritize core skills
+    CORE_SKILLS.forEach((coreIndex) => {
+      if (coreIndex !== index) {
+        const positionFactor = (coreIndex % 5) - 2;
+        const distanceFactor = ((coreIndex + index) % 3) + 1;
 
         // Apply more subtle movement to core skills
         const xOffset = positionFactor * 6 * (distanceFactor / 2);
         const yOffset = positionFactor * -1 * 5 * (distanceFactor / 2);
         const rotateVal = positionFactor * 1;
 
-        control.start({
+        skillControls[coreIndex].start({
           x: xOffset,
           y: yOffset,
           rotate: rotateVal,
-          // Maintain high visibility and scale for core skills
           opacity: 1,
           scale: 1.05,
           zIndex: 5,
@@ -110,45 +107,51 @@ const Hero = () => {
             damping: 8,
           },
         });
-      } else {
-        // For other elements, calculate a repulsion effect
-        // Create a more pronounced and consistent repulsion effect
-        // Calculate direction based on relative position to create a radial push
-
-        // Determine the relative position (simplistic approach)
-        const positionFactor = (i % 5) - 2; // Creates values -2, -1, 0, 1, 2
-        const distanceFactor = ((i + index) % 3) + 1; // Creates values 1, 2, 3
-
-        // Create a more dynamic repulsion with slight rotation
-        const xOffset = positionFactor * 12 * (distanceFactor / 2);
-        const yOffset = positionFactor * -1 * 10 * (distanceFactor / 2);
-        const rotateVal = positionFactor * 2;
-
-        control.start({
-          x: xOffset,
-          y: yOffset,
-          rotate: rotateVal,
-          transition: {
-            type: "spring",
-            stiffness: 100,
-            damping: 8,
-          },
-        });
       }
+    });
+
+    // Calculate which non-core skills to animate based on proximity or importance
+    const nonCoreSkills = Array.from(
+      { length: skillControls.length },
+      (_, i) => i
+    ).filter((i) => i !== index && !CORE_SKILLS.includes(i));
+
+    // Select a subset of non-core skills (closest or most relevant ones)
+    const skillsToAnimate = nonCoreSkills
+      .sort(() => 0.5 - Math.random()) // Simple way to randomize which skills move
+      .slice(0, MAX_ANIMATED_SKILLS - CORE_SKILLS.length);
+
+    // Animate the selected non-core skills
+    skillsToAnimate.forEach((i) => {
+      const positionFactor = (i % 5) - 2;
+      const distanceFactor = ((i + index) % 3) + 1;
+
+      const xOffset = positionFactor * 12 * (distanceFactor / 2);
+      const yOffset = positionFactor * -1 * 10 * (distanceFactor / 2);
+      const rotateVal = positionFactor * 2;
+
+      skillControls[i].start({
+        x: xOffset,
+        y: yOffset,
+        rotate: rotateVal,
+        transition: {
+          type: "spring",
+          stiffness: 100,
+          damping: 8,
+        },
+      });
     });
   };
 
-  // Function to handle hover end and return to original positions
   const handleHoverEnd = () => {
-    // Return all skills to their original positions with a gentle bounce
     skillControls.forEach((control, i) => {
       control.start({
         x: 0,
         y: 0,
-        // Return core skills to their slightly larger size
+
         scale: CORE_SKILLS.includes(i) ? 1.1 : 1,
         rotate: 0,
-        // Maintain higher z-index for core skills
+
         zIndex: CORE_SKILLS.includes(i) ? 5 : 1,
         transition: {
           type: "spring",
@@ -179,8 +182,9 @@ const Hero = () => {
             <p className="hero__subtitle">
               I transform complex problems into elegant, user-centric
               applications with a focus on accessibility and performance. My
-              background in marketing gives me a unique perspective on user
-              needs.
+              background in marketing and content strategy gives me a unique
+              perspective that bridges technical implementation with authentic
+              user needs.
             </p>
 
             <div className="hero__buttons">
@@ -231,7 +235,7 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
           >
-            {/* Core Skills */}
+            {}
             <motion.div
               className="hero__skill hero__skill--react hero__skill--core"
               variants={itemVariants}
@@ -292,7 +296,7 @@ const Hero = () => {
               </motion.div>
             </motion.div>
 
-            {/* Backend Skills */}
+            {}
             <motion.div
               className="hero__skill hero__skill--node hero__skill--core"
               variants={itemVariants}
@@ -353,7 +357,7 @@ const Hero = () => {
               </motion.div>
             </motion.div>
 
-            {/* Frontend Skills */}
+            {}
             <motion.div
               className="hero__skill hero__skill--css"
               variants={itemVariants}
@@ -414,7 +418,7 @@ const Hero = () => {
               </motion.div>
             </motion.div>
 
-            {/* Design/UX Skills */}
+            {}
             <motion.div
               className="hero__skill hero__skill--ux"
               variants={itemVariants}
@@ -455,7 +459,7 @@ const Hero = () => {
               </motion.div>
             </motion.div>
 
-            {/* Marketing Skills */}
+            {}
             <motion.div
               className="hero__skill hero__skill--analytics"
               variants={itemVariants}
@@ -476,7 +480,7 @@ const Hero = () => {
               </motion.div>
             </motion.div>
 
-            {/* Additional Tech Skills */}
+            {}
             <motion.div
               className="hero__skill hero__skill--mobile"
               variants={itemVariants}
