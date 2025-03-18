@@ -28,6 +28,26 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  // Close mobile menu when clicking on a navigation link
+  const handleNavClick = () => {
+    if (isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+  };
+
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <nav
       className={`navbar ${isScrolled ? "navbar--scrolled" : ""} ${
@@ -54,18 +74,29 @@ const Navbar = () => {
           }`}
         >
           <li className="navbar__item">
-            <a href="#" className="active">
+            <a href="#" className="active" onClick={handleNavClick}>
               Home
             </a>
           </li>
           <li className="navbar__item">
-            <a href="#projects">Projects</a>
+            <a href="#projects" onClick={handleNavClick}>
+              Projects
+            </a>
           </li>
           <li className="navbar__item">
-            <a href="#experience">Experience</a>
+            <a href="#skills" onClick={handleNavClick}>
+              Skills
+            </a>
           </li>
           <li className="navbar__item">
-            <a href="#contact">Contact</a>
+            <a href="#experience" onClick={handleNavClick}>
+              Experience
+            </a>
+          </li>
+          <li className="navbar__item">
+            <a href="#contact" onClick={handleNavClick}>
+              Contact
+            </a>
           </li>
           <li className="navbar__item">
             <button
@@ -78,6 +109,9 @@ const Navbar = () => {
               }
             >
               {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+              <span className="navbar__theme-label">
+                {theme === "light" ? "Dark Mode" : "Light Mode"}
+              </span>
             </button>
           </li>
         </ul>

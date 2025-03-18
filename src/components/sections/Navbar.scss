@@ -14,6 +14,7 @@
     max-width: 1100px;
     margin: 0 auto;
     @include flex(row, space-between, center);
+    padding: 0 $spacing-sm;
   }
 
   &__logo {
@@ -81,7 +82,7 @@
     cursor: pointer;
     padding: $spacing-xs/2;
     border-radius: $border-radius-sm;
-    @include flex(row, center, center, $spacing-xs/2);
+    @include flex(row, center, center, $spacing-xs);
     @include transition(background-color, transform);
 
     &:hover {
@@ -91,6 +92,21 @@
 
     svg {
       font-size: 1.1rem;
+    }
+
+    @media (min-width: $breakpoint-md) {
+      gap: $spacing-xs/2;
+    }
+  }
+
+  &__theme-label {
+    font-family: $font-family-primary;
+    display: none;
+
+    @media (max-width: $breakpoint-md) {
+      display: inline;
+      font-size: 0.9rem;
+      margin-left: $spacing-xs;
     }
   }
 
@@ -102,25 +118,27 @@
     cursor: pointer;
     padding: $spacing-xs/2;
 
-    @include respond-to(md-down) {
+    @media (max-width: $breakpoint-md) {
       display: block;
     }
   }
 
-  @include respond-to(md-down) {
+  @media (max-width: $breakpoint-md) {
     &__menu {
-      position: absolute;
-      top: 100%;
+      position: fixed;
+      top: 56px;
       left: 0;
       width: 100%;
       background-color: var(--background-secondary);
-      @include flex(column, flex-start, flex-start, $spacing-xs);
-      padding: $spacing-sm;
+      @include flex(column, flex-start, flex-start, $spacing-sm);
+      padding: $spacing-md;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      transform: translateY(-10px);
+      transform: translateY(-100%);
       opacity: 0;
       visibility: hidden;
       @include transition(transform, opacity, visibility);
+      height: calc(100vh - 56px);
+      overflow-y: auto;
 
       &--open {
         transform: translateY(0);
@@ -131,54 +149,13 @@
 
     &__item {
       width: 100%;
+      margin-bottom: $spacing-sm;
 
       a {
         display: block;
-        padding: $spacing-xs;
+        padding: $spacing-sm;
+        font-size: 1.1rem;
       }
-    }
-  }
-
-  &--glass {
-    background-color: rgba(var(--background-secondary), 0.8);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-  }
-
-  &--scrolled {
-    padding: $spacing-xs/2 $spacing-sm;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-
-    .navbar__logo {
-      font-size: 1.2rem;
-    }
-  }
-}
-
-@mixin respond-to($breakpoint) {
-  @if $breakpoint == xs {
-    @media (min-width: $breakpoint-xs) {
-      @content;
-    }
-  } @else if $breakpoint == sm {
-    @media (min-width: $breakpoint-sm) {
-      @content;
-    }
-  } @else if $breakpoint == md {
-    @media (min-width: $breakpoint-md) {
-      @content;
-    }
-  } @else if $breakpoint == lg {
-    @media (min-width: $breakpoint-lg) {
-      @content;
-    }
-  } @else if $breakpoint == xl {
-    @media (min-width: $breakpoint-xl) {
-      @content;
-    }
-  } @else if $breakpoint == md-down {
-    @media (max-width: $breakpoint-md) {
-      @content;
     }
   }
 }
