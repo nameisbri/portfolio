@@ -141,10 +141,11 @@ const Tech = () => {
 
       <div className="tech__intro">
         <p>
-          As an emerging full-stack developer, I leverage a robust technical
-          skillset and a unique background in marketing to create innovative,
-          user-centric solutions. My approach combines technical proficiency
-          with strategic thinking.
+          My technical skills have been developed with intention and curiosity.
+          Coming to software development after years in another field gives me a
+          unique appreciation for both the possibilities and limitations of
+          technology. I approach coding not just as a technical exercise, but as
+          a craft that requires empathy, communication, and constant learning.
         </p>
       </div>
 

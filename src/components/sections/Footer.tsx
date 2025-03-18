@@ -21,9 +21,13 @@ const Footer = () => {
           </div>
           <h2 className="footer__contact-title">Let's Work Together</h2>
           <p className="footer__contact-text">
-            I'm currently open to full-stack developer roles, both remote and
-            hybrid. With my unique blend of technical skills and marketing
-            experience, I bring a user-centered approach to every project.
+            I'm looking to join a team where genuine collaboration and
+            purpose-driven development are valued. My background in marketing
+            combined with my software engineering skills allows me to approach
+            problems holistically—considering both technical implementation and
+            human impact. I'm excited about opportunities (remote or hybrid)
+            where I can contribute to meaningful projects that make a difference
+            in people's lives.
           </p>
 
           <ul className="footer__contact-info">

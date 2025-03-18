@@ -102,11 +102,12 @@ const Experience = () => {
       <h2 className="section__heading">Experience</h2>
 
       <p className="experience__intro">
-        My journey from content management to software development has equipped
-        me with a valuable combination of technical skills and business acumen.
-        I excel at bridging the gap between user needs and technical
-        implementation, creating solutions that are accessible, efficient, and
-        impactful across industries.
+        The transition from marketing to development has been both natural and
+        eye-opening. Each step in my career has been guided by a desire to
+        create meaningful connections—first through content, now through code.
+        This dual perspective allows me to bridge technical possibilities with
+        human realities, building solutions that work for people, not just
+        systems.
       </p>
 
       <div className="experience__tabs">

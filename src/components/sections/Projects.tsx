@@ -100,9 +100,10 @@ const Projects = () => {
     <section className="projects" id="projects">
       <h2 className="section__heading">Projects</h2>
       <p className="projects__subtitle">
-        Recent work showcasing my full-stack development skills, collaboration
-        abilities, and problem-solving approach. Each project highlights
-        different technical competencies applicable across industries.
+        These projects represent my journey as a developer and my commitment to
+        creating technology with purpose. Each one taught me something valuable
+        about collaboration, problem-solving, and the art of writing code that
+        matters.
       </p>
 
       <motion.div

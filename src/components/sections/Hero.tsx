@@ -166,16 +166,16 @@ const Hero = () => {
           <div className="hero__content">
             <span className="hero__intro">Hi, I'm Gabriela</span>
             <h1 className="hero__title">
-              Software engineer delivering{" "}
-              <span className="text-gradient">impactful solutions</span>
+              Building technology that{" "}
+              <span className="text-gradient">feels human</span>
             </h1>
 
             <p className="hero__subtitle">
-              I transform complex problems into elegant, user-centric
-              applications with a focus on accessibility and performance. My
-              background in marketing and content strategy gives me a unique
-              perspective that bridges technical implementation with authentic
-              user needs.
+              My path to development wasn't traditional, and that's my greatest
+              strength. Those 8 years in marketing taught me that technology
+              only matters when it connects with people. Now I code with
+              empathy, designing and building applications that respect users'
+              needs, time, and intelligence.
             </p>
 
             <div className="hero__buttons">
