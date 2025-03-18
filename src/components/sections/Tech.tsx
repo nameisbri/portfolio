@@ -211,7 +211,11 @@ const Tech = () => {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ delay: 0.4, duration: 0.5 }}
       >
-        <h3>Currently Learning</h3>
+        <h3>Continuous Learning</h3>
+        <p className="tech__learning-text">
+          I believe in the power of continuous growth and staying at the
+          forefront of technology. Currently expanding my skills in:
+        </p>
         <div className="tech__learning-items">
           <motion.span className="tech__learning-item">
             <BracketsCurly weight="duotone" size={20} />
@@ -230,6 +234,12 @@ const Tech = () => {
             Grokking Algorithms
           </motion.span>
         </div>
+        <p className="tech__learning-approach">
+          My approach to learning combines structured courses with hands-on
+          projects, allowing me to quickly apply new concepts to real-world
+          problems. This adaptive learning style enables me to rapidly integrate
+          new technologies into my workflow.
+        </p>
       </motion.div>
     </section>
   );

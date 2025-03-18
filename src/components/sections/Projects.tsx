@@ -122,10 +122,16 @@ const Projects = () => {
             <div className="projects__image-container">
               <img
                 src={project.image}
-                alt={project.title}
+                alt={`Screenshot of ${project.title} project`}
                 className="projects__image"
+                loading="lazy"
               />
-              <span className="projects__card-type">{project.type}</span>
+              <span
+                className="projects__card-type"
+                aria-label={`Project type: ${project.type}`}
+              >
+                {project.type}
+              </span>
             </div>
 
             <h3 className="projects__card-title">{project.title}</h3>

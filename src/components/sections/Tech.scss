@@ -184,7 +184,7 @@
     border-left: 4px solid var(--accent-primary);
 
     h3 {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       margin-bottom: $spacing-sm;
       color: var(--accent-primary);
       position: relative;
@@ -200,6 +200,22 @@
         background-color: var(--accent-primary);
       }
     }
+  }
+
+  &__learning-text {
+    margin-bottom: $spacing-sm;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  &__learning-approach {
+    margin-top: $spacing-md;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-style: italic;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border-color);
+    padding-top: $spacing-sm;
   }
 
   &__learning-items {

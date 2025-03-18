@@ -39,7 +39,12 @@ const Navbar = () => {
           Gabriela Barreira
         </a>
 
-        <button className="navbar__mobile-toggle" onClick={toggleMobileMenu}>
+        <button
+          className="navbar__mobile-toggle"
+          onClick={toggleMobileMenu}
+          aria-expanded={isMobileMenuOpen}
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+        >
           {isMobileMenuOpen ? <X size={24} /> : <List size={24} />}
         </button>
 
