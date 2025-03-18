@@ -48,7 +48,7 @@ const Footer = () => {
               <span>Download Resume</span>
             </a>
             <a
-              href="mailto:gabriela@gcsb.me?subject=Job%20Opportunity%20for%20Gabriela"
+              href="mailto:gabriela@gcsb.me?subject=Inquiry%20for%20Gabriela"
               className="button button--secondary footer__contact-btn"
             >
               <EnvelopeSimple weight="bold" size={18} />

@@ -24,7 +24,7 @@
     padding-bottom: $spacing-xs;
 
     @media (max-width: $breakpoint-sm) {
-      overflow-x: auto; /* Allow horizontal scrolling for tabs */
+      overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       padding-bottom: $spacing-sm;
     }
@@ -214,8 +214,12 @@
     grid-template-columns: 1fr;
     gap: $spacing-md;
 
-    @media (max-width: $breakpoint-md) {
-      grid-template-columns: 1fr;
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
