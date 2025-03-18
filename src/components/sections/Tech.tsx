@@ -100,13 +100,13 @@ const Tech = () => {
       icon: <Database weight="duotone" />,
     },
     {
-      name: "Google Analytics",
-      category: "tool",
+      name: "TDD/Testing",
+      category: "methodology",
       icon: <ChartBar weight="duotone" />,
     },
     {
-      name: "SEO",
-      category: "marketing",
+      name: "RESTful Services",
+      category: "backend",
       icon: <Globe weight="duotone" />,
     },
   ];
@@ -141,10 +141,10 @@ const Tech = () => {
 
       <div className="tech__intro">
         <p>
-          With a strong foundation in full-stack development and a background in
-          marketing and content management, I bring a unique perspective to
-          technical projects. My cross-functional experience allows me to bridge
-          the gap between technical implementation and business goals.
+          As an emerging full-stack developer, I leverage a robust technical
+          skillset and a unique background in marketing to create innovative,
+          user-centric solutions. My approach combines technical proficiency
+          with strategic thinking.
         </p>
       </div>
 
@@ -173,34 +173,26 @@ const Tech = () => {
 
       <div className="tech__categories">
         <div className="tech__category-group">
-          <h3 className="tech__category-title">Frontend</h3>
+          <h3 className="tech__category-title">Development Skills</h3>
           <p>
-            Building responsive, accessible, and intuitive user interfaces using
-            modern frameworks and best practices.
+            Full-stack capabilities with strong frontend and backend development
+            skills, focusing on creating responsive, efficient web applications.
           </p>
         </div>
 
         <div className="tech__category-group">
-          <h3 className="tech__category-title">Backend</h3>
+          <h3 className="tech__category-title">Professional Approach</h3>
           <p>
-            Developing robust API endpoints, server logic, and database
-            interactions to power applications.
+            Committed to best practices including test-driven development, agile
+            methodologies, and continuous learning in software engineering.
           </p>
         </div>
 
         <div className="tech__category-group">
-          <h3 className="tech__category-title">Development Tools</h3>
+          <h3 className="tech__category-title">Unique Value Proposition</h3>
           <p>
-            Utilizing industry-standard tools and methodologies for efficient
-            collaboration and code quality.
-          </p>
-        </div>
-
-        <div className="tech__category-group">
-          <h3 className="tech__category-title">Marketing & Analytics</h3>
-          <p>
-            Leveraging my previous experience to incorporate data-driven
-            insights and optimization strategies.
+            Bridging technical expertise with marketing insights to deliver
+            solutions that are not just functional, but strategically impactful.
           </p>
         </div>
       </div>
@@ -213,8 +205,8 @@ const Tech = () => {
       >
         <h3>Continuous Learning</h3>
         <p className="tech__learning-text">
-          I believe in the power of continuous growth and staying at the
-          forefront of technology. Currently expanding my skills in:
+          Actively expanding my skill set to stay at the forefront of web
+          development:
         </p>
         <div className="tech__learning-items">
           <motion.span className="tech__learning-item">
@@ -223,22 +215,20 @@ const Tech = () => {
           </motion.span>
           <motion.span className="tech__learning-item">
             <Anchor weight="duotone" size={20} />
-            Advanced React Hooks
+            React Hooks
           </motion.span>
           <motion.span className="tech__learning-item">
             <DeviceMobile weight="duotone" size={20} />
-            Formik
+            Testing Frameworks
           </motion.span>
           <motion.span className="tech__learning-item">
             <BookOpen weight="duotone" size={20} />
-            Grokking Algorithms
+            Algorithms
           </motion.span>
         </div>
         <p className="tech__learning-approach">
-          My approach to learning combines structured courses with hands-on
-          projects, allowing me to quickly apply new concepts to real-world
-          problems. This adaptive learning style enables me to rapidly integrate
-          new technologies into my workflow.
+          Combining structured learning with hands-on projects to rapidly
+          develop and apply cutting-edge technical skills.
         </p>
       </motion.div>
     </section>
