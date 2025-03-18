@@ -31,8 +31,9 @@ const Footer = () => {
 
           <div className="footer__cta">
             <a
-              href="/Gabriela_Barreira_Resume.pdf"
-              download
+              href="/Resume_Gabriela_Barreira.pdf"
+              download="Resume_Gabriela_Barreira.pdf"
+              target="_blank"
               className="button button--primary footer__resume-btn"
             >
               <FileArrowDown weight="bold" size={18} />
@@ -70,7 +71,7 @@ const Footer = () => {
             <LinkedinLogo size={24} weight="fill" />
           </a>
           <a
-            href="mailto:gcdbarreira@gmail.com"
+            href="mailto:gabriela@gcsb.me"
             className="footer__social-link"
             aria-label="Email"
           >

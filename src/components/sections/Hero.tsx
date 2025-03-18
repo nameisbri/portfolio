@@ -185,8 +185,9 @@ const Hero = () => {
 
             <div className="hero__buttons">
               <a
-                href="/Gabriela_Barreira_Resume.pdf"
-                download
+                href="/Resume_Gabriela_Barreira.pdf"
+                download="Resume_Gabriela_Barreira.pdf"
+                target="_blank"
                 className="button button--primary hero__resume-btn"
               >
                 <FileArrowDown weight="bold" />

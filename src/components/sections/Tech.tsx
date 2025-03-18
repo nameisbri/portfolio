@@ -14,6 +14,8 @@ import {
   BracketsCurly,
   Brain,
   DeviceMobile,
+  BookOpen,
+  Anchor,
 } from "@phosphor-icons/react";
 import "./Tech.scss";
 
@@ -25,7 +27,7 @@ interface TechSkill {
 
 const Tech = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.2 });
+  const isInView = useInView(ref, { amount: 0.1 });
 
   const technologies: TechSkill[] = [
     {
@@ -208,45 +210,25 @@ const Tech = () => {
         className="tech__learning"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ delay: 0.6, duration: 0.5 }}
+        transition={{ delay: 0.4, duration: 0.5 }}
       >
         <h3>Currently Learning</h3>
         <div className="tech__learning-items">
-          <motion.span
-            className="tech__learning-item"
-            whileHover={{
-              scale: 1.1,
-              backgroundColor: "var(--accent-primary)",
-              color: "white",
-            }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          >
-            <Brain weight="duotone" size={20} />
-            Next.js
-          </motion.span>
-          <motion.span
-            className="tech__learning-item"
-            whileHover={{
-              scale: 1.1,
-              backgroundColor: "var(--accent-primary)",
-              color: "white",
-            }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          >
-            <DeviceMobile weight="duotone" size={20} />
-            React Native
-          </motion.span>
-          <motion.span
-            className="tech__learning-item"
-            whileHover={{
-              scale: 1.1,
-              backgroundColor: "var(--accent-primary)",
-              color: "white",
-            }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          >
+          <motion.span className="tech__learning-item">
             <BracketsCurly weight="duotone" size={20} />
             Advanced TypeScript
+          </motion.span>
+          <motion.span className="tech__learning-item">
+            <Anchor weight="duotone" size={20} />
+            Advanced React Hooks
+          </motion.span>
+          <motion.span className="tech__learning-item">
+            <DeviceMobile weight="duotone" size={20} />
+            Formik
+          </motion.span>
+          <motion.span className="tech__learning-item">
+            <BookOpen weight="duotone" size={20} />
+            Grokking Algorithms
           </motion.span>
         </div>
       </motion.div>

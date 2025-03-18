@@ -45,6 +45,7 @@ const Projects = () => {
       image: discloserImage,
       links: {
         github: "https://github.com/nameisbri/discloser",
+        live: "https://www.linkedin.com/feed/update/urn:li:activity:7302373369012785154/",
       },
     },
     {
@@ -59,7 +60,7 @@ const Projects = () => {
       role: "Full Stack Developer",
       image: instockImage,
       links: {
-        github: "https://github.com/nameisbri/bug-busters-instock",
+        live: "https://drive.google.com/file/d/17weBeLemqsBzaZrso3jCTzCa9-Ae4idM/view?usp=sharing",
       },
     },
     {
@@ -74,8 +75,8 @@ const Projects = () => {
       role: "Frontend Developer",
       image: microsoftImage,
       links: {
-        github: "https://github.com/nameisbri/microsoft-industry-project",
-        live: "https://nameisbri.github.io/microsoft-industry-project",
+        github: "https://github.com/nameisbri/ip-team-2",
+        live: "https://drive.google.com/file/d/1K7g485_1DY8wzvC0gNdupAORtVzrOhZr/view?usp=sharing",
       },
     },
     {
@@ -168,7 +169,7 @@ const Projects = () => {
                   className="projects__link projects__link--live"
                 >
                   <Globe size={20} />
-                  <span>Live Demo</span>
+                  <span>Demo</span>
                 </a>
               )}
             </div>
