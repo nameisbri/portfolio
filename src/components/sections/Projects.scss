@@ -14,12 +14,12 @@
     grid-template-columns: 1fr;
     gap: $spacing-md;
 
-    @include respond-to(md) {
-      grid-template-columns: repeat(2, 1fr);
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr;
     }
 
-    @include respond-to(lg) {
-      grid-template-columns: repeat(3, 1fr);
+    @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
@@ -41,12 +41,19 @@
         transform: scale(1.03);
       }
     }
+
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: $spacing-md;
+    }
   }
 
   &__image-container {
     position: relative;
     overflow: hidden;
     height: 180px;
+    @media (max-width: $breakpoint-sm) {
+      height: 150px;
+    }
   }
 
   &__image {
@@ -93,6 +100,9 @@
     @include flex(row, flex-start, center, $spacing-xs/2);
     flex-wrap: wrap;
     margin-bottom: $spacing-xs;
+    @media (max-width: $breakpoint-sm) {
+      flex-wrap: wrap;
+    }
   }
 
   &__tech-tag {
@@ -139,6 +149,10 @@
     border-top: 1px solid var(--border-color);
     @include flex(row, flex-start, center, $spacing-sm);
     margin-top: auto;
+    @media (max-width: $breakpoint-sm) {
+      flex-wrap: wrap;
+      gap: $spacing-xs;
+    }
   }
 
   &__link {

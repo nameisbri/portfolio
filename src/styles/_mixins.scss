@@ -72,6 +72,10 @@
     @media (min-width: $breakpoint-xl) {
       @content;
     }
+  } @else if $breakpoint == md-down {
+    @media (max-width: $breakpoint-md) {
+      @content;
+    }
   }
 }
 

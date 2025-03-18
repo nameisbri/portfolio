@@ -22,6 +22,12 @@
     margin-bottom: $spacing-md;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: $spacing-xs;
+
+    @media (max-width: $breakpoint-sm) {
+      overflow-x: auto; /* Allow horizontal scrolling for tabs */
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: $spacing-sm;
+    }
   }
 
   &__tab {
@@ -208,8 +214,8 @@
     grid-template-columns: 1fr;
     gap: $spacing-md;
 
-    @include respond-to(md) {
-      grid-template-columns: repeat(2, 1fr);
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr;
     }
   }
 

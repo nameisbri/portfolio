@@ -21,6 +21,14 @@
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: $spacing-md;
     margin: $spacing-lg 0;
+
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   &__item {
@@ -130,12 +138,12 @@
     gap: $spacing-md;
     margin: $spacing-xl 0;
 
-    @include respond-to(md) {
-      grid-template-columns: repeat(2, 1fr);
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: 1fr;
     }
 
-    @include respond-to(lg) {
-      grid-template-columns: repeat(4, 1fr);
+    @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 

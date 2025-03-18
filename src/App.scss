@@ -18,8 +18,12 @@
     margin: 0 auto;
     padding: $spacing-sm;
 
-    @include respond-to(md) {
-      padding: $spacing-md;
+    @media (max-width: $breakpoint-sm) {
+      padding: $spacing-xs;
+    }
+
+    @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+      padding: $spacing-sm;
     }
   }
 }

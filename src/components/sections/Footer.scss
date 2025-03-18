@@ -63,12 +63,19 @@
     @include respond-to(md) {
       padding: $spacing-xl;
     }
+
+    @media (max-width: $breakpoint-sm) {
+      padding: $spacing-sm;
+    }
   }
 
   &__contact-title {
     font-size: 1.8rem;
     margin-bottom: $spacing-sm;
     @include text-gradient(var(--accent-primary), var(--accent-secondary));
+    @media (max-width: $breakpoint-sm) {
+      font-size: 1.5rem;
+    }
   }
 
   &__contact-text {
@@ -109,8 +116,8 @@
     flex-wrap: wrap;
     gap: $spacing-sm;
 
-    @include respond-to(md) {
-      flex-wrap: nowrap;
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
     }
   }
 
@@ -133,14 +140,19 @@
     z-index: 1;
     border-top: 1px solid var(--border-color);
 
-    @include respond-to(md) {
-      @include flex(row, space-between, center);
-      padding: $spacing-md;
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+      text-align: center;
     }
   }
 
   &__info {
     max-width: 350px;
+
+    @media (max-width: $breakpoint-md) {
+      max-width: 100%;
+      margin-bottom: $spacing-md;
+    }
   }
 
   &__name {
@@ -157,6 +169,10 @@
 
   &__socials {
     @include flex(row, flex-start, center, $spacing-sm);
+
+    @media (max-width: $breakpoint-md) {
+      justify-content: center;
+    }
   }
 
   &__social-link {
@@ -172,6 +188,11 @@
       background-color: var(--accent-primary);
       color: white;
       transform: translateY(-2px);
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      width: 44px; /* Larger touch target */
+      height: 44px;
     }
   }
 
