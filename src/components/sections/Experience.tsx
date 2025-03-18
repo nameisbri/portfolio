@@ -9,12 +9,13 @@ const workExperience = [
   {
     title: "Web Content Manager",
     company: "Precision Nutrition",
-    period: "Jul 2020 - Mar 2025",
+    period: "Jul 2020 - Nov 2024",
     location: "Remote",
     description: [
-      "Engineered and implemented optimization strategies that increased conversion rates by 12% and drove organic traffic growth of 23%, demonstrating strong analytical and problem-solving abilities",
-      "Architected website performance improvements resulting in 25% faster page load time, enhancing user experience for over 100,000 monthly visitors, showing technical optimization skills",
-      "Spearheaded cross-functional collaboration between marketing and development teams to execute business-critical digital initiatives, highlighting project management and communication expertise",
+      "Engineered SEO optimization strategies that increased conversion rates by 12% and drove organic traffic growth of 23%, applying analytical problem-solving techniques transferable to software development",
+      "Implemented technical website optimizations resulting in 25% faster page load time, enhancing user experience for over 100,000 monthly visitors while demonstrating performance tuning capabilities",
+      "Led cross-functional collaboration between marketing and development teams, effectively translating business requirements into technical specifications and building bridges between departments",
+      "Applied data-driven decision making to content strategy using SQL queries and analytics dashboards, developing skills directly applicable to backend data management",
     ],
   },
   {
@@ -23,8 +24,9 @@ const workExperience = [
     period: "Jul 2019 - Jun 2020",
     location: "Toronto, ON",
     description: [
-      "Developed and deployed content optimization strategies that boosted user engagement by 20%, while enhancing overall performance metrics",
-      "Built comprehensive web analytics dashboards using SQL and Google Analytics, enabling data-driven decision making across teams, showcasing data analysis skills",
+      "Developed content optimization strategies that boosted user engagement by 20%, utilizing A/B testing methodologies similar to software testing principles",
+      "Built comprehensive web analytics dashboards using SQL and Google Analytics, demonstrating data visualization and database query capabilities essential for modern development roles",
+      "Collaborated with international teams across multiple time zones, developing the communication skills needed for distributed software development environments",
     ],
   },
   {
@@ -33,8 +35,9 @@ const workExperience = [
     period: "Jan 2018 - Jun 2019",
     location: "Porto, Portugal",
     description: [
-      "Launched targeted email marketing campaigns that achieved 20% higher open rates and improved customer retention",
-      "Orchestrated management of 500+ SKUs while implementing optimization strategies that generated 10% growth in website traffic, demonstrating attention to detail and system organization",
+      "Managed e-commerce platform technical configurations, gaining hands-on experience with frontend customization and integration with payment systems",
+      "Orchestrated digital inventory system for 500+ SKUs, implementing database organization principles and optimization techniques transferable to software development",
+      "Executed technical SEO improvements and platform optimizations that increased site performance and drove 10% growth in traffic through systematic problem analysis",
     ],
   },
 ];
@@ -46,7 +49,7 @@ const educationExperience = [
     period: "Nov 2024 - Feb 2025",
     location: "Remote",
     description:
-      "Intensive software engineering program focused on full-stack development, including JavaScript, React, Node.js, Express, and MySQL. Completed multiple projects, including a capstone health information management platform and several hackathon projects demonstrating rapid development skills.",
+      "Intensive software engineering program with 400+ hours of hands-on coding, focused on full-stack development including JavaScript, TypeScript, React, Node.js, Express, and MySQL. Completed 3 major projects including a health information management platform, demonstrating rapid skill acquisition and practical application in professional-level coding environments.",
   },
   {
     degree: "Bachelors in Media and Communication Technologies",
@@ -54,7 +57,7 @@ const educationExperience = [
     period: "2010 - 2014",
     location: "Aveiro, Portugal",
     description:
-      "Studied digital media, communication strategies, and emerging technologies. Focused on the intersection of technology and communication, providing a unique foundation for understanding user experience and technical communication.",
+      "Technical program combining digital media, communication strategies, and emerging technologies. Coursework included introductory programming, digital media production, and user experience principles—providing a foundation for understanding the intersection of technology and human-centered design that informs my development approach across industries.",
   },
 ];
 
@@ -62,21 +65,31 @@ const skillsExperience = [
   {
     category: "Technical Skills",
     skills: [
-      "Front-End: JavaScript, TypeScript, React, HTML5, CSS3/SCSS",
-      "Back-End: Node.js, Express.js, RESTful APIs",
-      "Database: MySQL, Database Design",
-      "Tools & Methods: Git/GitHub, Agile/Kanban, Responsive Design",
-      "Analysis: SQL Queries, Google Analytics, A/B Testing",
+      "Frontend: JavaScript, TypeScript, React, HTML5, CSS3/SCSS, Responsive Design",
+      "Backend: Node.js, Express.js, RESTful API Development, Authentication Systems",
+      "Database: MySQL, Database Design, SQL Query Optimization",
+      "Tools & Methods: Git/GitHub, Agile/Kanban, CI/CD Concepts",
+      "Testing: Unit Testing, End-to-End Testing Concepts, QA Methodology",
     ],
   },
   {
-    category: "Transferable Skills",
+    category: "Professional Strengths",
     skills: [
-      "Project Management: Coordinating cross-functional teams, timeline management",
-      "Communication: Technical writing, stakeholder presentations, requirements gathering",
-      "Problem Solving: Analytical thinking, debugging complex issues, system optimization",
-      "User Advocacy: User experience optimization, accessibility considerations, user testing",
-      "Business Acumen: Performance metrics, SEO principles, conversion optimization",
+      "Technical Problem Solving: Systematic debugging, analytical thinking, optimization strategies",
+      "Project Management: Cross-functional coordination, timeline management, stakeholder communication",
+      "User Advocacy: User experience principles, accessibility considerations, performance optimization",
+      "Data Analysis: Metrics interpretation, visualization creation, data-driven decision making",
+      "Technical Communication: Documentation, requirements gathering, cross-department translation",
+    ],
+  },
+  {
+    category: "Industry Knowledge",
+    skills: [
+      "Diverse Industry Adaptability: Quickly acquiring domain knowledge across different sectors",
+      "Health & Wellness: Understanding of health information systems and digital health trends (adds depth to health-tech projects but not limited to this sector)",
+      "E-commerce & Digital Marketing: Experience with online platforms across multiple industries",
+      "Educational Technology: Background in digital learning environments and content systems",
+      "Global Markets: Experience working with international teams and diverse cultural contexts",
     ],
   },
 ];
@@ -87,6 +100,14 @@ const Experience = () => {
   return (
     <section className="experience" id="experience">
       <h2 className="section__heading">Experience</h2>
+
+      <p className="experience__intro">
+        My journey from content management to software development has equipped
+        me with a valuable combination of technical skills and business acumen.
+        I excel at bridging the gap between user needs and technical
+        implementation, creating solutions that are accessible, efficient, and
+        impactful across industries.
+      </p>
 
       <div className="experience__tabs">
         <button
@@ -205,10 +226,12 @@ const Experience = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <p>
-                My unique background in marketing and content management
-                combined with software engineering skills allows me to bridge
-                the gap between technical implementation and user needs,
-                creating meaningful solutions in any industry.
+                My unique background combines software engineering skills with
+                real-world business experience, allowing me to approach
+                development with both technical excellence and strategic
+                insight. I'm adaptable to various industries while bringing
+                particular depth to projects involving user experience,
+                data-driven systems, and cross-functional collaboration.
               </p>
             </motion.div>
           </div>
