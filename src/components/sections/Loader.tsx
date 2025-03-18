@@ -6,17 +6,15 @@ const Loader = () => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Set timer to hide loader after assets have loaded
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 1800); // Slightly longer to show the full animation
+    }, 1800);
 
     return () => clearTimeout(timer);
   }, []);
 
   if (!isVisible) return null;
 
-  // Animation variants for code brackets
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -53,7 +51,6 @@ const Loader = () => {
     },
   };
 
-  // Animation for dots inside the brackets
   const dotVariants = {
     hidden: { opacity: 0, scale: 0 },
     visible: (i: number) => ({
@@ -85,7 +82,7 @@ const Loader = () => {
         exit="exit"
       >
         <div className="loader__code-container">
-          {/* Opening bracket */}
+          {}
           <motion.div
             className="loader__bracket loader__bracket--open"
             variants={bracketVariants}
@@ -93,12 +90,12 @@ const Loader = () => {
             {"<"}
           </motion.div>
 
-          {/* Name */}
+          {}
           <motion.div className="loader__name" variants={bracketVariants}>
             GB
           </motion.div>
 
-          {/* Closing bracket */}
+          {}
           <motion.div
             className="loader__bracket loader__bracket--close"
             variants={bracketVariants}
@@ -107,7 +104,7 @@ const Loader = () => {
           </motion.div>
         </div>
 
-        {/* Loading dots */}
+        {}
         <div className="loader__dots">
           {[0, 1, 2].map((i) => (
             <motion.div
@@ -119,7 +116,7 @@ const Loader = () => {
           ))}
         </div>
 
-        {/* Loading text */}
+        {}
         <motion.div
           className="loader__text"
           initial={{ opacity: 0 }}

@@ -28,14 +28,12 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  // Close mobile menu when clicking on a navigation link
   const handleNavClick = () => {
     if (isMobileMenuOpen) {
       setIsMobileMenuOpen(false);
     }
   };
 
-  // Prevent scrolling when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
