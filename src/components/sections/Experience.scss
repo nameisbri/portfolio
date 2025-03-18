@@ -4,6 +4,19 @@
   padding: $spacing-lg 0;
   position: relative;
 
+  &__intro {
+    margin-bottom: $spacing-md;
+    max-width: 800px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+
+    @include respond-to(md) {
+      font-size: 1.05rem;
+      margin-bottom: $spacing-lg;
+    }
+  }
+
   &__tabs {
     @include flex(row, flex-start, center, $spacing-xs);
     margin-bottom: $spacing-md;
