@@ -12,7 +12,6 @@ import {
   Lightbulb,
   TreeStructure,
   BracketsCurly,
-  Brain,
   DeviceMobile,
   BookOpen,
   Anchor,
