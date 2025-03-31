@@ -7,15 +7,16 @@ type ExperienceType = "work" | "education" | "skills";
 
 const workExperience = [
   {
-    title: "Web Content Manager",
+    title: "Web Content Manager / Junior Developer",
     company: "Precision Nutrition",
     period: "Jul 2020 - Present",
     location: "Remote",
     description: [
-      "Engineered SEO optimization strategies that increased conversion rates by 12% and drove organic traffic growth of 23%, applying analytical problem-solving techniques transferable to software development",
-      "Implemented technical website optimizations resulting in 25% faster page load time, enhancing user experience for over 100,000 monthly visitors while demonstrating performance tuning capabilities",
-      "Led cross-functional collaboration between marketing and development teams, effectively translating business requirements into technical specifications and building bridges between departments",
-      "Applied data-driven decision making to content strategy using SQL queries and analytics dashboards, developing skills directly applicable to backend data management",
+      "Currently leading the rebuild of a nutrition calculator from Angular to React, participating in the complete software development lifecycle",
+      "Collaborating in an Agile development environment using Jira for task management and Git for version control, including sprint planning and code reviews",
+      "Engineering SEO optimization strategies using JavaScript and data analysis tools that increased conversion rates by 12% and drove organic traffic growth of 23%",
+      "Developing and maintaining marketing landing pages using HTML, CSS, and PHP while ensuring cross-browser compatibility and responsive design",
+      "Leading cross-functional QA processes including manual testing, UX analysis, and documentation of technical bugs",
     ],
   },
   {

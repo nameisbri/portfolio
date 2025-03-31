@@ -6,6 +6,7 @@ import discloserImage from "../../assets/images/projects/discloser.jpg";
 import instockImage from "../../assets/images/projects/instock.jpg";
 import microsoftImage from "../../assets/images/projects/microsoft.jpg";
 import animalTriviaImage from "../../assets/images/projects/animal-trivia.jpg";
+import nutritionCalculatorImage from "../../assets/images/projects/nutrition-calc.png";
 
 interface Project {
   id: string;
@@ -24,6 +25,19 @@ interface Project {
 
 const Projects = () => {
   const projects: Project[] = [
+    {
+      id: "nutrition-calculator",
+      title: "Nutrition Calculator Rebuild",
+      description:
+        "Leading the rebuild of a nutrition calculator application from Angular to React, improving user experience and modernizing the codebase. Actively participating in the full software development lifecycle from requirements analysis to implementation.",
+      highlightedSkills:
+        "React development, Angular code analysis, Agile methodologies, cross-functional collaboration",
+      type: "Professional",
+      tech: ["React", "JavaScript", "Angular", "Agile", "Jira", "Git"],
+      role: "Frontend Developer",
+      image: nutritionCalculatorImage,
+      links: {}, // Omit links if this is private company work
+    },
     {
       id: "discloser",
       title: "Discloser - Health Information Platform",

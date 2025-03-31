@@ -171,11 +171,11 @@ const Hero = () => {
             </h1>
 
             <p className="hero__subtitle">
-              My path to development wasn't traditional, and that's my greatest
-              strength. Those 8 years in marketing taught me that technology
-              only matters when it connects with people. Now I code with
-              empathy, designing and building applications that respect users'
-              needs, time, and intelligence.
+              My journey bridges marketing and development—I'm now actively
+              building React applications at Precision Nutrition while bringing
+              my unique perspective on user experience. This dual background
+              allows me to create technology that's both technically sound and
+              genuinely user-focused.
             </p>
 
             <div className="hero__buttons">

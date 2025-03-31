@@ -21,13 +21,13 @@ const Footer = () => {
           </div>
           <h2 className="footer__contact-title">Let's Work Together</h2>
           <p className="footer__contact-text">
-            I'm looking to join a team where genuine collaboration and
-            purpose-driven development are valued. My background in marketing
-            combined with my software engineering skills allows me to approach
-            problems holistically—considering both technical implementation and
-            human impact. I'm excited about opportunities (remote or hybrid)
-            where I can contribute to meaningful projects that make a difference
-            in people's lives.
+            I'm a software developer actively building React applications at
+            Precision Nutrition while expanding my technical expertise. My
+            background in marketing combined with my software engineering skills
+            allows me to approach problems holistically—considering both
+            technical implementation and human impact. I'm excited about
+            opportunities where I can contribute to meaningful projects that
+            make a difference in people's lives.
           </p>
 
           <ul className="footer__contact-info">
