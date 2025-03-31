@@ -219,12 +219,12 @@ const Tech = () => {
             React Hooks
           </motion.span>
           <motion.span className="tech__learning-item">
-            <DeviceMobile weight="duotone" size={20} />
-            Testing Frameworks
+            <BookOpen weight="duotone" size={20} />
+            Agile Development
           </motion.span>
           <motion.span className="tech__learning-item">
-            <BookOpen weight="duotone" size={20} />
-            Algorithms
+            <DeviceMobile weight="duotone" size={20} />
+            Angular Concepts
           </motion.span>
         </div>
         <p className="tech__learning-approach">
