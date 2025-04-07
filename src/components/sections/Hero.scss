@@ -14,7 +14,7 @@
     padding: 0 $spacing-sm;
 
     @include respond-to(md) {
-      grid-template-columns: 3fr 2fr;
+      grid-template-columns: 3fr 4fr;
       gap: $spacing-xl;
       padding: $spacing-md;
       min-height: 40vh;
@@ -211,7 +211,7 @@
     }
 
     &--react {
-      top: 40%;
+      top: 43%;
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 2;
@@ -238,8 +238,8 @@
     }
 
     &--js {
-      top: 20%;
-      left: 60%;
+      top: 18%;
+      left: 58%;
 
       &.hero__skill--core .hero__skill-inner {
         box-shadow: 0 4px 16px rgba(247, 223, 30, 0.25);
@@ -259,8 +259,8 @@
     }
 
     &--ts {
-      top: 15%;
-      left: 25%;
+      top: 14%;
+      left: 22%;
 
       &.hero__skill--core .hero__skill-inner {
         box-shadow: 0 4px 16px rgba(49, 120, 198, 0.25);
@@ -280,8 +280,8 @@
     }
 
     &--node {
-      top: 60%;
-      left: 35%;
+      top: 62%;
+      left: 28%;
 
       &.hero__skill--core .hero__skill-inner {
         box-shadow: 0 4px 16px rgba(60, 135, 58, 0.25);
@@ -300,25 +300,8 @@
       }
     }
 
-    &--css {
-      top: 30%;
-      left: 40%;
-
-      .hero__skill-inner {
-        background-color: rgba(38, 77, 228, 0.15);
-        border: 1px solid rgba(38, 77, 228, 0.3);
-        color: #264de4;
-      }
-
-      [data-theme="dark"] & .hero__skill-inner {
-        color: #264de4;
-        background-color: rgba(38, 77, 228, 0.2);
-        border-color: rgba(38, 77, 228, 0.4);
-      }
-    }
-
     &--sass {
-      top: 75%;
+      top: 80%;
       left: 60%;
 
       .hero__skill-inner {
@@ -335,7 +318,7 @@
     }
 
     &--mysql {
-      top: 78%;
+      top: 86%;
       left: 15%;
 
       .hero__skill-inner {
@@ -351,26 +334,9 @@
       }
     }
 
-    &--express {
-      top: 70%;
-      left: 30%;
-
-      .hero__skill-inner {
-        background-color: rgba(0, 0, 0, 0.07);
-        border: 1px solid rgba(0, 0, 0, 0.15);
-        color: var(--text-primary);
-      }
-
-      [data-theme="dark"] & .hero__skill-inner {
-        color: #ffffff;
-        background-color: rgba(255, 255, 255, 0.15);
-        border-color: rgba(255, 255, 255, 0.3);
-      }
-    }
-
     &--html {
-      top: 25%;
-      left: 75%;
+      top: 20%;
+      left: 78%;
 
       .hero__skill-inner {
         background-color: rgba(227, 76, 38, 0.15);
@@ -385,42 +351,8 @@
       }
     }
 
-    &--ux {
-      top: 65%;
-      left: 65%;
-
-      .hero__skill-inner {
-        background-color: rgba($color-violet, 0.15);
-        border: 1px solid rgba($color-violet, 0.3);
-        color: $color-violet;
-      }
-
-      [data-theme="dark"] & .hero__skill-inner {
-        color: lighten($color-violet, 20%);
-        background-color: rgba(lighten($color-violet, 20%), 0.2);
-        border-color: rgba(lighten($color-violet, 20%), 0.4);
-      }
-    }
-
-    &--analytics {
-      top: 17%;
-      left: 48%;
-
-      .hero__skill-inner {
-        background-color: rgba($color-bittersweet, 0.15);
-        border: 1px solid rgba($color-bittersweet, 0.3);
-        color: $color-bittersweet;
-      }
-
-      [data-theme="dark"] & .hero__skill-inner {
-        color: $color-bittersweet;
-        background-color: rgba($color-bittersweet, 0.2);
-        border-color: rgba($color-bittersweet, 0.4);
-      }
-    }
-
     &--figma {
-      top: 82%;
+      top: 88%;
       left: 45%;
 
       .hero__skill-inner {
@@ -436,43 +368,9 @@
       }
     }
 
-    &--mobile {
-      top: 55%;
-      left: 75%;
-
-      .hero__skill-inner {
-        background-color: rgba(#3584e4, 0.15);
-        border: 1px solid rgba(#3584e4, 0.3);
-        color: #3584e4;
-      }
-
-      [data-theme="dark"] & .hero__skill-inner {
-        color: #3584e4;
-        background-color: rgba(#3584e4, 0.2);
-        border-color: rgba(#3584e4, 0.4);
-      }
-    }
-
-    &--cloud {
-      top: 32%;
-      left: 82%;
-
-      .hero__skill-inner {
-        background-color: rgba(#26c6da, 0.15);
-        border: 1px solid rgba(#26c6da, 0.3);
-        color: #26c6da;
-      }
-
-      [data-theme="dark"] & .hero__skill-inner {
-        color: #26c6da;
-        background-color: rgba(#26c6da, 0.2);
-        border-color: rgba(#26c6da, 0.4);
-      }
-    }
-
     &--api {
-      top: 80%;
-      left: 80%;
+      top: 70%;
+      left: 88%;
 
       .hero__skill-inner {
         background-color: rgba(#43a047, 0.15);
@@ -487,54 +385,165 @@
       }
     }
 
-    &--stack {
-      top: 40%;
-      left: 8%;
+    // Git/GitHub
+    &--git {
+      top: 56%;
+      left: 55%;
 
       .hero__skill-inner {
-        background-color: rgba($color-chartreuse, 0.15);
-        border: 1px solid rgba($color-chartreuse, 0.3);
-        color: darken($color-chartreuse, 40%);
+        background-color: rgba(240, 80, 50, 0.15);
+        border: 1px solid rgba(240, 80, 50, 0.3);
+        color: #f05032;
       }
 
       [data-theme="dark"] & .hero__skill-inner {
-        color: $color-chartreuse;
-        background-color: rgba($color-chartreuse, 0.2);
-        border-color: rgba($color-chartreuse, 0.4);
+        color: #f05032;
+        background-color: rgba(240, 80, 50, 0.2);
+        border-color: rgba(240, 80, 50, 0.4);
       }
     }
 
-    &--creative {
-      top: 12%;
-      left: 8%;
+    // React Hooks
+    &--hooks {
+      top: 32%;
+      left: 68%;
 
       .hero__skill-inner {
-        background-color: rgba(#ff9800, 0.15);
-        border: 1px solid rgba(#ff9800, 0.3);
-        color: #ff9800;
+        background-color: rgba(97, 218, 251, 0.15);
+        border: 1px solid rgba(97, 218, 251, 0.3);
+        color: #61dafb;
       }
 
       [data-theme="dark"] & .hero__skill-inner {
-        color: #ff9800;
-        background-color: rgba(#ff9800, 0.2);
-        border-color: rgba(#ff9800, 0.4);
+        color: #61dafb;
+        background-color: rgba(97, 218, 251, 0.2);
+        border-color: rgba(97, 218, 251, 0.4);
       }
     }
 
-    &--global {
-      top: 5%;
+    // Responsive
+    &--responsive {
+      top: 51%;
+      left: 80%;
+
+      .hero__skill-inner {
+        background-color: rgba(#3584e4, 0.15);
+        border: 1px solid rgba(#3584e4, 0.3);
+        color: #3584e4;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #3584e4;
+        background-color: rgba(#3584e4, 0.2);
+        border-color: rgba(#3584e4, 0.4);
+      }
+    }
+
+    // Context API
+    &--context {
+      top: 22%;
+      left: 92%;
+
+      .hero__skill-inner {
+        background-color: rgba(97, 218, 251, 0.15);
+        border: 1px solid rgba(97, 218, 251, 0.3);
+        color: #61dafb;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #61dafb;
+        background-color: rgba(97, 218, 251, 0.2);
+        border-color: rgba(97, 218, 251, 0.4);
+      }
+    }
+
+    // WordPress
+    &--wordpress {
+      top: 62%;
       left: 70%;
 
       .hero__skill-inner {
-        background-color: rgba(#1e88e5, 0.15);
-        border: 1px solid rgba(#1e88e5, 0.3);
-        color: #1e88e5;
+        background-color: rgba(33, 117, 155, 0.15);
+        border: 1px solid rgba(33, 117, 155, 0.3);
+        color: #21759b;
       }
 
       [data-theme="dark"] & .hero__skill-inner {
-        color: #1e88e5;
-        background-color: rgba(#1e88e5, 0.2);
-        border-color: rgba(#1e88e5, 0.4);
+        color: #21759b;
+        background-color: rgba(33, 117, 155, 0.2);
+        border-color: rgba(33, 117, 155, 0.4);
+      }
+    }
+
+    // Agile/Jira
+    &--agile {
+      top: 8%;
+      left: 40%;
+
+      .hero__skill-inner {
+        background-color: rgba(0, 101, 255, 0.15);
+        border: 1px solid rgba(0, 101, 255, 0.3);
+        color: #0065ff;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #0065ff;
+        background-color: rgba(0, 101, 255, 0.2);
+        border-color: rgba(0, 101, 255, 0.4);
+      }
+    }
+
+    // BEM
+    &--bem {
+      top: 72%;
+      left: 18%;
+
+      .hero__skill-inner {
+        background-color: rgba(205, 102, 153, 0.15);
+        border: 1px solid rgba(205, 102, 153, 0.3);
+        color: #cd6699;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #cd6699;
+        background-color: rgba(205, 102, 153, 0.2);
+        border-color: rgba(205, 102, 153, 0.4);
+      }
+    }
+
+    // UI Components
+    &--components {
+      top: 34%;
+      left: 12%;
+
+      .hero__skill-inner {
+        background-color: rgba(140, 60, 255, 0.15);
+        border: 1px solid rgba(140, 60, 255, 0.3);
+        color: #8c3cff;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #8c3cff;
+        background-color: rgba(140, 60, 255, 0.2);
+        border-color: rgba(140, 60, 255, 0.4);
+      }
+    }
+
+    // testing
+    &--testing {
+      top: 81%;
+      left: 38%;
+
+      .hero__skill-inner {
+        background-color: rgba(198, 61, 20, 0.15);
+        border: 1px solid rgba(198, 61, 20, 0.3);
+        color: #c63d14;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #c63d14;
+        background-color: rgba(198, 61, 20, 0.2);
+        border-color: rgba(198, 61, 20, 0.4);
       }
     }
   }

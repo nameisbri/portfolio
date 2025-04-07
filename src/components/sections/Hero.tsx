@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { motion, useAnimationControls } from "framer-motion";
 import {
   ArrowRight,
@@ -5,22 +6,22 @@ import {
   Code,
   Database,
   PaintBucket,
-  Layout,
-  GitBranch,
-  ChartLine,
-  FileHtml,
   Globe,
-  Coffee,
-  LightbulbFilament,
-  BracketsCurly,
-  Stack,
+  FileHtml,
   DeviceMobile,
   FigmaLogo,
+  PlugsConnected,
+  Intersect,
+  GitBranch,
   BracketsSquare,
-  Cloud,
+  BracketsCurly,
+  Bug,
+  Coffee,
+  Stack,
 } from "@phosphor-icons/react";
 import "./Hero.scss";
 
+// Define core skills (these will be larger and more prominent)
 const CORE_SKILLS = [0, 1, 2, 3];
 
 const Hero = () => {
@@ -62,13 +63,15 @@ const Hero = () => {
     }),
   };
 
-  const skillControls = Array(19)
+  // Create animation controls for each skill
+  const skillControls = Array(18)
     .fill(null)
     .map(() => useAnimationControls());
 
   const handleHover = (index: number) => {
     const MAX_ANIMATED_SKILLS = 10;
 
+    // Scale up and add a little wobble to the hovered skill
     skillControls[index].start({
       scale: 1.15,
       rotate: [0, -3, 3, -2, 2, 0],
@@ -79,6 +82,7 @@ const Hero = () => {
       },
     });
 
+    // Make core skills react to the hover
     CORE_SKILLS.forEach((coreIndex) => {
       if (coreIndex !== index) {
         const positionFactor = (coreIndex % 5) - 2;
@@ -104,6 +108,7 @@ const Hero = () => {
       }
     });
 
+    // Randomly select some non-core skills to animate
     const nonCoreSkills = Array.from(
       { length: skillControls.length },
       (_, i) => i
@@ -135,14 +140,13 @@ const Hero = () => {
   };
 
   const handleHoverEnd = () => {
+    // Reset all skills to their original positions
     skillControls.forEach((control, i) => {
       control.start({
         x: 0,
         y: 0,
-
         scale: CORE_SKILLS.includes(i) ? 1.1 : 1,
         rotate: 0,
-
         zIndex: CORE_SKILLS.includes(i) ? 5 : 1,
         transition: {
           type: "spring",
@@ -226,7 +230,7 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
           >
-            {}
+            {/* Core Skill: React */}
             <motion.div
               className="hero__skill hero__skill--react hero__skill--core"
               variants={itemVariants}
@@ -242,11 +246,12 @@ const Hero = () => {
                 custom={0}
                 initial="animate"
               >
-                <BracketsCurly size={24} weight="duotone" />
+                <BracketsSquare size={24} weight="duotone" />
                 <span>React</span>
               </motion.div>
             </motion.div>
 
+            {/* Core Skill: JavaScript */}
             <motion.div
               className="hero__skill hero__skill--js hero__skill--core"
               variants={itemVariants}
@@ -267,6 +272,7 @@ const Hero = () => {
               </motion.div>
             </motion.div>
 
+            {/* Core Skill: TypeScript */}
             <motion.div
               className="hero__skill hero__skill--ts hero__skill--core"
               variants={itemVariants}
@@ -287,7 +293,7 @@ const Hero = () => {
               </motion.div>
             </motion.div>
 
-            {}
+            {/* Core Skill: Node.js */}
             <motion.div
               className="hero__skill hero__skill--node hero__skill--core"
               variants={itemVariants}
@@ -308,8 +314,9 @@ const Hero = () => {
               </motion.div>
             </motion.div>
 
+            {/* HTML */}
             <motion.div
-              className="hero__skill hero__skill--express"
+              className="hero__skill hero__skill--html"
               variants={itemVariants}
               custom={4}
               animate={skillControls[4]}
@@ -323,13 +330,14 @@ const Hero = () => {
                 custom={4}
                 initial="animate"
               >
-                <GitBranch size={20} weight="duotone" />
-                <span>Express.js</span>
+                <FileHtml size={20} weight="duotone" />
+                <span>HTML5</span>
               </motion.div>
             </motion.div>
 
+            {/* CSS & SASS */}
             <motion.div
-              className="hero__skill hero__skill--mysql"
+              className="hero__skill hero__skill--sass"
               variants={itemVariants}
               custom={5}
               animate={skillControls[5]}
@@ -343,14 +351,14 @@ const Hero = () => {
                 custom={5}
                 initial="animate"
               >
-                <Database size={20} weight="duotone" />
-                <span>MySQL</span>
+                <PaintBucket size={20} weight="duotone" />
+                <span>CSS/SCSS</span>
               </motion.div>
             </motion.div>
 
-            {}
+            {/* React Hooks */}
             <motion.div
-              className="hero__skill hero__skill--css"
+              className="hero__skill hero__skill--hooks"
               variants={itemVariants}
               custom={6}
               animate={skillControls[6]}
@@ -364,13 +372,14 @@ const Hero = () => {
                 custom={6}
                 initial="animate"
               >
-                <PaintBucket size={20} weight="duotone" />
-                <span>CSS</span>
+                <PlugsConnected size={20} weight="duotone" />
+                <span>React Hooks</span>
               </motion.div>
             </motion.div>
 
+            {/* REST API */}
             <motion.div
-              className="hero__skill hero__skill--sass"
+              className="hero__skill hero__skill--api"
               variants={itemVariants}
               custom={7}
               animate={skillControls[7]}
@@ -384,13 +393,14 @@ const Hero = () => {
                 custom={7}
                 initial="animate"
               >
-                <PaintBucket size={20} weight="duotone" />
-                <span>SASS</span>
+                <Globe size={20} weight="duotone" />
+                <span>REST API</span>
               </motion.div>
             </motion.div>
 
+            {/* MySQL */}
             <motion.div
-              className="hero__skill hero__skill--html"
+              className="hero__skill hero__skill--mysql"
               variants={itemVariants}
               custom={8}
               animate={skillControls[8]}
@@ -404,14 +414,14 @@ const Hero = () => {
                 custom={8}
                 initial="animate"
               >
-                <FileHtml size={20} weight="duotone" />
-                <span>HTML</span>
+                <Database size={20} weight="duotone" />
+                <span>MySQL</span>
               </motion.div>
             </motion.div>
 
-            {}
+            {/* Git */}
             <motion.div
-              className="hero__skill hero__skill--ux"
+              className="hero__skill hero__skill--git"
               variants={itemVariants}
               custom={9}
               animate={skillControls[9]}
@@ -425,13 +435,14 @@ const Hero = () => {
                 custom={9}
                 initial="animate"
               >
-                <Layout size={20} weight="duotone" />
-                <span>UI/UX</span>
+                <GitBranch size={20} weight="duotone" />
+                <span>Git/GitHub</span>
               </motion.div>
             </motion.div>
 
+            {/* Responsive */}
             <motion.div
-              className="hero__skill hero__skill--figma"
+              className="hero__skill hero__skill--responsive"
               variants={itemVariants}
               custom={10}
               animate={skillControls[10]}
@@ -445,14 +456,14 @@ const Hero = () => {
                 custom={10}
                 initial="animate"
               >
-                <FigmaLogo size={20} weight="duotone" />
-                <span>Figma</span>
+                <DeviceMobile size={20} weight="duotone" />
+                <span>Responsive</span>
               </motion.div>
             </motion.div>
 
-            {}
+            {/* Context API */}
             <motion.div
-              className="hero__skill hero__skill--analytics"
+              className="hero__skill hero__skill--context"
               variants={itemVariants}
               custom={11}
               animate={skillControls[11]}
@@ -466,14 +477,35 @@ const Hero = () => {
                 custom={11}
                 initial="animate"
               >
-                <ChartLine size={20} weight="duotone" />
-                <span>Analytics</span>
+                <Intersect size={20} weight="duotone" />
+                <span>Context API</span>
               </motion.div>
             </motion.div>
 
-            {}
+            {/* WordPress */}
             <motion.div
-              className="hero__skill hero__skill--mobile"
+              className="hero__skill hero__skill--wordpress"
+              variants={itemVariants}
+              custom={12}
+              animate={skillControls[12]}
+              initial="visible"
+              onHoverStart={() => handleHover(12)}
+              onHoverEnd={handleHoverEnd}
+            >
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={12}
+                initial="animate"
+              >
+                <Globe size={20} weight="duotone" />
+                <span>WordPress</span>
+              </motion.div>
+            </motion.div>
+
+            {/* Agile */}
+            <motion.div
+              className="hero__skill hero__skill--agile"
               variants={itemVariants}
               custom={13}
               animate={skillControls[13]}
@@ -487,13 +519,14 @@ const Hero = () => {
                 custom={13}
                 initial="animate"
               >
-                <DeviceMobile size={20} weight="duotone" />
-                <span>Mobile</span>
+                <PlugsConnected size={20} weight="duotone" />
+                <span>Agile/Jira</span>
               </motion.div>
             </motion.div>
 
+            {/* BEM */}
             <motion.div
-              className="hero__skill hero__skill--cloud"
+              className="hero__skill hero__skill--bem"
               variants={itemVariants}
               custom={14}
               animate={skillControls[14]}
@@ -507,13 +540,14 @@ const Hero = () => {
                 custom={14}
                 initial="animate"
               >
-                <Cloud size={20} weight="duotone" />
-                <span>Cloud</span>
+                <PaintBucket size={20} weight="duotone" />
+                <span>SASS/BEM</span>
               </motion.div>
             </motion.div>
 
+            {/* Figma */}
             <motion.div
-              className="hero__skill hero__skill--api"
+              className="hero__skill hero__skill--figma"
               variants={itemVariants}
               custom={15}
               animate={skillControls[15]}
@@ -527,13 +561,14 @@ const Hero = () => {
                 custom={15}
                 initial="animate"
               >
-                <BracketsSquare size={20} weight="duotone" />
-                <span>REST API</span>
+                <FigmaLogo size={20} weight="duotone" />
+                <span>Figma</span>
               </motion.div>
             </motion.div>
 
+            {/* UI Components */}
             <motion.div
-              className="hero__skill hero__skill--stack"
+              className="hero__skill hero__skill--components"
               variants={itemVariants}
               custom={16}
               animate={skillControls[16]}
@@ -548,12 +583,13 @@ const Hero = () => {
                 initial="animate"
               >
                 <Stack size={20} weight="duotone" />
-                <span>Full Stack</span>
+                <span>UI Components</span>
               </motion.div>
             </motion.div>
 
+            {/* Testing */}
             <motion.div
-              className="hero__skill hero__skill--creative"
+              className="hero__skill hero__skill--testing"
               variants={itemVariants}
               custom={17}
               animate={skillControls[17]}
@@ -567,28 +603,8 @@ const Hero = () => {
                 custom={17}
                 initial="animate"
               >
-                <LightbulbFilament size={20} weight="duotone" />
-                <span>Creative</span>
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              className="hero__skill hero__skill--global"
-              variants={itemVariants}
-              custom={18}
-              animate={skillControls[18]}
-              initial="visible"
-              onHoverStart={() => handleHover(18)}
-              onHoverEnd={handleHoverEnd}
-            >
-              <motion.div
-                className="hero__skill-inner"
-                variants={floatVariants}
-                custom={18}
-                initial="animate"
-              >
-                <Globe size={20} weight="duotone" />
-                <span>Global</span>
+                <Bug size={20} weight="duotone" />
+                <span>Testing</span>
               </motion.div>
             </motion.div>
           </motion.div>
