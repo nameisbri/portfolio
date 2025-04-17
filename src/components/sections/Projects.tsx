@@ -111,8 +111,14 @@ const Projects = () => {
   ];
 
   return (
-    <section className="projects" id="projects">
-      <h2 className="section__heading">Projects</h2>
+    <section
+      className="projects"
+      id="projects"
+      aria-labelledby="projects-heading"
+    >
+      <h2 id="projects-heading" className="section__heading">
+        Projects
+      </h2>
       <p className="projects__subtitle">
         These projects represent my journey as a developer and my commitment to
         creating technology with purpose. Each one taught me something valuable
@@ -133,25 +139,33 @@ const Projects = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
+            role="article"
+            aria-labelledby={`project-title-${project.id}`}
           >
             <div className="projects__image-container">
               <img
                 src={project.image}
-                alt={`Screenshot of ${project.title} project`}
+                alt={`Screenshot of ${project.title} project showing the interface`}
                 className="projects__image"
                 loading="lazy"
               />
               <span
                 className="projects__card-type"
                 aria-label={`Project type: ${project.type}`}
+                role="note"
               >
                 {project.type}
               </span>
             </div>
 
-            <h3 className="projects__card-title">{project.title}</h3>
+            <h3
+              id={`project-title-${project.id}`}
+              className="projects__card-title"
+            >
+              {project.title}
+            </h3>
 
-            <div className="projects__card-tech">
+            <div className="projects__card-tech" aria-label="Technologies used">
               {project.tech.map((tech, index) => (
                 <span key={index} className="projects__tech-tag">
                   {tech}
@@ -176,8 +190,9 @@ const Projects = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="projects__link"
+                  aria-label={`View ${project.title} code on GitHub`}
                 >
-                  <GithubLogo size={20} />
+                  <GithubLogo size={20} aria-hidden="true" />
                   <span>GitHub</span>
                 </a>
               )}
@@ -188,8 +203,9 @@ const Projects = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="projects__link projects__link--live"
+                  aria-label={`View live demo of ${project.title}`}
                 >
-                  <Globe size={20} />
+                  <Globe size={20} aria-hidden="true" />
                   <span>Demo</span>
                 </a>
               )}

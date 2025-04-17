@@ -11,11 +11,11 @@ $color-violet: #522b47;
 $color-chartreuse: #e0ff4f;
 $color-timberwolf: #eadeda;
 
-$light-text-primary: $color-dark-green;
-$light-text-secondary: $color-violet;
+$light-text-primary: darken($color-dark-green, 5%);
+$light-text-secondary: darken($color-violet, 10%);
 $light-background-primary: $color-timberwolf;
 $light-background-secondary: #ffffff;
-$light-accent-primary: $color-bittersweet;
+$light-accent-primary: darken($color-bittersweet, 10%);
 $light-accent-secondary: $color-violet;
 $light-button-background: rgba($color-timberwolf, 0.7);
 $light-button-hover: $color-bittersweet;
