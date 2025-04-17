@@ -78,58 +78,53 @@ const Navbar = () => {
           }`}
           role="menu"
         >
-          <li className="navbar__item" role="none">
+          <li className="navbar__item" role="menuitem">
             <a
               href="#"
               className="active"
               onClick={handleNavClick}
-              role="menuitem"
               tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
             >
               Home
             </a>
           </li>
-          <li className="navbar__item">
+          <li className="navbar__item" role="menuitem">
             <a
               href="#projects"
               onClick={handleNavClick}
-              role="menuitem"
               tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
             >
               Projects
             </a>
           </li>
-          <li className="navbar__item">
+          <li className="navbar__item" role="menuitem">
             <a
               href="#skills"
               onClick={handleNavClick}
-              role="menuitem"
               tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
             >
               Skills
             </a>
           </li>
-          <li className="navbar__item">
+          <li className="navbar__item" role="menuitem">
             <a
               href="#experience"
               onClick={handleNavClick}
-              role="menuitem"
               tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
             >
               Experience
             </a>
           </li>
-          <li className="navbar__item">
+          <li className="navbar__item" role="menuitem">
             <a
               href="#contact"
               onClick={handleNavClick}
-              role="menuitem"
               tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
             >
               Contact
             </a>
           </li>
-          <li className="navbar__item">
+          <li className="navbar__item" role="button">
             <button
               onClick={toggleTheme}
               className="navbar__theme-toggle"
