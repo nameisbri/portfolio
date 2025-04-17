@@ -181,3 +181,17 @@ body {
 :focus:not(:focus-visible) {
   outline: none;
 }
+
+:focus-visible {
+  outline: 3px solid var(--accent-primary);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+a:focus,
+a:hover {
+  /* Text decoration to make links more obvious */
+  text-decoration: underline;
+  /* Ensure color change is significant */
+  color: var(--accent-primary);
+}
