@@ -124,7 +124,7 @@ const Navbar = () => {
               Contact
             </a>
           </li>
-          <li className="navbar__item" role="button">
+          <li className="navbar__item" role="menuitem">
             <button
               onClick={toggleTheme}
               className="navbar__theme-toggle"
