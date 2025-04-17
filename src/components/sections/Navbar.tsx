@@ -46,11 +46,17 @@ const Navbar = () => {
     };
   }, [isMobileMenuOpen]);
 
+  // Keyboard support for mobile menu
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Escape" && isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+  };
+
   return (
     <nav
-      className={`navbar ${isScrolled ? "navbar--scrolled" : ""} ${
-        isScrolled ? "navbar--glass" : ""
-      }`}
+      className={`navbar ${isScrolled ? "navbar--scrolled" : ""}`}
+      onKeyDown={handleKeyDown}
     >
       <div className="navbar__container">
         <a href="#" className="navbar__logo">
@@ -70,29 +76,56 @@ const Navbar = () => {
           className={`navbar__menu ${
             isMobileMenuOpen ? "navbar__menu--open" : ""
           }`}
+          role="menu"
         >
-          <li className="navbar__item">
-            <a href="#" className="active" onClick={handleNavClick}>
+          <li className="navbar__item" role="none">
+            <a
+              href="#"
+              className="active"
+              onClick={handleNavClick}
+              role="menuitem"
+              tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
+            >
               Home
             </a>
           </li>
           <li className="navbar__item">
-            <a href="#projects" onClick={handleNavClick}>
+            <a
+              href="#projects"
+              onClick={handleNavClick}
+              role="menuitem"
+              tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
+            >
               Projects
             </a>
           </li>
           <li className="navbar__item">
-            <a href="#skills" onClick={handleNavClick}>
+            <a
+              href="#skills"
+              onClick={handleNavClick}
+              role="menuitem"
+              tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
+            >
               Skills
             </a>
           </li>
           <li className="navbar__item">
-            <a href="#experience" onClick={handleNavClick}>
+            <a
+              href="#experience"
+              onClick={handleNavClick}
+              role="menuitem"
+              tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
+            >
               Experience
             </a>
           </li>
           <li className="navbar__item">
-            <a href="#contact" onClick={handleNavClick}>
+            <a
+              href="#contact"
+              onClick={handleNavClick}
+              role="menuitem"
+              tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
+            >
               Contact
             </a>
           </li>
