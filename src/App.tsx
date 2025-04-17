@@ -22,16 +22,23 @@ function App() {
 
   return (
     <div className="app">
+      <a href="#main-content" className="skip-to-content">
+        Skip to main content
+      </a>
       <AnimatePresence>{isLoading && <Loader />}</AnimatePresence>
 
-      <Navbar />
-      <main className="app__content">
+      <header role="banner">
+        <Navbar />
+      </header>
+      <main id="main-content" className="app__content" role="main">
         <Hero />
         <Experience />
         <Tech />
         <Projects />
       </main>
-      <Footer />
+      <footer role="contentinfo">
+        <Footer />
+      </footer>
     </div>
   );
 }
