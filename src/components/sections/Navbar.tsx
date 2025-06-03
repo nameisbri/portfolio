@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { useTheme } from "../../context/ThemeContext";
 import { Sun, Moon, List, X } from "@phosphor-icons/react";
 import "./Navbar.scss";
@@ -7,6 +8,7 @@ const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,9 +61,9 @@ const Navbar = () => {
       onKeyDown={handleKeyDown}
     >
       <div className="navbar__container">
-        <a href="#" className="navbar__logo">
+        <Link to="/" className="navbar__logo">
           Gabriela Barreira
-        </a>
+        </Link>
 
         <button
           className="navbar__mobile-toggle"
@@ -78,51 +80,75 @@ const Navbar = () => {
           }`}
           role="menu"
         >
+          {location.pathname === "/" ? (
+            <>
+              <li className="navbar__item" role="menuitem">
+                <a
+                  href="#"
+                  className="active"
+                  onClick={handleNavClick}
+                  tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
+                >
+                  Home
+                </a>
+              </li>
+              <li className="navbar__item" role="menuitem">
+                <a
+                  href="#projects"
+                  onClick={handleNavClick}
+                  tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
+                >
+                  Projects
+                </a>
+              </li>
+              <li className="navbar__item" role="menuitem">
+                <a
+                  href="#skills"
+                  onClick={handleNavClick}
+                  tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
+                >
+                  Skills
+                </a>
+              </li>
+              <li className="navbar__item" role="menuitem">
+                <a
+                  href="#experience"
+                  onClick={handleNavClick}
+                  tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
+                >
+                  Experience
+                </a>
+              </li>
+              <li className="navbar__item" role="menuitem">
+                <a
+                  href="#contact"
+                  onClick={handleNavClick}
+                  tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
+                >
+                  Contact
+                </a>
+              </li>
+            </>
+          ) : (
+            <li className="navbar__item" role="menuitem">
+              <Link 
+                to="/"
+                onClick={handleNavClick}
+                tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
+              >
+                Back to Portfolio
+              </Link>
+            </li>
+          )}
           <li className="navbar__item" role="menuitem">
-            <a
-              href="#"
-              className="active"
+            <Link
+              to="/freelance"
+              className={location.pathname === "/freelance" ? "active" : ""}
               onClick={handleNavClick}
               tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
             >
-              Home
-            </a>
-          </li>
-          <li className="navbar__item" role="menuitem">
-            <a
-              href="#projects"
-              onClick={handleNavClick}
-              tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
-            >
-              Projects
-            </a>
-          </li>
-          <li className="navbar__item" role="menuitem">
-            <a
-              href="#skills"
-              onClick={handleNavClick}
-              tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
-            >
-              Skills
-            </a>
-          </li>
-          <li className="navbar__item" role="menuitem">
-            <a
-              href="#experience"
-              onClick={handleNavClick}
-              tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
-            >
-              Experience
-            </a>
-          </li>
-          <li className="navbar__item" role="menuitem">
-            <a
-              href="#contact"
-              onClick={handleNavClick}
-              tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
-            >
-              Contact
-            </a>
+              Freelance Work
+            </Link>
           </li>
           <li className="navbar__item" role="menuitem">
             <button
