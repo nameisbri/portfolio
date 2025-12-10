@@ -7,16 +7,17 @@ type ExperienceType = "work" | "education" | "skills";
 
 const workExperience = [
   {
-    title: "Web Content Manager / Junior Developer",
+    title: "Junior Developer & Web Content Manager",
     company: "Precision Nutrition",
     period: "Jul 2020 - Present",
     location: "Remote",
     description: [
-      "Currently leading the rebuild of a nutrition calculator from Angular to React, participating in the complete software development lifecycle",
-      "Collaborating in an Agile development environment using Jira for task management and Git for version control, including sprint planning and code reviews",
-      "Engineering SEO optimization strategies using JavaScript and data analysis tools that increased conversion rates by 12% and drove organic traffic growth of 23%",
-      "Developing and maintaining marketing landing pages using HTML, CSS, and PHP while ensuring cross-browser compatibility and responsive design",
-      "Leading cross-functional QA processes including manual testing, UX analysis, and documentation of technical bugs",
+      "Manage web content lifecycle for health platform serving 100,000+ monthly visitors, including WordPress publishing, HTML formatting, and document conversions with citation systems",
+      "Build landing pages and implement A/B tests for pop-ups, lead magnets, and campaign assets",
+      "Fix bugs and complete feature tickets in Rails codebase, contributing to tech debt reduction",
+      "Analyze traffic and engagement data in Google Analytics and Search Console to inform content placement decisions",
+      "Coordinate across designers (Figma), copywriters, product owners, and partnership leads through PR workflows and Slack",
+      "Conduct cross-browser and functional QA before launches",
     ],
   },
   {
@@ -58,7 +59,7 @@ const educationExperience = [
     period: "2010 - 2014",
     location: "Aveiro, Portugal",
     description:
-      "Technical program combining digital media, communication strategies, and emerging technologies. Coursework included introductory programming, digital media production, and user experience principles—providing a foundation for understanding the intersection of technology and human-centered design that informs my development approach across industries.",
+      "Technical program combining digital media, communication strategies, and web technologies. Coursework included introductory programming, digital media production, and user experience principles—providing a foundation for understanding the intersection of technology and human-centered design.",
   },
 ];
 
@@ -84,13 +85,12 @@ const skillsExperience = [
     ],
   },
   {
-    category: "Industry Knowledge",
+    category: "How I Work",
     skills: [
-      "Diverse Industry Adaptability: Quickly acquiring domain knowledge across different sectors",
-      "Health & Wellness: Understanding of health information systems and digital health trends (adds depth to health-tech projects but not limited to this sector)",
-      "E-commerce & Digital Marketing: Experience with online platforms across multiple industries",
-      "Educational Technology: Background in digital learning environments and content systems",
-      "Global Markets: Experience working with international teams and diverse cultural contexts",
+      "Cross-functional coordination: I work with designers in Figma, developers in PRs, copywriters in Slack, and stakeholders in Basecamp. Getting everyone aligned is half the job.",
+      "AI-enhanced workflow: I use Claude and Cursor for code review and debugging, ChatGPT for content strategy, Perplexity for research. These tools are part of my daily work, not buzzwords.",
+      "Data-informed decisions: I pull analytics from GA and Search Console to figure out what's working and what needs to change.",
+      "Ship and iterate: I'd rather get something live and improve it than wait for perfect. QA it, launch it, learn from it.",
     ],
   },
 ];
@@ -103,12 +103,7 @@ const Experience = () => {
       <h2 className="section__heading">Experience</h2>
 
       <p className="experience__intro">
-        The transition from marketing to development has been both natural and
-        eye-opening. Each step in my career has been guided by a desire to
-        create meaningful connections—first through content, now through code.
-        This dual perspective allows me to bridge technical possibilities with
-        human realities, building solutions that work for people, not just
-        systems.
+        I've spent 5+ years at the intersection of marketing and development. I build landing pages, manage content systems, implement A/B tests, and fix bugs in production codebases. The throughline is getting things out the door while coordinating across designers, developers, copywriters, and stakeholders.
       </p>
 
       <div className="experience__tabs">
@@ -221,21 +216,6 @@ const Experience = () => {
                 </ul>
               </motion.div>
             ))}
-            <motion.div
-              className="experience__skills-note"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <p>
-                My unique background combines software engineering skills with
-                real-world business experience, allowing me to approach
-                development with both technical excellence and strategic
-                insight. I'm adaptable to various industries while bringing
-                particular depth to projects involving user experience,
-                data-driven systems, and cross-functional collaboration.
-              </p>
-            </motion.div>
           </div>
         )}
       </div>

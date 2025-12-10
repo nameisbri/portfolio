@@ -109,6 +109,36 @@ const Tech = () => {
       category: "backend",
       icon: <Globe weight="duotone" />,
     },
+    {
+      name: "WordPress",
+      category: "platform",
+      icon: <Globe weight="duotone" />,
+    },
+    {
+      name: "Claude",
+      category: "ai",
+      icon: <Lightbulb weight="duotone" />,
+    },
+    {
+      name: "Cursor",
+      category: "ai",
+      icon: <Code weight="duotone" />,
+    },
+    {
+      name: "ChatGPT",
+      category: "ai",
+      icon: <Lightbulb weight="duotone" />,
+    },
+    {
+      name: "Google Analytics",
+      category: "analytics",
+      icon: <ChartBar weight="duotone" />,
+    },
+    {
+      name: "Figma",
+      category: "design",
+      icon: <PaintBrush weight="duotone" />,
+    },
   ];
 
   const containerVariants = {
@@ -141,11 +171,7 @@ const Tech = () => {
 
       <div className="tech__intro">
         <p>
-          My technical skills have been developed with intention and curiosity.
-          Coming to software development after years in another field gives me a
-          unique appreciation for both the possibilities and limitations of
-          technology. I approach coding not just as a technical exercise, but as
-          a craft that requires empathy, communication, and constant learning.
+          I work across the stack and across teams. My toolkit spans development, content management, design coordination, and analytics. I use AI tools daily to ship faster.
         </p>
       </div>
 
@@ -174,26 +200,23 @@ const Tech = () => {
 
       <div className="tech__categories">
         <div className="tech__category-group">
-          <h3 className="tech__category-title">Development Skills</h3>
+          <h3 className="tech__category-title">Development</h3>
           <p>
-            Full-stack capabilities with strong frontend and backend development
-            skills, focusing on creating responsive, efficient web applications.
+            JavaScript, React, Rails, HTML/CSS, Node.js, Express, MySQL. I build full-stack web applications and fix bugs in production codebases.
           </p>
         </div>
 
         <div className="tech__category-group">
-          <h3 className="tech__category-title">Professional Approach</h3>
+          <h3 className="tech__category-title">Platforms & Tools</h3>
           <p>
-            Committed to best practices including test-driven development, agile
-            methodologies, and continuous learning in software engineering.
+            WordPress, Google Analytics, Figma. I manage content systems, analyze traffic data, and coordinate with designers.
           </p>
         </div>
 
         <div className="tech__category-group">
-          <h3 className="tech__category-title">Unique Value Proposition</h3>
+          <h3 className="tech__category-title">AI Workflow</h3>
           <p>
-            Bridging technical expertise with marketing insights to deliver
-            solutions that are not just functional, but strategically impactful.
+            Claude, Cursor, ChatGPT. I use AI tools for code review, debugging, and content strategy. They're part of my daily workflow, not buzzwords.
           </p>
         </div>
       </div>
@@ -204,10 +227,9 @@ const Tech = () => {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ delay: 0.4, duration: 0.5 }}
       >
-        <h3>Continuous Learning</h3>
+        <h3>Currently Learning</h3>
         <p className="tech__learning-text">
-          Actively expanding my skill set to stay at the forefront of web
-          development:
+          Expanding my toolkit through hands-on projects:
         </p>
         <div className="tech__learning-items">
           <motion.span className="tech__learning-item">
@@ -227,10 +249,6 @@ const Tech = () => {
             Angular Concepts
           </motion.span>
         </div>
-        <p className="tech__learning-approach">
-          Combining structured learning with hands-on projects to rapidly
-          develop and apply cutting-edge technical skills.
-        </p>
       </motion.div>
     </section>
   );
