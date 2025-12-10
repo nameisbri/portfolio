@@ -655,8 +655,8 @@
 
     // Cursor
     &--cursor {
-      top: 81%;
-      left: 38%;
+      top: 72%;
+      left: 18%;
 
       .hero__skill-inner {
         background-color: rgba(130, 80, 223, 0.15);
@@ -668,6 +668,96 @@
         color: #8250df;
         background-color: rgba(130, 80, 223, 0.2);
         border-color: rgba(130, 80, 223, 0.4);
+      }
+    }
+
+    // Responsive Design
+    &--responsive {
+      top: 51%;
+      left: 80%;
+
+      .hero__skill-inner {
+        background-color: rgba(53, 132, 228, 0.15);
+        border: 1px solid rgba(53, 132, 228, 0.3);
+        color: #3584e4;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #3584e4;
+        background-color: rgba(53, 132, 228, 0.2);
+        border-color: rgba(53, 132, 228, 0.4);
+      }
+    }
+
+    // REST API
+    &--api {
+      top: 32%;
+      left: 68%;
+
+      .hero__skill-inner {
+        background-color: rgba(67, 160, 71, 0.15);
+        border: 1px solid rgba(67, 160, 71, 0.3);
+        color: #43a047;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #43a047;
+        background-color: rgba(67, 160, 71, 0.2);
+        border-color: rgba(67, 160, 71, 0.4);
+      }
+    }
+
+    // Testing
+    &--testing {
+      top: 8%;
+      left: 40%;
+
+      .hero__skill-inner {
+        background-color: rgba(198, 61, 20, 0.15);
+        border: 1px solid rgba(198, 61, 20, 0.3);
+        color: #c63d14;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #c63d14;
+        background-color: rgba(198, 61, 20, 0.2);
+        border-color: rgba(198, 61, 20, 0.4);
+      }
+    }
+
+    // Google Tag Manager
+    &--gtm {
+      top: 56%;
+      left: 55%;
+
+      .hero__skill-inner {
+        background-color: rgba(255, 152, 0, 0.15);
+        border: 1px solid rgba(255, 152, 0, 0.3);
+        color: #ff9800;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #ff9800;
+        background-color: rgba(255, 152, 0, 0.2);
+        border-color: rgba(255, 152, 0, 0.4);
+      }
+    }
+
+    // SEO
+    &--seo {
+      top: 86%;
+      left: 15%;
+
+      .hero__skill-inner {
+        background-color: rgba(156, 39, 176, 0.15);
+        border: 1px solid rgba(156, 39, 176, 0.3);
+        color: #9c27b0;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #9c27b0;
+        background-color: rgba(156, 39, 176, 0.2);
+        border-color: rgba(156, 39, 176, 0.4);
       }
     }
   }

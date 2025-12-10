@@ -18,6 +18,10 @@ import {
   Robot,
   Cursor as CursorIcon,
   Train,
+  DeviceMobile,
+  TestTube,
+  Tag,
+  MagnifyingGlass,
 } from "@phosphor-icons/react";
 import "./Hero.scss";
 
@@ -64,7 +68,7 @@ const Hero = () => {
   };
 
   // Create animation controls for each skill
-  const skillControls = Array(16)
+  const skillControls = Array(21)
     .fill(null)
     .map(() => useAnimationControls());
 
@@ -574,6 +578,116 @@ const Hero = () => {
               >
                 <CursorIcon size={20} weight="duotone" />
                 <span>Cursor</span>
+              </motion.div>
+            </motion.div>
+
+            {/* Responsive Design */}
+            <motion.div
+              className="hero__skill hero__skill--responsive"
+              variants={itemVariants}
+              custom={16}
+              animate={skillControls[16]}
+              initial="visible"
+              onHoverStart={() => handleHover(16)}
+              onHoverEnd={handleHoverEnd}
+              role="presentation"
+            >
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={16}
+                initial="animate"
+              >
+                <DeviceMobile size={20} weight="duotone" />
+                <span>Responsive</span>
+              </motion.div>
+            </motion.div>
+
+            {/* REST API */}
+            <motion.div
+              className="hero__skill hero__skill--api"
+              variants={itemVariants}
+              custom={17}
+              animate={skillControls[17]}
+              initial="visible"
+              onHoverStart={() => handleHover(17)}
+              onHoverEnd={handleHoverEnd}
+              role="presentation"
+            >
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={17}
+                initial="animate"
+              >
+                <Globe size={20} weight="duotone" />
+                <span>REST API</span>
+              </motion.div>
+            </motion.div>
+
+            {/* Testing */}
+            <motion.div
+              className="hero__skill hero__skill--testing"
+              variants={itemVariants}
+              custom={18}
+              animate={skillControls[18]}
+              initial="visible"
+              onHoverStart={() => handleHover(18)}
+              onHoverEnd={handleHoverEnd}
+              role="presentation"
+            >
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={18}
+                initial="animate"
+              >
+                <TestTube size={20} weight="duotone" />
+                <span>Testing</span>
+              </motion.div>
+            </motion.div>
+
+            {/* Google Tag Manager */}
+            <motion.div
+              className="hero__skill hero__skill--gtm"
+              variants={itemVariants}
+              custom={19}
+              animate={skillControls[19]}
+              initial="visible"
+              onHoverStart={() => handleHover(19)}
+              onHoverEnd={handleHoverEnd}
+              role="presentation"
+            >
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={19}
+                initial="animate"
+              >
+                <Tag size={20} weight="duotone" />
+                <span>GTM</span>
+              </motion.div>
+            </motion.div>
+
+            {/* SEO */}
+            <motion.div
+              className="hero__skill hero__skill--seo"
+              variants={itemVariants}
+              custom={20}
+              animate={skillControls[20]}
+              initial="visible"
+              onHoverStart={() => handleHover(20)}
+              onHoverEnd={handleHoverEnd}
+              role="presentation"
+            >
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={20}
+                initial="animate"
+              >
+                <MagnifyingGlass size={20} weight="duotone" />
+                <span>SEO</span>
               </motion.div>
             </motion.div>
           </motion.div>
