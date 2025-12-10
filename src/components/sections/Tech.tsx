@@ -13,8 +13,6 @@ import {
   TreeStructure,
   BracketsCurly,
   DeviceMobile,
-  BookOpen,
-  Anchor,
   Robot,
   Train,
   Check,
