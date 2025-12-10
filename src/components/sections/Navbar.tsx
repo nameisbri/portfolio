@@ -46,11 +46,17 @@ const Navbar = () => {
     };
   }, [isMobileMenuOpen]);
 
+  // Keyboard support for mobile menu
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Escape" && isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+  };
+
   return (
     <nav
-      className={`navbar ${isScrolled ? "navbar--scrolled" : ""} ${
-        isScrolled ? "navbar--glass" : ""
-      }`}
+      className={`navbar ${isScrolled ? "navbar--scrolled" : ""}`}
+      onKeyDown={handleKeyDown}
     >
       <div className="navbar__container">
         <a href="#" className="navbar__logo">
@@ -70,33 +76,55 @@ const Navbar = () => {
           className={`navbar__menu ${
             isMobileMenuOpen ? "navbar__menu--open" : ""
           }`}
+          role="menu"
         >
-          <li className="navbar__item">
-            <a href="#" className="active" onClick={handleNavClick}>
+          <li className="navbar__item" role="menuitem">
+            <a
+              href="#"
+              className="active"
+              onClick={handleNavClick}
+              tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
+            >
               Home
             </a>
           </li>
-          <li className="navbar__item">
-            <a href="#projects" onClick={handleNavClick}>
+          <li className="navbar__item" role="menuitem">
+            <a
+              href="#projects"
+              onClick={handleNavClick}
+              tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
+            >
               Projects
             </a>
           </li>
-          <li className="navbar__item">
-            <a href="#skills" onClick={handleNavClick}>
+          <li className="navbar__item" role="menuitem">
+            <a
+              href="#skills"
+              onClick={handleNavClick}
+              tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
+            >
               Skills
             </a>
           </li>
-          <li className="navbar__item">
-            <a href="#experience" onClick={handleNavClick}>
+          <li className="navbar__item" role="menuitem">
+            <a
+              href="#experience"
+              onClick={handleNavClick}
+              tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
+            >
               Experience
             </a>
           </li>
-          <li className="navbar__item">
-            <a href="#contact" onClick={handleNavClick}>
+          <li className="navbar__item" role="menuitem">
+            <a
+              href="#contact"
+              onClick={handleNavClick}
+              tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
+            >
               Contact
             </a>
           </li>
-          <li className="navbar__item">
+          <li className="navbar__item" role="menuitem">
             <button
               onClick={toggleTheme}
               className="navbar__theme-toggle"
@@ -105,8 +133,17 @@ const Navbar = () => {
                   ? "Switch to dark mode"
                   : "Switch to light mode"
               }
+              title={
+                theme === "light"
+                  ? "Switch to dark mode"
+                  : "Switch to light mode"
+              }
             >
-              {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+              {theme === "light" ? (
+                <Moon size={20} aria-hidden="true" />
+              ) : (
+                <Sun size={20} aria-hidden="true" />
+              )}
               <span className="navbar__theme-label">
                 {theme === "light" ? "Dark Mode" : "Light Mode"}
               </span>

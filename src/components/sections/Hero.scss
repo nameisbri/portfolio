@@ -457,21 +457,55 @@
       }
     }
 
-    // WordPress
+    // WordPress (Core Skill)
     &--wordpress {
       top: 62%;
-      left: 70%;
+      left: 28%;
+
+      &.hero__skill--core .hero__skill-inner {
+        padding: $spacing-xs $spacing-md;
+        font-size: 1.15rem;
+        box-shadow: 0 4px 16px rgba(33, 117, 155, 0.3);
+      }
 
       .hero__skill-inner {
         background-color: rgba(33, 117, 155, 0.15);
         border: 1px solid rgba(33, 117, 155, 0.3);
         color: #21759b;
+        padding: $spacing-xs $spacing-md;
+        font-size: 1.15rem;
       }
 
       [data-theme="dark"] & .hero__skill-inner {
         color: #21759b;
         background-color: rgba(33, 117, 155, 0.2);
         border-color: rgba(33, 117, 155, 0.4);
+      }
+    }
+
+    // Rails (Core Skill)
+    &--rails {
+      top: 14%;
+      left: 22%;
+
+      &.hero__skill--core .hero__skill-inner {
+        padding: $spacing-xs $spacing-md;
+        font-size: 1.15rem;
+        box-shadow: 0 4px 16px rgba(204, 0, 0, 0.3);
+      }
+
+      .hero__skill-inner {
+        background-color: rgba(204, 0, 0, 0.15);
+        border: 1px solid rgba(204, 0, 0, 0.3);
+        color: #cc0000;
+        padding: $spacing-xs $spacing-md;
+        font-size: 1.15rem;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #cc0000;
+        background-color: rgba(204, 0, 0, 0.2);
+        border-color: rgba(204, 0, 0, 0.4);
       }
     }
 
@@ -547,111 +581,183 @@
       }
     }
 
-    // Express.js (medium prominence)
-    &--express {
-      top: 58%;
-      left: 22%;
+    // Analytics
+    &--analytics {
+      top: 88%;
+      left: 45%;
 
       .hero__skill-inner {
-        background-color: rgba(#4d4d4d, 0.15);
-        border: 1px solid rgba(#4d4d4d, 0.3);
-        color: #4d4d4d;
+        background-color: rgba(66, 133, 244, 0.15);
+        border: 1px solid rgba(66, 133, 244, 0.3);
+        color: #4285f4;
       }
 
       [data-theme="dark"] & .hero__skill-inner {
-        color: #b3b3b3;
-        background-color: rgba(#b3b3b3, 0.2);
-        border-color: rgba(#b3b3b3, 0.4);
+        color: #4285f4;
+        background-color: rgba(66, 133, 244, 0.2);
+        border-color: rgba(66, 133, 244, 0.4);
       }
     }
 
-    // Prompt Engineering (purple)
-    &--prompt {
-      top: 10%;
-      left: 66%;
+    // A/B Testing
+    &--abtesting {
+      top: 70%;
+      left: 88%;
 
       .hero__skill-inner {
-        background-color: rgba(#8a2be2, 0.15);
-        border: 1px solid rgba(#8a2be2, 0.3);
-        color: #8a2be2;
+        background-color: rgba(76, 175, 80, 0.15);
+        border: 1px solid rgba(76, 175, 80, 0.3);
+        color: #4caf50;
       }
 
       [data-theme="dark"] & .hero__skill-inner {
-        color: #8a2be2;
-        background-color: rgba(#8a2be2, 0.2);
-        border-color: rgba(#8a2be2, 0.4);
+        color: #4caf50;
+        background-color: rgba(76, 175, 80, 0.2);
+        border-color: rgba(76, 175, 80, 0.4);
       }
     }
 
-    // AI Workflows (orange)
-    &--ai {
-      top: 60%;
-      left: 74%;
+    // Webflow
+    &--webflow {
+      top: 22%;
+      left: 92%;
 
       .hero__skill-inner {
-        background-color: rgba(#ff8c00, 0.15);
-        border: 1px solid rgba(#ff8c00, 0.3);
-        color: #ff8c00;
+        background-color: rgba(67, 83, 255, 0.15);
+        border: 1px solid rgba(67, 83, 255, 0.3);
+        color: #4353ff;
       }
 
       [data-theme="dark"] & .hero__skill-inner {
-        color: #ff8c00;
-        background-color: rgba(#ff8c00, 0.2);
-        border-color: rgba(#ff8c00, 0.4);
+        color: #4353ff;
+        background-color: rgba(67, 83, 255, 0.2);
+        border-color: rgba(67, 83, 255, 0.4);
       }
     }
 
-    // GitHub Copilot (blue)
-    &--copilot {
-      top: 46%;
-      left: 72%;
-
-      .hero__skill-inner {
-        background-color: rgba(#007aff, 0.15);
-        border: 1px solid rgba(#007aff, 0.3);
-        color: #007aff;
-      }
-
-      [data-theme="dark"] & .hero__skill-inner {
-        color: #007aff;
-        background-color: rgba(#007aff, 0.2);
-        border-color: rgba(#007aff, 0.4);
-      }
-    }
-
-    // GEO (pink)
-    &--geo {
-      top: 12%;
-      left: 86%;
-
-      .hero__skill-inner {
-        background-color: rgba(#ff1493, 0.15);
-        border: 1px solid rgba(#ff1493, 0.3);
-        color: #ff1493;
-      }
-
-      [data-theme="dark"] & .hero__skill-inner {
-        color: #ff1493;
-        background-color: rgba(#ff1493, 0.2);
-        border-color: rgba(#ff1493, 0.4);
-      }
-    }
-
-    // Performance Optimization (teal)
-    &--performance {
-      top: 52%;
+    // Claude
+    &--claude {
+      top: 34%;
       left: 12%;
 
       .hero__skill-inner {
-        background-color: rgba(#20c997, 0.15);
-        border: 1px solid rgba(#20c997, 0.3);
-        color: #20c997;
+        background-color: rgba(204, 143, 97, 0.15);
+        border: 1px solid rgba(204, 143, 97, 0.3);
+        color: #cc8f61;
       }
 
       [data-theme="dark"] & .hero__skill-inner {
-        color: #20c997;
-        background-color: rgba(#20c997, 0.2);
-        border-color: rgba(#20c997, 0.4);
+        color: #cc8f61;
+        background-color: rgba(204, 143, 97, 0.2);
+        border-color: rgba(204, 143, 97, 0.4);
+      }
+    }
+
+    // Cursor
+    &--cursor {
+      top: 72%;
+      left: 18%;
+
+      .hero__skill-inner {
+        background-color: rgba(130, 80, 223, 0.15);
+        border: 1px solid rgba(130, 80, 223, 0.3);
+        color: #8250df;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #8250df;
+        background-color: rgba(130, 80, 223, 0.2);
+        border-color: rgba(130, 80, 223, 0.4);
+      }
+    }
+
+    // Responsive Design
+    &--responsive {
+      top: 51%;
+      left: 80%;
+
+      .hero__skill-inner {
+        background-color: rgba(53, 132, 228, 0.15);
+        border: 1px solid rgba(53, 132, 228, 0.3);
+        color: #3584e4;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #3584e4;
+        background-color: rgba(53, 132, 228, 0.2);
+        border-color: rgba(53, 132, 228, 0.4);
+      }
+    }
+
+    // REST API
+    &--api {
+      top: 32%;
+      left: 68%;
+
+      .hero__skill-inner {
+        background-color: rgba(67, 160, 71, 0.15);
+        border: 1px solid rgba(67, 160, 71, 0.3);
+        color: #43a047;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #43a047;
+        background-color: rgba(67, 160, 71, 0.2);
+        border-color: rgba(67, 160, 71, 0.4);
+      }
+    }
+
+    // Testing
+    &--testing {
+      top: 8%;
+      left: 40%;
+
+      .hero__skill-inner {
+        background-color: rgba(198, 61, 20, 0.15);
+        border: 1px solid rgba(198, 61, 20, 0.3);
+        color: #c63d14;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #c63d14;
+        background-color: rgba(198, 61, 20, 0.2);
+        border-color: rgba(198, 61, 20, 0.4);
+      }
+    }
+
+    // Google Tag Manager
+    &--gtm {
+      top: 56%;
+      left: 55%;
+
+      .hero__skill-inner {
+        background-color: rgba(255, 152, 0, 0.15);
+        border: 1px solid rgba(255, 152, 0, 0.3);
+        color: #ff9800;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #ff9800;
+        background-color: rgba(255, 152, 0, 0.2);
+        border-color: rgba(255, 152, 0, 0.4);
+      }
+    }
+
+    // SEO
+    &--seo {
+      top: 86%;
+      left: 15%;
+
+      .hero__skill-inner {
+        background-color: rgba(156, 39, 176, 0.15);
+        border: 1px solid rgba(156, 39, 176, 0.3);
+        color: #9c27b0;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #9c27b0;
+        background-color: rgba(156, 39, 176, 0.2);
+        border-color: rgba(156, 39, 176, 0.4);
       }
     }
   }

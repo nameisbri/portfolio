@@ -21,13 +21,7 @@ const Footer = () => {
           </div>
           <h2 className="footer__contact-title">Let's Work Together</h2>
           <p className="footer__contact-text">
-            I'm a software developer actively building React applications at
-            Precision Nutrition while expanding my technical expertise. My
-            background in marketing combined with my software engineering skills
-            allows me to approach problems holistically—considering both
-            technical implementation and human impact. I'm excited about
-            opportunities where I can contribute to meaningful projects that
-            make a difference in people's lives.
+            I'm open to web development, product management, and technical marketing roles. I bring 5+ years of shipping web experiences for high-traffic sites, plus the coordination skills to work across teams. Remote preferred, open to hybrid. Based in Hamilton, Ontario, EU citizen.
           </p>
 
           <ul className="footer__contact-info">
@@ -37,7 +31,7 @@ const Footer = () => {
             </li>
             <li>
               <MapPin size={18} />
-              <span>Ontario, Canada & Open to Remote</span>
+              <span>Hamilton, Ontario • Remote</span>
             </li>
           </ul>
 
@@ -66,7 +60,7 @@ const Footer = () => {
         <div className="footer__info">
           <h3 className="footer__name">Gabriela Barreira</h3>
           <p className="footer__tagline">
-            Software Developer building user-centric solutions
+            Web Developer bridging marketing and engineering
           </p>
         </div>
 
