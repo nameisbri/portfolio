@@ -21,7 +21,7 @@ const Footer = () => {
           </div>
           <h2 className="footer__contact-title">Let's Work Together</h2>
           <p className="footer__contact-text">
-            I'm open to web development, product management, and technical marketing roles. I bring 5+ years of shipping web experiences for high-traffic sites, plus the coordination skills to work across teams. Remote preferred, open to hybrid. Based in Hamilton, Ontario, EU citizen.
+            I'm open to web development, product management, and technical marketing roles. I bring 5+ years of shipping web experiences for high-traffic sites, plus the coordination skills to work across teams. Remote preferred, open to hybrid. Based in Montreal, EU citizen.
           </p>
 
           <ul className="footer__contact-info">
@@ -31,7 +31,7 @@ const Footer = () => {
             </li>
             <li>
               <MapPin size={18} />
-              <span>Hamilton, Ontario • Remote</span>
+              <span>Montreal, Canada • Remote</span>
             </li>
           </ul>
 

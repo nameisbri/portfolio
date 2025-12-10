@@ -15,10 +15,6 @@ import {
   DeviceMobile,
   BookOpen,
   Anchor,
-  Robot,
-  Train,
-  Check,
-  Sparkle,
 } from "@phosphor-icons/react";
 import "./Tech.scss";
 
@@ -231,26 +227,26 @@ const Tech = () => {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ delay: 0.4, duration: 0.5 }}
       >
-        <h3>Currently Exploring</h3>
+        <h3>Currently Learning</h3>
         <p className="tech__learning-text">
-          Tools and techniques I'm actively working with:
+          Expanding my toolkit through hands-on projects:
         </p>
         <div className="tech__learning-items">
           <motion.span className="tech__learning-item">
-            <Robot weight="duotone" size={20} />
-            AI-Assisted Development
+            <BracketsCurly weight="duotone" size={20} />
+            Advanced TypeScript
           </motion.span>
           <motion.span className="tech__learning-item">
-            <Train weight="duotone" size={20} />
-            Rails (deeper backend work)
+            <Anchor weight="duotone" size={20} />
+            React Hooks
           </motion.span>
           <motion.span className="tech__learning-item">
-            <Check weight="duotone" size={20} />
-            Accessibility Testing
+            <BookOpen weight="duotone" size={20} />
+            Agile Development
           </motion.span>
           <motion.span className="tech__learning-item">
-            <Sparkle weight="duotone" size={20} />
-            GEO (Generative Engine Optimization)
+            <DeviceMobile weight="duotone" size={20} />
+            Angular Concepts
           </motion.span>
         </div>
       </motion.div>
