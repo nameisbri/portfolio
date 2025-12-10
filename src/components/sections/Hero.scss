@@ -300,7 +300,7 @@
       }
     }
 
-    &--sass {
+    &--css {
       top: 80%;
       left: 60%;
 
@@ -457,21 +457,55 @@
       }
     }
 
-    // WordPress
+    // WordPress (Core Skill)
     &--wordpress {
       top: 62%;
-      left: 70%;
+      left: 28%;
+
+      &.hero__skill--core .hero__skill-inner {
+        padding: $spacing-xs $spacing-md;
+        font-size: 1.15rem;
+        box-shadow: 0 4px 16px rgba(33, 117, 155, 0.3);
+      }
 
       .hero__skill-inner {
         background-color: rgba(33, 117, 155, 0.15);
         border: 1px solid rgba(33, 117, 155, 0.3);
         color: #21759b;
+        padding: $spacing-xs $spacing-md;
+        font-size: 1.15rem;
       }
 
       [data-theme="dark"] & .hero__skill-inner {
         color: #21759b;
         background-color: rgba(33, 117, 155, 0.2);
         border-color: rgba(33, 117, 155, 0.4);
+      }
+    }
+
+    // Rails (Core Skill)
+    &--rails {
+      top: 14%;
+      left: 22%;
+
+      &.hero__skill--core .hero__skill-inner {
+        padding: $spacing-xs $spacing-md;
+        font-size: 1.15rem;
+        box-shadow: 0 4px 16px rgba(204, 0, 0, 0.3);
+      }
+
+      .hero__skill-inner {
+        background-color: rgba(204, 0, 0, 0.15);
+        border: 1px solid rgba(204, 0, 0, 0.3);
+        color: #cc0000;
+        padding: $spacing-xs $spacing-md;
+        font-size: 1.15rem;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #cc0000;
+        background-color: rgba(204, 0, 0, 0.2);
+        border-color: rgba(204, 0, 0, 0, 0.4);
       }
     }
 
@@ -544,6 +578,96 @@
         color: #c63d14;
         background-color: rgba(198, 61, 20, 0.2);
         border-color: rgba(198, 61, 20, 0.4);
+      }
+    }
+
+    // Analytics
+    &--analytics {
+      top: 88%;
+      left: 45%;
+
+      .hero__skill-inner {
+        background-color: rgba(66, 133, 244, 0.15);
+        border: 1px solid rgba(66, 133, 244, 0.3);
+        color: #4285f4;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #4285f4;
+        background-color: rgba(66, 133, 244, 0.2);
+        border-color: rgba(66, 133, 244, 0.4);
+      }
+    }
+
+    // A/B Testing
+    &--abtesting {
+      top: 70%;
+      left: 88%;
+
+      .hero__skill-inner {
+        background-color: rgba(76, 175, 80, 0.15);
+        border: 1px solid rgba(76, 175, 80, 0.3);
+        color: #4caf50;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #4caf50;
+        background-color: rgba(76, 175, 80, 0.2);
+        border-color: rgba(76, 175, 80, 0.4);
+      }
+    }
+
+    // Webflow
+    &--webflow {
+      top: 22%;
+      left: 92%;
+
+      .hero__skill-inner {
+        background-color: rgba(67, 83, 255, 0.15);
+        border: 1px solid rgba(67, 83, 255, 0.3);
+        color: #4353ff;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #4353ff;
+        background-color: rgba(67, 83, 255, 0.2);
+        border-color: rgba(67, 83, 255, 0.4);
+      }
+    }
+
+    // Claude
+    &--claude {
+      top: 34%;
+      left: 12%;
+
+      .hero__skill-inner {
+        background-color: rgba(204, 143, 97, 0.15);
+        border: 1px solid rgba(204, 143, 97, 0.3);
+        color: #cc8f61;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #cc8f61;
+        background-color: rgba(204, 143, 97, 0.2);
+        border-color: rgba(204, 143, 97, 0.4);
+      }
+    }
+
+    // Cursor
+    &--cursor {
+      top: 81%;
+      left: 38%;
+
+      .hero__skill-inner {
+        background-color: rgba(130, 80, 223, 0.15);
+        border: 1px solid rgba(130, 80, 223, 0.3);
+        color: #8250df;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #8250df;
+        background-color: rgba(130, 80, 223, 0.2);
+        border-color: rgba(130, 80, 223, 0.4);
       }
     }
   }

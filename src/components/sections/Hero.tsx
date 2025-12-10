@@ -7,16 +7,17 @@ import {
   PaintBucket,
   Globe,
   FileHtml,
-  DeviceMobile,
   FigmaLogo,
-  PlugsConnected,
-  Intersect,
   GitBranch,
   BracketsSquare,
   BracketsCurly,
-  Bug,
   Coffee,
-  Stack,
+  ChartBar,
+  SplitVertical,
+  Layout,
+  Robot,
+  Cursor as CursorIcon,
+  Train,
 } from "@phosphor-icons/react";
 import "./Hero.scss";
 
@@ -63,7 +64,7 @@ const Hero = () => {
   };
 
   // Create animation controls for each skill
-  const skillControls = Array(18)
+  const skillControls = Array(16)
     .fill(null)
     .map(() => useAnimationControls());
 
@@ -268,9 +269,9 @@ const Hero = () => {
               </motion.div>
             </motion.div>
 
-            {/* Core Skill: TypeScript */}
+            {/* Core Skill: WordPress */}
             <motion.div
-              className="hero__skill hero__skill--ts hero__skill--core"
+              className="hero__skill hero__skill--wordpress hero__skill--core"
               variants={itemVariants}
               custom={2}
               animate={skillControls[2]}
@@ -285,14 +286,14 @@ const Hero = () => {
                 custom={2}
                 initial="animate"
               >
-                <BracketsCurly size={20} weight="duotone" />
-                <span>TypeScript</span>
+                <Globe size={24} weight="duotone" />
+                <span>WordPress</span>
               </motion.div>
             </motion.div>
 
-            {/* Core Skill: Node.js */}
+            {/* Core Skill: Rails */}
             <motion.div
-              className="hero__skill hero__skill--node hero__skill--core"
+              className="hero__skill hero__skill--rails hero__skill--core"
               variants={itemVariants}
               custom={3}
               animate={skillControls[3]}
@@ -307,8 +308,8 @@ const Hero = () => {
                 custom={3}
                 initial="animate"
               >
-                <Coffee size={20} weight="duotone" />
-                <span>Node.js</span>
+                <Train size={24} weight="duotone" />
+                <span>Rails</span>
               </motion.div>
             </motion.div>
 
@@ -330,13 +331,13 @@ const Hero = () => {
                 initial="animate"
               >
                 <FileHtml size={20} weight="duotone" />
-                <span>HTML5</span>
+                <span>HTML</span>
               </motion.div>
             </motion.div>
 
-            {/* CSS & SASS */}
+            {/* CSS */}
             <motion.div
-              className="hero__skill hero__skill--sass"
+              className="hero__skill hero__skill--css"
               variants={itemVariants}
               custom={5}
               animate={skillControls[5]}
@@ -352,13 +353,13 @@ const Hero = () => {
                 initial="animate"
               >
                 <PaintBucket size={20} weight="duotone" />
-                <span>CSS/SCSS</span>
+                <span>CSS</span>
               </motion.div>
             </motion.div>
 
-            {/* React Hooks */}
+            {/* TypeScript */}
             <motion.div
-              className="hero__skill hero__skill--hooks"
+              className="hero__skill hero__skill--ts"
               variants={itemVariants}
               custom={6}
               animate={skillControls[6]}
@@ -373,14 +374,14 @@ const Hero = () => {
                 custom={6}
                 initial="animate"
               >
-                <PlugsConnected size={20} weight="duotone" />
-                <span>React Hooks</span>
+                <BracketsCurly size={20} weight="duotone" />
+                <span>TypeScript</span>
               </motion.div>
             </motion.div>
 
-            {/* REST API */}
+            {/* Node.js */}
             <motion.div
-              className="hero__skill hero__skill--api"
+              className="hero__skill hero__skill--node"
               variants={itemVariants}
               custom={7}
               animate={skillControls[7]}
@@ -395,8 +396,8 @@ const Hero = () => {
                 custom={7}
                 initial="animate"
               >
-                <Globe size={20} weight="duotone" />
-                <span>REST API</span>
+                <Coffee size={20} weight="duotone" />
+                <span>Node.js</span>
               </motion.div>
             </motion.div>
 
@@ -440,13 +441,13 @@ const Hero = () => {
                 initial="animate"
               >
                 <GitBranch size={20} weight="duotone" />
-                <span>Git/GitHub</span>
+                <span>Git</span>
               </motion.div>
             </motion.div>
 
-            {/* Responsive */}
+            {/* Figma */}
             <motion.div
-              className="hero__skill hero__skill--responsive"
+              className="hero__skill hero__skill--figma"
               variants={itemVariants}
               custom={10}
               animate={skillControls[10]}
@@ -461,14 +462,14 @@ const Hero = () => {
                 custom={10}
                 initial="animate"
               >
-                <DeviceMobile size={20} weight="duotone" />
-                <span>Responsive</span>
+                <FigmaLogo size={20} weight="duotone" />
+                <span>Figma</span>
               </motion.div>
             </motion.div>
 
-            {/* Context API */}
+            {/* Analytics */}
             <motion.div
-              className="hero__skill hero__skill--context"
+              className="hero__skill hero__skill--analytics"
               variants={itemVariants}
               custom={11}
               animate={skillControls[11]}
@@ -483,14 +484,14 @@ const Hero = () => {
                 custom={11}
                 initial="animate"
               >
-                <Intersect size={20} weight="duotone" />
-                <span>Context API</span>
+                <ChartBar size={20} weight="duotone" />
+                <span>Analytics</span>
               </motion.div>
             </motion.div>
 
-            {/* WordPress */}
+            {/* A/B Testing */}
             <motion.div
-              className="hero__skill hero__skill--wordpress"
+              className="hero__skill hero__skill--abtesting"
               variants={itemVariants}
               custom={12}
               animate={skillControls[12]}
@@ -505,14 +506,14 @@ const Hero = () => {
                 custom={12}
                 initial="animate"
               >
-                <Globe size={20} weight="duotone" />
-                <span>WordPress</span>
+                <SplitVertical size={20} weight="duotone" />
+                <span>A/B Testing</span>
               </motion.div>
             </motion.div>
 
-            {/* Agile */}
+            {/* Webflow */}
             <motion.div
-              className="hero__skill hero__skill--agile"
+              className="hero__skill hero__skill--webflow"
               variants={itemVariants}
               custom={13}
               animate={skillControls[13]}
@@ -527,14 +528,14 @@ const Hero = () => {
                 custom={13}
                 initial="animate"
               >
-                <PlugsConnected size={20} weight="duotone" />
-                <span>Agile/Jira</span>
+                <Layout size={20} weight="duotone" />
+                <span>Webflow</span>
               </motion.div>
             </motion.div>
 
-            {/* BEM */}
+            {/* Claude */}
             <motion.div
-              className="hero__skill hero__skill--bem"
+              className="hero__skill hero__skill--claude"
               variants={itemVariants}
               custom={14}
               animate={skillControls[14]}
@@ -549,14 +550,14 @@ const Hero = () => {
                 custom={14}
                 initial="animate"
               >
-                <PaintBucket size={20} weight="duotone" />
-                <span>SASS/BEM</span>
+                <Robot size={20} weight="duotone" />
+                <span>Claude</span>
               </motion.div>
             </motion.div>
 
-            {/* Figma */}
+            {/* Cursor */}
             <motion.div
-              className="hero__skill hero__skill--figma"
+              className="hero__skill hero__skill--cursor"
               variants={itemVariants}
               custom={15}
               animate={skillControls[15]}
@@ -571,52 +572,8 @@ const Hero = () => {
                 custom={15}
                 initial="animate"
               >
-                <FigmaLogo size={20} weight="duotone" />
-                <span>Figma</span>
-              </motion.div>
-            </motion.div>
-
-            {/* UI Components */}
-            <motion.div
-              className="hero__skill hero__skill--components"
-              variants={itemVariants}
-              custom={16}
-              animate={skillControls[16]}
-              initial="visible"
-              onHoverStart={() => handleHover(16)}
-              onHoverEnd={handleHoverEnd}
-              role="presentation"
-            >
-              <motion.div
-                className="hero__skill-inner"
-                variants={floatVariants}
-                custom={16}
-                initial="animate"
-              >
-                <Stack size={20} weight="duotone" />
-                <span>UI Components</span>
-              </motion.div>
-            </motion.div>
-
-            {/* Testing */}
-            <motion.div
-              className="hero__skill hero__skill--testing"
-              variants={itemVariants}
-              custom={17}
-              animate={skillControls[17]}
-              initial="visible"
-              onHoverStart={() => handleHover(17)}
-              onHoverEnd={handleHoverEnd}
-              role="presentation"
-            >
-              <motion.div
-                className="hero__skill-inner"
-                variants={floatVariants}
-                custom={17}
-                initial="animate"
-              >
-                <Bug size={20} weight="duotone" />
-                <span>Testing</span>
+                <CursorIcon size={20} weight="duotone" />
+                <span>Cursor</span>
               </motion.div>
             </motion.div>
           </motion.div>
