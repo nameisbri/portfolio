@@ -120,10 +120,7 @@ const Projects = () => {
         Projects
       </h2>
       <p className="projects__subtitle">
-        These projects represent my journey as a developer and my commitment to
-        creating technology with purpose. Each one taught me something valuable
-        about collaboration, problem-solving, and the art of writing code that
-        matters.
+        These projects show how I approach problems: understanding the user need, building something that works, and shipping it. Each one involved coordinating across different constraints and stakeholders.
       </p>
 
       <motion.div

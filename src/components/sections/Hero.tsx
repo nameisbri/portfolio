@@ -169,16 +169,11 @@ const Hero = () => {
           <div className="hero__content">
             <span className="hero__intro">Hi, I'm Gabriela</span>
             <h1 className="hero__title">
-              Building technology that{" "}
-              <span className="text-gradient">feels human</span>
+              <span className="text-gradient">Web Developer</span>
             </h1>
 
             <p className="hero__subtitle">
-              My journey bridges marketing and development—I'm now actively
-              building React applications at Precision Nutrition while bringing
-              my unique perspective on user experience. This dual background
-              allows me to create technology that's both technically sound and
-              genuinely user-focused.
+              I bridge marketing teams and developers, turning campaign ideas into production-ready web pages. 5+ years managing digital experiences for 100,000+ monthly visitors.
             </p>
 
             <div className="hero__buttons">
