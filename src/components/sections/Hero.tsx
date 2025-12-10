@@ -62,10 +62,58 @@ const Hero = () => {
     }),
   };
 
-  // Create animation controls for each skill
-  const skillControls = Array(18)
-    .fill(null)
-    .map(() => useAnimationControls());
+  // Create animation controls for each skill (hooks must not be called in loops)
+  const control0 = useAnimationControls();
+  const control1 = useAnimationControls();
+  const control2 = useAnimationControls();
+  const control3 = useAnimationControls();
+  const control4 = useAnimationControls();
+  const control5 = useAnimationControls();
+  const control6 = useAnimationControls();
+  const control7 = useAnimationControls();
+  const control8 = useAnimationControls();
+  const control9 = useAnimationControls();
+  const control10 = useAnimationControls();
+  const control11 = useAnimationControls();
+  const control12 = useAnimationControls();
+  const control13 = useAnimationControls();
+  const control14 = useAnimationControls();
+  const control15 = useAnimationControls();
+  const control16 = useAnimationControls();
+  const control17 = useAnimationControls();
+  const control18 = useAnimationControls();
+  const control19 = useAnimationControls();
+  const control20 = useAnimationControls();
+  const control21 = useAnimationControls();
+  const control22 = useAnimationControls();
+  const control23 = useAnimationControls();
+
+  const skillControls = [
+    control0,
+    control1,
+    control2,
+    control3,
+    control4,
+    control5,
+    control6,
+    control7,
+    control8,
+    control9,
+    control10,
+    control11,
+    control12,
+    control13,
+    control14,
+    control15,
+    control16,
+    control17,
+    control18,
+    control19,
+    control20,
+    control21,
+    control22,
+    control23,
+  ];
 
   const handleHover = (index: number) => {
     const MAX_ANIMATED_SKILLS = 10;
@@ -169,16 +217,17 @@ const Hero = () => {
           <div className="hero__content">
             <span className="hero__intro">Hi, I'm Gabriela</span>
             <h1 className="hero__title">
-              Building technology that{" "}
-              <span className="text-gradient">feels human</span>
+              Senior Full-Stack Developer with{" "}
+              <span className="text-gradient">Strategic Innovation</span>
             </h1>
 
             <p className="hero__subtitle">
-              My journey bridges marketing and development—I'm now actively
-              building React applications at Precision Nutrition while bringing
-              my unique perspective on user experience. This dual background
-              allows me to create technology that's both technically sound and
-              genuinely user-focused.
+              I leverage 5+ years of proven technical expertise enhanced by
+              modern productivity tools to deliver scalable solutions that drive
+              measurable business outcomes. My unique combination of deep
+              development skills and strategic business acumen enables me to
+              build applications that solve real problems and grow with your
+              business.
             </p>
 
             <div className="hero__buttons">
@@ -604,6 +653,132 @@ const Hero = () => {
               >
                 <Bug size={20} weight="duotone" />
                 <span>Testing</span>
+              </motion.div>
+            </motion.div>
+
+            {/* Express.js */}
+            <motion.div
+              className="hero__skill hero__skill--express"
+              variants={itemVariants}
+              custom={18}
+              animate={skillControls[18]}
+              initial="visible"
+              onHoverStart={() => handleHover(18)}
+              onHoverEnd={handleHoverEnd}
+            >
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={18}
+                initial="animate"
+              >
+                <Stack size={20} weight="duotone" />
+                <span>Express.js</span>
+              </motion.div>
+            </motion.div>
+
+            {/* Prompt Engineering */}
+            <motion.div
+              className="hero__skill hero__skill--prompt"
+              variants={itemVariants}
+              custom={19}
+              animate={skillControls[19]}
+              initial="visible"
+              onHoverStart={() => handleHover(19)}
+              onHoverEnd={handleHoverEnd}
+            >
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={19}
+                initial="animate"
+              >
+                <Code size={20} weight="duotone" />
+                <span>Prompt Engineering</span>
+              </motion.div>
+            </motion.div>
+
+            {/* AI Workflows */}
+            <motion.div
+              className="hero__skill hero__skill--ai"
+              variants={itemVariants}
+              custom={20}
+              animate={skillControls[20]}
+              initial="visible"
+              onHoverStart={() => handleHover(20)}
+              onHoverEnd={handleHoverEnd}
+            >
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={20}
+                initial="animate"
+              >
+                <PlugsConnected size={20} weight={"duotone"} />
+                <span>AI Workflows</span>
+              </motion.div>
+            </motion.div>
+
+            {/* GitHub Copilot */}
+            <motion.div
+              className="hero__skill hero__skill--copilot"
+              variants={itemVariants}
+              custom={21}
+              animate={skillControls[21]}
+              initial="visible"
+              onHoverStart={() => handleHover(21)}
+              onHoverEnd={handleHoverEnd}
+            >
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={21}
+                initial="animate"
+              >
+                <GitBranch size={20} weight="duotone" />
+                <span>GitHub Copilot</span>
+              </motion.div>
+            </motion.div>
+
+            {/* GEO */}
+            <motion.div
+              className="hero__skill hero__skill--geo"
+              variants={itemVariants}
+              custom={22}
+              animate={skillControls[22]}
+              initial="visible"
+              onHoverStart={() => handleHover(22)}
+              onHoverEnd={handleHoverEnd}
+            >
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={22}
+                initial="animate"
+              >
+                <Globe size={20} weight="duotone" />
+                <span>GEO</span>
+              </motion.div>
+            </motion.div>
+
+            {/* Performance Optimization */}
+            <motion.div
+              className="hero__skill hero__skill--performance"
+              variants={itemVariants}
+              custom={23}
+              animate={skillControls[23]}
+              initial="visible"
+              onHoverStart={() => handleHover(23)}
+              onHoverEnd={handleHoverEnd}
+            >
+              <motion.div
+                className="hero__skill-inner"
+                variants={floatVariants}
+                custom={23}
+                initial="animate"
+              >
+                <Intersect size={20} weight="duotone" />
+                <span>Performance Optimization</span>
               </motion.div>
             </motion.div>
           </motion.div>

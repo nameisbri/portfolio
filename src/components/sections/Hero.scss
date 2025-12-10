@@ -301,8 +301,8 @@
     }
 
     &--sass {
-      top: 80%;
-      left: 60%;
+      top: 92%;
+      left: 66%;
 
       .hero__skill-inner {
         background-color: rgba(205, 102, 153, 0.15);
@@ -318,8 +318,8 @@
     }
 
     &--mysql {
-      top: 86%;
-      left: 15%;
+      top: 74%;
+      left: 22%;
 
       .hero__skill-inner {
         background-color: rgba(0, 97, 138, 0.15);
@@ -335,8 +335,8 @@
     }
 
     &--html {
-      top: 20%;
-      left: 78%;
+      top: 12%;
+      left: 94%;
 
       .hero__skill-inner {
         background-color: rgba(227, 76, 38, 0.15);
@@ -369,8 +369,8 @@
     }
 
     &--api {
-      top: 70%;
-      left: 88%;
+      top: 60%;
+      left: 82%;
 
       .hero__skill-inner {
         background-color: rgba(#43a047, 0.15);
@@ -544,6 +544,114 @@
         color: #c63d14;
         background-color: rgba(198, 61, 20, 0.2);
         border-color: rgba(198, 61, 20, 0.4);
+      }
+    }
+
+    // Express.js (medium prominence)
+    &--express {
+      top: 58%;
+      left: 22%;
+
+      .hero__skill-inner {
+        background-color: rgba(#4d4d4d, 0.15);
+        border: 1px solid rgba(#4d4d4d, 0.3);
+        color: #4d4d4d;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #b3b3b3;
+        background-color: rgba(#b3b3b3, 0.2);
+        border-color: rgba(#b3b3b3, 0.4);
+      }
+    }
+
+    // Prompt Engineering (purple)
+    &--prompt {
+      top: 10%;
+      left: 66%;
+
+      .hero__skill-inner {
+        background-color: rgba(#8a2be2, 0.15);
+        border: 1px solid rgba(#8a2be2, 0.3);
+        color: #8a2be2;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #8a2be2;
+        background-color: rgba(#8a2be2, 0.2);
+        border-color: rgba(#8a2be2, 0.4);
+      }
+    }
+
+    // AI Workflows (orange)
+    &--ai {
+      top: 60%;
+      left: 74%;
+
+      .hero__skill-inner {
+        background-color: rgba(#ff8c00, 0.15);
+        border: 1px solid rgba(#ff8c00, 0.3);
+        color: #ff8c00;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #ff8c00;
+        background-color: rgba(#ff8c00, 0.2);
+        border-color: rgba(#ff8c00, 0.4);
+      }
+    }
+
+    // GitHub Copilot (blue)
+    &--copilot {
+      top: 46%;
+      left: 72%;
+
+      .hero__skill-inner {
+        background-color: rgba(#007aff, 0.15);
+        border: 1px solid rgba(#007aff, 0.3);
+        color: #007aff;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #007aff;
+        background-color: rgba(#007aff, 0.2);
+        border-color: rgba(#007aff, 0.4);
+      }
+    }
+
+    // GEO (pink)
+    &--geo {
+      top: 12%;
+      left: 86%;
+
+      .hero__skill-inner {
+        background-color: rgba(#ff1493, 0.15);
+        border: 1px solid rgba(#ff1493, 0.3);
+        color: #ff1493;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #ff1493;
+        background-color: rgba(#ff1493, 0.2);
+        border-color: rgba(#ff1493, 0.4);
+      }
+    }
+
+    // Performance Optimization (teal)
+    &--performance {
+      top: 52%;
+      left: 12%;
+
+      .hero__skill-inner {
+        background-color: rgba(#20c997, 0.15);
+        border: 1px solid rgba(#20c997, 0.3);
+        color: #20c997;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #20c997;
+        background-color: rgba(#20c997, 0.2);
+        border-color: rgba(#20c997, 0.4);
       }
     }
   }
