@@ -121,10 +121,10 @@
     @include transition(transform, background-color);
     min-width: 44px;
     min-height: 44px;
-    @include flex(row, center, center);
 
     @media (max-width: $breakpoint-md) {
       display: flex;
+      @include flex(row, center, center);
     }
 
     &:hover,
