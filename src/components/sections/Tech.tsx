@@ -143,12 +143,14 @@ const Tech = () => {
             className={`tech__item tech__item--${tech.category}`}
             variants={itemVariants}
             whileHover={{
-              scale: 1.05,
-              boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)",
+              scale: 1.08,
+              y: -4,
               transition: { duration: 0.2 },
             }}
           >
-            <div className="tech__icon">{tech.icon}</div>
+            <div className="tech__icon-wrapper">
+              <div className="tech__icon">{tech.icon}</div>
+            </div>
             <span className="tech__name">{tech.name}</span>
           </motion.div>
         ))}
