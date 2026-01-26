@@ -3,7 +3,6 @@ import {
   GithubLogo,
   LinkedinLogo,
   EnvelopeSimple,
-  FileArrowDown,
   MapPin,
 } from "@phosphor-icons/react";
 
@@ -21,7 +20,7 @@ const Footer = () => {
           </div>
           <h2 className="footer__contact-title">Ready to Start Your Project?</h2>
           <p className="footer__contact-text">
-            Let's discuss how I can help bring your product idea to life. I'm available for new projects and would love to hear about what you're building.
+            I'm a Product Designer & Developer specializing in React Native mobile apps, modern web applications, product design, and UX/UI. I leverage AI-assisted development workflows (Cursor, Claude, agent systems) to deliver efficient, high-quality solutions throughout the entire product lifecycle. Available for freelance projects, product design work, and development opportunities—let's bring your vision to life.
           </p>
 
           <ul className="footer__contact-info">
@@ -37,20 +36,11 @@ const Footer = () => {
 
           <div className="footer__cta">
             <a
-              href="mailto:gabriela@gcsb.me?subject=Project%20Inquiry"
+              href="mailto:gabriela@gcsb.me?subject=Inquiry%20for%20Gabriela"
               className="button button--primary footer__contact-btn"
             >
               <EnvelopeSimple weight="bold" size={18} />
-              <span>Start a Conversation</span>
-            </a>
-            <a
-              href="/Resume_Gabriela_Barreira.pdf"
-              download="Resume_Gabriela_Barreira.pdf"
-              target="_blank"
-              className="button button--secondary footer__resume-btn"
-            >
-              <FileArrowDown weight="bold" size={18} />
-              <span>Download Resume</span>
+              <span>Contact Me</span>
             </a>
           </div>
         </div>
@@ -97,6 +87,14 @@ const Footer = () => {
         <p>
           © {new Date().getFullYear()} Gabriela Barreira. All rights reserved.
         </p>
+        <a
+          href="/Resume_Gabriela_Barreira.pdf"
+          download="Resume_Gabriela_Barreira.pdf"
+          target="_blank"
+          className="footer__resume-link"
+        >
+          Download Resume
+        </a>
       </div>
     </footer>
   );

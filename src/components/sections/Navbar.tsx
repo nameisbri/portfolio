@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "../../context/ThemeContext";
-import { Sun, Moon, List, X } from "@phosphor-icons/react";
+import { Sun, Moon, List, X, ArrowRight } from "@phosphor-icons/react";
 import "./Navbar.scss";
 
 const Navbar = () => {
@@ -173,6 +173,15 @@ const Navbar = () => {
             </button>
           </li>
         </ul>
+
+        <a
+          href="#contact"
+          className="navbar__cta-button"
+          onClick={handleNavClick}
+        >
+          <span>Start Project</span>
+          <ArrowRight size={18} weight="bold" />
+        </a>
       </div>
     </nav>
   );

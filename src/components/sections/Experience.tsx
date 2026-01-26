@@ -83,27 +83,11 @@ const Experience = () => {
 
   return (
     <section className="experience" id="experience">
-      <h2 className="section__heading">Experience</h2>
+      <h2 className="section__heading">The Full-Stack Edge</h2>
 
-      <div className="experience__intro-section">
-        <p className="experience__intro">
-          I help businesses and entrepreneurs launch products that drive results. From mobile apps to websites, I handle design and development so you can focus on growing your business.
-        </p>
-        <div className="experience__stats">
-        <div className="experience__stat">
-          <span className="experience__stat-number">8+</span>
-          <span className="experience__stat-label">Years Experience</span>
-        </div>
-          <div className="experience__stat">
-            <span className="experience__stat-number">20+</span>
-            <span className="experience__stat-label">Products Launched</span>
-          </div>
-          <div className="experience__stat">
-            <span className="experience__stat-number">100%</span>
-            <span className="experience__stat-label">Client Satisfaction</span>
-          </div>
-        </div>
-      </div>
+      <p className="experience__intro">
+        Most founders get stuck playing 'telephone' between a designer and a developer. I bridge that gap. With 8+ years of experience and 20+ successful launches, I handle the entire lifecycle. You get the expertise of a full agency with the agility and direct communication of a single dedicated partner.
+      </p>
 
       <div className="experience__tabs">
         <button

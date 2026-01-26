@@ -159,19 +159,20 @@
     line-height: 1.4;
   }
 
-  &__card-outcome {
-    padding: $spacing-xs $spacing-sm;
-    margin: $spacing-xs 0;
-    background-color: rgba(var(--accent-primary), 0.08);
+  &__card-result {
+    padding: $spacing-sm;
+    margin: $spacing-sm $spacing-sm $spacing-xs;
+    background: linear-gradient(135deg, rgba($color-chartreuse, 0.15), rgba($color-bittersweet, 0.1));
     border-left: 3px solid var(--accent-primary);
     border-radius: $border-radius-sm;
-    font-size: 0.85rem;
-    line-height: 1.5;
+    font-size: 0.9rem;
+    font-weight: $font-weight-medium;
     color: var(--text-primary);
+    line-height: 1.5;
 
-    strong {
-      color: var(--accent-primary);
-      font-weight: $font-weight-bold;
+    @media (max-width: $breakpoint-sm) {
+      font-size: 0.85rem;
+      padding: $spacing-xs;
     }
   }
 

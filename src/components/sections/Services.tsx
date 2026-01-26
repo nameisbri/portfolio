@@ -33,7 +33,7 @@ const Services = () => {
       id: "ios-app-development",
       title: "Mobile App Development",
       description:
-        "Launch your app on the App Store and Play Store. I build native-feeling mobile apps with React Native that work beautifully on iOS and Android, delivered faster with modern development practices.",
+        "Native mobile applications built with React Native. I specialize in creating smooth, performant mobile experiences that work beautifully on iOS and Android, delivered faster with modern development practices.",
       icon: <DeviceMobile weight="duotone" />,
     },
     {
@@ -94,7 +94,11 @@ const Services = () => {
     <section className="services" id="services" ref={ref}>
       <h2 className="section__heading">Services</h2>
       <p className="services__subtitle">
-        Everything you need to bring your product idea to life. One person, complete solution—from design to App Store.
+        I offer comprehensive product development services, from initial design
+        concepts to fully functional applications. Whether you need a website, an
+        mobile app, product design, or the complete product lifecycle, I bring
+        technical expertise, design thinking, and AI-enhanced workflows to every
+        project.
       </p>
 
       <motion.div

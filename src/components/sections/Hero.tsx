@@ -1,7 +1,6 @@
 import { motion, useAnimationControls } from "framer-motion";
 import {
   ArrowRight,
-  FileArrowDown,
   PaintBucket,
   Globe,
   DeviceMobile,
@@ -198,80 +197,32 @@ const Hero = () => {
             ease: [0.22, 1, 0.36, 1]
           }}
         >
-          <motion.div 
-            className="hero__content"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <motion.span 
-              className="hero__intro"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              Hi, I'm Gabriela
-            </motion.span>
-            <motion.h1 
-              className="hero__title"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
-            >
-              I Turn Product Ideas Into{" "}
-              <motion.span 
-                style={{ color: "var(--accent-primary)" }}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-              >
-                Profitable Apps & Websites
-              </motion.span>
-            </motion.h1>
+          <div className="hero__content">
+            <h1 className="hero__title">
+              From Idea to App Store in Weeks, Not Months
+            </h1>
 
-            <motion.p 
-              className="hero__subtitle"
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-            >
-              I turn product ideas into profitable apps and websites. From concept to App Store and Play Store, I handle design, development, and launch—delivering results faster with AI-enhanced workflows.
-            </motion.p>
+            <p className="hero__subtitle">
+              I build high-performance mobile apps and conversion-driven websites for founders who need to move fast. By combining Product Design with AI-Accelerated Development, I deliver agency-grade results at startup speed.
+            </p>
 
-            <motion.div 
-              className="hero__availability"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.7 }}
-            >
-              <span className="hero__availability-badge">Available for new projects</span>
-            </motion.div>
-
-            <motion.div 
-              className="hero__buttons"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-            >
+            <div className="hero__buttons">
               <a
                 href="#contact"
                 className="button button--primary hero__cta-btn"
               >
-                <span>Start a Project</span>
+                <span>Start Your Project</span>
                 <ArrowRight weight="bold" />
               </a>
               <a
-                href="/Resume_Gabriela_Barreira.pdf"
-                download="Resume_Gabriela_Barreira.pdf"
-                target="_blank"
-                className="button button--secondary hero__resume-btn"
+                href="#projects"
+                className="button button--secondary hero__view-work-btn"
               >
-                <FileArrowDown weight="bold" />
-                <span>Download Resume</span>
+                <span>View My Work</span>
+                <ArrowRight weight="bold" />
               </a>
-            </motion.div>
-
-          </motion.div>
+            </div>
+          </div>
         </motion.div>
 
         <div className="hero__right">

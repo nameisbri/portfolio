@@ -2,10 +2,13 @@ import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import "./App.scss";
 import Hero from "./components/sections/Hero";
-import Experience from "./components/sections/Experience";
-import Tech from "./components/sections/Tech";
+import SocialProof from "./components/sections/SocialProof";
+import Process from "./components/sections/Process";
 import Projects from "./components/sections/Projects";
 import Services from "./components/sections/Services";
+import Tech from "./components/sections/Tech";
+import Experience from "./components/sections/Experience";
+import ContactForm from "./components/sections/ContactForm";
 import Footer from "./components/sections/Footer";
 import Navbar from "./components/sections/Navbar";
 import Loader from "./components/sections/Loader";
@@ -33,10 +36,13 @@ function App() {
       </header>
       <main id="main-content" className="app__content" role="main">
         <Hero />
+        <SocialProof />
+        <Process />
         <Projects />
         <Services />
         <Tech />
         <Experience />
+        <ContactForm />
       </main>
       <footer role="contentinfo">
         <Footer />

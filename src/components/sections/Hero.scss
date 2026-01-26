@@ -127,6 +127,7 @@
     @media (max-width: $breakpoint-sm) {
       flex-direction: column;
       width: 100%;
+      flex-direction: column;
 
       .button {
         width: 100%;
@@ -150,9 +151,12 @@
     }
   }
 
-  &__resume-btn {
-    padding: $spacing-xs $spacing-md;
+  &__view-work-btn {
+    padding: $spacing-xs $spacing-lg;
     transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-xs;
 
     &:hover {
       transform: translateY(-2px);

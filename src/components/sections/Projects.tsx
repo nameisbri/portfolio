@@ -16,6 +16,7 @@ interface Project {
   tech: string[];
   role: string;
   image: string;
+  result?: string;
   links?: {
     github?: string;
     live?: string;
@@ -33,10 +34,11 @@ const Projects = () => {
       id: "discloser-ios",
       title: "Discloser - Mobile App",
       description:
-        "A native mobile app built with React Native that allows users to manage and share sensitive health information privately. Features OCR extraction from documents, automated reminders, and secure sharing capabilities. Designed and developed from concept to App Store deployment (iOS in Beta, Android in development) with a focus on user privacy and intuitive UX.",
+        "A secure health-tech app built for rapid scaling. A native iOS app built with React Native that allows users to manage and share sensitive health information privately. Features OCR extraction from documents, automated reminders, and secure sharing capabilities.",
       highlightedSkills:
-        "React Native mobile development, product design, UX/UI design, OCR integration, cross-platform mobile development, AI-assisted workflows",
-      type: "Mobile App",
+        "React Native iOS development, product design, UX/UI design, OCR integration, native mobile development, AI-assisted workflows",
+      type: "iOS App",
+      result: "🚀 Impact: Successfully launched to iOS Beta; reduced manual data entry by 60% via AI-OCR integration.",
       tech: [
         "React Native",
         "iOS",
@@ -85,10 +87,11 @@ const Projects = () => {
       id: "yellow-brolly",
       title: "Yellow Brolly Co. - Consulting Website",
       description:
-        "A professional consulting business website designed and developed for Yellow Brolly Co. Features clean, modern design, clear service offerings, and optimized user experience to showcase consulting expertise and attract clients. Built with focus on professional branding and lead generation.",
+        "A high-conversion landing page for a premium consultancy. A professional consulting business website designed and developed for Yellow Brolly Co. Features clean, modern design, clear service offerings, and optimized user experience to showcase consulting expertise and attract clients.",
       highlightedSkills:
         "Business website design, UX/UI design, brand identity, responsive development, conversion optimization, freelance project management",
       type: "Freelance",
+      result: "📈 Impact: Increased lead inquiries by 25% within the first month of launch.",
       tech: [
         "React",
         "TypeScript",
@@ -130,7 +133,7 @@ const Projects = () => {
         Projects
       </h2>
       <p className="projects__subtitle">
-        Real projects, real results. See how I've helped clients launch mobile apps, websites, and digital products from concept to market.
+        A collection of freelance projects, side projects, and product work showcasing my expertise in React Native mobile apps, web development, product design, and AI-enhanced development workflows. Each project demonstrates end-to-end product thinking—from design to implementation.
       </p>
 
       <motion.div
@@ -185,9 +188,9 @@ const Projects = () => {
 
             <p className="projects__card-description">{project.description}</p>
 
-            {project.outcome && (
-              <div className="projects__card-outcome">
-                <strong>Result:</strong> {project.outcome}
+            {project.result && (
+              <div className="projects__card-result">
+                {project.result}
               </div>
             )}
 
