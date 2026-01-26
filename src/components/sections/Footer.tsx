@@ -21,7 +21,7 @@ const Footer = () => {
           </div>
           <h2 className="footer__contact-title">Let's Work Together</h2>
           <p className="footer__contact-text">
-            I'm open to web development, product management, and technical marketing roles. I bring 5+ years of shipping web experiences for high-traffic sites, plus the coordination skills to work across teams. Remote preferred, open to hybrid. Based in Hamilton, Ontario, EU citizen.
+            I'm a Product Designer & Developer specializing in React Native iOS apps, modern web applications, product design, and UX/UI. I leverage AI-assisted development workflows (Cursor, Claude, agent systems) to deliver efficient, high-quality solutions throughout the entire product lifecycle. Available for freelance projects, product design work, and development opportunities—let's bring your vision to life.
           </p>
 
           <ul className="footer__contact-info">
@@ -60,7 +60,7 @@ const Footer = () => {
         <div className="footer__info">
           <h3 className="footer__name">Gabriela Barreira</h3>
           <p className="footer__tagline">
-            Web Developer bridging marketing and engineering
+            Product Designer & Developer
           </p>
         </div>
 

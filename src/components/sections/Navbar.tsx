@@ -97,12 +97,13 @@ const Navbar = () => {
               Projects
             </a>
           </li>
-          <li className="navbar__item" role="menuitem">
-            <a
-              href="#skills"
-              onClick={handleNavClick}
-              tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
-            >
+          <li className="navbar__item">
+            <a href="#services" onClick={handleNavClick}>
+              Services
+            </a>
+          </li>
+          <li className="navbar__item">
+            <a href="#skills" onClick={handleNavClick}>
               Skills
             </a>
           </li>

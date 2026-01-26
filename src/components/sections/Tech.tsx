@@ -1,22 +1,13 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import {
-  Code,
-  Database,
-  Globe,
   BracketsSquare,
   PaintBrush,
-  Lightning,
-  ChartBar,
-  Gear,
   Lightbulb,
   TreeStructure,
   BracketsCurly,
   DeviceMobile,
   Robot,
-  Train,
-  Check,
-  Sparkle,
 } from "@phosphor-icons/react";
 import "./Tech.scss";
 
@@ -32,14 +23,9 @@ const Tech = () => {
 
   const technologies: TechSkill[] = [
     {
-      name: "JavaScript",
-      category: "language",
-      icon: <Code weight="duotone" />,
-    },
-    {
-      name: "TypeScript",
-      category: "language",
-      icon: <BracketsCurly weight="duotone" />,
+      name: "React Native",
+      category: "mobile",
+      icon: <DeviceMobile weight="duotone" />,
     },
     {
       name: "React",
@@ -47,39 +33,24 @@ const Tech = () => {
       icon: <BracketsSquare weight="duotone" />,
     },
     {
-      name: "Node.js",
-      category: "backend",
-      icon: <TreeStructure weight="duotone" />,
+      name: "TypeScript",
+      category: "language",
+      icon: <BracketsCurly weight="duotone" />,
     },
     {
-      name: "Express.js",
-      category: "backend",
-      icon: <Lightning weight="duotone" />,
-    },
-    {
-      name: "HTML5",
-      category: "frontend",
-      icon: <Code weight="duotone" />,
-    },
-    {
-      name: "CSS/SASS",
-      category: "frontend",
+      name: "Product Design",
+      category: "design",
       icon: <PaintBrush weight="duotone" />,
     },
     {
-      name: "MySQL",
-      category: "database",
-      icon: <Database weight="duotone" />,
+      name: "UX/UI Design",
+      category: "design",
+      icon: <Lightbulb weight="duotone" />,
     },
     {
-      name: "REST APIs",
+      name: "Node.js",
       category: "backend",
-      icon: <Globe weight="duotone" />,
-    },
-    {
-      name: "Git/GitHub",
-      category: "tool",
-      icon: <Gear weight="duotone" />,
+      icon: <TreeStructure weight="duotone" />,
     },
     {
       name: "Responsive Design",
@@ -87,29 +58,9 @@ const Tech = () => {
       icon: <DeviceMobile weight="duotone" />,
     },
     {
-      name: "UI/UX",
-      category: "design",
-      icon: <Lightbulb weight="duotone" />,
-    },
-    {
-      name: "Agile/Kanban",
-      category: "methodology",
-      icon: <TreeStructure weight="duotone" />,
-    },
-    {
-      name: "SQL",
-      category: "database",
-      icon: <Database weight="duotone" />,
-    },
-    {
-      name: "TDD/Testing",
-      category: "methodology",
-      icon: <ChartBar weight="duotone" />,
-    },
-    {
-      name: "RESTful Services",
-      category: "backend",
-      icon: <Globe weight="duotone" />,
+      name: "AI-Enhanced Development",
+      category: "ai-tools",
+      icon: <Robot weight="duotone" />,
     },
     {
       name: "WordPress",
@@ -173,7 +124,7 @@ const Tech = () => {
 
       <div className="tech__intro">
         <p>
-          I work across the stack and across teams. My toolkit spans development, content management, design coordination, and analytics. I use AI tools daily to ship faster.
+          I bring together product design, development, and modern AI-enhanced workflows to deliver complete digital solutions. Whether you need an iOS app, a website, or a full product from concept to launch, I have the expertise to make it happen efficiently and beautifully.
         </p>
       </div>
 
@@ -202,56 +153,26 @@ const Tech = () => {
 
       <div className="tech__categories">
         <div className="tech__category-group">
-          <h3 className="tech__category-title">Development</h3>
+          <h3 className="tech__category-title">What I Build</h3>
           <p>
-            JavaScript, React, Rails, HTML/CSS, Node.js, Express, MySQL. I build full-stack web applications and fix bugs in production codebases.
+            iOS apps, responsive websites, and full-stack web applications. I handle everything from the initial design to final deployment, ensuring your product works beautifully across all devices.
           </p>
         </div>
 
         <div className="tech__category-group">
-          <h3 className="tech__category-title">Platforms & Tools</h3>
+          <h3 className="tech__category-title">How I Work</h3>
           <p>
-            WordPress, Google Analytics, Figma. I manage content systems, analyze traffic data, and coordinate with designers.
+            I combine design thinking with technical expertise to create products that look great and work seamlessly. Every project includes thoughtful UX/UI design, clean code, and attention to detail.
           </p>
         </div>
 
         <div className="tech__category-group">
-          <h3 className="tech__category-title">AI Workflow</h3>
+          <h3 className="tech__category-title">Why It's Efficient</h3>
           <p>
-            Claude, Cursor, ChatGPT. I use AI tools for code review, debugging, and content strategy. They're part of my daily workflow, not buzzwords.
+            I leverage modern AI-assisted development tools and workflows to deliver high-quality results faster. This means you get your product sooner without compromising on quality or design.
           </p>
         </div>
       </div>
-
-      <motion.div
-        className="tech__learning"
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ delay: 0.4, duration: 0.5 }}
-      >
-        <h3>Currently Exploring</h3>
-        <p className="tech__learning-text">
-          Tools and techniques I'm actively working with:
-        </p>
-        <div className="tech__learning-items">
-          <motion.span className="tech__learning-item">
-            <Robot weight="duotone" size={20} />
-            AI-Assisted Development
-          </motion.span>
-          <motion.span className="tech__learning-item">
-            <Train weight="duotone" size={20} />
-            Rails (deeper backend work)
-          </motion.span>
-          <motion.span className="tech__learning-item">
-            <Check weight="duotone" size={20} />
-            Accessibility Testing
-          </motion.span>
-          <motion.span className="tech__learning-item">
-            <Sparkle weight="duotone" size={20} />
-            GEO (Generative Engine Optimization)
-          </motion.span>
-        </div>
-      </motion.div>
     </section>
   );
 };

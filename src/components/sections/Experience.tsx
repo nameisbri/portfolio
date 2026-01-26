@@ -7,39 +7,24 @@ type ExperienceType = "work" | "education" | "skills";
 
 const workExperience = [
   {
-    title: "Junior Developer & Web Content Manager",
+    title: "Freelance Product Designer & Developer",
+    company: "Independent",
+    period: "2018 - Present",
+    location: "Remote",
+    description: [
+      "Design and develop iOS apps, websites, and digital products for clients across various industries",
+      "Deliver end-to-end solutions from initial concept through design, development, and launch",
+      "Leverage AI-enhanced workflows to provide efficient, high-quality results for freelance clients",
+    ],
+  },
+  {
+    title: "Web Developer",
     company: "Precision Nutrition",
     period: "Jul 2020 - Present",
     location: "Remote",
     description: [
-      "Manage web content lifecycle for health platform serving 100,000+ monthly visitors, including WordPress publishing, HTML formatting, and document conversions with citation systems",
-      "Build landing pages and implement A/B tests for pop-ups, lead magnets, and campaign assets",
-      "Fix bugs and complete feature tickets in Rails codebase, contributing to tech debt reduction",
-      "Analyze traffic and engagement data in Google Analytics and Search Console to inform content placement decisions",
-      "Coordinate across designers (Figma), copywriters, product owners, and partnership leads through PR workflows and Slack",
-      "Conduct cross-browser and functional QA before launches",
-    ],
-  },
-  {
-    title: "Web Marketing Coordinator",
-    company: "EF Educational Tours",
-    period: "Jul 2019 - Jun 2020",
-    location: "Toronto, ON",
-    description: [
-      "Developed content optimization strategies that boosted user engagement by 20%, utilizing A/B testing methodologies similar to software testing principles",
-      "Built comprehensive web analytics dashboards using SQL and Google Analytics, demonstrating data visualization and database query capabilities essential for modern development roles",
-      "Collaborated with international teams across multiple time zones, developing the communication skills needed for distributed software development environments",
-    ],
-  },
-  {
-    title: "e-Commerce Manager",
-    company: "BOXPT Equipment",
-    period: "Jan 2018 - Jun 2019",
-    location: "Porto, Portugal",
-    description: [
-      "Managed e-commerce platform technical configurations, gaining hands-on experience with frontend customization and integration with payment systems",
-      "Orchestrated digital inventory system for 500+ SKUs, implementing database organization principles and optimization techniques transferable to software development",
-      "Executed technical SEO improvements and platform optimizations that increased site performance and drove 10% growth in traffic through systematic problem analysis",
+      "Full-stack development including React application rebuilds and modern web development",
+      "Focus on user experience, responsive design, and delivering quality technical solutions",
     ],
   },
 ];
@@ -65,32 +50,30 @@ const educationExperience = [
 
 const skillsExperience = [
   {
-    category: "Technical Skills",
+    category: "What I Deliver",
     skills: [
-      "Frontend: JavaScript, TypeScript, React, HTML5, CSS3/SCSS, Responsive Design",
-      "Backend: Node.js, Express.js, RESTful API Development, Authentication Systems",
-      "Database: MySQL, Database Design, SQL Query Optimization",
-      "Tools & Methods: Git/GitHub, Agile/Kanban, CI/CD Concepts",
-      "Testing: Unit Testing, End-to-End Testing Concepts, QA Methodology",
-    ],
-  },
-  {
-    category: "Professional Strengths",
-    skills: [
-      "Technical Problem Solving: Systematic debugging, analytical thinking, optimization strategies",
-      "Project Management: Cross-functional coordination, timeline management, stakeholder communication",
-      "User Advocacy: User experience principles, accessibility considerations, performance optimization",
-      "Data Analysis: Metrics interpretation, visualization creation, data-driven decision making",
-      "Technical Communication: Documentation, requirements gathering, cross-department translation",
+      "Complete iOS apps built with React Native, from design to App Store deployment",
+      "Modern, responsive websites that work beautifully on all devices",
+      "Full product development from initial concept through launch",
+      "Professional design that reflects your brand and engages your users",
     ],
   },
   {
     category: "How I Work",
     skills: [
-      "Cross-functional coordination: I work with designers in Figma, developers in PRs, copywriters in Slack, and stakeholders in Basecamp. Getting everyone aligned is half the job.",
-      "AI-enhanced workflow: I use Claude and Cursor for code review and debugging, ChatGPT for content strategy, Perplexity for research. These tools are part of my daily work, not buzzwords.",
-      "Data-informed decisions: I pull analytics from GA and Search Console to figure out what's working and what needs to change.",
-      "Ship and iterate: I'd rather get something live and improve it than wait for perfect. QA it, launch it, learn from it.",
+      "Clear communication and regular updates throughout the project",
+      "Efficient workflows using modern AI-assisted development tools",
+      "Focus on quality and attention to detail in every deliverable",
+      "Flexible collaboration that fits your timeline and needs",
+    ],
+  },
+  {
+    category: "Why Choose Me",
+    skills: [
+      "End-to-end capability: I handle both design and development, so you work with one person",
+      "Modern approach: AI-enhanced workflows mean faster delivery without sacrificing quality",
+      "Proven results: See my work in the projects above—real products, real clients",
+      "Client-focused: Your success is my success, and I'm committed to delivering value",
     ],
   },
 ];
@@ -103,7 +86,7 @@ const Experience = () => {
       <h2 className="section__heading">Experience</h2>
 
       <p className="experience__intro">
-        I've spent 5+ years at the intersection of marketing and development. I build landing pages, manage content systems, implement A/B tests, and fix bugs in production codebases. The throughline is getting things out the door while coordinating across designers, developers, copywriters, and stakeholders.
+        I help businesses and entrepreneurs bring their digital product ideas to life. From iOS apps to websites, I handle the entire process—design, development, and launch—so you can focus on your business. My approach combines thoughtful design, modern development practices, and AI-enhanced workflows to deliver results efficiently without compromising quality.
       </p>
 
       <div className="experience__tabs">
@@ -216,6 +199,16 @@ const Experience = () => {
                 </ul>
               </motion.div>
             ))}
+            <motion.div
+              className="experience__skills-note"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <p>
+                Ready to bring your product idea to life? I work with businesses, entrepreneurs, and organizations to create iOS apps, websites, and digital products that make an impact. Let's discuss your project and see how I can help you achieve your goals.
+              </p>
+            </motion.div>
           </div>
         )}
       </div>
