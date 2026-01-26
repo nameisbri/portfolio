@@ -91,10 +91,11 @@
 @mixin button-styles($type: "primary") {
   border-radius: $border-radius-md;
   font-family: $font-family-primary;
-  font-weight: $font-weight-medium;
-  padding: $spacing-xs $spacing-md;
+  font-weight: $font-weight-bold;
+  padding: $spacing-sm $spacing-lg;
   cursor: pointer;
   @include transition(transform, background-color, color, box-shadow);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 
   @if $type == "primary" {
     background-color: var(--accent-primary);
@@ -104,18 +105,20 @@
     &:hover,
     &:focus {
       transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
       color: white !important; // Ensure text stays white on red button
     }
   } @else if $type == "secondary" {
     background-color: transparent;
     color: var(--accent-primary);
     border: 1px solid var(--accent-primary);
+    box-shadow: none;
 
     &:hover,
     &:focus {
       background-color: var(--accent-primary);
       color: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
   }
 }

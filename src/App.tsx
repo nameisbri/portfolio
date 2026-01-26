@@ -11,6 +11,7 @@ import Experience from "./components/sections/Experience";
 import ContactForm from "./components/sections/ContactForm";
 import Footer from "./components/sections/Footer";
 import Navbar from "./components/sections/Navbar";
+import FloatingCTA from "./components/sections/FloatingCTA";
 import Loader from "./components/sections/Loader";
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
       <footer role="contentinfo">
         <Footer />
       </footer>
+      <FloatingCTA />
     </div>
   );
 }

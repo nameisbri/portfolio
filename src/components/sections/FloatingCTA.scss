@@ -1,0 +1,69 @@
+@use "../../index.scss" as *;
+
+.floating-cta {
+  position: fixed;
+  bottom: $spacing-lg;
+  right: $spacing-lg;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: $spacing-sm $spacing-lg;
+  background: var(--accent-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: $border-radius-full;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  font-weight: $font-weight-bold;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+    color: white !important;
+    text-decoration: none !important;
+  }
+
+  &:visited,
+  &:active,
+  &:link {
+    color: white;
+    text-decoration: none;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &__text {
+    display: inline-block;
+  }
+
+  &__icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover &__icon {
+    transform: translateX(3px);
+  }
+
+  @media (max-width: $breakpoint-md) {
+    bottom: $spacing-md;
+    right: $spacing-md;
+    font-size: 0.85rem;
+    padding: $spacing-xs $spacing-md;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    bottom: $spacing-sm;
+    right: $spacing-sm;
+    font-size: 0.8rem;
+    padding: calc($spacing-xs * 0.9) calc($spacing-md * 0.9);
+  }
+}

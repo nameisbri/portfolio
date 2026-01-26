@@ -217,8 +217,8 @@ body {
   border-radius: 2px;
 }
 
-a:focus:not(.button),
-a:hover:not(.button) {
+a:focus:not(.button):not(.floating-cta),
+a:hover:not(.button):not(.floating-cta) {
   /* Text decoration to make links more obvious */
   text-decoration: underline;
   /* Ensure color change is significant */

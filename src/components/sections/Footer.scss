@@ -124,14 +124,7 @@
     @include flex(row, center, center, $spacing-xs);
     flex: 1;
     min-width: 200px;
-    font-weight: $font-weight-bold;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-    }
+    // Styles now handled by button mixin
   }
 
   &__resume-btn {
