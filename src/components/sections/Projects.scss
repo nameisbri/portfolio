@@ -40,56 +40,6 @@
       grid-template-columns: repeat(2, 1fr);
       gap: $spacing-lg;
     }
-
-    // First project spans full width for visual interest
-    @media (min-width: $breakpoint-md) {
-      .projects__card:first-child {
-        grid-column: 1 / -1;
-        display: grid;
-        grid-template-columns: 1.2fr 1fr;
-        gap: $spacing-xl;
-        align-items: start;
-        padding: $spacing-lg;
-
-        .projects__image-container {
-          height: 100%;
-          min-height: 350px;
-          border-radius: $border-radius-md;
-          overflow: hidden;
-        }
-
-        .projects__card-title {
-          padding: 0;
-          margin-bottom: $spacing-sm;
-          font-size: 1.4rem;
-        }
-
-        .projects__card-tech {
-          padding: 0;
-          margin-bottom: $spacing-sm;
-        }
-
-        .projects__card-description {
-          padding: 0;
-          font-size: 1rem;
-        }
-
-        .projects__card-outcome {
-          padding: $spacing-sm;
-          margin: $spacing-sm 0;
-        }
-
-        .projects__card-skills,
-        .projects__card-role {
-          padding: 0;
-        }
-
-        .projects__card-links {
-          padding: $spacing-md 0 0;
-          border-top: none;
-        }
-      }
-    }
   }
 
   &__card {
