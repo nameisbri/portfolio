@@ -1,6 +1,8 @@
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 import { PaperPlaneTilt } from "@phosphor-icons/react";
+import emailjs from "@emailjs/browser";
+import { EMAILJS_CONFIG } from "../../config/emailjs.config";
 import "./ContactForm.scss";
 
 const ContactForm = () => {
@@ -33,43 +35,59 @@ const ContactForm = () => {
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
-    // Create mailto link with form data
-    const subject = encodeURIComponent(`Strategy Call Request: ${formData.projectType}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\n` +
-        `Company: ${formData.company || "N/A"}\n` +
-        `Email: ${formData.email}\n` +
-        `Phone: ${formData.phone || "N/A"}\n` +
-        `Project Type: ${formData.projectType}\n` +
-        `Primary Goal: ${formData.primaryGoal}\n` +
-        `Budget: ${formData.budget}\n` +
-        `Desired Launch Date: ${formData.launchDate || "Not specified"}\n\n` +
-        `Project Details:\n${formData.message}`
-    );
+    try {
+      // Format launch date for display
+      const formattedLaunchDate = formData.launchDate
+        ? new Date(formData.launchDate).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })
+        : "Not specified";
 
-    // Open email client
-    window.location.href = `mailto:gabriela@gcsb.me?subject=${subject}&body=${body}`;
+      // Send email via EmailJS
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          company: formData.company || "N/A",
+          phone: formData.phone || "N/A",
+          project_type: formData.projectType,
+          primary_goal: formData.primaryGoal,
+          budget: formData.budget,
+          launch_date: formattedLaunchDate,
+          message: formData.message,
+          subject: `Strategy Call Request: ${formData.projectType}`,
+        },
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
 
-    // Simulate success (since mailto doesn't provide feedback)
-    setTimeout(() => {
-      setIsSubmitting(false);
+      // Success - reset form
       setSubmitStatus("success");
-      // Reset form after a delay
+      setFormData({
+        name: "",
+        company: "",
+        email: "",
+        phone: "",
+        projectType: "",
+        primaryGoal: "",
+        budget: "",
+        launchDate: "",
+        message: "",
+      });
+
+      // Reset status after 5 seconds
       setTimeout(() => {
-        setFormData({
-          name: "",
-          company: "",
-          email: "",
-          phone: "",
-          projectType: "",
-          primaryGoal: "",
-          budget: "",
-          launchDate: "",
-          message: "",
-        });
         setSubmitStatus("idle");
-      }, 3000);
-    }, 500);
+      }, 5000);
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -236,8 +254,7 @@ const ContactForm = () => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              Thanks! Your email client should open shortly. If it doesn't, please email me directly at{" "}
-              <a href="mailto:gabriela@gcsb.me">gabriela@gcsb.me</a>
+              ✓ Message sent successfully! I'll review your project details and get back to you within 24 hours.
             </motion.p>
           )}
 
