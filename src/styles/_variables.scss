@@ -1,22 +1,22 @@
-$font-family-primary: "Outfit", system-ui, sans-serif;
-$font-family-secondary: "Space Grotesk", monospace;
+$font-family-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+$font-family-secondary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
 $line-height: 1.45;
 $font-weight-regular: 400;
 $font-weight-medium: 500;
 $font-weight-bold: 700;
 
 $color-dark-green: #041f1e;
-$color-bittersweet: #f25757;
+$color-bittersweet: #c73636; // More muted, professional red
 $color-violet: #522b47;
-$color-chartreuse: #e0ff4f;
+$color-chartreuse: #5b8fa8; // Muted teal-blue instead of bright chartreuse
 $color-timberwolf: #eadeda;
 
 $light-text-primary: darken($color-dark-green, 5%);
 $light-text-secondary: darken($color-violet, 10%);
 $light-background-primary: $color-timberwolf;
 $light-background-secondary: #ffffff;
-$light-accent-primary: darken($color-bittersweet, 10%);
-$light-accent-secondary: $color-violet;
+$light-accent-primary: $color-bittersweet; // Use muted red directly
+$light-accent-secondary: $color-chartreuse; // Use muted teal-blue
 $light-button-background: rgba($color-timberwolf, 0.7);
 $light-button-hover: $color-bittersweet;
 $light-border-color: rgba($color-violet, 0.2);
@@ -26,8 +26,8 @@ $dark-text-primary: $color-timberwolf;
 $dark-text-secondary: rgba($color-timberwolf, 0.7);
 $dark-background-primary: $color-dark-green;
 $dark-background-secondary: lighten($color-dark-green, 3%);
-$dark-accent-primary: $color-bittersweet;
-$dark-accent-secondary: $color-chartreuse;
+$dark-accent-primary: lighten($color-bittersweet, 8%); // Slightly lighter for dark mode
+$dark-accent-secondary: lighten($color-chartreuse, 10%); // Slightly lighter for dark mode
 $dark-button-background: rgba($color-violet, 0.7);
 $dark-button-hover: $color-chartreuse;
 $dark-border-color: rgba($color-timberwolf, 0.2);
@@ -51,9 +51,9 @@ $transition-normal: 0.25s ease;
 $transition-slow: 0.4s ease;
 
 $border-radius-sm: 4px;
-$border-radius-md: 8px;
-$border-radius-lg: 12px;
-$border-radius-xl: 24px;
+$border-radius-md: 6px;
+$border-radius-lg: 8px;
+$border-radius-xl: 12px;
 $border-radius-full: 9999px;
 
 $project-capstone: $color-bittersweet;

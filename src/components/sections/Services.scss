@@ -53,16 +53,12 @@
     width: 56px;
     height: 56px;
     border-radius: $border-radius-md;
-    background: linear-gradient(
-      135deg,
-      var(--accent-primary),
-      var(--accent-secondary)
-    );
+    background: var(--accent-primary);
     @include flex(row, center, center);
     margin-bottom: $spacing-md;
     color: white;
     font-size: 28px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
     svg {
       width: 28px;

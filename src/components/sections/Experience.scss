@@ -98,11 +98,7 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: linear-gradient(
-        to right,
-        var(--accent-primary),
-        var(--accent-secondary)
-      );
+      background: var(--accent-primary);
       @include transition(width);
     }
 
@@ -140,7 +136,6 @@
       background: linear-gradient(
         to bottom,
         var(--accent-primary),
-        var(--accent-secondary),
         transparent
       );
       opacity: 0.25;

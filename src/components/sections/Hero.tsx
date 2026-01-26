@@ -197,7 +197,7 @@ const Hero = () => {
             <span className="hero__intro">Hi, I'm Gabriela</span>
             <h1 className="hero__title">
               I Turn Product Ideas Into{" "}
-              <span className="text-gradient">Profitable Apps & Websites</span>
+              <span style={{ color: "var(--accent-primary)" }}>Profitable Apps & Websites</span>
             </h1>
 
             <p className="hero__subtitle">

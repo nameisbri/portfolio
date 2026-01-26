@@ -18,10 +18,10 @@
   }
 
   &__logo {
-    font-family: $font-family-secondary;
+    font-family: $font-family-primary;
     font-size: 1.3rem;
     font-weight: $font-weight-bold;
-    @include text-gradient(var(--accent-primary), var(--accent-secondary));
+    color: var(--accent-primary);
     text-decoration: none;
   }
 
@@ -57,11 +57,7 @@
         left: 0;
         width: 0;
         height: 2px;
-        background: linear-gradient(
-          to right,
-          var(--accent-primary),
-          var(--accent-secondary)
-        );
+        background: var(--accent-primary);
         @include transition(width);
         border-radius: $border-radius-full;
       }
