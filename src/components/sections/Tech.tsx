@@ -8,6 +8,9 @@ import {
   BracketsCurly,
   DeviceMobile,
   Robot,
+  Globe,
+  Code,
+  ChartBar,
 } from "@phosphor-icons/react";
 import "./Tech.scss";
 
