@@ -31,9 +31,9 @@ const Services = () => {
     },
     {
       id: "ios-app-development",
-      title: "iOS App Development",
+      title: "Mobile App Development",
       description:
-        "Launch your app on the App Store. I build native-feeling iOS apps that users love, delivered faster with modern development practices.",
+        "Launch your app on the App Store and Play Store. I build native-feeling mobile apps with React Native that work beautifully on iOS and Android, delivered faster with modern development practices.",
       icon: <DeviceMobile weight="duotone" />,
     },
     {

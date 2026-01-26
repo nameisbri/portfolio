@@ -235,7 +235,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              I turn product ideas into profitable apps and websites. From concept to App Store, I handle design, development, and launch—delivering results faster with AI-enhanced workflows.
+              I turn product ideas into profitable apps and websites. From concept to App Store and Play Store, I handle design, development, and launch—delivering results faster with AI-enhanced workflows.
             </motion.p>
 
             <motion.div 
@@ -299,7 +299,7 @@ const Hero = () => {
                 initial="animate"
               >
                 <DeviceMobile size={24} weight="duotone" />
-                <span>iOS Apps</span>
+                <span>Mobile Apps</span>
               </motion.div>
             </motion.div>
 

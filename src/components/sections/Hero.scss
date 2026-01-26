@@ -256,9 +256,16 @@
     }
 
     @media (max-width: $breakpoint-md) {
-      height: 250px;
-      margin: 0 auto;
-      opacity: 0.6; // Reduced but still visible on mobile
+      height: 280px;
+      margin: $spacing-md auto;
+      opacity: 0.6;
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 $spacing-sm;
     }
   }
 

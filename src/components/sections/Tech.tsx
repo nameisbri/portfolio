@@ -127,7 +127,7 @@ const Tech = () => {
 
       <div className="tech__intro">
         <p>
-          I bring together product design, development, and modern AI-enhanced workflows to deliver complete digital solutions. Whether you need an iOS app, a website, or a full product from concept to launch, I have the expertise to make it happen efficiently and beautifully.
+          I bring together product design, development, and modern AI-enhanced workflows to deliver complete digital solutions. Whether you need a mobile app, a website, or a full product from concept to launch, I have the expertise to make it happen efficiently and beautifully.
         </p>
       </div>
 
@@ -158,7 +158,7 @@ const Tech = () => {
         <div className="tech__category-group">
           <h3 className="tech__category-title">What I Build</h3>
           <p>
-            iOS apps, responsive websites, and full-stack web applications. I handle everything from the initial design to final deployment, ensuring your product works beautifully across all devices.
+            Mobile apps (iOS & Android), responsive websites, and full-stack web applications. I handle everything from the initial design to final deployment, ensuring your product works beautifully across all devices.
           </p>
         </div>
 

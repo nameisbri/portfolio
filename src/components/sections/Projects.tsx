@@ -31,15 +31,16 @@ const Projects = () => {
   const projects: Project[] = [
     {
       id: "discloser-ios",
-      title: "Discloser - iOS App",
+      title: "Discloser - Mobile App",
       description:
-        "A native iOS app built with React Native that allows users to manage and share sensitive health information privately. Features OCR extraction from documents, automated reminders, and secure sharing capabilities. Designed and developed from concept to App Store deployment with a focus on user privacy and intuitive UX.",
+        "A native mobile app built with React Native that allows users to manage and share sensitive health information privately. Features OCR extraction from documents, automated reminders, and secure sharing capabilities. Designed and developed from concept to App Store deployment (iOS in Beta, Android in development) with a focus on user privacy and intuitive UX.",
       highlightedSkills:
-        "React Native iOS development, product design, UX/UI design, OCR integration, native mobile development, AI-assisted workflows",
-      type: "iOS App",
+        "React Native mobile development, product design, UX/UI design, OCR integration, cross-platform mobile development, AI-assisted workflows",
+      type: "Mobile App",
       tech: [
         "React Native",
         "iOS",
+        "Android",
         "JavaScript",
         "Node.js",
         "Express",
@@ -54,13 +55,13 @@ const Projects = () => {
         live: "https://discloser.app",
         liveLabel: "Visit Landing Page",
       },
-      outcome: "Successfully launched on App Store • Complete product lifecycle from design to deployment",
+      outcome: "iOS Beta live • Android in development • Complete product lifecycle from design to deployment",
     },
     {
       id: "discloser-landing",
       title: "Discloser - Landing Page",
       description:
-        "A modern, conversion-focused landing page designed and developed for the Discloser iOS app. Features responsive design, clear value proposition, and seamless user experience to drive app downloads. Built with attention to UX principles and conversion optimization.",
+        "A modern, conversion-focused landing page designed and developed for the Discloser mobile app. Features responsive design, clear value proposition, and seamless user experience to drive app downloads. Built with attention to UX principles and conversion optimization.",
       highlightedSkills:
         "Web design, UX/UI design, responsive development, conversion optimization, product marketing, AI-assisted development",
       type: "Web Design",
@@ -129,7 +130,7 @@ const Projects = () => {
         Projects
       </h2>
       <p className="projects__subtitle">
-        Real projects, real results. See how I've helped clients launch iOS apps, websites, and digital products from concept to market.
+        Real projects, real results. See how I've helped clients launch mobile apps, websites, and digital products from concept to market.
       </p>
 
       <motion.div
