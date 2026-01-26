@@ -12,12 +12,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 3px;
-    background: linear-gradient(
-      to right,
-      var(--accent-primary),
-      var(--accent-secondary)
-    );
+    height: 2px;
+    background: var(--accent-primary);
   }
 
   &::after {
@@ -72,7 +68,7 @@
   &__contact-title {
     font-size: 1.8rem;
     margin-bottom: $spacing-sm;
-    @include text-gradient(var(--accent-primary), var(--accent-secondary));
+    color: var(--accent-primary);
     @media (max-width: $breakpoint-sm) {
       font-size: 1.5rem;
     }
@@ -112,24 +108,36 @@
   }
 
   &__cta {
-    margin-top: $spacing-md;
+    margin-top: $spacing-lg;
     display: flex;
     flex-wrap: wrap;
-    gap: $spacing-sm;
+    gap: $spacing-md;
+    justify-content: center;
 
     @media (max-width: $breakpoint-md) {
       flex-direction: column;
+      gap: $spacing-sm;
+    }
+  }
+
+  &__contact-btn {
+    @include flex(row, center, center, $spacing-xs);
+    flex: 1;
+    min-width: 200px;
+    font-weight: $font-weight-bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     }
   }
 
   &__resume-btn {
     @include flex(row, center, center, $spacing-xs);
     flex: 1;
-  }
-
-  &__contact-btn {
-    @include flex(row, center, center, $spacing-xs);
-    flex: 1;
+    min-width: 200px;
   }
 
   &__content {
@@ -159,7 +167,7 @@
   &__name {
     font-size: 1.3rem;
     margin-bottom: $spacing-xs/2;
-    @include text-gradient(var(--accent-primary), var(--accent-secondary));
+    color: var(--accent-primary);
   }
 
   &__tagline {

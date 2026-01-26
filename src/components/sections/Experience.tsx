@@ -9,10 +9,10 @@ const workExperience = [
   {
     title: "Freelance Product Designer & Developer",
     company: "Independent",
-    period: "2018 - Present",
+    period: "2016 - Present",
     location: "Remote",
     description: [
-      "Design and develop iOS apps, websites, and digital products for clients across various industries",
+      "Design and develop mobile apps, websites, and digital products for clients across various industries",
       "Deliver end-to-end solutions from initial concept through design, development, and launch",
       "Leverage AI-enhanced workflows to provide efficient, high-quality results for freelance clients",
     ],
@@ -52,7 +52,7 @@ const skillsExperience = [
   {
     category: "What I Deliver",
     skills: [
-      "Complete iOS apps built with React Native, from design to App Store deployment",
+      "Complete mobile apps built with React Native, from design to App Store and Play Store deployment",
       "Modern, responsive websites that work beautifully on all devices",
       "Full product development from initial concept through launch",
       "Professional design that reflects your brand and engages your users",
@@ -85,9 +85,25 @@ const Experience = () => {
     <section className="experience" id="experience">
       <h2 className="section__heading">Experience</h2>
 
-      <p className="experience__intro">
-        I help businesses and entrepreneurs bring their digital product ideas to life. From iOS apps to websites, I handle the entire process—design, development, and launch—so you can focus on your business. My approach combines thoughtful design, modern development practices, and AI-enhanced workflows to deliver results efficiently without compromising quality.
-      </p>
+      <div className="experience__intro-section">
+        <p className="experience__intro">
+          I help businesses and entrepreneurs launch products that drive results. From mobile apps to websites, I handle design and development so you can focus on growing your business.
+        </p>
+        <div className="experience__stats">
+        <div className="experience__stat">
+          <span className="experience__stat-number">8+</span>
+          <span className="experience__stat-label">Years Experience</span>
+        </div>
+          <div className="experience__stat">
+            <span className="experience__stat-number">20+</span>
+            <span className="experience__stat-label">Products Launched</span>
+          </div>
+          <div className="experience__stat">
+            <span className="experience__stat-number">100%</span>
+            <span className="experience__stat-label">Client Satisfaction</span>
+          </div>
+        </div>
+      </div>
 
       <div className="experience__tabs">
         <button
@@ -206,7 +222,7 @@ const Experience = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <p>
-                Ready to bring your product idea to life? I work with businesses, entrepreneurs, and organizations to create iOS apps, websites, and digital products that make an impact. Let's discuss your project and see how I can help you achieve your goals.
+                Ready to bring your product idea to life? I work with businesses, entrepreneurs, and organizations to create mobile apps, websites, and digital products that make an impact. Let's discuss your project and see how I can help you achieve your goals.
               </p>
             </motion.div>
           </div>
