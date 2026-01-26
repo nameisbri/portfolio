@@ -116,10 +116,23 @@
     border: none;
     color: var(--text-primary);
     cursor: pointer;
-    padding: $spacing-xs/2;
+    padding: $spacing-xs;
+    border-radius: $border-radius-sm;
+    @include transition(transform, background-color);
+    min-width: 44px;
+    min-height: 44px;
+    @include flex(row, center, center);
 
     @media (max-width: $breakpoint-md) {
-      display: block;
+      display: flex;
+    }
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+      background-color: rgba(var(--accent-primary), 0.1);
+      outline: 2px solid var(--accent-primary);
+      outline-offset: 2px;
     }
   }
 
@@ -149,12 +162,21 @@
 
     &__item {
       width: 100%;
-      margin-bottom: $spacing-sm;
+      margin-bottom: $spacing-xs;
 
       a {
         display: block;
-        padding: $spacing-sm;
+        padding: $spacing-md;
         font-size: 1.1rem;
+        min-height: 44px;
+        @include flex(row, flex-start, center);
+        border-radius: $border-radius-sm;
+        @include transition(background-color);
+
+        &:hover,
+        &:focus {
+          background-color: rgba(var(--accent-primary), 0.1);
+        }
       }
     }
   }

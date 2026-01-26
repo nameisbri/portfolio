@@ -37,20 +37,20 @@ const Footer = () => {
 
           <div className="footer__cta">
             <a
-              href="/Resume_Gabriela_Barreira.pdf"
-              download="Resume_Gabriela_Barreira.pdf"
-              target="_blank"
-              className="button button--primary footer__resume-btn"
-            >
-              <FileArrowDown weight="bold" size={18} />
-              <span>Download Resume</span>
-            </a>
-            <a
               href="mailto:gabriela@gcsb.me?subject=Project%20Inquiry"
               className="button button--primary footer__contact-btn"
             >
               <EnvelopeSimple weight="bold" size={18} />
-              <span>Get Started</span>
+              <span>Start a Conversation</span>
+            </a>
+            <a
+              href="/Resume_Gabriela_Barreira.pdf"
+              download="Resume_Gabriela_Barreira.pdf"
+              target="_blank"
+              className="button button--secondary footer__resume-btn"
+            >
+              <FileArrowDown weight="bold" size={18} />
+              <span>Download Resume</span>
             </a>
           </div>
         </div>

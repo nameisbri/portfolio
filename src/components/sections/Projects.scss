@@ -27,17 +27,16 @@
     border-radius: $border-radius-md;
     overflow: hidden;
     box-shadow: var(--card-shadow);
-    @include transition(transform, box-shadow);
+    @include transition(box-shadow);
     height: 100%;
     display: flex;
     flex-direction: column;
 
     &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 
       .projects__image {
-        transform: scale(1.03);
+        transform: scale(1.05);
       }
     }
 
@@ -172,13 +171,19 @@
 
   &__link {
     @include flex(row, center, center, $spacing-xs/2);
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
+    padding: $spacing-xs/2 $spacing-sm;
+    border-radius: $border-radius-sm;
+    min-height: 36px;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: var(--accent-primary);
+      background-color: rgba(var(--accent-primary), 0.1);
+      transform: translateY(-1px);
     }
 
     &--live {

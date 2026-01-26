@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { GithubLogo, Globe } from "@phosphor-icons/react";
 import "./Projects.scss";
 
@@ -23,6 +24,9 @@ interface Project {
 }
 
 const Projects = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.1, once: true });
+
   const projects: Project[] = [
     {
       id: "discloser-ios",
@@ -125,18 +129,20 @@ const Projects = () => {
       </p>
 
       <motion.div
+        ref={ref}
         className="projects__grid"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.5 }}
       >
         {projects.map((project) => (
           <motion.div
             key={project.id}
             className="projects__card"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.4, delay: projects.indexOf(project) * 0.1 }}
+            whileHover={{ y: -5 }}
             role="article"
             aria-labelledby={`project-title-${project.id}`}
           >
@@ -146,6 +152,7 @@ const Projects = () => {
                 alt={`Screenshot of ${project.title} project showing the interface`}
                 className="projects__image"
                 loading="lazy"
+                decoding="async"
               />
               <span
                 className="projects__card-type"
