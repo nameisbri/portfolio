@@ -1,20 +1,13 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import {
-  Code,
-  Database,
-  Globe,
   BracketsSquare,
   PaintBrush,
-  Lightning,
-  ChartBar,
-  Gear,
   Lightbulb,
   TreeStructure,
   BracketsCurly,
   DeviceMobile,
-  BookOpen,
-  Anchor,
+  Robot,
 } from "@phosphor-icons/react";
 import "./Tech.scss";
 
@@ -30,14 +23,9 @@ const Tech = () => {
 
   const technologies: TechSkill[] = [
     {
-      name: "JavaScript",
-      category: "language",
-      icon: <Code weight="duotone" />,
-    },
-    {
-      name: "TypeScript",
-      category: "language",
-      icon: <BracketsCurly weight="duotone" />,
+      name: "React Native",
+      category: "mobile",
+      icon: <DeviceMobile weight="duotone" />,
     },
     {
       name: "React",
@@ -45,39 +33,24 @@ const Tech = () => {
       icon: <BracketsSquare weight="duotone" />,
     },
     {
-      name: "Node.js",
-      category: "backend",
-      icon: <TreeStructure weight="duotone" />,
+      name: "TypeScript",
+      category: "language",
+      icon: <BracketsCurly weight="duotone" />,
     },
     {
-      name: "Express.js",
-      category: "backend",
-      icon: <Lightning weight="duotone" />,
-    },
-    {
-      name: "HTML5",
-      category: "frontend",
-      icon: <Code weight="duotone" />,
-    },
-    {
-      name: "CSS/SASS",
-      category: "frontend",
+      name: "Product Design",
+      category: "design",
       icon: <PaintBrush weight="duotone" />,
     },
     {
-      name: "MySQL",
-      category: "database",
-      icon: <Database weight="duotone" />,
+      name: "UX/UI Design",
+      category: "design",
+      icon: <Lightbulb weight="duotone" />,
     },
     {
-      name: "REST APIs",
+      name: "Node.js",
       category: "backend",
-      icon: <Globe weight="duotone" />,
-    },
-    {
-      name: "Git/GitHub",
-      category: "tool",
-      icon: <Gear weight="duotone" />,
+      icon: <TreeStructure weight="duotone" />,
     },
     {
       name: "Responsive Design",
@@ -85,29 +58,9 @@ const Tech = () => {
       icon: <DeviceMobile weight="duotone" />,
     },
     {
-      name: "UI/UX",
-      category: "design",
-      icon: <Lightbulb weight="duotone" />,
-    },
-    {
-      name: "Agile/Kanban",
-      category: "methodology",
-      icon: <TreeStructure weight="duotone" />,
-    },
-    {
-      name: "SQL",
-      category: "database",
-      icon: <Database weight="duotone" />,
-    },
-    {
-      name: "TDD/Testing",
-      category: "methodology",
-      icon: <ChartBar weight="duotone" />,
-    },
-    {
-      name: "RESTful Services",
-      category: "backend",
-      icon: <Globe weight="duotone" />,
+      name: "AI-Enhanced Development",
+      category: "ai-tools",
+      icon: <Robot weight="duotone" />,
     },
   ];
 
@@ -141,11 +94,7 @@ const Tech = () => {
 
       <div className="tech__intro">
         <p>
-          My technical skills have been developed with intention and curiosity.
-          Coming to software development after years in another field gives me a
-          unique appreciation for both the possibilities and limitations of
-          technology. I approach coding not just as a technical exercise, but as
-          a craft that requires empathy, communication, and constant learning.
+          I bring together product design, development, and modern AI-enhanced workflows to deliver complete digital solutions. Whether you need an iOS app, a website, or a full product from concept to launch, I have the expertise to make it happen efficiently and beautifully.
         </p>
       </div>
 
@@ -174,64 +123,26 @@ const Tech = () => {
 
       <div className="tech__categories">
         <div className="tech__category-group">
-          <h3 className="tech__category-title">Development Skills</h3>
+          <h3 className="tech__category-title">What I Build</h3>
           <p>
-            Full-stack capabilities with strong frontend and backend development
-            skills, focusing on creating responsive, efficient web applications.
+            iOS apps, responsive websites, and full-stack web applications. I handle everything from the initial design to final deployment, ensuring your product works beautifully across all devices.
           </p>
         </div>
 
         <div className="tech__category-group">
-          <h3 className="tech__category-title">Professional Approach</h3>
+          <h3 className="tech__category-title">How I Work</h3>
           <p>
-            Committed to best practices including test-driven development, agile
-            methodologies, and continuous learning in software engineering.
+            I combine design thinking with technical expertise to create products that look great and work seamlessly. Every project includes thoughtful UX/UI design, clean code, and attention to detail.
           </p>
         </div>
 
         <div className="tech__category-group">
-          <h3 className="tech__category-title">Unique Value Proposition</h3>
+          <h3 className="tech__category-title">Why It's Efficient</h3>
           <p>
-            Bridging technical expertise with marketing insights to deliver
-            solutions that are not just functional, but strategically impactful.
+            I leverage modern AI-assisted development tools and workflows to deliver high-quality results faster. This means you get your product sooner without compromising on quality or design.
           </p>
         </div>
       </div>
-
-      <motion.div
-        className="tech__learning"
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ delay: 0.4, duration: 0.5 }}
-      >
-        <h3>Continuous Learning</h3>
-        <p className="tech__learning-text">
-          Actively expanding my skill set to stay at the forefront of web
-          development:
-        </p>
-        <div className="tech__learning-items">
-          <motion.span className="tech__learning-item">
-            <BracketsCurly weight="duotone" size={20} />
-            Advanced TypeScript
-          </motion.span>
-          <motion.span className="tech__learning-item">
-            <Anchor weight="duotone" size={20} />
-            React Hooks
-          </motion.span>
-          <motion.span className="tech__learning-item">
-            <BookOpen weight="duotone" size={20} />
-            Agile Development
-          </motion.span>
-          <motion.span className="tech__learning-item">
-            <DeviceMobile weight="duotone" size={20} />
-            Angular Concepts
-          </motion.span>
-        </div>
-        <p className="tech__learning-approach">
-          Combining structured learning with hands-on projects to rapidly
-          develop and apply cutting-edge technical skills.
-        </p>
-      </motion.div>
     </section>
   );
 };

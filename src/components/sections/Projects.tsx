@@ -3,10 +3,8 @@ import { GithubLogo, Globe } from "@phosphor-icons/react";
 import "./Projects.scss";
 
 import discloserImage from "../../assets/images/projects/discloser.jpg";
-import instockImage from "../../assets/images/projects/instock.jpg";
-import microsoftImage from "../../assets/images/projects/microsoft.jpg";
-import animalTriviaImage from "../../assets/images/projects/animal-trivia.jpg";
 import nutritionCalculatorImage from "../../assets/images/projects/nutrition-calc.png";
+// TODO: Add images for Discloser landing page and Yellow Brolly Co.
 
 interface Project {
   id: string;
@@ -26,10 +24,79 @@ interface Project {
 const Projects = () => {
   const projects: Project[] = [
     {
+      id: "discloser-ios",
+      title: "Discloser - iOS App",
+      description:
+        "A native iOS app built with React Native that allows users to manage and share sensitive health information privately. Features OCR extraction from documents, automated reminders, and secure sharing capabilities. Designed and developed from concept to App Store deployment with a focus on user privacy and intuitive UX.",
+      highlightedSkills:
+        "React Native iOS development, product design, UX/UI design, OCR integration, native mobile development, AI-assisted workflows",
+      type: "iOS App",
+      tech: [
+        "React Native",
+        "iOS",
+        "JavaScript",
+        "Node.js",
+        "Express",
+        "MySQL",
+        "OCR",
+        "Product Design",
+      ],
+      role: "Product Designer & Developer",
+      image: discloserImage,
+      links: {
+        github: "https://github.com/nameisbri/discloser",
+        live: "https://www.linkedin.com/feed/update/urn:li:activity:7302373369012785154/",
+      },
+    },
+    {
+      id: "discloser-landing",
+      title: "Discloser - Landing Page",
+      description:
+        "A modern, conversion-focused landing page designed and developed for the Discloser iOS app. Features responsive design, clear value proposition, and seamless user experience to drive app downloads. Built with attention to UX principles and conversion optimization.",
+      highlightedSkills:
+        "Web design, UX/UI design, responsive development, conversion optimization, product marketing, AI-assisted development",
+      type: "Web Design",
+      tech: [
+        "React",
+        "TypeScript",
+        "SCSS",
+        "Responsive Design",
+        "Product Design",
+        "UX/UI",
+      ],
+      role: "Product Designer & Developer",
+      image: discloserImage, // TODO: Replace with Discloser landing page image
+      links: {
+        live: "https://discloser.app",
+      },
+    },
+    {
+      id: "yellow-brolly",
+      title: "Yellow Brolly Co. - Consulting Website",
+      description:
+        "A professional consulting business website designed and developed for Yellow Brolly Co. Features clean, modern design, clear service offerings, and optimized user experience to showcase consulting expertise and attract clients. Built with focus on professional branding and lead generation.",
+      highlightedSkills:
+        "Business website design, UX/UI design, brand identity, responsive development, conversion optimization, freelance project management",
+      type: "Freelance",
+      tech: [
+        "React",
+        "TypeScript",
+        "SCSS",
+        "Responsive Design",
+        "Product Design",
+        "UX/UI",
+      ],
+      role: "Product Designer & Developer",
+      image: discloserImage, // TODO: Replace with Yellow Brolly Co. image
+      links: {
+        live: "https://yellow-brolly.vercel.app/",
+      },
+    },
+    {
       id: "nutrition-calculator",
       title: "Nutrition Calculator Rebuild",
       description:
-        "Leading the rebuild of a nutrition calculator application from Angular to React, improving user experience and modernizing the codebase. Actively participating in the full software development lifecycle from requirements analysis to implementation.",
+        "Professional work leading the rebuild of a nutrition calculator application from Angular to React, improving user experience and modernizing the codebase. Participated in the full software development lifecycle from requirements analysis to implementation.",
       highlightedSkills:
         "React development, Angular code analysis, Agile methodologies, cross-functional collaboration",
       type: "Professional",
@@ -38,86 +105,13 @@ const Projects = () => {
       image: nutritionCalculatorImage,
       links: {}, // Omit links if this is private company work
     },
-    {
-      id: "discloser",
-      title: "Discloser - Health Information Platform",
-      description:
-        "A secure platform that allows users to manage and share sensitive information privately. Features OCR extraction from documents, automated reminders, and private sharing capabilities.",
-      highlightedSkills:
-        "Full-stack development, database design, OCR integration, user authentication",
-      type: "Capstone",
-      tech: [
-        "JavaScript",
-        "React",
-        "Node.js",
-        "Express",
-        "MySQL",
-        "OCR",
-        "SCSS",
-      ],
-      role: "Full Stack Developer",
-      image: discloserImage,
-      links: {
-        github: "https://github.com/nameisbri/discloser",
-        live: "https://www.linkedin.com/feed/update/urn:li:activity:7302373369012785154/",
-      },
-    },
-    {
-      id: "instock",
-      title: "InStock - Inventory Management System",
-      description:
-        "A full-stack inventory management application built for a fictional Fortune 500 client. Addresses scalability issues with warehouse management and inventory tracking across multiple locations.",
-      highlightedSkills:
-        "API development, relational database management, collaborative Git workflow",
-      type: "Team Project",
-      tech: ["React", "Node.js", "Express", "SASS/BEM", "Axios", "REST API"],
-      role: "Full Stack Developer",
-      image: instockImage,
-      links: {
-        live: "https://drive.google.com/file/d/17weBeLemqsBzaZrso3jCTzCa9-Ae4idM/view?usp=sharing",
-      },
-    },
-    {
-      id: "microsoft",
-      title: "AI Business Consultant",
-      description:
-        "An interactive web application designed to help small businesses integrate AI into their operations, developed during a 24-hour hackathon organized by Microsoft and BrainStation.",
-      highlightedSkills:
-        "Rapid prototyping, agile development, UX design, interactive data visualization",
-      type: "Hackathon",
-      tech: ["React.js", "SCSS", "JavaScript", "GitHub Pages"],
-      role: "Frontend Developer",
-      image: microsoftImage,
-      links: {
-        github: "https://github.com/nameisbri/ip-team-2",
-        live: "https://drive.google.com/file/d/1K7g485_1DY8wzvC0gNdupAORtVzrOhZr/view?usp=sharing",
-      },
-    },
-    {
-      id: "animal-trivia",
-      title: "Animal Trivia - Interactive Quiz Game",
-      description:
-        "An educational quiz application focused on animal facts, developed during a BrainStation hackathon with dynamic scoring and interactive elements.",
-      highlightedSkills:
-        "JavaScript logic, API integration, state management, responsive design",
-      type: "Hackathon",
-      tech: ["JavaScript", "React", "REST API", "CSS"],
-      role: "JavaScript Lead",
-      image: animalTriviaImage,
-      links: {
-        github: "https://github.com/nameisbri/animal-trivia",
-      },
-    },
   ];
 
   return (
     <section className="projects" id="projects">
       <h2 className="section__heading">Projects</h2>
       <p className="projects__subtitle">
-        These projects represent my journey as a developer and my commitment to
-        creating technology with purpose. Each one taught me something valuable
-        about collaboration, problem-solving, and the art of writing code that
-        matters.
+        A collection of freelance projects, side projects, and product work showcasing my expertise in React Native iOS apps, web development, product design, and AI-enhanced development workflows. Each project demonstrates end-to-end product thinking—from design to implementation.
       </p>
 
       <motion.div

@@ -21,13 +21,7 @@ const Footer = () => {
           </div>
           <h2 className="footer__contact-title">Let's Work Together</h2>
           <p className="footer__contact-text">
-            I'm a software developer actively building React applications at
-            Precision Nutrition while expanding my technical expertise. My
-            background in marketing combined with my software engineering skills
-            allows me to approach problems holistically—considering both
-            technical implementation and human impact. I'm excited about
-            opportunities where I can contribute to meaningful projects that
-            make a difference in people's lives.
+            I'm a Product Designer & Developer specializing in React Native iOS apps, modern web applications, product design, and UX/UI. I leverage AI-assisted development workflows (Cursor, Claude, agent systems) to deliver efficient, high-quality solutions throughout the entire product lifecycle. Available for freelance projects, product design work, and development opportunities—let's bring your vision to life.
           </p>
 
           <ul className="footer__contact-info">
@@ -66,7 +60,7 @@ const Footer = () => {
         <div className="footer__info">
           <h3 className="footer__name">Gabriela Barreira</h3>
           <p className="footer__tagline">
-            Software Developer building user-centric solutions
+            Product Designer & Developer
           </p>
         </div>
 

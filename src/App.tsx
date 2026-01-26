@@ -5,6 +5,7 @@ import Hero from "./components/sections/Hero";
 import Experience from "./components/sections/Experience";
 import Tech from "./components/sections/Tech";
 import Projects from "./components/sections/Projects";
+import Services from "./components/sections/Services";
 import Footer from "./components/sections/Footer";
 import Navbar from "./components/sections/Navbar";
 import Loader from "./components/sections/Loader";
@@ -27,9 +28,10 @@ function App() {
       <Navbar />
       <main className="app__content">
         <Hero />
-        <Experience />
-        <Tech />
         <Projects />
+        <Services />
+        <Tech />
+        <Experience />
       </main>
       <Footer />
     </div>

@@ -211,9 +211,8 @@
     }
 
     &--react {
-      top: 43%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      top: 55%;
+      left: 65%;
       z-index: 2;
 
       &.hero__skill--core .hero__skill-inner {
@@ -352,8 +351,8 @@
     }
 
     &--figma {
-      top: 88%;
-      left: 45%;
+      top: 85%;
+      left: 50%;
 
       .hero__skill-inner {
         background-color: rgba(#a259ff, 0.15);
@@ -423,8 +422,8 @@
 
     // Responsive
     &--responsive {
-      top: 51%;
-      left: 80%;
+      top: 70%;
+      left: 85%;
 
       .hero__skill-inner {
         background-color: rgba(#3584e4, 0.15);
@@ -640,6 +639,262 @@
     // Performance Optimization (teal)
     &--performance {
       top: 52%;
+      left: 12%;
+
+      .hero__skill-inner {
+        background-color: rgba(#20c997, 0.15);
+        border: 1px solid rgba(#20c997, 0.3);
+        color: #20c997;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #20c997;
+        background-color: rgba(#20c997, 0.2);
+        border-color: rgba(#20c997, 0.4);
+      }
+    }
+
+    // React Native / iOS Apps (core)
+    &--react-native {
+      top: 43%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+
+      &.hero__skill--core .hero__skill-inner {
+        padding: $spacing-xs $spacing-md;
+        font-size: 1.15rem;
+        box-shadow: 0 4px 16px rgba(97, 218, 251, 0.3);
+      }
+
+      .hero__skill-inner {
+        background-color: rgba(97, 218, 251, 0.15);
+        border: 1px solid rgba(97, 218, 251, 0.3);
+        color: #61dafb;
+        padding: $spacing-xs $spacing-md;
+        font-size: 1.15rem;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #61dafb;
+        background-color: rgba(97, 218, 251, 0.2);
+        border-color: rgba(97, 218, 251, 0.4);
+      }
+    }
+
+    // Product Design (core)
+    &--product-design {
+      top: 20%;
+      left: 70%;
+
+      &.hero__skill--core .hero__skill-inner {
+        box-shadow: 0 4px 16px rgba(#a259ff, 0.25);
+      }
+
+      .hero__skill-inner {
+        background-color: rgba(#a259ff, 0.15);
+        border: 1px solid rgba(#a259ff, 0.3);
+        color: #a259ff;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #a259ff;
+        background-color: rgba(#a259ff, 0.2);
+        border-color: rgba(#a259ff, 0.4);
+      }
+    }
+
+    // UX/UI Design (core)
+    &--ux-ui {
+      top: 16%;
+      left: 25%;
+
+      &.hero__skill--core .hero__skill-inner {
+        box-shadow: 0 4px 16px rgba(#a259ff, 0.25);
+      }
+
+      .hero__skill-inner {
+        background-color: rgba(#a259ff, 0.15);
+        border: 1px solid rgba(#a259ff, 0.3);
+        color: #a259ff;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #a259ff;
+        background-color: rgba(#a259ff, 0.2);
+        border-color: rgba(#a259ff, 0.4);
+      }
+    }
+
+    // AI-Enhanced (core)
+    &--ai-enhanced {
+      top: 60%;
+      left: 30%;
+
+      &.hero__skill--core .hero__skill-inner {
+        box-shadow: 0 4px 16px rgba(#ff8c00, 0.25);
+      }
+
+      .hero__skill-inner {
+        background-color: rgba(#ff8c00, 0.15);
+        border: 1px solid rgba(#ff8c00, 0.3);
+        color: #ff8c00;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #ff8c00;
+        background-color: rgba(#ff8c00, 0.2);
+        border-color: rgba(#ff8c00, 0.4);
+      }
+    }
+
+    // Websites
+    &--websites {
+      top: 25%;
+      left: 75%;
+
+      .hero__skill-inner {
+        background-color: rgba(#3584e4, 0.15);
+        border: 1px solid rgba(#3584e4, 0.3);
+        color: #3584e4;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #3584e4;
+        background-color: rgba(#3584e4, 0.2);
+        border-color: rgba(#3584e4, 0.4);
+      }
+    }
+
+    // TypeScript
+    &--ts {
+      top: 35%;
+      left: 15%;
+
+      .hero__skill-inner {
+        background-color: rgba(49, 120, 198, 0.15);
+        border: 1px solid rgba(49, 120, 198, 0.3);
+        color: #3178c6;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #3178c6;
+        background-color: rgba(49, 120, 198, 0.2);
+        border-color: rgba(49, 120, 198, 0.4);
+      }
+    }
+
+    // Full Stack
+    &--fullstack {
+      top: 80%;
+      left: 25%;
+
+      .hero__skill-inner {
+        background-color: rgba(140, 60, 255, 0.15);
+        border: 1px solid rgba(140, 60, 255, 0.3);
+        color: #8c3cff;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #8c3cff;
+        background-color: rgba(140, 60, 255, 0.2);
+        border-color: rgba(140, 60, 255, 0.4);
+      }
+    }
+
+    // Landing Pages
+    &--landing {
+      top: 45%;
+      left: 90%;
+
+      .hero__skill-inner {
+        background-color: rgba(#43a047, 0.15);
+        border: 1px solid rgba(#43a047, 0.3);
+        color: #43a047;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #43a047;
+        background-color: rgba(#43a047, 0.2);
+        border-color: rgba(#43a047, 0.4);
+      }
+    }
+
+    // Business Sites
+    &--business {
+      top: 12%;
+      left: 85%;
+
+      .hero__skill-inner {
+        background-color: rgba(97, 218, 251, 0.15);
+        border: 1px solid rgba(97, 218, 251, 0.3);
+        color: #61dafb;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #61dafb;
+        background-color: rgba(97, 218, 251, 0.2);
+        border-color: rgba(97, 218, 251, 0.4);
+      }
+    }
+
+    // End-to-End
+    &--endtoend {
+      top: 75%;
+      left: 60%;
+
+      .hero__skill-inner {
+        background-color: rgba(#a259ff, 0.15);
+        border: 1px solid rgba(#a259ff, 0.3);
+        color: #a259ff;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #a259ff;
+        background-color: rgba(#a259ff, 0.2);
+        border-color: rgba(#a259ff, 0.4);
+      }
+    }
+
+    // Modern Design
+    &--modern {
+      top: 30%;
+      left: 35%;
+
+      .hero__skill-inner {
+        background-color: rgba(198, 61, 20, 0.15);
+        border: 1px solid rgba(198, 61, 20, 0.3);
+        color: #c63d14;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #c63d14;
+        background-color: rgba(198, 61, 20, 0.2);
+        border-color: rgba(198, 61, 20, 0.4);
+      }
+    }
+
+    // Fast Delivery
+    &--fast {
+      top: 8%;
+      left: 50%;
+
+      .hero__skill-inner {
+        background-color: rgba(#ff8c00, 0.15);
+        border: 1px solid rgba(#ff8c00, 0.3);
+        color: #ff8c00;
+      }
+
+      [data-theme="dark"] & .hero__skill-inner {
+        color: #ff8c00;
+        background-color: rgba(#ff8c00, 0.2);
+        border-color: rgba(#ff8c00, 0.4);
+      }
+    }
+
+    // Client-Focused
+    &--client {
+      top: 65%;
       left: 12%;
 
       .hero__skill-inner {
