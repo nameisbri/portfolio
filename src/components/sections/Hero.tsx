@@ -31,7 +31,7 @@ const Hero = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20, scale: 0.9 },
+    hidden: { opacity: 0, y: 30, scale: 0.8 },
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
@@ -39,20 +39,22 @@ const Hero = () => {
       zIndex: CORE_SKILLS.includes(i) ? 5 : 1,
       transition: {
         type: "spring",
-        stiffness: 100,
-        damping: 10,
+        stiffness: 150,
+        damping: 12,
+        delay: i * 0.05,
       },
     }),
   };
 
   const floatVariants = {
     animate: (i: number) => ({
-      y: CORE_SKILLS.includes(i) ? [0, -3, 0] : [0, i % 2 === 0 ? -4 : -6, 0],
+      y: CORE_SKILLS.includes(i) ? [0, -8, 0] : [0, i % 2 === 0 ? -6 : -10, 0],
+      rotate: CORE_SKILLS.includes(i) ? [0, 2, -2, 0] : [0, 1, -1, 0],
       transition: {
-        duration: CORE_SKILLS.includes(i) ? 6 : i % 2 === 0 ? 5 : 6,
+        duration: CORE_SKILLS.includes(i) ? 4 : i % 2 === 0 ? 3.5 : 4.5,
         repeat: Infinity,
         ease: "easeInOut",
-        delay: i * 0.3,
+        delay: i * 0.2,
       },
     }),
   };
@@ -95,9 +97,9 @@ const Hero = () => {
   ];
 
   const handleHover = (index: number) => {
-    const MAX_ANIMATED_SKILLS = 10;
+    const MAX_ANIMATED_SKILLS = 12;
 
-    // Scale up and add a little wobble to the hovered skill
+    // Scale up and add a bounce animation to the hovered skill
     skillControls[index].start({
       scale: 1.15,
       rotate: [0, -3, 3, -2, 2, 0],
@@ -189,26 +191,68 @@ const Hero = () => {
       <div className="hero__wrapper">
         <motion.div
           className="hero__left"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ 
+            duration: 0.8,
+            ease: [0.22, 1, 0.36, 1]
+          }}
         >
-          <div className="hero__content">
-            <span className="hero__intro">Hi, I'm Gabriela</span>
-            <h1 className="hero__title">
+          <motion.div 
+            className="hero__content"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <motion.span 
+              className="hero__intro"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              Hi, I'm Gabriela
+            </motion.span>
+            <motion.h1 
+              className="hero__title"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+            >
               I Turn Product Ideas Into{" "}
-              <span style={{ color: "var(--accent-primary)" }}>Profitable Apps & Websites</span>
-            </h1>
+              <motion.span 
+                style={{ color: "var(--accent-primary)" }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+              >
+                Profitable Apps & Websites
+              </motion.span>
+            </motion.h1>
 
-            <p className="hero__subtitle">
+            <motion.p 
+              className="hero__subtitle"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
               I turn product ideas into profitable apps and websites. From concept to App Store, I handle design, development, and launch—delivering results faster with AI-enhanced workflows.
-            </p>
+            </motion.p>
 
-            <div className="hero__availability">
+            <motion.div 
+              className="hero__availability"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+            >
               <span className="hero__availability-badge">Available for new projects</span>
-            </div>
+            </motion.div>
 
-            <div className="hero__buttons">
+            <motion.div 
+              className="hero__buttons"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+            >
               <a
                 href="#contact"
                 className="button button--primary hero__cta-btn"
@@ -225,9 +269,9 @@ const Hero = () => {
                 <FileArrowDown weight="bold" />
                 <span>Download Resume</span>
               </a>
-            </div>
+            </motion.div>
 
-          </div>
+          </motion.div>
         </motion.div>
 
         <div className="hero__right">

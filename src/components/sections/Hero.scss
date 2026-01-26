@@ -205,20 +205,22 @@
     width: 100%;
     height: 320px;
     max-width: 400px;
-    opacity: 0.6;
+    opacity: 0.85;
 
     &--simplified {
-      opacity: 0.4;
+      opacity: 0.85;
       
       .hero__skill {
-        pointer-events: none;
+        pointer-events: auto;
+        cursor: pointer;
         
         &-inner {
-          transition: opacity 0.3s ease;
+          transition: all 0.3s ease;
         }
         
         &:hover .hero__skill-inner {
-          opacity: 0.7;
+          opacity: 1;
+          transform: scale(1.1);
         }
       }
     }
@@ -232,7 +234,7 @@
       height: 100%;
       background: radial-gradient(
         circle at center,
-        rgba($color-bittersweet, 0.08),
+        rgba($color-bittersweet, 0.15),
         transparent 85%
       );
       z-index: -1;
@@ -242,7 +244,7 @@
       [data-theme="dark"] & {
         background: radial-gradient(
           circle at center,
-          rgba($color-chartreuse, 0.06),
+          rgba($color-chartreuse, 0.12),
           transparent 85%
         );
         filter: blur(25px);
@@ -256,7 +258,7 @@
     @media (max-width: $breakpoint-md) {
       height: 250px;
       margin: 0 auto;
-      display: none; // Hide on mobile to reduce distraction
+      opacity: 0.6; // Reduced but still visible on mobile
     }
   }
 
@@ -273,6 +275,12 @@
       border-radius: $border-radius-full;
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
       backdrop-filter: blur(4px);
+      transition: all 0.3s ease;
+    }
+
+    &:hover &-inner {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      transform: scale(1.05);
     }
 
     &--core {
