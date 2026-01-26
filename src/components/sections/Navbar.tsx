@@ -17,7 +17,7 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -28,7 +28,22 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const handleNavClick = () => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const href = e.currentTarget.getAttribute("href");
+    if (href && href.startsWith("#")) {
+      e.preventDefault();
+      const targetId = href.substring(1);
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        const offsetTop = targetElement.offsetTop - 80; // Account for sticky navbar
+        window.scrollTo({
+          top: offsetTop,
+          behavior: "smooth",
+        });
+      }
+    }
+    
     if (isMobileMenuOpen) {
       setIsMobileMenuOpen(false);
     }
@@ -81,7 +96,6 @@ const Navbar = () => {
           <li className="navbar__item" role="menuitem">
             <a
               href="#"
-              className="active"
               onClick={handleNavClick}
               tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
             >
@@ -97,13 +111,21 @@ const Navbar = () => {
               Projects
             </a>
           </li>
-          <li className="navbar__item">
-            <a href="#services" onClick={handleNavClick}>
+          <li className="navbar__item" role="menuitem">
+            <a
+              href="#services"
+              onClick={handleNavClick}
+              tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
+            >
               Services
             </a>
           </li>
-          <li className="navbar__item">
-            <a href="#skills" onClick={handleNavClick}>
+          <li className="navbar__item" role="menuitem">
+            <a
+              href="#skills"
+              onClick={handleNavClick}
+              tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
+            >
               Skills
             </a>
           </li>

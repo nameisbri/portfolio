@@ -4,17 +4,83 @@
   padding: $spacing-lg 0;
   position: relative;
 
+  // Creative section divider
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--accent-primary) 40%,
+      var(--accent-primary) 60%,
+      transparent
+    );
+    opacity: 0.2;
+  }
+
+  &__intro-section {
+    margin-bottom: $spacing-xl;
+  }
+
   &__intro {
-    margin-bottom: $spacing-md;
+    margin-bottom: $spacing-lg;
     max-width: 800px;
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1.05rem;
+    line-height: 1.7;
     color: var(--text-secondary);
 
     @include respond-to(md) {
-      font-size: 1.05rem;
-      margin-bottom: $spacing-lg;
+      font-size: 1.1rem;
     }
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-md;
+    margin-top: $spacing-lg;
+    padding: $spacing-lg;
+    background-color: var(--background-secondary);
+    border-radius: $border-radius-lg;
+    border: 1px solid var(--border-color);
+
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: 1fr;
+      gap: $spacing-sm;
+      padding: $spacing-md;
+    }
+  }
+
+  &__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__stat-number {
+    font-size: 2.5rem;
+    font-weight: $font-weight-bold;
+    color: var(--accent-primary);
+    line-height: 1;
+    margin-bottom: $spacing-xs/2;
+    font-family: $font-family-secondary;
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: 2rem;
+    }
+  }
+
+  &__stat-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: $font-weight-medium;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   &__tabs {
@@ -50,11 +116,7 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: linear-gradient(
-        to right,
-        var(--accent-primary),
-        var(--accent-secondary)
-      );
+      background: var(--accent-primary);
       @include transition(width);
     }
 
@@ -92,7 +154,6 @@
       background: linear-gradient(
         to bottom,
         var(--accent-primary),
-        var(--accent-secondary),
         transparent
       );
       opacity: 0.25;

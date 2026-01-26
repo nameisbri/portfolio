@@ -30,7 +30,7 @@ const Hero = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20, scale: 0.9 },
+    hidden: { opacity: 0, y: 30, scale: 0.8 },
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
@@ -38,17 +38,19 @@ const Hero = () => {
       zIndex: CORE_SKILLS.includes(i) ? 5 : 1,
       transition: {
         type: "spring",
-        stiffness: 100,
-        damping: 10,
+        stiffness: 150,
+        damping: 12,
+        delay: i * 0.05,
       },
     }),
   };
 
   const floatVariants = {
     animate: (i: number) => ({
-      y: CORE_SKILLS.includes(i) ? [0, -6, 0] : [0, i % 2 === 0 ? -8 : -12, 0],
+      y: CORE_SKILLS.includes(i) ? [0, -8, 0] : [0, i % 2 === 0 ? -6 : -10, 0],
+      rotate: CORE_SKILLS.includes(i) ? [0, 2, -2, 0] : [0, 1, -1, 0],
       transition: {
-        duration: CORE_SKILLS.includes(i) ? 4 : i % 2 === 0 ? 3 : 4,
+        duration: CORE_SKILLS.includes(i) ? 4 : i % 2 === 0 ? 3.5 : 4.5,
         repeat: Infinity,
         ease: "easeInOut",
         delay: i * 0.2,
@@ -94,9 +96,9 @@ const Hero = () => {
   ];
 
   const handleHover = (index: number) => {
-    const MAX_ANIMATED_SKILLS = 10;
+    const MAX_ANIMATED_SKILLS = 12;
 
-    // Scale up and add a little wobble to the hovered skill
+    // Scale up and add a bounce animation to the hovered skill
     skillControls[index].start({
       scale: 1.15,
       rotate: [0, -3, 3, -2, 2, 0],
@@ -188,9 +190,12 @@ const Hero = () => {
       <div className="hero__wrapper">
         <motion.div
           className="hero__left"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ 
+            duration: 0.8,
+            ease: [0.22, 1, 0.36, 1]
+          }}
         >
           <div className="hero__content">
             <h1 className="hero__title">
@@ -222,7 +227,7 @@ const Hero = () => {
 
         <div className="hero__right">
           <motion.div
-            className="hero__skill-cloud"
+            className="hero__skill-cloud hero__skill-cloud--simplified"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -245,7 +250,7 @@ const Hero = () => {
                 initial="animate"
               >
                 <DeviceMobile size={24} weight="duotone" />
-                <span>iOS Apps</span>
+                <span>Mobile Apps</span>
               </motion.div>
             </motion.div>
 

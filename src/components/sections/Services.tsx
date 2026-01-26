@@ -26,7 +26,7 @@ const Services = () => {
       id: "website-development",
       title: "Website Development",
       description:
-        "Modern, responsive web applications built with React, TypeScript, and best practices. From landing pages to complex web apps, I create fast, accessible, and scalable solutions.",
+        "Get a website that converts visitors into customers. Fast, mobile-friendly, and built to grow your business—from landing pages to full web applications.",
       icon: <Globe weight="duotone" />,
     },
     {
@@ -40,28 +40,28 @@ const Services = () => {
       id: "product-design",
       title: "Product Design",
       description:
-        "End-to-end product design from concept to launch. I combine user research, UX principles, and design thinking to create products that solve real problems and delight users.",
+        "Turn your idea into a product users actually want. From user research to final designs, I create products that solve real problems and drive results.",
       icon: <PaintBrush weight="duotone" />,
     },
     {
       id: "ux-ui-design",
       title: "UX/UI Design",
       description:
-        "User experience and interface design focused on usability, accessibility, and visual appeal. I create intuitive interfaces that guide users seamlessly through their journey.",
+        "Designs that work. I create intuitive interfaces that guide users to take action—increasing engagement and conversions.",
       icon: <Lightbulb weight="duotone" />,
     },
     {
       id: "ai-enhanced-development",
       title: "AI-Enhanced Development",
       description:
-        "Leveraging AI tools like Cursor and Claude for efficient product development. I use extensive agent workflows and prompt engineering to accelerate the entire product lifecycle while maintaining quality.",
+        "Faster delivery without sacrificing quality. I use AI tools to accelerate development, meaning you get your product sooner at competitive rates.",
       icon: <Robot weight="duotone" />,
     },
     {
       id: "full-product-lifecycle",
       title: "Full Product Lifecycle",
       description:
-        "Complete product development from initial concept through design, development, and launch. I handle every stage with AI-assisted workflows, ensuring efficient delivery without compromising on quality.",
+        "One person, complete solution. From concept to launch, I handle design and development so you can focus on your business.",
       icon: <Stack weight="duotone" />,
     },
   ];

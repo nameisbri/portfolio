@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { GithubLogo, Globe } from "@phosphor-icons/react";
 import "./Projects.scss";
 
@@ -19,14 +20,19 @@ interface Project {
   links?: {
     github?: string;
     live?: string;
+    liveLabel?: string; // Custom label for live link
   };
+  outcome?: string;
 }
 
 const Projects = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.1, once: true });
+
   const projects: Project[] = [
     {
       id: "discloser-ios",
-      title: "Discloser - iOS App",
+      title: "Discloser - Mobile App",
       description:
         "A secure health-tech app built for rapid scaling. A native iOS app built with React Native that allows users to manage and share sensitive health information privately. Features OCR extraction from documents, automated reminders, and secure sharing capabilities.",
       highlightedSkills:
@@ -36,6 +42,7 @@ const Projects = () => {
       tech: [
         "React Native",
         "iOS",
+        "Android",
         "JavaScript",
         "Node.js",
         "Express",
@@ -47,14 +54,16 @@ const Projects = () => {
       image: discloserImage,
       links: {
         github: "https://github.com/nameisbri/discloser",
-        live: "https://www.linkedin.com/feed/update/urn:li:activity:7302373369012785154/",
+        live: "https://discloser.app",
+        liveLabel: "Visit Landing Page",
       },
+      outcome: "iOS Beta live • Android in development • Complete product lifecycle from design to deployment",
     },
     {
       id: "discloser-landing",
       title: "Discloser - Landing Page",
       description:
-        "A modern, conversion-focused landing page designed and developed for the Discloser iOS app. Features responsive design, clear value proposition, and seamless user experience to drive app downloads. Built with attention to UX principles and conversion optimization.",
+        "A modern, conversion-focused landing page designed and developed for the Discloser mobile app. Features responsive design, clear value proposition, and seamless user experience to drive app downloads. Built with attention to UX principles and conversion optimization.",
       highlightedSkills:
         "Web design, UX/UI design, responsive development, conversion optimization, product marketing, AI-assisted development",
       type: "Web Design",
@@ -70,7 +79,9 @@ const Projects = () => {
       image: discloserImage, // TODO: Replace with Discloser landing page image
       links: {
         live: "https://discloser.app",
+        liveLabel: "Visit Site",
       },
+      outcome: "Live at discloser.app • Optimized for conversions and mobile experience",
     },
     {
       id: "yellow-brolly",
@@ -93,7 +104,9 @@ const Projects = () => {
       image: discloserImage, // TODO: Replace with Yellow Brolly Co. image
       links: {
         live: "https://yellow-brolly.vercel.app/",
+        liveLabel: "Visit Site",
       },
+      outcome: "Delivered on time • Professional brand presence • Ready for client acquisition",
     },
     {
       id: "nutrition-calculator",
@@ -124,18 +137,20 @@ const Projects = () => {
       </p>
 
       <motion.div
+        ref={ref}
         className="projects__grid"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.5 }}
       >
         {projects.map((project) => (
           <motion.div
             key={project.id}
             className="projects__card"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.4, delay: projects.indexOf(project) * 0.1 }}
+            whileHover={{ y: -5 }}
             role="article"
             aria-labelledby={`project-title-${project.id}`}
           >
@@ -145,6 +160,7 @@ const Projects = () => {
                 alt={`Screenshot of ${project.title} project showing the interface`}
                 className="projects__image"
                 loading="lazy"
+                decoding="async"
               />
               <span
                 className="projects__card-type"
@@ -206,16 +222,25 @@ const Projects = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="projects__link projects__link--live"
-                  aria-label={`View live demo of ${project.title}`}
+                  aria-label={`${project.links.liveLabel || "View"} ${project.title}`}
                 >
                   <Globe size={20} aria-hidden="true" />
-                  <span>Demo</span>
+                  <span>{project.links.liveLabel || "View Site"}</span>
                 </a>
               )}
             </div>
           </motion.div>
         ))}
       </motion.div>
+
+      <div className="projects__cta">
+        <p className="projects__cta-text">
+          Have a project in mind? Let's discuss how I can help bring it to life.
+        </p>
+        <a href="#contact" className="button button--primary">
+          Start Your Project
+        </a>
+      </div>
     </section>
   );
 };

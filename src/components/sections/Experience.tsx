@@ -9,7 +9,7 @@ const workExperience = [
   {
     title: "Freelance Product Designer & Developer",
     company: "Independent",
-    period: "2018 - Present",
+    period: "2016 - Present",
     location: "Remote",
     description: [
       "Design and develop mobile apps, websites, and digital products for clients across various industries",
