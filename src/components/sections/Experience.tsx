@@ -85,9 +85,25 @@ const Experience = () => {
     <section className="experience" id="experience">
       <h2 className="section__heading">Experience</h2>
 
-      <p className="experience__intro">
-        I help businesses and entrepreneurs launch products that drive results. 6+ years of freelance experience, 20+ products launched. From iOS apps to websites, I handle design and development so you can focus on growing your business.
-      </p>
+      <div className="experience__intro-section">
+        <p className="experience__intro">
+          I help businesses and entrepreneurs launch products that drive results. From iOS apps to websites, I handle design and development so you can focus on growing your business.
+        </p>
+        <div className="experience__stats">
+          <div className="experience__stat">
+            <span className="experience__stat-number">6+</span>
+            <span className="experience__stat-label">Years Experience</span>
+          </div>
+          <div className="experience__stat">
+            <span className="experience__stat-number">20+</span>
+            <span className="experience__stat-label">Products Launched</span>
+          </div>
+          <div className="experience__stat">
+            <span className="experience__stat-number">100%</span>
+            <span className="experience__stat-label">Client Satisfaction</span>
+          </div>
+        </div>
+      </div>
 
       <div className="experience__tabs">
         <button

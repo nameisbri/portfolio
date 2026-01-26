@@ -19,6 +19,7 @@ interface Project {
     github?: string;
     live?: string;
   };
+  outcome?: string;
 }
 
 const Projects = () => {
@@ -47,6 +48,7 @@ const Projects = () => {
         github: "https://github.com/nameisbri/discloser",
         live: "https://www.linkedin.com/feed/update/urn:li:activity:7302373369012785154/",
       },
+      outcome: "Successfully launched on App Store • Complete product lifecycle from design to deployment",
     },
     {
       id: "discloser-landing",
@@ -69,6 +71,7 @@ const Projects = () => {
       links: {
         live: "https://discloser.app",
       },
+      outcome: "Live at discloser.app • Optimized for conversions and mobile experience",
     },
     {
       id: "yellow-brolly",
@@ -91,6 +94,7 @@ const Projects = () => {
       links: {
         live: "https://yellow-brolly.vercel.app/",
       },
+      outcome: "Delivered on time • Professional brand presence • Ready for client acquisition",
     },
     {
       id: "nutrition-calculator",
@@ -169,6 +173,12 @@ const Projects = () => {
 
             <p className="projects__card-description">{project.description}</p>
 
+            {project.outcome && (
+              <div className="projects__card-outcome">
+                <strong>Result:</strong> {project.outcome}
+              </div>
+            )}
+
             <div className="projects__card-skills">
               <strong>Key Skills:</strong> {project.highlightedSkills}
             </div>
@@ -207,6 +217,15 @@ const Projects = () => {
           </motion.div>
         ))}
       </motion.div>
+
+      <div className="projects__cta">
+        <p className="projects__cta-text">
+          Have a project in mind? Let's discuss how I can help bring it to life.
+        </p>
+        <a href="#contact" className="button button--primary">
+          Start Your Project
+        </a>
+      </div>
     </section>
   );
 };

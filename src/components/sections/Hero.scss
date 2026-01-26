@@ -51,30 +51,35 @@
 
   &__title {
     font-family: $font-family-secondary;
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-size: clamp(2rem, 4.5vw, 3rem);
     font-weight: $font-weight-bold;
     line-height: 1.2;
-    margin-bottom: $spacing-sm;
+    margin-bottom: $spacing-md;
     color: var(--text-primary);
+    letter-spacing: -0.02em;
 
     .text-gradient {
       @include text-gradient(var(--accent-primary), var(--accent-secondary));
     }
 
     @media (max-width: $breakpoint-sm) {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
     }
   }
 
   &__subtitle {
     color: var(--text-secondary);
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: $spacing-md;
-    max-width: 450px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: $spacing-lg;
+    max-width: 600px;
+
+    @include respond-to(md) {
+      font-size: 1.15rem;
+    }
 
     @media (max-width: $breakpoint-sm) {
-      font-size: 0.9rem; /* Smaller font on mobile */
+      font-size: 1rem;
     }
   }
 

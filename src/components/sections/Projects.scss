@@ -121,6 +121,22 @@
     line-height: 1.4;
   }
 
+  &__card-outcome {
+    padding: $spacing-xs $spacing-sm;
+    margin: $spacing-xs 0;
+    background-color: rgba(var(--accent-primary), 0.08);
+    border-left: 3px solid var(--accent-primary);
+    border-radius: $border-radius-sm;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--text-primary);
+
+    strong {
+      color: var(--accent-primary);
+      font-weight: $font-weight-bold;
+    }
+  }
+
   &__card-skills {
     padding: 0 $spacing-sm;
     font-size: 0.8rem;
@@ -167,6 +183,30 @@
 
     &--live {
       margin-left: auto;
+    }
+  }
+
+  &__cta {
+    margin-top: $spacing-xl;
+    padding: $spacing-xl;
+    text-align: center;
+    background-color: var(--background-secondary);
+    border-radius: $border-radius-lg;
+    border: 1px solid var(--border-color);
+
+    @media (max-width: $breakpoint-sm) {
+      padding: $spacing-lg;
+    }
+  }
+
+  &__cta-text {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: $spacing-md;
+    font-weight: $font-weight-medium;
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: 1rem;
     }
   }
 }
