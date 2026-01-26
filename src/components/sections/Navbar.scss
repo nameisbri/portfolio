@@ -68,10 +68,15 @@
 
       &:hover {
         color: var(--accent-primary);
+        text-decoration: none;
 
         &::after {
           width: 100%;
         }
+      }
+
+      &:focus {
+        text-decoration: none;
       }
     }
   }
