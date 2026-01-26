@@ -5,7 +5,8 @@ import "./Projects.scss";
 
 import discloserImage from "../../assets/images/projects/discloser.jpg";
 import nutritionCalculatorImage from "../../assets/images/projects/nutrition-calc.png";
-// TODO: Add images for Discloser landing page and Yellow Brolly Co.
+import discloserLandingImage from "../../assets/images/projects/discloser-landing.png";
+import yellowBrollyImage from "../../assets/images/projects/yellow-brolly.png";
 
 interface Project {
   id: string;
@@ -38,7 +39,8 @@ const Projects = () => {
       highlightedSkills:
         "React Native iOS development, product design, UX/UI design, OCR integration, native mobile development, AI-assisted workflows",
       type: "iOS App",
-      result: "🚀 Impact: Successfully launched to iOS Beta; reduced manual data entry by 60% via AI-OCR integration.",
+      result:
+        "🚀 Impact: Successfully launched to iOS Beta; reduced manual data entry by 60% via AI-OCR integration.",
       tech: [
         "React Native",
         "iOS",
@@ -57,7 +59,8 @@ const Projects = () => {
         live: "https://discloser.app",
         liveLabel: "Visit Landing Page",
       },
-      outcome: "iOS Beta live • Android in development • Complete product lifecycle from design to deployment",
+      outcome:
+        "iOS Beta live • Android in development • Complete product lifecycle from design to deployment",
     },
     {
       id: "discloser-landing",
@@ -76,12 +79,13 @@ const Projects = () => {
         "UX/UI",
       ],
       role: "Product Designer & Developer",
-      image: discloserImage, // TODO: Replace with Discloser landing page image
+      image: discloserLandingImage,
       links: {
         live: "https://discloser.app",
         liveLabel: "Visit Site",
       },
-      outcome: "Live at discloser.app • Optimized for conversions and mobile experience",
+      outcome:
+        "Live at discloser.app • Optimized for conversions and mobile experience",
     },
     {
       id: "yellow-brolly",
@@ -91,7 +95,8 @@ const Projects = () => {
       highlightedSkills:
         "Business website design, UX/UI design, brand identity, responsive development, conversion optimization, freelance project management",
       type: "Freelance",
-      result: "📈 Impact: Increased lead inquiries by 25% within the first month of launch.",
+      result:
+        "📈 Impact: Increased lead inquiries by 25% within the first month of launch.",
       tech: [
         "React",
         "TypeScript",
@@ -101,12 +106,13 @@ const Projects = () => {
         "UX/UI",
       ],
       role: "Product Designer & Developer",
-      image: discloserImage, // TODO: Replace with Yellow Brolly Co. image
+      image: yellowBrollyImage,
       links: {
         live: "https://yellow-brolly.vercel.app/",
         liveLabel: "Visit Site",
       },
-      outcome: "Delivered on time • Professional brand presence • Ready for client acquisition",
+      outcome:
+        "Delivered on time • Professional brand presence • Ready for client acquisition",
     },
     {
       id: "nutrition-calculator",
@@ -133,7 +139,10 @@ const Projects = () => {
         Projects
       </h2>
       <p className="projects__subtitle">
-        A collection of freelance projects, side projects, and product work showcasing my expertise in React Native mobile apps, web development, product design, and AI-enhanced development workflows. Each project demonstrates end-to-end product thinking—from design to implementation.
+        A collection of freelance projects, side projects, and product work
+        showcasing my expertise in React Native mobile apps, web development,
+        product design, and AI-enhanced development workflows. Each project
+        demonstrates end-to-end product thinking—from design to implementation.
       </p>
 
       <motion.div
@@ -149,7 +158,10 @@ const Projects = () => {
             className="projects__card"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.4, delay: projects.indexOf(project) * 0.1 }}
+            transition={{
+              duration: 0.4,
+              delay: projects.indexOf(project) * 0.1,
+            }}
             whileHover={{ y: -5 }}
             role="article"
             aria-labelledby={`project-title-${project.id}`}
@@ -189,9 +201,7 @@ const Projects = () => {
             <p className="projects__card-description">{project.description}</p>
 
             {project.result && (
-              <div className="projects__card-result">
-                {project.result}
-              </div>
+              <div className="projects__card-result">{project.result}</div>
             )}
 
             <div className="projects__card-skills">
