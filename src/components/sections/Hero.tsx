@@ -194,7 +194,10 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="hero__content">
-            <span className="hero__intro">Hi, I'm Gabriela</span>
+            <div className="hero__intro-wrapper">
+              <span className="hero__intro">Hi, I'm Gabriela</span>
+              <span className="hero__number">6+</span>
+            </div>
             <h1 className="hero__title">
               I Turn Product Ideas Into{" "}
               <span style={{ color: "var(--accent-primary)" }}>Profitable Apps & Websites</span>

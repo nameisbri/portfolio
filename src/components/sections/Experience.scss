@@ -4,6 +4,24 @@
   padding: $spacing-lg 0;
   position: relative;
 
+  // Creative section divider
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--accent-primary) 40%,
+      var(--accent-primary) 60%,
+      transparent
+    );
+    opacity: 0.2;
+  }
+
   &__intro-section {
     margin-bottom: $spacing-xl;
   }
