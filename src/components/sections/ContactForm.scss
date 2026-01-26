@@ -1,0 +1,158 @@
+@use "../../index.scss" as *;
+
+.contact-form {
+  padding: $spacing-xl 0;
+  background: var(--background-secondary);
+
+  &__container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+  }
+
+  &__subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto $spacing-xl;
+    line-height: 1.6;
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: 1rem;
+    }
+  }
+
+  &__form {
+    background: var(--background-primary);
+    padding: $spacing-xl;
+    border-radius: $border-radius-lg;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    @media (max-width: $breakpoint-sm) {
+      padding: $spacing-lg;
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-md;
+    margin-bottom: $spacing-md;
+
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: 1fr;
+      gap: $spacing-sm;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs/2;
+
+    &--full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: $font-weight-medium;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+    }
+
+    input,
+    select,
+    textarea {
+      padding: $spacing-sm;
+      border: 1px solid var(--border-color);
+      border-radius: $border-radius-md;
+      background: var(--background-secondary);
+      color: var(--text-primary);
+      font-size: 1rem;
+      font-family: $font-family-primary;
+      @include transition(border-color, box-shadow);
+
+      &:focus {
+        outline: none;
+        border-color: var(--accent-primary);
+        box-shadow: 0 0 0 3px rgba(var(--accent-primary), 0.1);
+      }
+
+      &::placeholder {
+        color: var(--text-secondary);
+        opacity: 0.6;
+      }
+    }
+
+    select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23f25757' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right $spacing-sm center;
+      padding-right: $spacing-xl;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+      font-family: $font-family-primary;
+    }
+  }
+
+  &__submit {
+    width: 100%;
+    margin-top: $spacing-lg;
+    padding: $spacing-sm $spacing-lg;
+    font-weight: $font-weight-bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-xs;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+  }
+
+  &__success {
+    margin-top: $spacing-md;
+    padding: $spacing-sm;
+    background: rgba($color-chartreuse, 0.1);
+    border: 1px solid rgba($color-chartreuse, 0.3);
+    border-radius: $border-radius-md;
+    color: var(--text-primary);
+    text-align: center;
+    font-size: 0.9rem;
+
+    a {
+      color: var(--accent-primary);
+      text-decoration: underline;
+    }
+  }
+
+  &__error {
+    margin-top: $spacing-md;
+    padding: $spacing-sm;
+    background: rgba($color-bittersweet, 0.1);
+    border: 1px solid rgba($color-bittersweet, 0.3);
+    border-radius: $border-radius-md;
+    color: var(--text-primary);
+    text-align: center;
+    font-size: 0.9rem;
+
+    a {
+      color: var(--accent-primary);
+      text-decoration: underline;
+    }
+  }
+}

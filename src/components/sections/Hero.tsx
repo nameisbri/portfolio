@@ -1,7 +1,6 @@
 import { motion, useAnimationControls } from "framer-motion";
 import {
   ArrowRight,
-  FileArrowDown,
   PaintBucket,
   Globe,
   DeviceMobile,
@@ -194,52 +193,28 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="hero__content">
-            <span className="hero__intro">Hi, I'm Gabriela</span>
             <h1 className="hero__title">
-              Product Designer &{" "}
-              <span className="text-gradient">Developer</span>
+              From Idea to App Store in Weeks, Not Months
             </h1>
 
             <p className="hero__subtitle">
-              I create end-to-end digital products—from concept to launch. Specializing in React Native iOS apps, modern web applications, product design, and UX/UI, I leverage AI-assisted development workflows (Cursor, Claude, agent systems) to deliver efficient, user-centric solutions. Available for freelance projects, product design, and development opportunities.
+              I build high-performance mobile apps and conversion-driven websites for founders who need to move fast. By combining Product Design with AI-Accelerated Development, I deliver agency-grade results at startup speed.
             </p>
 
             <div className="hero__buttons">
               <a
-                href="/Resume_Gabriela_Barreira.pdf"
-                download="Resume_Gabriela_Barreira.pdf"
-                target="_blank"
-                className="button button--primary hero__resume-btn"
+                href="#contact"
+                className="button button--primary hero__cta-btn"
               >
-                <FileArrowDown weight="bold" />
-                <span>Download Resume</span>
+                <span>Start Your Project</span>
+                <ArrowRight weight="bold" />
               </a>
-            </div>
-
-            <div className="hero__links">
-              <a href="#projects" className="hero__link">
-                <motion.span initial={{ x: -5 }} whileHover={{ x: 0 }}>
-                  View my projects
-                </motion.span>
-                <motion.div
-                  initial={{ x: 0 }}
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  <ArrowRight weight="bold" />
-                </motion.div>
-              </a>
-              <a href="#contact" className="hero__link">
-                <motion.span initial={{ x: -5 }} whileHover={{ x: 0 }}>
-                  Get in touch
-                </motion.span>
-                <motion.div
-                  initial={{ x: 0 }}
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  <ArrowRight weight="bold" />
-                </motion.div>
+              <a
+                href="#projects"
+                className="button button--secondary hero__view-work-btn"
+              >
+                <span>View My Work</span>
+                <ArrowRight weight="bold" />
               </a>
             </div>
           </div>

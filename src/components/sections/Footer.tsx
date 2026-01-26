@@ -3,7 +3,6 @@ import {
   GithubLogo,
   LinkedinLogo,
   EnvelopeSimple,
-  FileArrowDown,
   MapPin,
 } from "@phosphor-icons/react";
 
@@ -21,7 +20,7 @@ const Footer = () => {
           </div>
           <h2 className="footer__contact-title">Let's Work Together</h2>
           <p className="footer__contact-text">
-            I'm a Product Designer & Developer specializing in React Native iOS apps, modern web applications, product design, and UX/UI. I leverage AI-assisted development workflows (Cursor, Claude, agent systems) to deliver efficient, high-quality solutions throughout the entire product lifecycle. Available for freelance projects, product design work, and development opportunities—let's bring your vision to life.
+            I'm a Product Designer & Developer specializing in React Native mobile apps, modern web applications, product design, and UX/UI. I leverage AI-assisted development workflows (Cursor, Claude, agent systems) to deliver efficient, high-quality solutions throughout the entire product lifecycle. Available for freelance projects, product design work, and development opportunities—let's bring your vision to life.
           </p>
 
           <ul className="footer__contact-info">
@@ -37,17 +36,8 @@ const Footer = () => {
 
           <div className="footer__cta">
             <a
-              href="/Resume_Gabriela_Barreira.pdf"
-              download="Resume_Gabriela_Barreira.pdf"
-              target="_blank"
-              className="button button--primary footer__resume-btn"
-            >
-              <FileArrowDown weight="bold" size={18} />
-              <span>Download Resume</span>
-            </a>
-            <a
               href="mailto:gabriela@gcsb.me?subject=Inquiry%20for%20Gabriela"
-              className="button button--secondary footer__contact-btn"
+              className="button button--primary footer__contact-btn"
             >
               <EnvelopeSimple weight="bold" size={18} />
               <span>Contact Me</span>
@@ -97,6 +87,14 @@ const Footer = () => {
         <p>
           © {new Date().getFullYear()} Gabriela Barreira. All rights reserved.
         </p>
+        <a
+          href="/Resume_Gabriela_Barreira.pdf"
+          download="Resume_Gabriela_Barreira.pdf"
+          target="_blank"
+          className="footer__resume-link"
+        >
+          Download Resume
+        </a>
       </div>
     </footer>
   );

@@ -31,9 +31,9 @@ const Services = () => {
     },
     {
       id: "ios-app-development",
-      title: "iOS App Development",
+      title: "Mobile App Development",
       description:
-        "Native iOS applications built with React Native. I specialize in creating smooth, performant mobile experiences that feel native to iOS while leveraging cross-platform efficiency.",
+        "Native mobile applications built with React Native. I specialize in creating smooth, performant mobile experiences that work beautifully on iOS and Android, delivered faster with modern development practices.",
       icon: <DeviceMobile weight="duotone" />,
     },
     {
@@ -96,7 +96,7 @@ const Services = () => {
       <p className="services__subtitle">
         I offer comprehensive product development services, from initial design
         concepts to fully functional applications. Whether you need a website, an
-        iOS app, product design, or the complete product lifecycle, I bring
+        mobile app, product design, or the complete product lifecycle, I bring
         technical expertise, design thinking, and AI-enhanced workflows to every
         project.
       </p>

@@ -12,7 +12,7 @@ const workExperience = [
     period: "2018 - Present",
     location: "Remote",
     description: [
-      "Design and develop iOS apps, websites, and digital products for clients across various industries",
+      "Design and develop mobile apps, websites, and digital products for clients across various industries",
       "Deliver end-to-end solutions from initial concept through design, development, and launch",
       "Leverage AI-enhanced workflows to provide efficient, high-quality results for freelance clients",
     ],
@@ -52,7 +52,7 @@ const skillsExperience = [
   {
     category: "What I Deliver",
     skills: [
-      "Complete iOS apps built with React Native, from design to App Store deployment",
+      "Complete mobile apps built with React Native, from design to App Store and Play Store deployment",
       "Modern, responsive websites that work beautifully on all devices",
       "Full product development from initial concept through launch",
       "Professional design that reflects your brand and engages your users",
@@ -83,10 +83,10 @@ const Experience = () => {
 
   return (
     <section className="experience" id="experience">
-      <h2 className="section__heading">Experience</h2>
+      <h2 className="section__heading">The Full-Stack Edge</h2>
 
       <p className="experience__intro">
-        I help businesses and entrepreneurs bring their digital product ideas to life. From iOS apps to websites, I handle the entire process—design, development, and launch—so you can focus on your business. My approach combines thoughtful design, modern development practices, and AI-enhanced workflows to deliver results efficiently without compromising quality.
+        Most founders get stuck playing 'telephone' between a designer and a developer. I bridge that gap. With 8+ years of experience and 20+ successful launches, I handle the entire lifecycle. You get the expertise of a full agency with the agility and direct communication of a single dedicated partner.
       </p>
 
       <div className="experience__tabs">
@@ -206,7 +206,7 @@ const Experience = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <p>
-                Ready to bring your product idea to life? I work with businesses, entrepreneurs, and organizations to create iOS apps, websites, and digital products that make an impact. Let's discuss your project and see how I can help you achieve your goals.
+                Ready to bring your product idea to life? I work with businesses, entrepreneurs, and organizations to create mobile apps, websites, and digital products that make an impact. Let's discuss your project and see how I can help you achieve your goals.
               </p>
             </motion.div>
           </div>

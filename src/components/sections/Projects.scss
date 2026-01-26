@@ -121,6 +121,23 @@
     line-height: 1.4;
   }
 
+  &__card-result {
+    padding: $spacing-sm;
+    margin: $spacing-sm $spacing-sm $spacing-xs;
+    background: linear-gradient(135deg, rgba($color-chartreuse, 0.15), rgba($color-bittersweet, 0.1));
+    border-left: 3px solid var(--accent-primary);
+    border-radius: $border-radius-sm;
+    font-size: 0.9rem;
+    font-weight: $font-weight-medium;
+    color: var(--text-primary);
+    line-height: 1.5;
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: 0.85rem;
+      padding: $spacing-xs;
+    }
+  }
+
   &__card-skills {
     padding: 0 $spacing-sm;
     font-size: 0.8rem;
