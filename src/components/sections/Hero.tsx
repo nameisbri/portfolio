@@ -199,7 +199,8 @@ const Hero = () => {
         >
           <div className="hero__content">
             <h1 className="hero__title">
-              From Idea to App Store in Weeks, Not Months
+              From Idea to App Store in{" "}
+              <span className="text-gradient">Weeks, Not Months</span>
             </h1>
 
             <p className="hero__subtitle">

@@ -105,6 +105,7 @@
     &:focus {
       transform: translateY(-2px);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      color: white !important; // Ensure text stays white on red button
     }
   } @else if $type == "secondary" {
     background-color: transparent;

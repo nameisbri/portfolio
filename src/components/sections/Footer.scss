@@ -68,7 +68,7 @@
   &__contact-title {
     font-size: 1.8rem;
     margin-bottom: $spacing-sm;
-    color: var(--accent-primary);
+    @include text-gradient(var(--accent-primary), var(--accent-secondary));
     @media (max-width: $breakpoint-sm) {
       font-size: 1.5rem;
     }
@@ -167,7 +167,7 @@
   &__name {
     font-size: 1.3rem;
     margin-bottom: $spacing-xs/2;
-    color: var(--accent-primary);
+    @include text-gradient(var(--accent-primary), var(--accent-secondary));
   }
 
   &__tagline {

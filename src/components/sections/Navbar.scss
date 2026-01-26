@@ -22,7 +22,7 @@
     font-family: $font-family-primary;
     font-size: 1.3rem;
     font-weight: $font-weight-bold;
-    color: var(--accent-primary);
+    @include text-gradient(var(--accent-primary), var(--accent-secondary));
     text-decoration: none;
   }
 
