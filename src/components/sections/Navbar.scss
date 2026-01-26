@@ -66,6 +66,17 @@
         border-radius: $border-radius-full;
       }
 
+      &:link,
+      &:visited,
+      &:active {
+        color: var(--text-primary);
+        text-decoration: none;
+
+        &::after {
+          width: 0;
+        }
+      }
+
       &:hover {
         color: var(--accent-primary);
         text-decoration: none;
@@ -76,7 +87,12 @@
       }
 
       &:focus {
+        color: var(--text-primary);
         text-decoration: none;
+
+        &::after {
+          width: 0;
+        }
       }
     }
   }
