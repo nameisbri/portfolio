@@ -31,7 +31,7 @@ const Footer = () => {
             </li>
             <li>
               <MapPin size={18} />
-              <span>Ontario, Canada & Open to Remote</span>
+              <span>Hamilton, Ontario • Remote</span>
             </li>
           </ul>
 

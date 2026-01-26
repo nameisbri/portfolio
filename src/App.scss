@@ -49,3 +49,16 @@
     }
   }
 }
+
+.skip-to-content {
+  position: absolute;
+  top: -40px; /* Hidden by default */
+  left: 0;
+  padding: 8px 16px;
+  z-index: 9999;
+  transition: top 0.2s;
+
+  &:focus {
+    top: 0; /* Appears when focused */
+  }
+}

@@ -261,6 +261,7 @@ const Hero = () => {
               initial="visible"
               onHoverStart={() => handleHover(0)}
               onHoverEnd={handleHoverEnd}
+              role="presentation"
             >
               <motion.div
                 className="hero__skill-inner"
@@ -282,6 +283,7 @@ const Hero = () => {
               initial="visible"
               onHoverStart={() => handleHover(1)}
               onHoverEnd={handleHoverEnd}
+              role="presentation"
             >
               <motion.div
                 className="hero__skill-inner"
@@ -303,6 +305,7 @@ const Hero = () => {
               initial="visible"
               onHoverStart={() => handleHover(2)}
               onHoverEnd={handleHoverEnd}
+              role="presentation"
             >
               <motion.div
                 className="hero__skill-inner"
@@ -324,6 +327,7 @@ const Hero = () => {
               initial="visible"
               onHoverStart={() => handleHover(3)}
               onHoverEnd={handleHoverEnd}
+              role="presentation"
             >
               <motion.div
                 className="hero__skill-inner"
@@ -345,6 +349,7 @@ const Hero = () => {
               initial="visible"
               onHoverStart={() => handleHover(4)}
               onHoverEnd={handleHoverEnd}
+              role="presentation"
             >
               <motion.div
                 className="hero__skill-inner"
@@ -366,6 +371,7 @@ const Hero = () => {
               initial="visible"
               onHoverStart={() => handleHover(5)}
               onHoverEnd={handleHoverEnd}
+              role="presentation"
             >
               <motion.div
                 className="hero__skill-inner"
@@ -387,6 +393,7 @@ const Hero = () => {
               initial="visible"
               onHoverStart={() => handleHover(6)}
               onHoverEnd={handleHoverEnd}
+              role="presentation"
             >
               <motion.div
                 className="hero__skill-inner"
@@ -408,6 +415,7 @@ const Hero = () => {
               initial="visible"
               onHoverStart={() => handleHover(7)}
               onHoverEnd={handleHoverEnd}
+              role="presentation"
             >
               <motion.div
                 className="hero__skill-inner"
@@ -429,6 +437,7 @@ const Hero = () => {
               initial="visible"
               onHoverStart={() => handleHover(8)}
               onHoverEnd={handleHoverEnd}
+              role="presentation"
             >
               <motion.div
                 className="hero__skill-inner"
@@ -450,6 +459,7 @@ const Hero = () => {
               initial="visible"
               onHoverStart={() => handleHover(9)}
               onHoverEnd={handleHoverEnd}
+              role="presentation"
             >
               <motion.div
                 className="hero__skill-inner"
@@ -471,6 +481,7 @@ const Hero = () => {
               initial="visible"
               onHoverStart={() => handleHover(10)}
               onHoverEnd={handleHoverEnd}
+              role="presentation"
             >
               <motion.div
                 className="hero__skill-inner"
@@ -492,6 +503,7 @@ const Hero = () => {
               initial="visible"
               onHoverStart={() => handleHover(11)}
               onHoverEnd={handleHoverEnd}
+              role="presentation"
             >
               <motion.div
                 className="hero__skill-inner"
@@ -513,6 +525,7 @@ const Hero = () => {
               initial="visible"
               onHoverStart={() => handleHover(12)}
               onHoverEnd={handleHoverEnd}
+              role="presentation"
             >
               <motion.div
                 className="hero__skill-inner"
@@ -534,6 +547,7 @@ const Hero = () => {
               initial="visible"
               onHoverStart={() => handleHover(13)}
               onHoverEnd={handleHoverEnd}
+              role="presentation"
             >
               <motion.div
                 className="hero__skill-inner"
@@ -555,6 +569,7 @@ const Hero = () => {
               initial="visible"
               onHoverStart={() => handleHover(14)}
               onHoverEnd={handleHoverEnd}
+              role="presentation"
             >
               <motion.div
                 className="hero__skill-inner"
@@ -576,6 +591,7 @@ const Hero = () => {
               initial="visible"
               onHoverStart={() => handleHover(15)}
               onHoverEnd={handleHoverEnd}
+              role="presentation"
             >
               <motion.div
                 className="hero__skill-inner"

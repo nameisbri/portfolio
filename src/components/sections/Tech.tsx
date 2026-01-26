@@ -62,6 +62,36 @@ const Tech = () => {
       category: "ai-tools",
       icon: <Robot weight="duotone" />,
     },
+    {
+      name: "WordPress",
+      category: "platform",
+      icon: <Globe weight="duotone" />,
+    },
+    {
+      name: "Claude",
+      category: "ai",
+      icon: <Lightbulb weight="duotone" />,
+    },
+    {
+      name: "Cursor",
+      category: "ai",
+      icon: <Code weight="duotone" />,
+    },
+    {
+      name: "ChatGPT",
+      category: "ai",
+      icon: <Lightbulb weight="duotone" />,
+    },
+    {
+      name: "Google Analytics",
+      category: "analytics",
+      icon: <ChartBar weight="duotone" />,
+    },
+    {
+      name: "Figma",
+      category: "design",
+      icon: <PaintBrush weight="duotone" />,
+    },
   ];
 
   const containerVariants = {

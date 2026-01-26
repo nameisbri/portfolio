@@ -44,7 +44,7 @@ const educationExperience = [
     period: "2010 - 2014",
     location: "Aveiro, Portugal",
     description:
-      "Technical program combining digital media, communication strategies, and emerging technologies. Coursework included introductory programming, digital media production, and user experience principles—providing a foundation for understanding the intersection of technology and human-centered design that informs my development approach across industries.",
+      "Technical program combining digital media, communication strategies, and web technologies. Coursework included introductory programming, digital media production, and user experience principles—providing a foundation for understanding the intersection of technology and human-centered design.",
   },
 ];
 
