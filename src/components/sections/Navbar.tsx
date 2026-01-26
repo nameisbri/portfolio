@@ -7,7 +7,6 @@ const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,36 +15,9 @@ const Navbar = () => {
       } else {
         setIsScrolled(false);
       }
-
-      // Determine active section based on scroll position
-      const scrollPosition = window.scrollY + 150; // Offset for navbar and padding
-      const sections = [
-        { id: "main-content", name: "" },
-        { id: "projects", name: "projects" },
-        { id: "services", name: "services" },
-        { id: "skills", name: "skills" },
-        { id: "experience", name: "experience" },
-        { id: "contact", name: "contact" },
-      ];
-
-      // Check from bottom to top to find the current section
-      let currentSection = "";
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const sectionElement = document.getElementById(sections[i].id);
-        if (sectionElement) {
-          const sectionTop = sectionElement.offsetTop;
-          if (scrollPosition >= sectionTop) {
-            currentSection = sections[i].name;
-            break;
-          }
-        }
-      }
-
-      setActiveSection(currentSection);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial check
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -124,7 +96,6 @@ const Navbar = () => {
           <li className="navbar__item" role="menuitem">
             <a
               href="#"
-              className={activeSection === "" ? "active" : ""}
               onClick={handleNavClick}
               tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
             >
@@ -134,7 +105,6 @@ const Navbar = () => {
           <li className="navbar__item" role="menuitem">
             <a
               href="#projects"
-              className={activeSection === "projects" ? "active" : ""}
               onClick={handleNavClick}
               tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
             >
@@ -144,7 +114,6 @@ const Navbar = () => {
           <li className="navbar__item" role="menuitem">
             <a
               href="#services"
-              className={activeSection === "services" ? "active" : ""}
               onClick={handleNavClick}
               tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
             >
@@ -154,7 +123,6 @@ const Navbar = () => {
           <li className="navbar__item" role="menuitem">
             <a
               href="#skills"
-              className={activeSection === "skills" ? "active" : ""}
               onClick={handleNavClick}
               tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
             >
@@ -164,7 +132,6 @@ const Navbar = () => {
           <li className="navbar__item" role="menuitem">
             <a
               href="#experience"
-              className={activeSection === "experience" ? "active" : ""}
               onClick={handleNavClick}
               tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
             >
@@ -174,7 +141,6 @@ const Navbar = () => {
           <li className="navbar__item" role="menuitem">
             <a
               href="#contact"
-              className={activeSection === "contact" ? "active" : ""}
               onClick={handleNavClick}
               tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
             >

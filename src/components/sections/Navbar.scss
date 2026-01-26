@@ -47,6 +47,8 @@
       position: relative;
       @include transition(color);
       font-size: 0.9rem;
+      border: none;
+      outline: none;
 
       &::after {
         content: "";
@@ -64,8 +66,7 @@
         border-radius: $border-radius-full;
       }
 
-      &:hover,
-      &.active {
+      &:hover {
         color: var(--accent-primary);
 
         &::after {
