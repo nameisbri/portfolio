@@ -19,6 +19,7 @@ interface Project {
   links?: {
     github?: string;
     live?: string;
+    liveLabel?: string; // Custom label for live link
   };
   outcome?: string;
 }
@@ -50,7 +51,8 @@ const Projects = () => {
       image: discloserImage,
       links: {
         github: "https://github.com/nameisbri/discloser",
-        live: "https://www.linkedin.com/feed/update/urn:li:activity:7302373369012785154/",
+        live: "https://discloser.app",
+        liveLabel: "Visit Landing Page",
       },
       outcome: "Successfully launched on App Store • Complete product lifecycle from design to deployment",
     },
@@ -74,6 +76,7 @@ const Projects = () => {
       image: discloserImage, // TODO: Replace with Discloser landing page image
       links: {
         live: "https://discloser.app",
+        liveLabel: "Visit Site",
       },
       outcome: "Live at discloser.app • Optimized for conversions and mobile experience",
     },
@@ -97,6 +100,7 @@ const Projects = () => {
       image: discloserImage, // TODO: Replace with Yellow Brolly Co. image
       links: {
         live: "https://yellow-brolly.vercel.app/",
+        liveLabel: "Visit Site",
       },
       outcome: "Delivered on time • Professional brand presence • Ready for client acquisition",
     },
@@ -214,10 +218,10 @@ const Projects = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="projects__link projects__link--live"
-                  aria-label={`View live demo of ${project.title}`}
+                  aria-label={`${project.links.liveLabel || "View"} ${project.title}`}
                 >
                   <Globe size={20} aria-hidden="true" />
-                  <span>Demo</span>
+                  <span>{project.links.liveLabel || "View Site"}</span>
                 </a>
               )}
             </div>
