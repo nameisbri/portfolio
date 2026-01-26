@@ -86,7 +86,7 @@ const Experience = () => {
       <h2 className="section__heading">Experience</h2>
 
       <p className="experience__intro">
-        I help businesses and entrepreneurs bring their digital product ideas to life. From iOS apps to websites, I handle the entire process—design, development, and launch—so you can focus on your business. My approach combines thoughtful design, modern development practices, and AI-enhanced workflows to deliver results efficiently without compromising quality.
+        I help businesses and entrepreneurs launch products that drive results. 6+ years of freelance experience, 20+ products launched. From iOS apps to websites, I handle design and development so you can focus on growing your business.
       </p>
 
       <div className="experience__tabs">

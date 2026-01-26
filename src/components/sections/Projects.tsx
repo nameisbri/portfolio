@@ -117,7 +117,7 @@ const Projects = () => {
         Projects
       </h2>
       <p className="projects__subtitle">
-        A collection of freelance projects, side projects, and product work showcasing my expertise in React Native iOS apps, web development, product design, and AI-enhanced development workflows. Each project demonstrates end-to-end product thinking—from design to implementation.
+        Real projects, real results. See how I've helped clients launch iOS apps, websites, and digital products from concept to market.
       </p>
 
       <motion.div

@@ -19,9 +19,9 @@ const Footer = () => {
               className="footer__image"
             />
           </div>
-          <h2 className="footer__contact-title">Let's Work Together</h2>
+          <h2 className="footer__contact-title">Ready to Start Your Project?</h2>
           <p className="footer__contact-text">
-            I'm a Product Designer & Developer specializing in React Native iOS apps, modern web applications, product design, and UX/UI. I leverage AI-assisted development workflows (Cursor, Claude, agent systems) to deliver efficient, high-quality solutions throughout the entire product lifecycle. Available for freelance projects, product design work, and development opportunities—let's bring your vision to life.
+            Let's discuss how I can help bring your product idea to life. I'm available for new projects and would love to hear about what you're building.
           </p>
 
           <ul className="footer__contact-info">
@@ -46,11 +46,11 @@ const Footer = () => {
               <span>Download Resume</span>
             </a>
             <a
-              href="mailto:gabriela@gcsb.me?subject=Inquiry%20for%20Gabriela"
-              className="button button--secondary footer__contact-btn"
+              href="mailto:gabriela@gcsb.me?subject=Project%20Inquiry"
+              className="button button--primary footer__contact-btn"
             >
               <EnvelopeSimple weight="bold" size={18} />
-              <span>Contact Me</span>
+              <span>Get Started</span>
             </a>
           </div>
         </div>

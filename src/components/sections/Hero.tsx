@@ -47,12 +47,12 @@ const Hero = () => {
 
   const floatVariants = {
     animate: (i: number) => ({
-      y: CORE_SKILLS.includes(i) ? [0, -6, 0] : [0, i % 2 === 0 ? -8 : -12, 0],
+      y: CORE_SKILLS.includes(i) ? [0, -3, 0] : [0, i % 2 === 0 ? -4 : -6, 0],
       transition: {
-        duration: CORE_SKILLS.includes(i) ? 4 : i % 2 === 0 ? 3 : 4,
+        duration: CORE_SKILLS.includes(i) ? 6 : i % 2 === 0 ? 5 : 6,
         repeat: Infinity,
         ease: "easeInOut",
-        delay: i * 0.2,
+        delay: i * 0.3,
       },
     }),
   };
@@ -196,58 +196,43 @@ const Hero = () => {
           <div className="hero__content">
             <span className="hero__intro">Hi, I'm Gabriela</span>
             <h1 className="hero__title">
-              Product Designer &{" "}
-              <span className="text-gradient">Developer</span>
+              I Turn Product Ideas Into{" "}
+              <span className="text-gradient">Profitable Apps & Websites</span>
             </h1>
 
             <p className="hero__subtitle">
-              I create end-to-end digital products—from concept to launch. Specializing in React Native iOS apps, modern web applications, product design, and UX/UI, I leverage AI-assisted development workflows (Cursor, Claude, agent systems) to deliver efficient, user-centric solutions. Available for freelance projects, product design, and development opportunities.
+              I turn product ideas into profitable apps and websites. From concept to App Store, I handle design, development, and launch—delivering results faster with AI-enhanced workflows.
             </p>
 
+            <div className="hero__availability">
+              <span className="hero__availability-badge">Available for new projects</span>
+            </div>
+
             <div className="hero__buttons">
+              <a
+                href="#contact"
+                className="button button--primary hero__cta-btn"
+              >
+                <span>Start a Project</span>
+                <ArrowRight weight="bold" />
+              </a>
               <a
                 href="/Resume_Gabriela_Barreira.pdf"
                 download="Resume_Gabriela_Barreira.pdf"
                 target="_blank"
-                className="button button--primary hero__resume-btn"
+                className="button button--secondary hero__resume-btn"
               >
                 <FileArrowDown weight="bold" />
                 <span>Download Resume</span>
               </a>
             </div>
 
-            <div className="hero__links">
-              <a href="#projects" className="hero__link">
-                <motion.span initial={{ x: -5 }} whileHover={{ x: 0 }}>
-                  View my projects
-                </motion.span>
-                <motion.div
-                  initial={{ x: 0 }}
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  <ArrowRight weight="bold" />
-                </motion.div>
-              </a>
-              <a href="#contact" className="hero__link">
-                <motion.span initial={{ x: -5 }} whileHover={{ x: 0 }}>
-                  Get in touch
-                </motion.span>
-                <motion.div
-                  initial={{ x: 0 }}
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  <ArrowRight weight="bold" />
-                </motion.div>
-              </a>
-            </div>
           </div>
         </motion.div>
 
         <div className="hero__right">
           <motion.div
-            className="hero__skill-cloud"
+            className="hero__skill-cloud hero__skill-cloud--simplified"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
