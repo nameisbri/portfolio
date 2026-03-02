@@ -127,7 +127,7 @@ const Tech = () => {
 
       <div className="tech__intro">
         <p>
-          I bring together product design, development, and modern AI-enhanced workflows to deliver complete digital solutions. Whether you need a mobile app, a website, or a full product from concept to launch, I have the expertise to make it happen efficiently and beautifully.
+          Design and development across mobile, web, and full-stack. I use AI-assisted tools in my workflow and handle projects from concept through deployment.
         </p>
       </div>
 
@@ -160,21 +160,14 @@ const Tech = () => {
         <div className="tech__category-group">
           <h3 className="tech__category-title">What I Build</h3>
           <p>
-            Mobile apps (iOS & Android), responsive websites, and full-stack web applications. I handle everything from the initial design to final deployment, ensuring your product works beautifully across all devices.
+            Mobile apps (iOS & Android) with React Native, responsive websites, and full-stack web applications. From initial design in Figma through deployment.
           </p>
         </div>
 
         <div className="tech__category-group">
           <h3 className="tech__category-title">How I Work</h3>
           <p>
-            I combine design thinking with technical expertise to create products that look great and work seamlessly. Every project includes thoughtful UX/UI design, clean code, and attention to detail.
-          </p>
-        </div>
-
-        <div className="tech__category-group">
-          <h3 className="tech__category-title">Why It's Efficient</h3>
-          <p>
-            I leverage modern AI-assisted development tools and workflows to deliver high-quality results faster. This means you get your product sooner without compromising on quality or design.
+            Design and code under one roof. I start in Figma, build in React/React Native, and use AI-assisted tools (Claude, Cursor) to move faster without cutting corners.
           </p>
         </div>
       </div>
