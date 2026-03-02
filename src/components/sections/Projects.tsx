@@ -35,9 +35,9 @@ const Projects = () => {
       id: "discloser-ios",
       title: "Discloser - Mobile App",
       description:
-        "A secure health-tech app built for rapid scaling. A native iOS app built with React Native that allows users to manage and share sensitive health information privately. Features OCR extraction from documents, automated reminders, and secure sharing capabilities.",
+        "A React Native iOS app for managing and sharing sensitive health information. Features OCR document extraction, automated reminders, and secure sharing. Designed and built end-to-end from concept to App Store beta.",
       highlightedSkills:
-        "React Native iOS development, product design, UX/UI design, OCR integration, native mobile development, AI-assisted workflows",
+        "React Native, iOS development, product design, UX/UI, OCR integration",
       type: "iOS App",
       result:
         "🚀 Impact: Successfully launched to iOS Beta; reduced manual data entry by 60% via AI-OCR integration.",
@@ -66,9 +66,9 @@ const Projects = () => {
       id: "discloser-landing",
       title: "Discloser - Landing Page",
       description:
-        "A modern, conversion-focused landing page designed and developed for the Discloser mobile app. Features responsive design, clear value proposition, and seamless user experience to drive app downloads. Built with attention to UX principles and conversion optimization.",
+        "Marketing site for the Discloser mobile app. Responsive design, clear information architecture, and optimized for mobile. Built with React and TypeScript.",
       highlightedSkills:
-        "Web design, UX/UI design, responsive development, conversion optimization, product marketing, AI-assisted development",
+        "Web design, UX/UI design, responsive development, React, TypeScript",
       type: "Web Design",
       tech: [
         "React",
@@ -85,15 +85,15 @@ const Projects = () => {
         liveLabel: "Visit Site",
       },
       outcome:
-        "Live at discloser.app • Optimized for conversions and mobile experience",
+        "Live at discloser.app",
     },
     {
       id: "yellow-brolly",
       title: "Yellow Brolly Co. - Consulting Website",
       description:
-        "A high-conversion landing page for a premium consultancy. A professional consulting business website designed and developed for Yellow Brolly Co. Features clean, modern design, clear service offerings, and optimized user experience to showcase consulting expertise and attract clients.",
+        "Professional consulting website for Yellow Brolly Co. Clean, modern design with clear service presentation and responsive layout. Freelance project handling design and development.",
       highlightedSkills:
-        "Business website design, UX/UI design, brand identity, responsive development, conversion optimization, freelance project management",
+        "Business website design, UX/UI design, brand identity, responsive development",
       type: "Freelance",
       result:
         "📈 Impact: Increased lead inquiries by 25% within the first month of launch.",
@@ -112,7 +112,7 @@ const Projects = () => {
         liveLabel: "Visit Site",
       },
       outcome:
-        "Delivered on time • Professional brand presence • Ready for client acquisition",
+        "Delivered and live",
     },
     {
       id: "nutrition-calculator",
@@ -139,10 +139,7 @@ const Projects = () => {
         Projects
       </h2>
       <p className="projects__subtitle">
-        A collection of freelance projects, side projects, and product work
-        showcasing my expertise in React Native mobile apps, web development,
-        product design, and AI-enhanced development workflows. Each project
-        demonstrates end-to-end product thinking—from design to implementation.
+        Selected work across mobile apps, web development, and product design.
       </p>
 
       <motion.div
@@ -243,14 +240,6 @@ const Projects = () => {
         ))}
       </motion.div>
 
-      <div className="projects__cta">
-        <p className="projects__cta-text">
-          Have a project in mind? Let's discuss how I can help bring it to life.
-        </p>
-        <a href="#contact" className="button button--primary">
-          Start Your Project
-        </a>
-      </div>
     </section>
   );
 };

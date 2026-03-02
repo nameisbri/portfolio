@@ -9,7 +9,7 @@ import {
   BracketsSquare,
   BracketsCurly,
   Stack,
-  Lightning,
+  TreeStructure,
 } from "@phosphor-icons/react";
 import "./Hero.scss";
 
@@ -199,27 +199,29 @@ const Hero = () => {
         >
           <div className="hero__content">
             <h1 className="hero__title">
-              From Idea to App Store in{" "}
-              <span className="text-gradient">Weeks, Not Months</span>
+              I design and build{" "}
+              <span className="text-gradient">mobile apps & web products</span>
             </h1>
 
             <p className="hero__subtitle">
-              I build high-performance mobile apps and conversion-driven websites for founders who need to move fast. By combining Product Design with AI-Accelerated Development, I deliver agency-grade results at startup speed.
+              Product designer turned developer with 8+ years in digital products. I work across the full stack — from Figma to React Native to deployment.
             </p>
 
             <div className="hero__buttons">
               <a
-                href="#contact"
+                href="#projects"
                 className="button button--primary hero__cta-btn"
               >
-                <span>Start Your Project</span>
+                <span>See My Work</span>
                 <ArrowRight weight="bold" />
               </a>
               <a
-                href="#projects"
+                href="/Resume_Gabriela_Barreira.pdf"
+                download="Resume_Gabriela_Barreira.pdf"
+                target="_blank"
                 className="button button--secondary hero__view-work-btn"
               >
-                <span>View My Work</span>
+                <span>Download Resume</span>
                 <ArrowRight weight="bold" />
               </a>
             </div>
@@ -453,9 +455,9 @@ const Hero = () => {
               </motion.div>
             </motion.div>
 
-            {/* Landing Pages */}
+            {/* JavaScript */}
             <motion.div
-              className="hero__skill hero__skill--landing"
+              className="hero__skill hero__skill--javascript"
               variants={itemVariants}
               custom={10}
               animate={skillControls[10]}
@@ -470,14 +472,14 @@ const Hero = () => {
                 custom={10}
                 initial="animate"
               >
-                <Globe size={20} weight="duotone" />
-                <span>Landing Pages</span>
+                <BracketsSquare size={20} weight="duotone" />
+                <span>JavaScript</span>
               </motion.div>
             </motion.div>
 
-            {/* Business Websites */}
+            {/* Git */}
             <motion.div
-              className="hero__skill hero__skill--business"
+              className="hero__skill hero__skill--git"
               variants={itemVariants}
               custom={11}
               animate={skillControls[11]}
@@ -493,13 +495,13 @@ const Hero = () => {
                 initial="animate"
               >
                 <Stack size={20} weight="duotone" />
-                <span>Business Sites</span>
+                <span>Git</span>
               </motion.div>
             </motion.div>
 
-            {/* End-to-End */}
+            {/* Node.js */}
             <motion.div
-              className="hero__skill hero__skill--endtoend"
+              className="hero__skill hero__skill--nodejs"
               variants={itemVariants}
               custom={12}
               animate={skillControls[12]}
@@ -514,14 +516,14 @@ const Hero = () => {
                 custom={12}
                 initial="animate"
               >
-                <PlugsConnected size={20} weight="duotone" />
-                <span>End-to-End</span>
+                <TreeStructure size={20} weight="duotone" />
+                <span>Node.js</span>
               </motion.div>
             </motion.div>
 
-            {/* Modern Design */}
+            {/* SCSS */}
             <motion.div
-              className="hero__skill hero__skill--modern"
+              className="hero__skill hero__skill--scss"
               variants={itemVariants}
               custom={13}
               animate={skillControls[13]}
@@ -537,13 +539,13 @@ const Hero = () => {
                 initial="animate"
               >
                 <PaintBucket size={20} weight="duotone" />
-                <span>Modern Design</span>
+                <span>SCSS</span>
               </motion.div>
             </motion.div>
 
-            {/* Fast Delivery */}
+            {/* Express */}
             <motion.div
-              className="hero__skill hero__skill--fast"
+              className="hero__skill hero__skill--express"
               variants={itemVariants}
               custom={14}
               animate={skillControls[14]}
@@ -558,14 +560,14 @@ const Hero = () => {
                 custom={14}
                 initial="animate"
               >
-                <Lightning size={20} weight="duotone" />
-                <span>Fast Delivery</span>
+                <BracketsCurly size={20} weight="duotone" />
+                <span>Express</span>
               </motion.div>
             </motion.div>
 
-            {/* Client-Focused */}
+            {/* MySQL */}
             <motion.div
-              className="hero__skill hero__skill--client"
+              className="hero__skill hero__skill--mysql"
               variants={itemVariants}
               custom={15}
               animate={skillControls[15]}
@@ -580,8 +582,8 @@ const Hero = () => {
                 custom={15}
                 initial="animate"
               >
-                <DeviceMobile size={20} weight="duotone" />
-                <span>Client-Focused</span>
+                <TreeStructure size={20} weight="duotone" />
+                <span>MySQL</span>
               </motion.div>
             </motion.div>
           </motion.div>
