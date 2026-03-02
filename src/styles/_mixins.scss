@@ -1,7 +1,10 @@
+@use "sass:list";
+@use "variables" as *;
+
 @mixin transition($properties...) {
   $values: ();
   @each $prop in $properties {
-    $values: append($values, $prop $transition-normal, comma);
+    $values: list.append($values, $prop $transition-normal, comma);
   }
   transition: $values;
 }

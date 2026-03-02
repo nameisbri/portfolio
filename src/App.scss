@@ -1,7 +1,7 @@
-@import "./styles/variables";
-@import "./styles/mixins";
-@import "./styles/typography";
-@import "./styles/globals";
+@use "./styles/variables" as *;
+@use "./styles/mixins" as *;
+@use "./styles/typography";
+@use "./styles/globals";
 
 .app {
   display: flex;

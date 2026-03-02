@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "../../index.scss" as *;
 
 .contact-form {
@@ -79,7 +80,7 @@
     border: 1px solid rgba($color-success, 0.15);
     border-left: 3px solid $color-success;
     border-radius: $border-radius-md;
-    color: darken($color-success, 10%);
+    color: color.adjust($color-success, $lightness: -10%);
     font-size: 0.9rem;
   }
 
@@ -90,7 +91,7 @@
     border: 1px solid rgba($color-error, 0.15);
     border-left: 3px solid $color-error;
     border-radius: $border-radius-md;
-    color: darken($color-error, 10%);
+    color: color.adjust($color-error, $lightness: -10%);
     font-size: 0.9rem;
 
     a {
