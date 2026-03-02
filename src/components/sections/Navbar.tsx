@@ -113,15 +113,6 @@ const Navbar = () => {
           </li>
           <li className="navbar__item" role="menuitem">
             <a
-              href="#services"
-              onClick={handleNavClick}
-              tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
-            >
-              Services
-            </a>
-          </li>
-          <li className="navbar__item" role="menuitem">
-            <a
               href="#skills"
               onClick={handleNavClick}
               tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}

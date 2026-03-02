@@ -18,9 +18,9 @@ const Footer = () => {
               className="footer__image"
             />
           </div>
-          <h2 className="footer__contact-title">Ready to Start Your Project?</h2>
+          <h2 className="footer__contact-title">Let's Connect</h2>
           <p className="footer__contact-text">
-            I'm a Product Designer & Developer specializing in React Native mobile apps, modern web applications, product design, and UX/UI. I leverage AI-assisted development workflows (Cursor, Claude, agent systems) to deliver efficient, high-quality solutions throughout the entire product lifecycle. Available for freelance projects, product design work, and development opportunities—let's bring your vision to life.
+            Product Designer & Developer based in Hamilton, Ontario. I build mobile apps and web products with React Native, React, and TypeScript. Open to full-time roles, contract work, and interesting projects.
           </p>
 
           <ul className="footer__contact-info">
