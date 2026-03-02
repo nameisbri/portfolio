@@ -12,9 +12,6 @@ const ContactForm = () => {
     email: "",
     phone: "",
     projectType: "",
-    primaryGoal: "",
-    budget: "",
-    launchDate: "",
     message: "",
   });
 
@@ -36,15 +33,6 @@ const ContactForm = () => {
     setSubmitStatus("idle");
 
     try {
-      // Format launch date for display
-      const formattedLaunchDate = formData.launchDate
-        ? new Date(formData.launchDate).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })
-        : "Not specified";
-
       // Send email via EmailJS
       await emailjs.send(
         EMAILJS_CONFIG.SERVICE_ID,
@@ -54,12 +42,9 @@ const ContactForm = () => {
           from_email: formData.email,
           company: formData.company || "N/A",
           phone: formData.phone || "N/A",
-          project_type: formData.projectType,
-          primary_goal: formData.primaryGoal,
-          budget: formData.budget,
-          launch_date: formattedLaunchDate,
+          project_type: formData.projectType || "Not specified",
           message: formData.message,
-          subject: `Strategy Call Request: ${formData.projectType}`,
+          subject: `Portfolio Contact: ${formData.projectType || "General"}`,
         },
         EMAILJS_CONFIG.PUBLIC_KEY
       );
@@ -72,9 +57,6 @@ const ContactForm = () => {
         email: "",
         phone: "",
         projectType: "",
-        primaryGoal: "",
-        budget: "",
-        launchDate: "",
         message: "",
       });
 
@@ -93,9 +75,9 @@ const ContactForm = () => {
   return (
     <section className="contact-form" id="contact">
       <div className="contact-form__container">
-        <h2 className="section__heading">Let's Build Your Roadmap</h2>
+        <h2 className="section__heading">Get in Touch</h2>
         <p className="contact-form__subtitle">
-          Fill out the form below to request a strategy call. I'll review your project details and get back to you within 24 hours.
+          Interested in working together? Send me a message and I'll get back to you within 24 hours.
         </p>
 
         <form className="contact-form__form" onSubmit={handleSubmit}>
@@ -153,66 +135,20 @@ const ContactForm = () => {
 
           <div className="contact-form__row">
             <div className="contact-form__field">
-              <label htmlFor="projectType">What are we building? *</label>
+              <label htmlFor="projectType">What are you looking for?</label>
               <select
                 id="projectType"
                 name="projectType"
                 value={formData.projectType}
                 onChange={handleChange}
-                required
               >
-                <option value="">Select a project type</option>
-                <option value="Mobile App (iOS/Android)">Mobile App (iOS/Android)</option>
-                <option value="Website">Website</option>
-                <option value="Web Application">Web Application</option>
-                <option value="Product Design">Product Design</option>
+                <option value="">Select a type (optional)</option>
+                <option value="Full-time Role">Full-time Role</option>
+                <option value="Contract Work">Contract Work</option>
+                <option value="Freelance Project">Freelance Project</option>
+                <option value="Collaboration">Collaboration</option>
                 <option value="Other">Other</option>
               </select>
-            </div>
-            <div className="contact-form__field">
-              <label htmlFor="primaryGoal">What is your primary goal? *</label>
-              <select
-                id="primaryGoal"
-                name="primaryGoal"
-                value={formData.primaryGoal}
-                onChange={handleChange}
-                required
-              >
-                <option value="">Select a goal</option>
-                <option value="Launching a New Product">Launching a New Product</option>
-                <option value="Growing an Existing Product">Growing an Existing Product</option>
-                <option value="Redesigning for Better Results">Redesigning for Better Results</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-          </div>
-
-          <div className="contact-form__row">
-            <div className="contact-form__field">
-              <label htmlFor="budget">Estimated Project Budget *</label>
-              <select
-                id="budget"
-                name="budget"
-                value={formData.budget}
-                onChange={handleChange}
-                required
-              >
-                <option value="">Select a budget range</option>
-                <option value="$5,000 – $10,000">$5,000 – $10,000</option>
-                <option value="$10,000 – $25,000">$10,000 – $25,000</option>
-                <option value="$25,000+">$25,000+</option>
-                <option value="I'm not sure, let's discuss">I'm not sure, let's discuss</option>
-              </select>
-            </div>
-            <div className="contact-form__field">
-              <label htmlFor="launchDate">Desired Launch Date</label>
-              <input
-                type="date"
-                id="launchDate"
-                name="launchDate"
-                value={formData.launchDate}
-                onChange={handleChange}
-              />
             </div>
           </div>
 
@@ -225,7 +161,7 @@ const ContactForm = () => {
               onChange={handleChange}
               required
               rows={6}
-              placeholder="What are you looking to build? What challenges are you facing? Any specific requirements or questions?"
+              placeholder="Tell me a bit about what you're looking for, or just say hello."
             />
           </div>
 
@@ -242,7 +178,7 @@ const ContactForm = () => {
               "Message Sent!"
             ) : (
               <>
-                <span>Request My Strategy Call</span>
+                <span>Send Message</span>
                 <PaperPlaneTilt weight="bold" size={18} />
               </>
             )}
@@ -254,7 +190,7 @@ const ContactForm = () => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              ✓ Message sent successfully! I'll review your project details and get back to you within 24 hours.
+              ✓ Message sent! I'll get back to you within 24 hours.
             </motion.p>
           )}
 
