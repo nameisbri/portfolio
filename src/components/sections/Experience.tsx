@@ -12,9 +12,9 @@ const workExperience = [
     period: "2016 - Present",
     location: "Remote",
     description: [
-      "Design and develop mobile apps, websites, and digital products for clients across various industries",
-      "Deliver end-to-end solutions from initial concept through design, development, and launch",
-      "Leverage AI-enhanced workflows to provide efficient, high-quality results for freelance clients",
+      "Design and develop mobile apps, websites, and digital products for clients across industries",
+      "Handle full product lifecycle from concept through design, development, and deployment",
+      "Use AI-assisted tools (Claude, Cursor) to streamline development workflows",
     ],
   },
   {
@@ -23,8 +23,8 @@ const workExperience = [
     period: "Jul 2020 - Present",
     location: "Remote",
     description: [
-      "Full-stack development including React application rebuilds and modern web development",
-      "Focus on user experience, responsive design, and delivering quality technical solutions",
+      "Full-stack development including React application rebuilds and feature work",
+      "Focused on user experience, responsive design, and code quality",
     ],
   },
 ];
@@ -50,30 +50,30 @@ const educationExperience = [
 
 const skillsExperience = [
   {
-    category: "What I Deliver",
+    category: "Development",
     skills: [
-      "Complete mobile apps built with React Native, from design to App Store and Play Store deployment",
-      "Modern, responsive websites that work beautifully on all devices",
-      "Full product development from initial concept through launch",
-      "Professional design that reflects your brand and engages your users",
+      "React Native mobile apps (iOS & Android) from prototype to App Store",
+      "React, TypeScript, Node.js, Express, MySQL full-stack development",
+      "Responsive web applications with modern tooling",
+      "AI-assisted development workflows with Claude and Cursor",
     ],
   },
   {
-    category: "How I Work",
+    category: "Design",
     skills: [
-      "Clear communication and regular updates throughout the project",
-      "Efficient workflows using modern AI-assisted development tools",
-      "Focus on quality and attention to detail in every deliverable",
-      "Flexible collaboration that fits your timeline and needs",
+      "Product design from user research through high-fidelity prototypes",
+      "UX/UI design in Figma with a focus on usability",
+      "Design systems and component libraries",
+      "Responsive design across mobile, tablet, and desktop",
     ],
   },
   {
-    category: "Why Choose Me",
+    category: "Process",
     skills: [
-      "End-to-end capability: I handle both design and development, so you work with one person",
-      "Modern approach: AI-enhanced workflows mean faster delivery without sacrificing quality",
-      "Proven results: See my work in the projects above—real products, real clients",
-      "Client-focused: Your success is my success, and I'm committed to delivering value",
+      "Full product lifecycle: research, design, build, test, deploy",
+      "Cross-functional collaboration with designers, developers, and stakeholders",
+      "Agile methodologies and iterative development",
+      "Version control with Git, CI/CD pipelines",
     ],
   },
 ];
@@ -83,10 +83,10 @@ const Experience = () => {
 
   return (
     <section className="experience" id="experience">
-      <h2 className="section__heading">The Full-Stack Edge</h2>
+      <h2 className="section__heading">Experience</h2>
 
       <p className="experience__intro">
-        Most founders get stuck playing 'telephone' between a designer and a developer. I bridge that gap. With 8+ years of experience and 20+ successful launches, I handle the entire lifecycle. You get the expertise of a full agency with the agility and direct communication of a single dedicated partner.
+        8+ years across product design and development. 20+ products shipped. I work across the full lifecycle — research, design, build, deploy.
       </p>
 
       <div className="experience__tabs">
@@ -199,16 +199,7 @@ const Experience = () => {
                 </ul>
               </motion.div>
             ))}
-            <motion.div
-              className="experience__skills-note"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <p>
-                Ready to bring your product idea to life? I work with businesses, entrepreneurs, and organizations to create mobile apps, websites, and digital products that make an impact. Let's discuss your project and see how I can help you achieve your goals.
-              </p>
-            </motion.div>
+
           </div>
         )}
       </div>
