@@ -1,27 +1,18 @@
 import { useState, useEffect } from "react";
-import { useTheme } from "../../context/ThemeContext";
-import { Sun, Moon, List, X } from "@phosphor-icons/react";
+import { List, X } from "@phosphor-icons/react";
 import "./Navbar.scss";
 
 const Navbar = () => {
-  const { theme, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMobileMenu = () => {
@@ -32,36 +23,24 @@ const Navbar = () => {
     const href = e.currentTarget.getAttribute("href");
     if (href && href.startsWith("#")) {
       e.preventDefault();
-      const targetId = href.substring(1);
-      const targetElement = document.getElementById(targetId);
-      
+      const targetElement = document.getElementById(href.substring(1));
+
       if (targetElement) {
-        const offsetTop = targetElement.offsetTop - 80; // Account for sticky navbar
-        window.scrollTo({
-          top: offsetTop,
-          behavior: "smooth",
-        });
+        const offsetTop = targetElement.offsetTop - 80;
+        window.scrollTo({ top: offsetTop, behavior: "smooth" });
       }
     }
-    
+
     if (isMobileMenuOpen) {
       setIsMobileMenuOpen(false);
     }
   };
 
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-
-    return () => {
-      document.body.style.overflow = "";
-    };
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
   }, [isMobileMenuOpen]);
 
-  // Keyboard support for mobile menu
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Escape" && isMobileMenuOpen) {
       setIsMobileMenuOpen(false);
@@ -74,7 +53,7 @@ const Navbar = () => {
       onKeyDown={handleKeyDown}
     >
       <div className="navbar__container">
-        <a href="#" className="navbar__logo">
+        <a href="#" className="navbar__logo" onClick={handleNavClick}>
           Gabriela Barreira
         </a>
 
@@ -88,80 +67,17 @@ const Navbar = () => {
         </button>
 
         <ul
-          className={`navbar__menu ${
-            isMobileMenuOpen ? "navbar__menu--open" : ""
-          }`}
+          className={`navbar__menu ${isMobileMenuOpen ? "navbar__menu--open" : ""}`}
           role="menu"
         >
           <li className="navbar__item" role="menuitem">
-            <a
-              href="#"
-              onClick={handleNavClick}
-              tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
-            >
-              Home
-            </a>
+            <a href="#projects" onClick={handleNavClick}>Projects</a>
           </li>
           <li className="navbar__item" role="menuitem">
-            <a
-              href="#projects"
-              onClick={handleNavClick}
-              tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
-            >
-              Projects
-            </a>
+            <a href="#skills" onClick={handleNavClick}>About</a>
           </li>
           <li className="navbar__item" role="menuitem">
-            <a
-              href="#skills"
-              onClick={handleNavClick}
-              tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
-            >
-              Skills
-            </a>
-          </li>
-          <li className="navbar__item" role="menuitem">
-            <a
-              href="#experience"
-              onClick={handleNavClick}
-              tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
-            >
-              Experience
-            </a>
-          </li>
-          <li className="navbar__item" role="menuitem">
-            <a
-              href="#contact"
-              onClick={handleNavClick}
-              tabIndex={isMobileMenuOpen || !isMobileMenuOpen ? 0 : -1}
-            >
-              Contact
-            </a>
-          </li>
-          <li className="navbar__item" role="menuitem">
-            <button
-              onClick={toggleTheme}
-              className="navbar__theme-toggle"
-              aria-label={
-                theme === "light"
-                  ? "Switch to dark mode"
-                  : "Switch to light mode"
-              }
-              title={
-                theme === "light"
-                  ? "Switch to dark mode"
-                  : "Switch to light mode"
-              }
-            >
-              {theme === "light" ? (
-                <Moon size={20} aria-hidden="true" />
-              ) : (
-                <Sun size={20} aria-hidden="true" />
-              )}
-              <span className="navbar__theme-label">
-                {theme === "light" ? "Dark Mode" : "Light Mode"}
-              </span>
-            </button>
+            <a href="#contact" onClick={handleNavClick}>Contact</a>
           </li>
         </ul>
       </div>

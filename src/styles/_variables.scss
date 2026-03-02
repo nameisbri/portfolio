@@ -1,44 +1,38 @@
-$font-family-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-$font-family-secondary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-$line-height: 1.45;
+// Typography
+$font-family-display: "DM Serif Display", Georgia, "Times New Roman", serif;
+$font-family-body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+$line-height: 1.5;
 $font-weight-regular: 400;
 $font-weight-medium: 500;
 $font-weight-bold: 700;
 
-$color-dark-green: #041f1e;
-$color-bittersweet: #c73636; // More muted, professional red
-$color-violet: #522b47;
-$color-chartreuse: #5b8fa8; // Muted teal-blue instead of bright chartreuse
-$color-timberwolf: #eadeda;
+// Fresh & Vibrant Palette
+$color-background: #F5F0EB;
+$color-surface: #FEFCFA;
+$color-text-primary: #2D2A26;
+$color-text-secondary: #6B6560;
+$color-accent: #F06543; // Bright coral
+$color-accent-hover: #D94E2F;
+$color-accent-light: rgba(240, 101, 67, 0.08);
+$color-secondary: #2A9D8F; // Vibrant teal
+$color-secondary-light: rgba(42, 157, 143, 0.08);
+$color-tertiary: #E9A820; // Golden yellow
+$color-border: rgba(45, 42, 38, 0.08);
+$color-border-warm: rgba(45, 42, 38, 0.12);
+$color-card-shadow: 0 2px 12px rgba(45, 42, 38, 0.06);
 
-$light-text-primary: darken($color-dark-green, 5%);
-$light-text-secondary: darken($color-violet, 10%);
-$light-background-primary: $color-timberwolf;
-$light-background-secondary: #ffffff;
-$light-accent-primary: $color-bittersweet; // Use muted red directly
-$light-accent-secondary: $color-chartreuse; // Use muted teal-blue
-$light-button-background: rgba($color-timberwolf, 0.7);
-$light-button-hover: $color-bittersweet;
-$light-border-color: rgba($color-violet, 0.2);
-$light-card-shadow: 0 3px 15px rgba($color-dark-green, 0.04);
+// Semantic
+$color-success: #2A9D8F;
+$color-error: #E63946;
 
-$dark-text-primary: $color-timberwolf;
-$dark-text-secondary: rgba($color-timberwolf, 0.7);
-$dark-background-primary: $color-dark-green;
-$dark-background-secondary: lighten($color-dark-green, 3%);
-$dark-accent-primary: lighten($color-bittersweet, 8%); // Slightly lighter for dark mode
-$dark-accent-secondary: lighten($color-chartreuse, 10%); // Slightly lighter for dark mode
-$dark-button-background: rgba($color-violet, 0.7);
-$dark-button-hover: $color-chartreuse;
-$dark-border-color: rgba($color-timberwolf, 0.2);
-$dark-card-shadow: 0 3px 15px rgba(black, 0.15);
-
+// Breakpoints
 $breakpoint-xs: 480px;
 $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
 
+// Spacing
 $spacing-xs: 0.4rem;
 $spacing-sm: 0.8rem;
 $spacing-md: 1.2rem;
@@ -46,16 +40,14 @@ $spacing-lg: 1.6rem;
 $spacing-xl: 2.4rem;
 $spacing-xxl: 3.2rem;
 
+// Transitions
 $transition-fast: 0.15s ease;
 $transition-normal: 0.25s ease;
 $transition-slow: 0.4s ease;
 
+// Border Radius
 $border-radius-sm: 4px;
-$border-radius-md: 6px;
-$border-radius-lg: 8px;
-$border-radius-xl: 12px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 16px;
 $border-radius-full: 9999px;
-
-$project-capstone: $color-bittersweet;
-$project-team: $color-violet;
-$project-hackathon: $color-chartreuse;

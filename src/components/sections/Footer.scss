@@ -1,257 +1,83 @@
 @use "../../index.scss" as *;
 
 .footer {
-  background-color: var(--background-secondary);
-  margin-top: $spacing-xl;
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--accent-primary);
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.1;
-    pointer-events: none;
-
-    [data-theme="light"] & {
-      background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23041f1e' fill-opacity='0.4' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
-    }
-
-    [data-theme="dark"] & {
-      opacity: 0.5;
-      background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23e0ff4f' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
-    }
-  }
-
-  &__contact-wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: $spacing-lg $spacing-sm;
-    position: relative;
-    z-index: 1;
-
-    @include respond-to(md) {
-      padding: $spacing-xl $spacing-md;
-    }
-  }
-
-  &__contact {
-    background-color: var(--background-primary);
-    border-radius: $border-radius-lg;
-    padding: $spacing-lg;
-    box-shadow: var(--card-shadow);
-    max-width: 700px;
-    margin: 0 auto;
-
-    @include respond-to(md) {
-      padding: $spacing-xl;
-    }
-
-    @media (max-width: $breakpoint-sm) {
-      padding: $spacing-sm;
-    }
-  }
-
-  &__contact-title {
-    font-size: 1.8rem;
-    margin-bottom: $spacing-sm;
-    @include text-gradient(var(--accent-primary), var(--accent-secondary));
-    @media (max-width: $breakpoint-sm) {
-      font-size: 1.5rem;
-    }
-  }
-
-  &__contact-text {
-    margin-bottom: $spacing-md;
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-
-  &__contact-info {
-    list-style-type: none;
-    padding: 0;
-    margin-bottom: $spacing-md;
-
-    li {
-      @include flex(row, flex-start, center, $spacing-xs);
-      margin-bottom: $spacing-xs;
-      font-size: 1rem;
-      color: var(--text-secondary);
-
-      svg {
-        color: var(--accent-primary);
-      }
-
-      a {
-        color: var(--text-primary);
-        text-decoration: none;
-        transition: color 0.2s ease;
-
-        &:hover {
-          color: var(--accent-primary);
-        }
-      }
-    }
-  }
-
-  &__cta {
-    margin-top: $spacing-lg;
-    display: flex;
-    flex-wrap: wrap;
-    gap: $spacing-md;
-    justify-content: center;
-
-    @media (max-width: $breakpoint-md) {
-      flex-direction: column;
-      gap: $spacing-sm;
-    }
-  }
-
-  &__contact-btn {
-    @include flex(row, center, center, $spacing-xs);
-    flex: 1;
-    min-width: 200px;
-    // Styles now handled by button mixin
-  }
-
-  &__resume-btn {
-    @include flex(row, center, center, $spacing-xs);
-    flex: 1;
-    min-width: 200px;
-  }
+  border-top: 2px solid $color-accent;
+  padding: $spacing-xl 0 $spacing-lg;
 
   &__content {
     max-width: 1100px;
     margin: 0 auto;
-    padding: $spacing-md $spacing-sm;
-    @include flex(column, space-between, flex-start, $spacing-md);
-    position: relative;
-    z-index: 1;
-    border-top: 1px solid var(--border-color);
+    padding: 0 $spacing-md;
 
-    @media (max-width: $breakpoint-md) {
+    @include respond-to(md) {
+      padding: 0 $spacing-lg;
+    }
+  }
+
+  &__links {
+    @include flex(row, space-between, center);
+    margin-bottom: $spacing-lg;
+
+    @media (max-width: $breakpoint-sm) {
       flex-direction: column;
-      text-align: center;
+      gap: $spacing-md;
+      align-items: flex-start;
     }
   }
 
-  &__info {
-    max-width: 350px;
+  &__link {
+    color: $color-accent;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: $font-weight-medium;
+    @include transition(color);
 
-    @media (max-width: $breakpoint-md) {
-      max-width: 100%;
-      margin-bottom: $spacing-md;
+    &:hover {
+      color: $color-accent-hover;
     }
-  }
-
-  &__name {
-    font-size: 1.3rem;
-    margin-bottom: $spacing-xs/2;
-    @include text-gradient(var(--accent-primary), var(--accent-secondary));
-  }
-
-  &__tagline {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    margin-bottom: $spacing-sm;
   }
 
   &__socials {
-    @include flex(row, flex-start, center, $spacing-sm);
-
-    @media (max-width: $breakpoint-md) {
-      justify-content: center;
-    }
+    @include flex(row, flex-start, center, $spacing-md);
   }
 
   &__social-link {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: rgba(var(--text-primary), 0.05);
-    @include flex(row, center, center);
-    color: var(--text-primary);
-    @include transition(background-color, color, transform);
+    color: $color-text-primary;
+    @include transition(color);
+    display: flex;
 
     &:hover {
-      background-color: var(--accent-primary);
-      color: white;
-      transform: translateY(-2px);
-    }
-
-    @media (max-width: $breakpoint-sm) {
-      width: 44px;
-      height: 44px;
+      color: $color-accent;
+      text-decoration: none;
+      transform: none;
     }
   }
 
   &__bottom {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: $spacing-sm;
-    text-align: center;
-    border-top: 1px solid var(--border-color);
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: $spacing-md;
+    gap: $spacing-sm;
+    font-size: 0.8rem;
+    color: $color-text-secondary;
     flex-wrap: wrap;
 
-    p {
+    a {
       font-size: 0.8rem;
-      color: var(--text-secondary);
-      margin: 0;
     }
   }
 
+  &__divider {
+    color: $color-accent;
+    opacity: 0.3;
+  }
+
   &__resume-link {
-    font-size: 0.75rem; // 12px equivalent
-    color: var(--text-secondary);
+    color: $color-text-secondary;
     text-decoration: none;
     @include transition(color);
 
     &:hover {
-      color: var(--accent-primary);
-      text-decoration: underline;
-    }
-  }
-
-  &__image-container {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto $spacing-md auto;
-    border: 3px solid var(--background-secondary);
-    box-shadow: var(--card-shadow);
-
-    @include respond-to(md) {
-      width: 150px;
-      height: 150px;
-    }
-  }
-
-  &__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.05);
+      color: $color-accent;
     }
   }
 }

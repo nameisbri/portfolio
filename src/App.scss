@@ -1,9 +1,6 @@
 @import "./styles/variables";
-
 @import "./styles/mixins";
-
 @import "./styles/typography";
-
 @import "./styles/globals";
 
 .app {
@@ -16,49 +13,43 @@
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
-    padding: $spacing-sm;
+    padding: 0 $spacing-md;
 
-    @media (max-width: $breakpoint-sm) {
-      padding: $spacing-xs;
-    }
-
-    @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
-      padding: $spacing-sm;
+    @include respond-to(md) {
+      padding: 0 $spacing-lg;
     }
   }
 }
 
-.section {
-  &__heading {
-    position: relative;
-    margin-bottom: $spacing-lg;
+.section__heading {
+  font-family: $font-family-display;
+  margin-bottom: $spacing-lg;
+  color: $color-text-primary;
+  position: relative;
+  padding-bottom: $spacing-sm;
 
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -8px;
-      width: 50px;
-      height: 3px;
-      background: linear-gradient(
-        to right,
-        var(--accent-primary),
-        var(--accent-secondary)
-      );
-      border-radius: $border-radius-full;
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 32px;
+    height: 2px;
+    background: $color-accent;
   }
 }
 
 .skip-to-content {
   position: absolute;
-  top: -40px; /* Hidden by default */
+  top: -40px;
   left: 0;
   padding: 8px 16px;
   z-index: 9999;
   transition: top 0.2s;
+  background: $color-accent;
+  color: white;
 
   &:focus {
-    top: 0; /* Appears when focused */
+    top: 0;
   }
 }

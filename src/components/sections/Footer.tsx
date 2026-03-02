@@ -1,100 +1,62 @@
-import "./Footer.scss";
 import {
   GithubLogo,
   LinkedinLogo,
   EnvelopeSimple,
-  MapPin,
 } from "@phosphor-icons/react";
+import "./Footer.scss";
 
 const Footer = () => {
   return (
-    <footer className="footer" id="contact">
-      <div className="footer__contact-wrapper">
-        <div className="footer__contact">
-          <div className="footer__image-container">
-            <img
-              src="/headshot.jpg"
-              alt="Gabriela Barreira"
-              className="footer__image"
-            />
-          </div>
-          <h2 className="footer__contact-title">Let's Connect</h2>
-          <p className="footer__contact-text">
-            Product Designer & Developer based in Hamilton, Ontario. I build mobile apps and web products with React Native, React, and TypeScript. Open to full-time roles, contract work, and interesting projects.
-          </p>
+    <footer className="footer">
+      <div className="footer__content">
+        <div className="footer__links">
+          <a href="mailto:gabriela@gcsb.me" className="footer__link">
+            gabriela@gcsb.me
+          </a>
 
-          <ul className="footer__contact-info">
-            <li>
-              <EnvelopeSimple size={18} />
-              <a href="mailto:gabriela@gcsb.me">gabriela@gcsb.me</a>
-            </li>
-            <li>
-              <MapPin size={18} />
-              <span>Hamilton, Ontario • Remote</span>
-            </li>
-          </ul>
-
-          <div className="footer__cta">
+          <div className="footer__socials">
             <a
-              href="mailto:gabriela@gcsb.me?subject=Inquiry%20for%20Gabriela"
-              className="button button--primary footer__contact-btn"
+              href="https://github.com/nameisbri"
+              className="footer__social-link"
+              aria-label="GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <EnvelopeSimple weight="bold" size={18} />
-              <span>Contact Me</span>
+              <GithubLogo size={20} />
+            </a>
+            <a
+              href="https://linkedin.com/in/gabcsb"
+              className="footer__social-link"
+              aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LinkedinLogo size={20} />
+            </a>
+            <a
+              href="mailto:gabriela@gcsb.me"
+              className="footer__social-link"
+              aria-label="Email"
+            >
+              <EnvelopeSimple size={20} />
             </a>
           </div>
         </div>
-      </div>
 
-      <div className="footer__content">
-        <div className="footer__info">
-          <h3 className="footer__name">Gabriela Barreira</h3>
-          <p className="footer__tagline">
-            Product Designer & Developer
-          </p>
-        </div>
-
-        <div className="footer__socials">
+        <div className="footer__bottom">
+          <span>&copy; {new Date().getFullYear()} Gabriela Barreira</span>
+          <span className="footer__divider">&middot;</span>
+          <span>Hamilton, Ontario</span>
+          <span className="footer__divider">&middot;</span>
           <a
-            href="https://github.com/nameisbri"
-            className="footer__social-link"
-            aria-label="GitHub Profile"
+            href="/Resume_Gabriela_Barreira.pdf"
+            download="Resume_Gabriela_Barreira.pdf"
             target="_blank"
-            rel="noopener noreferrer"
+            className="footer__resume-link"
           >
-            <GithubLogo size={24} weight="fill" />
-          </a>
-          <a
-            href="https://linkedin.com/in/gabcsb"
-            className="footer__social-link"
-            aria-label="LinkedIn Profile"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <LinkedinLogo size={24} weight="fill" />
-          </a>
-          <a
-            href="mailto:gabriela@gcsb.me"
-            className="footer__social-link"
-            aria-label="Email"
-          >
-            <EnvelopeSimple size={24} weight="fill" />
+            Resume
           </a>
         </div>
-      </div>
-
-      <div className="footer__bottom">
-        <p>
-          © {new Date().getFullYear()} Gabriela Barreira. All rights reserved.
-        </p>
-        <a
-          href="/Resume_Gabriela_Barreira.pdf"
-          download="Resume_Gabriela_Barreira.pdf"
-          target="_blank"
-          className="footer__resume-link"
-        >
-          Download Resume
-        </a>
       </div>
     </footer>
   );
