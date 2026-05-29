@@ -2,21 +2,137 @@
 @use "../../index.scss" as *;
 
 .contact-form {
-  padding: $spacing-xl 0;
-  margin-top: $spacing-lg;
-  padding-top: $spacing-xxl;
+  padding: $space-section 0 $spacing-xl;
   border-top: 1px solid $color-border;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+
+    @include respond-to(md) {
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: clamp(2.4rem, 6vw, 6rem);
+      align-items: start;
+    }
+  }
+
+  // — Invitation panel —
+  &__aside {
+    .section__heading {
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  &__status {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-xs;
+    margin-bottom: $spacing-md;
+    font-family: $font-family-body;
+    font-size: 0.78rem;
+    font-weight: $font-weight-medium;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $color-text-primary;
+  }
+
+  &__status-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: $border-radius-full;
+    background: $color-secondary;
+    flex-shrink: 0;
+  }
 
   &__subtitle {
     color: $color-text-secondary;
     font-size: 1.05rem;
-    max-width: 500px;
+    max-width: 42ch;
     margin-bottom: $spacing-xl;
     line-height: 1.6;
   }
 
+  &__direct {
+    padding-top: $spacing-lg;
+    border-top: 1px solid $color-border;
+  }
+
+  &__direct-label {
+    display: block;
+    font-family: $font-family-body;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $color-text-secondary;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__email {
+    display: inline-block;
+    font-family: $font-family-display;
+    font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+    color: $color-text-primary;
+    text-decoration: none;
+    border-bottom: 2px solid $color-accent;
+    padding-bottom: 2px;
+    @include transition(color);
+
+    &:hover,
+    &:focus-visible {
+      color: $color-accent;
+      text-decoration: none;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+    margin-top: $spacing-lg;
+  }
+
+  &__location {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-xs;
+    color: $color-text-secondary;
+    font-size: 0.9rem;
+
+    svg {
+      color: $color-accent;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: $spacing-xs;
+  }
+
+  &__social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: $border-radius-full;
+    border: 1px solid $color-border-warm;
+    color: $color-text-secondary;
+    @include transition(transform, color, border-color, background-color);
+
+    &:hover,
+    &:focus-visible {
+      transform: translateY(-2px);
+      color: $color-accent;
+      border-color: $color-accent;
+      background: $color-accent-light;
+      text-decoration: none;
+    }
+  }
+
   &__form {
-    max-width: 500px;
     display: flex;
     flex-direction: column;
     gap: $spacing-md;
@@ -36,7 +152,7 @@
 
     input,
     textarea {
-      padding: $spacing-sm;
+      padding: $spacing-sm $spacing-md;
       border: 1px solid $color-border-warm;
       border-radius: $border-radius-md;
       background: $color-surface;

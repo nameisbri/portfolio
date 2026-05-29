@@ -1,55 +1,21 @@
 @use "../../index.scss" as *;
 
 .footer {
-  border-top: 2px solid $color-accent;
-  padding: $spacing-xl 0 $spacing-lg;
+  border-top: 1px solid $color-border;
+  padding: $spacing-lg 0;
 
   &__content {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 $spacing-md;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
 
     @include respond-to(md) {
       padding: 0 $spacing-lg;
-    }
-  }
-
-  &__links {
-    @include flex(row, space-between, center);
-    margin-bottom: $spacing-lg;
-
-    @media (max-width: $breakpoint-sm) {
-      flex-direction: column;
-      gap: $spacing-md;
-      align-items: flex-start;
-    }
-  }
-
-  &__link {
-    color: $color-accent;
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: $font-weight-medium;
-    @include transition(color);
-
-    &:hover {
-      color: $color-accent-hover;
-    }
-  }
-
-  &__socials {
-    @include flex(row, flex-start, center, $spacing-md);
-  }
-
-  &__social-link {
-    color: $color-text-primary;
-    @include transition(color);
-    display: flex;
-
-    &:hover {
-      color: $color-accent;
-      text-decoration: none;
-      transform: none;
     }
   }
 
@@ -60,24 +26,31 @@
     font-size: 0.8rem;
     color: $color-text-secondary;
     flex-wrap: wrap;
-
-    a {
-      font-size: 0.8rem;
-    }
   }
 
-  &__divider {
-    color: $color-accent;
-    opacity: 0.3;
-  }
-
-  &__resume-link {
+  &__top {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-xs;
+    font-family: $font-family-body;
+    font-size: 0.8rem;
+    font-weight: $font-weight-medium;
     color: $color-text-secondary;
     text-decoration: none;
     @include transition(color);
 
-    &:hover {
+    svg {
+      @include transition(transform);
+    }
+
+    &:hover,
+    &:focus-visible {
       color: $color-accent;
+      text-decoration: none;
+
+      svg {
+        transform: translateY(-2px);
+      }
     }
   }
 }

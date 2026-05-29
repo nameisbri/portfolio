@@ -33,19 +33,30 @@ export interface Translations {
     portuguese: string;
   };
   hero: {
-    titleLead: string;
-    titleAccent: string;
+    status: string;
+    kicker: string;
+    titleBefore: string;
+    titleMark: string;
+    titleAfter: string;
     subtitle: string;
     seeWork: string;
+    getInTouch: string;
+    portraitAlt: string;
   };
   projects: {
     heading: string;
     githubLabel: string;
     items: Record<string, ProjectCopy>;
+    screenLabels: {
+      upload: string;
+      dashboard: string;
+      share: string;
+    };
     neblina: {
       heading: string;
       body: string;
       link: string;
+      imageAlt: string;
     };
   };
   tech: {
@@ -70,6 +81,8 @@ export interface Translations {
   contact: {
     heading: string;
     subtitle: string;
+    orDirect: string;
+    remote: string;
     nameLabel: string;
     namePlaceholder: string;
     emailLabel: string;
@@ -83,7 +96,7 @@ export interface Translations {
     error: string;
   };
   footer: {
-    location: string;
+    backToTop: string;
   };
 }
 
@@ -99,11 +112,16 @@ const en: Translations = {
     portuguese: "Portuguese",
   },
   hero: {
-    titleLead: "I design and build",
-    titleAccent: "mobile apps & web products",
+    status: "Available for new work",
+    kicker: "Product Designer & Developer · Remote",
+    titleBefore: "I design and build",
+    titleMark: "mobile apps",
+    titleAfter: "& web products.",
     subtitle:
-      "Product designer & developer, 8+ years. From Figma to React Native to deployment.",
+      "Eight years of it — I take a product from the blank Figma file to the thing people actually open on their phones.",
     seeWork: "See my work",
+    getInTouch: "Get in touch",
+    portraitAlt: "Gabriela Barreira",
   },
   projects: {
     heading: "Selected Work",
@@ -122,10 +140,16 @@ const en: Translations = {
         liveLabel: "Visit Landing Page",
       },
     },
+    screenLabels: {
+      upload: "Discloser app: document upload with OCR verification",
+      dashboard: "Discloser app: home dashboard with risk-based reminders",
+      share: "Discloser app: time-limited QR sharing",
+    },
     neblina: {
       heading: "Neblina",
       body: "I also run Neblina, a product studio. When a project needs more than one person's worth of strategy, design, and engineering, that's where it lives.",
       link: "See client work at Neblina",
+      imageAlt: "Neblina product studio — homepage",
     },
   },
   tech: {
@@ -198,6 +222,8 @@ const en: Translations = {
     heading: "Get in Touch",
     subtitle:
       "Interested in working together? Send me a message and I'll get back to you.",
+    orDirect: "Or reach me directly",
+    remote: "Working remotely",
     nameLabel: "Name *",
     namePlaceholder: "Your name",
     emailLabel: "Email *",
@@ -213,7 +239,7 @@ const en: Translations = {
       "Something went wrong. Please try again or email me directly at",
   },
   footer: {
-    location: "Portugal",
+    backToTop: "Back to top",
   },
 };
 
@@ -229,11 +255,16 @@ const pt: Translations = {
     portuguese: "Português",
   },
   hero: {
-    titleLead: "Desenho e construo",
-    titleAccent: "aplicações móveis e produtos web",
+    status: "Disponível para novos projetos",
+    kicker: "Designer e Programadora de Produto · Remoto",
+    titleBefore: "Desenho e construo",
+    titleMark: "aplicações móveis",
+    titleAfter: "e produtos web.",
     subtitle:
-      "Designer e programadora de produto, mais de 8 anos. Do Figma ao React Native até à publicação.",
+      "Oito anos disto — pego num produto desde o ficheiro Figma em branco até àquilo que as pessoas abrem mesmo no telemóvel.",
     seeWork: "Ver o meu trabalho",
+    getInTouch: "Falar comigo",
+    portraitAlt: "Gabriela Barreira",
   },
   projects: {
     heading: "Trabalho Selecionado",
@@ -252,10 +283,16 @@ const pt: Translations = {
         liveLabel: "Visitar Landing Page",
       },
     },
+    screenLabels: {
+      upload: "App Discloser: carregamento de documento com verificação OCR",
+      dashboard: "App Discloser: painel inicial com lembretes baseados em risco",
+      share: "App Discloser: partilha por QR com tempo limitado",
+    },
     neblina: {
       heading: "Neblina",
       body: "Também tenho a Neblina, um estúdio de produto. Quando um projeto precisa de mais do que uma pessoa em estratégia, design e engenharia, é aí que ele vive.",
       link: "Ver trabalho com clientes na Neblina",
+      imageAlt: "Neblina estúdio de produto — página inicial",
     },
   },
   tech: {
@@ -328,6 +365,8 @@ const pt: Translations = {
     heading: "Entre em Contacto",
     subtitle:
       "Interessado em trabalhar comigo? Envie-me uma mensagem e eu respondo-lhe.",
+    orDirect: "Ou contacte-me diretamente",
+    remote: "Trabalho remoto",
     nameLabel: "Nome *",
     namePlaceholder: "O seu nome",
     emailLabel: "Email *",
@@ -343,7 +382,7 @@ const pt: Translations = {
       "Algo correu mal. Tente novamente ou contacte-me diretamente em",
   },
   footer: {
-    location: "Portugal",
+    backToTop: "Voltar ao topo",
   },
 };
 

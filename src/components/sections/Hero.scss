@@ -1,71 +1,205 @@
 @use "../../index.scss" as *;
 
 .hero {
-  padding: 20vh 0 $spacing-xxl;
+  padding: clamp(2.5rem, 8vh, 6rem) 0 $space-section;
 
-  @media (max-width: $breakpoint-md) {
-    padding: 12vh 0 $spacing-xl;
-  }
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+    align-items: center;
 
-  &__content {
-    max-width: 680px;
-  }
-
-  &__title {
-    font-family: $font-family-display;
-    font-size: clamp(2.25rem, 5vw, 3.5rem);
-    line-height: 1.15;
-    color: $color-text-primary;
-    margin-bottom: $spacing-md;
-
-    @media (max-width: $breakpoint-sm) {
-      font-size: 2rem;
+    @include respond-to(lg) {
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: clamp(2.4rem, 5vw, 5rem);
     }
   }
 
-  &__accent {
-    color: $color-accent;
+  // — Eyebrow: live status + role/location, editorial small-caps —
+  &__eyebrow {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-xs;
+    margin-bottom: $spacing-lg;
+    font-family: $font-family-body;
+    font-size: 0.78rem;
+    font-weight: $font-weight-medium;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $color-text-secondary;
+  }
+
+  &__status-row {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+
+  &__status {
+    width: 9px;
+    height: 9px;
+    border-radius: $border-radius-full;
+    background: $color-secondary;
+    position: relative;
+    flex-shrink: 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: $color-secondary;
+      animation: hero-pulse 2.4s $ease-out-soft infinite;
+    }
+  }
+
+  &__status-text {
+    color: $color-text-primary;
+  }
+
+  &__kicker {
+    color: $color-text-secondary;
+  }
+
+  // — Oversized editorial headline; breaks the old narrow column —
+  &__title {
+    font-family: $font-family-display;
+    font-size: clamp(2.6rem, 6.2vw, 4.75rem);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    color: $color-text-primary;
+    margin: 0 0 $spacing-lg;
+    max-width: 16ch;
+  }
+
+  // The signature move: a hand-drawn gold highlighter swipe behind one phrase.
+  &__mark {
+    position: relative;
+    white-space: nowrap;
+    color: $color-text-primary;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -0.12em;
+      right: -0.12em;
+      bottom: 0.06em;
+      height: 0.4em;
+      background: $color-tertiary;
+      opacity: 0.55;
+      transform: skew(-12deg) rotate(-1.4deg);
+      border-radius: 3px;
+      z-index: -1;
+    }
   }
 
   &__subtitle {
-    font-size: 1.1rem;
+    font-family: $font-family-body;
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
     line-height: 1.6;
     color: $color-text-secondary;
-    margin-bottom: $spacing-xl;
-    max-width: 520px;
-
-    @media (max-width: $breakpoint-sm) {
-      font-size: 1rem;
-    }
+    max-width: 46ch;
+    margin: 0 0 $spacing-xl;
   }
 
-  &__buttons {
+  &__actions {
     display: flex;
     align-items: center;
     gap: $spacing-lg;
     flex-wrap: wrap;
-
-    @media (max-width: $breakpoint-sm) {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: $spacing-md;
-    }
   }
 
-  &__text-link {
+  &__ghost {
     display: inline-flex;
     align-items: center;
     gap: $spacing-xs;
-    color: $color-accent;
     font-family: $font-family-body;
     font-weight: $font-weight-medium;
     font-size: 0.95rem;
+    color: $color-text-primary;
     text-decoration: none;
-    @include transition(color);
 
-    &:hover {
-      color: $color-accent-hover;
+    &:hover,
+    &:focus-visible {
+      color: $color-accent;
       text-decoration: none;
     }
+  }
+
+  &__ghost-arrow {
+    display: inline-block;
+    @include transition(transform);
+  }
+
+  &__ghost:hover &__ghost-arrow,
+  &__ghost:focus-visible &__ghost-arrow {
+    transform: translateX(4px);
+  }
+
+  // — Portrait in a designed, offset frame (no generic drop-shadow card) —
+  &__portrait {
+    justify-self: center;
+    width: 100%;
+    max-width: 300px;
+
+    @include respond-to(lg) {
+      justify-self: end;
+      max-width: 360px;
+    }
+  }
+
+  &__portrait-frame {
+    position: relative;
+    border-radius: $border-radius-lg;
+
+    // Coral block offset behind the image — the "designed" detail.
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: $color-accent;
+      transform: translate(14px, 14px);
+      z-index: 0;
+    }
+
+    // Thin gold corner tick, top-left — small editorial signature.
+    &::after {
+      content: "";
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      width: 36px;
+      height: 36px;
+      border-top: 2px solid $color-tertiary;
+      border-left: 2px solid $color-tertiary;
+      z-index: 2;
+    }
+  }
+
+  &__portrait-img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: $border-radius-lg;
+    border: 1px solid $color-border-warm;
+    background: $color-surface;
+  }
+}
+
+@keyframes hero-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  70%,
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
   }
 }

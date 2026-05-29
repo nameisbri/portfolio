@@ -1,6 +1,11 @@
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
-import { PaperPlaneTilt } from "@phosphor-icons/react";
+import {
+  PaperPlaneTilt,
+  GithubLogo,
+  LinkedinLogo,
+  Globe,
+} from "@phosphor-icons/react";
 import emailjs from "@emailjs/browser";
 import { EMAILJS_CONFIG } from "../../config/emailjs.config";
 import { useLang } from "../../context/LanguageContext";
@@ -63,10 +68,57 @@ const ContactForm = () => {
 
   return (
     <section className="contact-form" id="contact">
-      <h2 className="section__heading">{t.contact.heading}</h2>
-      <p className="contact-form__subtitle">{t.contact.subtitle}</p>
+      <div className="contact-form__inner">
+        <aside className="contact-form__aside">
+          <p className="contact-form__status">
+            <span className="contact-form__status-dot" aria-hidden="true" />
+            {t.hero.status}
+          </p>
 
-      <form className="contact-form__form" onSubmit={handleSubmit}>
+          <h2 className="section__heading">{t.contact.heading}</h2>
+          <p className="contact-form__subtitle">{t.contact.subtitle}</p>
+
+          <div className="contact-form__direct">
+            <span className="contact-form__direct-label">
+              {t.contact.orDirect}
+            </span>
+            <a
+              href="mailto:gabriela@gcsb.me"
+              className="contact-form__email"
+            >
+              gabriela@gcsb.me
+            </a>
+
+            <div className="contact-form__meta">
+              <span className="contact-form__location">
+                <Globe size={16} weight="bold" />
+                {t.contact.remote}
+              </span>
+              <div className="contact-form__socials">
+                <a
+                  href="https://github.com/nameisbri"
+                  className="contact-form__social"
+                  aria-label="GitHub"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <GithubLogo size={20} />
+                </a>
+                <a
+                  href="https://linkedin.com/in/gabcsb"
+                  className="contact-form__social"
+                  aria-label="LinkedIn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <LinkedinLogo size={20} />
+                </a>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <form className="contact-form__form" onSubmit={handleSubmit}>
         <div className="contact-form__field">
           <label htmlFor="name">{t.contact.nameLabel}</label>
           <input
@@ -145,7 +197,8 @@ const ContactForm = () => {
             <a href="mailto:gabriela@gcsb.me">gabriela@gcsb.me</a>
           </motion.p>
         )}
-      </form>
+        </form>
+      </div>
     </section>
   );
 };

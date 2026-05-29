@@ -40,10 +40,19 @@ $spacing-lg: 1.6rem;
 $spacing-xl: 2.4rem;
 $spacing-xxl: 3.2rem;
 
+// Easing — exponential ease-out for natural deceleration (no bounce/elastic)
+$ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+$ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+$ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+
 // Transitions
-$transition-fast: 0.15s ease;
-$transition-normal: 0.25s ease;
-$transition-slow: 0.4s ease;
+$transition-fast: 0.15s $ease-out-quart;
+$transition-normal: 0.25s $ease-out-expo;
+$transition-slow: 0.4s $ease-out-soft;
+
+// Fluid spacing — breathes on larger screens (min, max) tied to spacing scale
+$space-section: clamp(3.5rem, 7vw, 7rem);
+$space-block: clamp(1.6rem, 3vw, 2.8rem);
 
 // Border Radius
 $border-radius-sm: 4px;

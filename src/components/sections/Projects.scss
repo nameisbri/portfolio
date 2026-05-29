@@ -1,7 +1,7 @@
 @use "../../index.scss" as *;
 
 .projects {
-  padding: $spacing-xl 0;
+  padding: $space-section 0;
 
   &__list {
     display: flex;
@@ -22,7 +22,7 @@
 
     &--featured {
       @include respond-to(md) {
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 3fr 2fr;
       }
     }
 
@@ -33,21 +33,128 @@
         grid-template-columns: 1fr;
       }
     }
+
+    // Mobile-app project: text on top, a fanned trio of phone screens below.
+    &--showcase {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-lg;
+
+      .projects__info {
+        order: -1;
+      }
+    }
   }
 
-  &__image-container {
+  // — Phone-screen showcase —
+  &__showcase {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: $spacing-md 0;
+  }
+
+  &__phone {
+    flex: 0 1 196px;
+    min-width: 0;
+    max-width: 196px;
+    border-radius: 22px;
+    overflow: hidden;
+    background: $color-surface;
+    border: 1px solid $color-border-warm;
+    box-shadow: 0 22px 48px rgba(45, 42, 38, 0.16);
+    @include transition(transform, box-shadow);
+
+    &:nth-child(1) {
+      z-index: 1;
+      margin-right: -32px;
+      transform: translateY(22px) rotate(-4deg);
+      transform-origin: bottom right;
+    }
+
+    &:nth-child(2) {
+      z-index: 2;
+      position: relative;
+    }
+
+    &:nth-child(3) {
+      z-index: 1;
+      margin-left: -32px;
+      transform: translateY(22px) rotate(4deg);
+      transform-origin: bottom left;
+    }
+  }
+
+  // Fan the screens apart on hover — a small, deliberate flourish.
+  &__showcase:hover {
+    .projects__phone:nth-child(1) {
+      transform: translateY(14px) rotate(-7deg) translateX(-12px);
+    }
+
+    .projects__phone:nth-child(3) {
+      transform: translateY(14px) rotate(7deg) translateX(12px);
+    }
+  }
+
+  &__phone-img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  // — Browser frame for website screenshots (traffic lights in brand colors) —
+  &__browser {
+    display: block;
     overflow: hidden;
     border-radius: $border-radius-lg;
     background: $color-surface;
-    border: 1px solid $color-border;
+    border: 1px solid $color-border-warm;
+    box-shadow: $color-card-shadow;
+
+    &--link {
+      text-decoration: none;
+      @include transition(transform, box-shadow);
+
+      &:hover,
+      &:focus-visible {
+        text-decoration: none;
+        transform: translateY(-3px);
+        box-shadow: 0 16px 36px rgba(45, 42, 38, 0.14);
+      }
+    }
   }
 
-  &__image {
+  &__browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px $spacing-md;
+    background: color-mix(in srgb, $color-text-primary 5%, $color-surface);
+    border-bottom: 1px solid $color-border;
+
+    span {
+      width: 10px;
+      height: 10px;
+      border-radius: $border-radius-full;
+      background: $color-border-warm;
+
+      &:nth-child(1) {
+        background: $color-accent;
+      }
+      &:nth-child(2) {
+        background: $color-tertiary;
+      }
+      &:nth-child(3) {
+        background: $color-secondary;
+      }
+    }
+  }
+
+  &__browser-img {
+    display: block;
     width: 100%;
     height: auto;
-    display: block;
-    border-radius: $border-radius-lg;
-    transition: transform 0.4s ease;
+    @include transition(transform);
 
     .projects__item:hover & {
       transform: scale(1.02);
@@ -105,9 +212,18 @@
   }
 
   &__neblina {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+    align-items: center;
     margin-top: $spacing-xxl;
     padding-top: $spacing-xl;
     border-top: 1px solid $color-border;
+
+    @include respond-to(md) {
+      grid-template-columns: 3fr 2fr;
+      gap: clamp(2rem, 4vw, 4rem);
+    }
   }
 
   &__neblina-heading {
@@ -123,5 +239,16 @@
     color: $color-text-secondary;
     margin-bottom: $spacing-md;
     max-width: 60ch;
+  }
+
+  &__neblina-shot {
+    text-decoration: none;
+    @include transition(transform, box-shadow);
+
+    &:hover {
+      text-decoration: none;
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px rgba(45, 42, 38, 0.14);
+    }
   }
 }

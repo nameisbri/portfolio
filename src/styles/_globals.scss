@@ -49,7 +49,7 @@ body {
   min-height: 44px;
   position: relative;
   overflow: hidden;
-  transition: all 0.25s ease;
+  @include transition(background-color, color, border-color, transform, box-shadow);
   font-family: $font-family-body;
 
   &--primary {
@@ -96,4 +96,21 @@ a:focus:not(.button),
 a:hover:not(.button) {
   text-decoration: underline;
   color: $color-accent;
+}
+
+// Respect users who ask for less motion — kill transitions, animations,
+// transforms, and smooth scroll across the board.
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

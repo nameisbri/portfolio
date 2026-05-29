@@ -1,74 +1,128 @@
 @use "../../index.scss" as *;
 
 .tech {
-  padding: $spacing-xl 0;
+  padding: $space-section 0;
 
-  &__content {
-    display: flex;
-    flex-direction: column;
+  // — Skill groups: three accent-coded pill clusters —
+  &__groups {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: $spacing-xl;
-  }
 
-  &__skills {
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-lg;
+    @include respond-to(sm) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond-to(lg) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1.6rem, 3vw, 3rem);
+    }
   }
 
   &__group {
-    padding-left: $spacing-md;
-    border-left: 2px solid $color-border;
+    --group-accent: #{$color-accent};
 
-    &:nth-child(1) {
-      border-left-color: $color-accent;
+    &--accent {
+      --group-accent: #{$color-accent};
     }
-
-    &:nth-child(2) {
-      border-left-color: $color-secondary;
+    &--secondary {
+      --group-accent: #{$color-secondary};
     }
-
-    &:nth-child(3) {
-      border-left-color: $color-tertiary;
+    &--tertiary {
+      --group-accent: #{$color-tertiary};
     }
   }
 
   &__group-title {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
     font-family: $font-family-display;
     font-size: 1.15rem;
     color: $color-text-primary;
-    margin-bottom: $spacing-xs;
+    margin-bottom: $spacing-md;
+    padding-bottom: $spacing-sm;
+    border-bottom: 1px solid $color-border;
   }
 
-  &__group-list {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: $color-text-secondary;
-    max-width: 640px;
+  &__group-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: $border-radius-full;
+    background: var(--group-accent);
+    flex-shrink: 0;
   }
 
+  &__pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-xs;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 0.85rem;
+    border-radius: $border-radius-full;
+    border: 1px solid $color-border-warm;
+    background: $color-surface;
+    color: $color-text-primary;
+    font-family: $font-family-body;
+    font-size: 0.85rem;
+    line-height: 1;
+    margin-bottom: 0;
+    @include transition(transform, border-color, color, background-color);
+
+    &:hover {
+      transform: translateY(-2px);
+      border-color: var(--group-accent);
+      color: var(--group-accent);
+      background: color-mix(in srgb, var(--group-accent) 7%, $color-surface);
+    }
+  }
+
+  // — Narrative: what I build / how I work, editorial-numbered —
   &__about {
     display: grid;
     grid-template-columns: 1fr;
-    gap: $spacing-lg;
-    margin-top: $spacing-md;
-    padding-top: $spacing-lg;
+    gap: $spacing-xl;
+    margin-top: clamp(2.4rem, 5vw, 4rem);
+    padding-top: clamp(2rem, 4vw, 3rem);
     border-top: 1px solid $color-border;
 
     @include respond-to(md) {
       grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4.5rem);
     }
+  }
+
+  &__about-block {
+    position: relative;
+  }
+
+  &__about-index {
+    display: block;
+    font-family: $font-family-display;
+    font-size: 1.5rem;
+    color: $color-accent;
+    margin-bottom: $spacing-xs;
+    letter-spacing: 0.02em;
   }
 
   &__about-title {
     font-family: $font-family-display;
-    font-size: 1.15rem;
+    font-size: 1.3rem;
     color: $color-text-primary;
-    margin-bottom: $spacing-xs;
+    margin-bottom: $spacing-sm;
   }
 
   &__about-block p {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.65;
     color: $color-text-secondary;
+    max-width: 42ch;
   }
 }
