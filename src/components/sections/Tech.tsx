@@ -1,8 +1,10 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { useLang } from "../../context/LanguageContext";
 import "./Tech.scss";
 
 const Tech = () => {
+  const { t } = useLang();
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.1, once: true });
 
@@ -13,45 +15,35 @@ const Tech = () => {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="section__heading">Skills</h2>
+        <h2 className="section__heading">{t.tech.heading}</h2>
 
         <div className="tech__content">
           <div className="tech__skills">
             <div className="tech__group">
-              <h3 className="tech__group-title">Development</h3>
-              <p className="tech__group-list">
-                React Native, React, TypeScript, JavaScript, Astro, Preact, Node.js, Express, MySQL, Supabase/Postgres, SCSS, GSAP, WordPress, Responsive Design
-              </p>
+              <h3 className="tech__group-title">{t.tech.groups.development.title}</h3>
+              <p className="tech__group-list">{t.tech.groups.development.list}</p>
             </div>
 
             <div className="tech__group">
-              <h3 className="tech__group-title">Design</h3>
-              <p className="tech__group-list">
-                Figma, Product Design, UX/UI Design, Design Systems, Prototyping
-              </p>
+              <h3 className="tech__group-title">{t.tech.groups.design.title}</h3>
+              <p className="tech__group-list">{t.tech.groups.design.list}</p>
             </div>
 
             <div className="tech__group">
-              <h3 className="tech__group-title">Tools & Workflow</h3>
-              <p className="tech__group-list">
-                Git, Claude Code, Cursor, MCP servers, Google Analytics, Agile, Jira
-              </p>
+              <h3 className="tech__group-title">{t.tech.groups.tools.title}</h3>
+              <p className="tech__group-list">{t.tech.groups.tools.list}</p>
             </div>
           </div>
 
           <div className="tech__about">
             <div className="tech__about-block">
-              <h3 className="tech__about-title">What I Build</h3>
-              <p>
-                Mobile apps (iOS & Android) with React Native, responsive websites, and full-stack web applications. From initial design in Figma through deployment.
-              </p>
+              <h3 className="tech__about-title">{t.tech.whatTitle}</h3>
+              <p>{t.tech.whatBody}</p>
             </div>
 
             <div className="tech__about-block">
-              <h3 className="tech__about-title">How I Work</h3>
-              <p>
-                Design and code under one roof. I start in Figma, build in React/React Native, and use AI-assisted tools (Claude Code, Cursor) to move faster without cutting corners.
-              </p>
+              <h3 className="tech__about-title">{t.tech.howTitle}</h3>
+              <p>{t.tech.howBody}</p>
             </div>
           </div>
         </div>

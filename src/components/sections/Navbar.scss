@@ -37,11 +37,45 @@
     }
   }
 
+  &__right {
+    @include flex(row, flex-end, center, $spacing-lg);
+  }
+
   &__menu {
     @include flex(row, flex-end, center, $spacing-lg);
     list-style: none;
     margin: 0;
     padding: 0;
+  }
+
+  &__lang {
+    @include flex(row, center, center, $spacing-xs);
+  }
+
+  &__lang-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: $spacing-xs $spacing-xs;
+    font-family: $font-family-body;
+    font-weight: $font-weight-medium;
+    font-size: 0.85rem;
+    color: $color-text-secondary;
+    @include transition(color);
+
+    &:hover {
+      color: $color-accent;
+    }
+
+    &--active {
+      color: $color-accent;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  &__lang-sep {
+    color: $color-text-secondary;
+    font-size: 0.85rem;
   }
 
   &__item {

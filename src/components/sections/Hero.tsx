@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "@phosphor-icons/react";
+import { useLang } from "../../context/LanguageContext";
 import "./Hero.scss";
 
 const Hero = () => {
+  const { t } = useLang();
+
   return (
     <section className="hero">
       <motion.div
@@ -12,26 +14,15 @@ const Hero = () => {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         <h1 className="hero__title">
-          I design and build{" "}
-          <span className="hero__accent">mobile apps & web products</span>
+          {t.hero.titleLead}{" "}
+          <span className="hero__accent">{t.hero.titleAccent}</span>
         </h1>
 
-        <p className="hero__subtitle">
-          Product designer & developer, 8+ years. From Figma to React Native to deployment.
-        </p>
+        <p className="hero__subtitle">{t.hero.subtitle}</p>
 
         <div className="hero__buttons">
           <a href="#projects" className="button button--primary">
-            <span>See my work</span>
-          </a>
-          <a
-            href="/Resume_Gabriela_Barreira.pdf"
-            download="Resume_Gabriela_Barreira.pdf"
-            target="_blank"
-            className="hero__text-link"
-          >
-            <span>Download resume</span>
-            <ArrowRight weight="bold" size={16} />
+            <span>{t.hero.seeWork}</span>
           </a>
         </div>
       </motion.div>

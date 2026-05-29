@@ -3,9 +3,11 @@ import {
   LinkedinLogo,
   EnvelopeSimple,
 } from "@phosphor-icons/react";
+import { useLang } from "../../context/LanguageContext";
 import "./Footer.scss";
 
 const Footer = () => {
+  const { t } = useLang();
   return (
     <footer className="footer">
       <div className="footer__content">
@@ -46,16 +48,7 @@ const Footer = () => {
         <div className="footer__bottom">
           <span>&copy; {new Date().getFullYear()} Gabriela Barreira</span>
           <span className="footer__divider">&middot;</span>
-          <span>Portugal</span>
-          <span className="footer__divider">&middot;</span>
-          <a
-            href="/Resume_Gabriela_Barreira.pdf"
-            download="Resume_Gabriela_Barreira.pdf"
-            target="_blank"
-            className="footer__resume-link"
-          >
-            Resume
-          </a>
+          <span>{t.footer.location}</span>
         </div>
       </div>
     </footer>

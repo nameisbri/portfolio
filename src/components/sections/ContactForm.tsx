@@ -3,9 +3,11 @@ import { motion } from "framer-motion";
 import { PaperPlaneTilt } from "@phosphor-icons/react";
 import emailjs from "@emailjs/browser";
 import { EMAILJS_CONFIG } from "../../config/emailjs.config";
+import { useLang } from "../../context/LanguageContext";
 import "./ContactForm.scss";
 
 const ContactForm = () => {
+  const { t } = useLang();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -61,14 +63,12 @@ const ContactForm = () => {
 
   return (
     <section className="contact-form" id="contact">
-      <h2 className="section__heading">Get in Touch</h2>
-      <p className="contact-form__subtitle">
-        Interested in working together? Send me a message and I'll get back to you.
-      </p>
+      <h2 className="section__heading">{t.contact.heading}</h2>
+      <p className="contact-form__subtitle">{t.contact.subtitle}</p>
 
       <form className="contact-form__form" onSubmit={handleSubmit}>
         <div className="contact-form__field">
-          <label htmlFor="name">Name *</label>
+          <label htmlFor="name">{t.contact.nameLabel}</label>
           <input
             type="text"
             id="name"
@@ -76,12 +76,12 @@ const ContactForm = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            placeholder="Your name"
+            placeholder={t.contact.namePlaceholder}
           />
         </div>
 
         <div className="contact-form__field">
-          <label htmlFor="email">Email *</label>
+          <label htmlFor="email">{t.contact.emailLabel}</label>
           <input
             type="email"
             id="email"
@@ -89,12 +89,12 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            placeholder="your@email.com"
+            placeholder={t.contact.emailPlaceholder}
           />
         </div>
 
         <div className="contact-form__field">
-          <label htmlFor="message">Message *</label>
+          <label htmlFor="message">{t.contact.messageLabel}</label>
           <textarea
             id="message"
             name="message"
@@ -102,7 +102,7 @@ const ContactForm = () => {
             onChange={handleChange}
             required
             rows={6}
-            placeholder="Tell me about what you're looking for, or just say hello."
+            placeholder={t.contact.messagePlaceholder}
           />
         </div>
 
@@ -114,12 +114,12 @@ const ContactForm = () => {
           whileTap={{ scale: 0.98 }}
         >
           {isSubmitting ? (
-            "Sending..."
+            t.contact.sending
           ) : submitStatus === "success" ? (
-            "Message Sent!"
+            t.contact.sent
           ) : (
             <>
-              <span>Send Message</span>
+              <span>{t.contact.send}</span>
               <PaperPlaneTilt weight="bold" size={18} />
             </>
           )}
@@ -131,7 +131,7 @@ const ContactForm = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            Message sent! I'll get back to you soon.
+            {t.contact.success}
           </motion.p>
         )}
 
@@ -141,7 +141,7 @@ const ContactForm = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            Something went wrong. Please try again or email me directly at{" "}
+            {t.contact.error}{" "}
             <a href="mailto:gabriela@gcsb.me">gabriela@gcsb.me</a>
           </motion.p>
         )}

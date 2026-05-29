@@ -1,48 +1,12 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useLang } from "../../context/LanguageContext";
 import "./Experience.scss";
 
-const workExperience = [
-  {
-    title: "Founder & Lead Developer",
-    company: "Neblina",
-    companyLink: "https://neblina.tech",
-    period: "2026 - Present",
-    description: [
-      "Run a product studio delivering strategy, design, and development for founders and small teams, from brand and UI through full-stack build and deployment.",
-      "Lead projects end to end, including the automation and AI integrations that keep them running after launch.",
-      "Build AI-assisted workflows (Claude Code, Cursor, MCP servers) into both client delivery and my own products.",
-    ],
-  },
-  {
-    title: "Web Developer & Content Manager",
-    company: "Precision Nutrition",
-    period: "Jul 2020 - Present",
-    description: [
-      "Full-stack development including React application rebuilds and feature work",
-      "Focused on user experience, responsive design, and code quality",
-    ],
-  },
-];
-
-const educationExperience = [
-  {
-    degree: "Diploma, Software Engineering",
-    institution: "BrainStation",
-    period: "Nov 2024 - Feb 2025",
-    description:
-      "Intensive software engineering program with 400+ hours of hands-on coding. Full-stack development including JavaScript, TypeScript, React, Node.js, Express, and MySQL.",
-  },
-  {
-    degree: "Bachelors in Media and Communication Technologies",
-    institution: "Aveiro University",
-    period: "2010 - 2014",
-    description:
-      "Technical program combining digital media, communication strategies, and web technologies. Coursework included programming, digital media production, and user experience principles.",
-  },
-];
-
 const Experience = () => {
+  const { t } = useLang();
+  const workExperience = t.experience.work;
+  const educationExperience = t.experience.education;
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.1, once: true });
 
@@ -53,10 +17,10 @@ const Experience = () => {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="section__heading">Experience</h2>
+        <h2 className="section__heading">{t.experience.heading}</h2>
 
         <div className="experience__section">
-          <h3 className="experience__section-title">Work</h3>
+          <h3 className="experience__section-title">{t.experience.workTitle}</h3>
           <div className="experience__list">
             {workExperience.map((job) => (
               <div key={job.company} className="experience__item">
@@ -89,7 +53,7 @@ const Experience = () => {
         </div>
 
         <div className="experience__section">
-          <h3 className="experience__section-title">Education</h3>
+          <h3 className="experience__section-title">{t.experience.educationTitle}</h3>
           <div className="experience__list">
             {educationExperience.map((edu) => (
               <div key={edu.institution} className="experience__item">

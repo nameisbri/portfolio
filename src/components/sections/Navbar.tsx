@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { List, X } from "@phosphor-icons/react";
+import { useLang } from "../../context/LanguageContext";
 import "./Navbar.scss";
 
 const Navbar = () => {
+  const { lang, setLang, t } = useLang();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -57,29 +59,59 @@ const Navbar = () => {
           Gabriela Barreira
         </a>
 
-        <button
-          className="navbar__mobile-toggle"
-          onClick={toggleMobileMenu}
-          aria-expanded={isMobileMenuOpen}
-          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <List size={24} />}
-        </button>
+        <div className="navbar__right">
+          <ul
+            className={`navbar__menu ${isMobileMenuOpen ? "navbar__menu--open" : ""}`}
+            role="menu"
+          >
+            <li className="navbar__item" role="menuitem">
+              <a href="#projects" onClick={handleNavClick}>{t.nav.projects}</a>
+            </li>
+            <li className="navbar__item" role="menuitem">
+              <a href="#skills" onClick={handleNavClick}>{t.nav.about}</a>
+            </li>
+            <li className="navbar__item" role="menuitem">
+              <a href="#contact" onClick={handleNavClick}>{t.nav.contact}</a>
+            </li>
+          </ul>
 
-        <ul
-          className={`navbar__menu ${isMobileMenuOpen ? "navbar__menu--open" : ""}`}
-          role="menu"
-        >
-          <li className="navbar__item" role="menuitem">
-            <a href="#projects" onClick={handleNavClick}>Projects</a>
-          </li>
-          <li className="navbar__item" role="menuitem">
-            <a href="#skills" onClick={handleNavClick}>About</a>
-          </li>
-          <li className="navbar__item" role="menuitem">
-            <a href="#contact" onClick={handleNavClick}>Contact</a>
-          </li>
-        </ul>
+          <div
+            className="navbar__lang"
+            role="group"
+            aria-label={t.nav.english + " / " + t.nav.portuguese}
+          >
+            <button
+              type="button"
+              className={`navbar__lang-btn ${lang === "en" ? "navbar__lang-btn--active" : ""}`}
+              onClick={() => setLang("en")}
+              aria-pressed={lang === "en"}
+              aria-label={t.nav.english}
+            >
+              EN
+            </button>
+            <span className="navbar__lang-sep" aria-hidden="true">
+              /
+            </span>
+            <button
+              type="button"
+              className={`navbar__lang-btn ${lang === "pt" ? "navbar__lang-btn--active" : ""}`}
+              onClick={() => setLang("pt")}
+              aria-pressed={lang === "pt"}
+              aria-label={t.nav.portuguese}
+            >
+              PT
+            </button>
+          </div>
+
+          <button
+            className="navbar__mobile-toggle"
+            onClick={toggleMobileMenu}
+            aria-expanded={isMobileMenuOpen}
+            aria-label={isMobileMenuOpen ? t.nav.closeMenu : t.nav.openMenu}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <List size={24} />}
+          </button>
+        </div>
       </div>
     </nav>
   );
