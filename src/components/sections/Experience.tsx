@@ -4,17 +4,18 @@ import "./Experience.scss";
 
 const workExperience = [
   {
-    title: "Freelance Product Designer & Developer",
-    company: "Independent",
-    period: "2016 - Present",
+    title: "Founder & Lead Developer",
+    company: "Neblina",
+    companyLink: "https://neblina.tech",
+    period: "2026 - Present",
     description: [
-      "Design and develop mobile apps, websites, and digital products for clients across industries",
-      "Handle full product lifecycle from concept through design, development, and deployment",
-      "Use AI-assisted tools (Claude, Cursor) to streamline development workflows",
+      "Run a product studio delivering strategy, design, and development for founders and small teams, from brand and UI through full-stack build and deployment.",
+      "Lead projects end to end, including the automation and AI integrations that keep them running after launch.",
+      "Build AI-assisted workflows (Claude Code, Cursor, MCP servers) into both client delivery and my own products.",
     ],
   },
   {
-    title: "Web Developer",
+    title: "Web Developer & Content Manager",
     company: "Precision Nutrition",
     period: "Jul 2020 - Present",
     description: [
@@ -62,7 +63,18 @@ const Experience = () => {
                 <div className="experience__header">
                   <span className="experience__role">{job.title}</span>
                   <span className="experience__separator"> — </span>
-                  <span className="experience__company">{job.company}</span>
+                  {job.companyLink ? (
+                    <a
+                      className="experience__company"
+                      href={job.companyLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {job.company}
+                    </a>
+                  ) : (
+                    <span className="experience__company">{job.company}</span>
+                  )}
                   <span className="experience__separator"> — </span>
                   <span className="experience__period">{job.period}</span>
                 </div>

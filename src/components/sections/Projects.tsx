@@ -3,16 +3,13 @@ import { useRef } from "react";
 import "./Projects.scss";
 
 import discloserImage from "../../assets/images/projects/discloser.jpg";
-import nutritionCalculatorImage from "../../assets/images/projects/nutrition-calc.png";
-import discloserLandingImage from "../../assets/images/projects/discloser-landing.png";
-import yellowBrollyImage from "../../assets/images/projects/yellow-brolly.png";
 
 interface Project {
   id: string;
   title: string;
   description: string;
   tech: string;
-  image: string;
+  image?: string;
   featured?: boolean;
   links?: {
     github?: string;
@@ -27,10 +24,22 @@ const Projects = () => {
 
   const projects: Project[] = [
     {
+      id: "pn-level1-landing",
+      title: "Precision Nutrition – Level 1 Certification Landing Page",
+      description:
+        "Flagship conversion page for PN's Level 1 Certification, serving 175,000+ coaches worldwide. Full ownership of layout, content structure, responsive design, and performance, built with Astro and Preact islands.",
+      tech: "Astro, Preact, TypeScript, SCSS",
+      featured: true,
+      links: {
+        live: "https://precisionnutrition.com/nutrition-certification-level-1-register-now",
+        liveLabel: "Visit Site",
+      },
+    },
+    {
       id: "discloser-ios",
       title: "Discloser - Mobile App",
       description:
-        "A React Native iOS app for managing and sharing sensitive health information. Features OCR document extraction, automated reminders, and secure sharing. Designed and built end-to-end from concept to App Store beta.",
+        "A privacy-first React Native iOS app for sharing sensitive health information, with OCR document verification, time-limited QR sharing, and risk-based reminders. Designed and built end to end, currently in App Store review.",
       tech: "React Native, iOS, Node.js, Express, MySQL, OCR",
       image: discloserImage,
       featured: true,
@@ -39,38 +48,6 @@ const Projects = () => {
         live: "https://discloser.app",
         liveLabel: "Visit Landing Page",
       },
-    },
-    {
-      id: "discloser-landing",
-      title: "Discloser - Landing Page",
-      description:
-        "Marketing site for the Discloser mobile app. Responsive design, clear information architecture, and optimized for mobile.",
-      tech: "React, TypeScript, SCSS",
-      image: discloserLandingImage,
-      links: {
-        live: "https://discloser.app",
-        liveLabel: "Visit Site",
-      },
-    },
-    {
-      id: "yellow-brolly",
-      title: "Yellow Brolly Co.",
-      description:
-        "Professional consulting website for Yellow Brolly Co. Clean, modern design with clear service presentation and responsive layout.",
-      tech: "React, TypeScript, SCSS",
-      image: yellowBrollyImage,
-      links: {
-        live: "https://yellow-brolly.vercel.app/",
-        liveLabel: "Visit Site",
-      },
-    },
-    {
-      id: "nutrition-calculator",
-      title: "Nutrition Calculator Rebuild",
-      description:
-        "Led the rebuild of a nutrition calculator application from Angular to React at Precision Nutrition, improving user experience and modernizing the codebase.",
-      tech: "React, JavaScript, Angular, Agile",
-      image: nutritionCalculatorImage,
     },
   ];
 
@@ -88,20 +65,22 @@ const Projects = () => {
         {projects.map((project, index) => (
           <motion.article
             key={project.id}
-            className={`projects__item ${project.featured ? "projects__item--featured" : ""}`}
+            className={`projects__item ${project.featured ? "projects__item--featured" : ""} ${!project.image ? "projects__item--no-image" : ""}`}
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <div className="projects__image-container">
-              <img
-                src={project.image}
-                alt={`${project.title}`}
-                className="projects__image"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
+            {project.image && (
+              <div className="projects__image-container">
+                <img
+                  src={project.image}
+                  alt={`${project.title}`}
+                  className="projects__image"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            )}
 
             <div className="projects__info">
               <h3 className="projects__title">{project.title}</h3>
@@ -133,6 +112,23 @@ const Projects = () => {
             </div>
           </motion.article>
         ))}
+      </div>
+
+      <div className="projects__neblina">
+        <h3 className="projects__neblina-heading">Neblina</h3>
+        <p className="projects__neblina-body">
+          I also run Neblina, a product studio. When a project needs more than
+          one person's worth of strategy, design, and engineering, that's where
+          it lives.
+        </p>
+        <a
+          href="https://neblina.tech"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="projects__link"
+        >
+          See client work at Neblina
+        </a>
       </div>
     </section>
   );

@@ -25,6 +25,14 @@
         grid-template-columns: 2fr 1fr;
       }
     }
+
+    &--no-image {
+      grid-template-columns: 1fr;
+
+      @include respond-to(md) {
+        grid-template-columns: 1fr;
+      }
+    }
   }
 
   &__image-container {
@@ -94,5 +102,26 @@
       color: $color-accent-hover;
       text-decoration: underline;
     }
+  }
+
+  &__neblina {
+    margin-top: $spacing-xxl;
+    padding-top: $spacing-xl;
+    border-top: 1px solid $color-border;
+  }
+
+  &__neblina-heading {
+    font-family: $font-family-display;
+    font-size: 1.5rem;
+    color: $color-text-primary;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__neblina-body {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: $color-text-secondary;
+    margin-bottom: $spacing-md;
+    max-width: 60ch;
   }
 }

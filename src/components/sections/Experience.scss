@@ -58,6 +58,16 @@
     font-weight: $font-weight-medium;
   }
 
+  a.experience__company {
+    text-decoration: none;
+    @include transition(color);
+
+    &:hover {
+      color: $color-accent-hover;
+      text-decoration: underline;
+    }
+  }
+
   &__period {
     color: $color-text-secondary;
     font-size: 0.9rem;

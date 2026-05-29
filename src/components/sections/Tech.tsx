@@ -20,7 +20,7 @@ const Tech = () => {
             <div className="tech__group">
               <h3 className="tech__group-title">Development</h3>
               <p className="tech__group-list">
-                React Native, React, TypeScript, JavaScript, Node.js, Express, MySQL, SCSS, WordPress, Responsive Design
+                React Native, React, TypeScript, JavaScript, Astro, Preact, Node.js, Express, MySQL, Supabase/Postgres, SCSS, GSAP, WordPress, Responsive Design
               </p>
             </div>
 
@@ -34,7 +34,7 @@ const Tech = () => {
             <div className="tech__group">
               <h3 className="tech__group-title">Tools & Workflow</h3>
               <p className="tech__group-list">
-                Git, Claude, Cursor, ChatGPT, Google Analytics, Agile, Jira
+                Git, Claude Code, Cursor, MCP servers, Google Analytics, Agile, Jira
               </p>
             </div>
           </div>
@@ -50,7 +50,7 @@ const Tech = () => {
             <div className="tech__about-block">
               <h3 className="tech__about-title">How I Work</h3>
               <p>
-                Design and code under one roof. I start in Figma, build in React/React Native, and use AI-assisted tools (Claude, Cursor) to move faster without cutting corners.
+                Design and code under one roof. I start in Figma, build in React/React Native, and use AI-assisted tools (Claude Code, Cursor) to move faster without cutting corners.
               </p>
             </div>
           </div>

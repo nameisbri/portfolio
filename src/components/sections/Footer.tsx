@@ -46,7 +46,7 @@ const Footer = () => {
         <div className="footer__bottom">
           <span>&copy; {new Date().getFullYear()} Gabriela Barreira</span>
           <span className="footer__divider">&middot;</span>
-          <span>Hamilton, Ontario</span>
+          <span>Portugal</span>
           <span className="footer__divider">&middot;</span>
           <a
             href="/Resume_Gabriela_Barreira.pdf"
