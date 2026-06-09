@@ -180,7 +180,7 @@
 
   &__tech {
     font-size: 0.85rem;
-    color: $color-secondary;
+    color: $color-accent-ink;
     margin-bottom: $spacing-sm;
     font-family: $font-family-body;
     font-weight: $font-weight-medium;
@@ -200,13 +200,13 @@
 
   &__link {
     font-size: 0.9rem;
-    color: $color-accent;
+    color: $color-accent-ink;
     text-decoration: none;
     font-weight: $font-weight-medium;
     @include transition(color);
 
     &:hover {
-      color: $color-accent-hover;
+      color: $color-accent-ink-hover;
       text-decoration: underline;
     }
   }

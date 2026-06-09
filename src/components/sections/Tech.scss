@@ -19,14 +19,15 @@
     }
   }
 
+  // Monochrome-plus-acid: three readable tonal markers, not three hues.
   &__group {
-    --group-accent: #{$color-accent};
+    --group-accent: #{$color-accent-ink};
 
     &--accent {
-      --group-accent: #{$color-accent};
+      --group-accent: #{$color-accent-ink};
     }
     &--secondary {
-      --group-accent: #{$color-secondary};
+      --group-accent: #{$color-text-primary};
     }
     &--tertiary {
       --group-accent: #{$color-tertiary};
@@ -106,10 +107,11 @@
   &__about-index {
     display: block;
     font-family: $font-family-display;
+    font-weight: $font-weight-display;
     font-size: 1.5rem;
-    color: $color-accent;
+    color: $color-accent-ink;
     margin-bottom: $spacing-xs;
-    letter-spacing: 0.02em;
+    letter-spacing: 0;
   }
 
   &__about-title {

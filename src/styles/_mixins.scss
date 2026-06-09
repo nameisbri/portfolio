@@ -56,25 +56,28 @@
 
   @if $type == "primary" {
     background-color: $color-accent;
-    color: white;
+    color: $color-on-accent;
     border: none;
+    font-weight: $font-weight-semibold;
 
     &:hover,
     &:focus {
       background-color: $color-accent-hover;
-      color: white !important;
+      color: $color-on-accent !important;
       text-decoration: none;
-      transform: translateY(-1px);
+      transform: translateY(-2px);
     }
   } @else if $type == "secondary" {
     background-color: transparent;
-    color: $color-accent;
-    border: 1px solid $color-accent;
+    color: $color-text-primary;
+    border: 1px solid $color-text-primary;
+    font-weight: $font-weight-semibold;
 
     &:hover,
     &:focus {
       background-color: $color-accent;
-      color: white;
+      color: $color-on-accent;
+      border-color: $color-accent;
       text-decoration: none;
     }
   }

@@ -47,7 +47,7 @@
   z-index: 9999;
   transition: top 0.2s;
   background: $color-accent;
-  color: white;
+  color: $color-on-accent;
 
   &:focus {
     top: 0;

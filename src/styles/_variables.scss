@@ -1,29 +1,37 @@
-// Typography
-$font-family-display: "DM Serif Display", Georgia, "Times New Roman", serif;
-$font-family-body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+// Typography — Paper & Acid: a tech-forward grotesque over a warm humanist sans
+$font-family-display: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+$font-family-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
 $line-height: 1.5;
 $font-weight-regular: 400;
 $font-weight-medium: 500;
+$font-weight-semibold: 600;
 $font-weight-bold: 700;
+$font-weight-display: 600; // Space Grotesk wants weight at display sizes
 
-// Fresh & Vibrant Palette
-$color-background: #F5F0EB;
-$color-surface: #FEFCFA;
-$color-text-primary: #2D2A26;
-$color-text-secondary: #6B6560;
-$color-accent: #F06543; // Bright coral
-$color-accent-hover: #D94E2F;
-$color-accent-light: rgba(240, 101, 67, 0.08);
-$color-secondary: #2A9D8F; // Vibrant teal
-$color-secondary-light: rgba(42, 157, 143, 0.08);
-$color-tertiary: #E9A820; // Golden yellow
-$color-border: rgba(45, 42, 38, 0.08);
-$color-border-warm: rgba(45, 42, 38, 0.12);
-$color-card-shadow: 0 2px 12px rgba(45, 42, 38, 0.06);
+// Paper & Acid palette — near-monochrome on warm paper, one electric acid hit
+$color-background: #EFEEE9; // paper
+$color-surface: #F7F6F1; // raised paper
+$color-text-primary: #15140F; // near-black ink
+$color-text-secondary: #6E6B62; // stone
+
+// Acid lime is a FILL/HIGHLIGHT colour — unreadable as text, so links/text use the ink variant.
+$color-accent: #C8F03C; // acid lime — fills, highlights, the single hit
+$color-accent-hover: #B6DE2A; // deeper acid for fill hovers
+$color-on-accent: #15140F; // ink text sitting on an acid fill
+$color-accent-ink: #54660A; // readable lime-ink for links/text on paper (AA)
+$color-accent-ink-hover: #3C4A06;
+$color-accent-light: rgba(200, 240, 60, 0.4); // acid wash — glow, highlight backgrounds
+
+$color-secondary: #15140F; // near-black — monochrome second voice
+$color-secondary-light: rgba(21, 20, 15, 0.06);
+$color-tertiary: #6E6B62; // stone — third voice
+$color-border: rgba(21, 20, 15, 0.13);
+$color-border-warm: rgba(21, 20, 15, 0.22); // stronger rules suit the brutalist-lite tone
+$color-card-shadow: 0 2px 14px rgba(21, 20, 15, 0.07);
 
 // Semantic
-$color-success: #2A9D8F;
-$color-error: #E63946;
+$color-success: #2F5D50; // deep pine — positive without clashing
+$color-error: #C0341D;
 
 // Breakpoints
 $breakpoint-xs: 480px;

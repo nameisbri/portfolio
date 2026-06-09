@@ -78,7 +78,7 @@ body {
 }
 
 :focus {
-  outline: 2px solid $color-accent;
+  outline: 2px solid $color-text-primary;
   outline-offset: 2px;
 }
 
@@ -87,7 +87,7 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid $color-accent;
+  outline: 2px solid $color-text-primary;
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -95,7 +95,7 @@ body {
 a:focus:not(.button),
 a:hover:not(.button) {
   text-decoration: underline;
-  color: $color-accent;
+  color: $color-accent-ink;
 }
 
 // Respect users who ask for less motion — kill transitions, animations,
