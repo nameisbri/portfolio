@@ -101,7 +101,7 @@ export interface Translations {
 }
 
 const en: Translations = {
-  docTitle: "Gabriela Barreira | Product Designer & Developer",
+  docTitle: "Gabriela Barreira | Web Developer for Marketing & Product Teams",
   nav: {
     projects: "Projects",
     about: "About",
@@ -113,7 +113,7 @@ const en: Translations = {
   },
   hero: {
     status: "Available for new work",
-    kicker: "Product Designer & Developer · Remote",
+    kicker: "Web Developer for Marketing Teams · Remote",
     titleBefore: "I design and build",
     titleMark: "mobile apps",
     titleAfter: "& web products.",
@@ -221,9 +221,9 @@ const en: Translations = {
   contact: {
     heading: "Get in Touch",
     subtitle:
-      "Interested in working together? Send me a message and I'll get back to you.",
+      "I help marketing and product teams ship websites and landing pages that actually convert, without sacrificing performance, accessibility, or QA. Most of my work sits at the intersection of marketing and engineering: fast iteration, AI-assisted workflows, and a habit of catching what gets missed under deadline pressure. Available for freelance and contract work through Neblina, alongside my role at Precision Nutrition.",
     orDirect: "Or reach me directly",
-    remote: "Working remotely",
+    remote: "Portugal • Remote",
     nameLabel: "Name *",
     namePlaceholder: "Your name",
     emailLabel: "Email *",
@@ -244,7 +244,7 @@ const en: Translations = {
 };
 
 const pt: Translations = {
-  docTitle: "Gabriela Barreira | Designer e Programadora de Produto",
+  docTitle: "Gabriela Barreira | Programadora Web para Equipas de Marketing e Produto",
   nav: {
     projects: "Projetos",
     about: "Sobre",
@@ -256,7 +256,7 @@ const pt: Translations = {
   },
   hero: {
     status: "Disponível para novos projetos",
-    kicker: "Designer e Programadora de Produto · Remoto",
+    kicker: "Programadora Web para Equipas de Marketing · Remoto",
     titleBefore: "Desenho e construo",
     titleMark: "aplicações móveis",
     titleAfter: "e produtos web.",
@@ -364,9 +364,9 @@ const pt: Translations = {
   contact: {
     heading: "Entre em Contacto",
     subtitle:
-      "Interessado em trabalhar comigo? Envie-me uma mensagem e eu respondo-lhe.",
+      "Ajudo equipas de marketing e produto a lançar sites e landing pages que realmente convertem, sem sacrificar desempenho, acessibilidade ou QA. A maior parte do meu trabalho vive na interseção entre marketing e engenharia: iteração rápida, fluxos de trabalho assistidos por IA e o hábito de apanhar o que escapa sob a pressão dos prazos. Disponível para trabalho freelance e a contrato através da Neblina, em paralelo com o meu trabalho na Precision Nutrition.",
     orDirect: "Ou contacte-me diretamente",
-    remote: "Trabalho remoto",
+    remote: "Portugal • Remoto",
     nameLabel: "Nome *",
     namePlaceholder: "O seu nome",
     emailLabel: "Email *",
