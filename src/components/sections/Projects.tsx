@@ -1,12 +1,15 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useLang } from "../../context/LanguageContext";
+import type { Translations } from "../../i18n/translations";
 import "./Projects.scss";
 
 import discloserUpload from "../../assets/images/projects/discloser/upload.webp";
 import discloserDashboard from "../../assets/images/projects/discloser/dashboard.webp";
 import discloserShare from "../../assets/images/projects/discloser/share.webp";
 import pnImage from "../../assets/images/projects/pn-level1.webp";
+import pnPopupImage from "../../assets/images/projects/pn-popup.webp";
+import flexImage from "../../assets/images/projects/flex-2026.webp";
 import neblinaImage from "../../assets/images/projects/neblina.webp";
 
 type ScreenKey = "upload" | "dashboard" | "share";
@@ -23,36 +26,156 @@ interface ProjectMeta {
   };
 }
 
-const projectMeta: ProjectMeta[] = [
+const leadProject: ProjectMeta = {
+  id: "pn-level1-landing",
+  tech: "Astro, Preact, TypeScript, SCSS",
+  image: pnImage,
+  featured: true,
+  links: {
+    live: "https://precisionnutrition.com/nutrition-certification-level-1-register-now",
+  },
+};
+
+const pairProjects: ProjectMeta[] = [
   {
-    id: "pn-level1-landing",
-    tech: "Astro, Preact, TypeScript, SCSS",
-    image: pnImage,
-    featured: true,
+    id: "pn-exit-popup",
+    tech: "Astro, TypeScript, PostHog, Cloudflare",
+    image: pnPopupImage,
     links: {
       live: "https://precisionnutrition.com/nutrition-certification-level-1-register-now",
     },
   },
   {
-    id: "discloser-ios",
-    tech: "React Native, iOS, Node.js, Express, MySQL, OCR",
-    screens: [
-      { src: discloserUpload, key: "upload" },
-      { src: discloserDashboard, key: "dashboard" },
-      { src: discloserShare, key: "share" },
-    ],
-    featured: true,
-    links: {
-      github: "https://github.com/nameisbri/discloser",
-      live: "https://discloser.app",
-    },
+    id: "pn-flex-2026",
+    tech: "WordPress, PHP, ACF, SCSS, JavaScript",
+    image: flexImage,
   },
 ];
+
+const showcaseProject: ProjectMeta = {
+  id: "discloser-ios",
+  tech: "React Native, iOS, Node.js, Express, MySQL, OCR",
+  screens: [
+    { src: discloserUpload, key: "upload" },
+    { src: discloserDashboard, key: "dashboard" },
+    { src: discloserShare, key: "share" },
+  ],
+  links: {
+    github: "https://github.com/nameisbri/discloser",
+    live: "https://discloser.app",
+  },
+};
+
+interface CardProps {
+  project: ProjectMeta;
+  t: Translations;
+  isInView: boolean;
+  delay: number;
+}
+
+const ProjectCard = ({ project, t, isInView, delay }: CardProps) => {
+  const copy = t.projects.items[project.id];
+
+  return (
+    <motion.article
+      className={[
+        "projects__item",
+        project.featured && "projects__item--featured",
+        project.screens && "projects__item--showcase",
+        !project.image && !project.screens && "projects__item--no-image",
+      ]
+        .filter(Boolean)
+        .join(" ")}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      transition={{ duration: 0.5, delay }}
+    >
+      {project.image &&
+        (() => {
+          const frame = (
+            <>
+              <div className="projects__browser-bar" aria-hidden="true">
+                <span />
+                <span />
+                <span />
+              </div>
+              <img
+                src={project.image}
+                alt={copy.title}
+                className="projects__browser-img"
+                loading="lazy"
+                decoding="async"
+              />
+            </>
+          );
+
+          return project.links?.live ? (
+            <a
+              href={project.links.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="projects__browser projects__browser--link"
+              aria-label={copy.liveLabel + ": " + copy.title}
+            >
+              {frame}
+            </a>
+          ) : (
+            <div className="projects__browser">{frame}</div>
+          );
+        })()}
+
+      {project.screens && (
+        <div className="projects__showcase">
+          {project.screens.map((screen) => (
+            <div key={screen.key} className="projects__phone">
+              <img
+                src={screen.src}
+                alt={t.projects.screenLabels[screen.key]}
+                className="projects__phone-img"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          ))}
+        </div>
+      )}
+
+      <div className="projects__info">
+        <h3 className="projects__title">{copy.title}</h3>
+        <p className="projects__tech">{project.tech}</p>
+        <p className="projects__description">{copy.description}</p>
+
+        <div className="projects__links">
+          {project.links?.github && (
+            <a
+              href={project.links.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="projects__link"
+            >
+              {t.projects.githubLabel}
+            </a>
+          )}
+          {project.links?.live && (
+            <a
+              href={project.links.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="projects__link"
+            >
+              {copy.liveLabel}
+            </a>
+          )}
+        </div>
+      </div>
+    </motion.article>
+  );
+};
 
 const Projects = () => {
   const { t } = useLang();
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.1, once: true });
+  const isInView = useInView(ref, { amount: 0.05, once: true });
 
   return (
     <section
@@ -65,105 +188,26 @@ const Projects = () => {
       </h2>
 
       <div ref={ref} className="projects__list">
-        {projectMeta.map((project, index) => {
-          const copy = t.projects.items[project.id];
+        <ProjectCard project={leadProject} t={t} isInView={isInView} delay={0} />
 
-          return (
-            <motion.article
+        <div className="projects__pair">
+          {pairProjects.map((project, index) => (
+            <ProjectCard
               key={project.id}
-              className={[
-                "projects__item",
-                project.featured && "projects__item--featured",
-                project.screens && "projects__item--showcase",
-                !project.image && !project.screens && "projects__item--no-image",
-              ]
-                .filter(Boolean)
-                .join(" ")}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              {project.image &&
-                (() => {
-                  const frame = (
-                    <>
-                      <div className="projects__browser-bar" aria-hidden="true">
-                        <span />
-                        <span />
-                        <span />
-                      </div>
-                      <img
-                        src={project.image}
-                        alt={copy.title}
-                        className="projects__browser-img"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </>
-                  );
+              project={project}
+              t={t}
+              isInView={isInView}
+              delay={0.1 + index * 0.1}
+            />
+          ))}
+        </div>
 
-                  return project.links?.live ? (
-                    <a
-                      href={project.links.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="projects__browser projects__browser--link"
-                      aria-label={copy.liveLabel + ": " + copy.title}
-                    >
-                      {frame}
-                    </a>
-                  ) : (
-                    <div className="projects__browser">{frame}</div>
-                  );
-                })()}
-
-              {project.screens && (
-                <div className="projects__showcase">
-                  {project.screens.map((screen) => (
-                    <div key={screen.key} className="projects__phone">
-                      <img
-                        src={screen.src}
-                        alt={t.projects.screenLabels[screen.key]}
-                        className="projects__phone-img"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              <div className="projects__info">
-                <h3 className="projects__title">{copy.title}</h3>
-                <p className="projects__tech">{project.tech}</p>
-                <p className="projects__description">{copy.description}</p>
-
-                <div className="projects__links">
-                  {project.links?.github && (
-                    <a
-                      href={project.links.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="projects__link"
-                    >
-                      {t.projects.githubLabel}
-                    </a>
-                  )}
-                  {project.links?.live && (
-                    <a
-                      href={project.links.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="projects__link"
-                    >
-                      {copy.liveLabel}
-                    </a>
-                  )}
-                </div>
-              </div>
-            </motion.article>
-          );
-        })}
+        <ProjectCard
+          project={showcaseProject}
+          t={t}
+          isInView={isInView}
+          delay={0.3}
+        />
       </div>
 
       <div className="projects__neblina">

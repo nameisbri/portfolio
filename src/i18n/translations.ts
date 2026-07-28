@@ -133,6 +133,18 @@ const en: Translations = {
           "Flagship conversion page for PN's Level 1 Certification, serving 175,000+ coaches worldwide. Full ownership of layout, content structure, responsive design, and performance, built with Astro and Preact islands.",
         liveLabel: "Visit Site",
       },
+      "pn-exit-popup": {
+        title: "Exit-Intent Marketing Popup",
+        description:
+          "Lead-capture popup for the Level 1 page, built natively in Astro. A Turnstile-protected form posts to WordPress endpoints, PostHog events track impressions and submissions, and the rollout was timed around PN's promo calendar. Live in production.",
+        liveLabel: "See the Page",
+      },
+      "pn-flex-2026": {
+        title: "Flex 2026 – WordPress Sales Page Builder",
+        description:
+          "A sales-page template of 18 modular ACF blocks that lets PN's marketing team assemble full campaign pages without a developer. Ports the Astro design system to WordPress — fluid type, scroll-reveal animations, pricing and countdown blocks — pixel-matched across two CSS stacks.",
+        liveLabel: "Visit Site",
+      },
       "discloser-ios": {
         title: "Discloser - Mobile App",
         description:
@@ -157,7 +169,7 @@ const en: Translations = {
     groups: {
       development: {
         title: "Development",
-        list: "React Native, React, TypeScript, JavaScript, Astro, Preact, Node.js, Express, MySQL, Supabase/Postgres, SCSS, GSAP, WordPress, Responsive Design",
+        list: "React Native, React, TypeScript, JavaScript, Astro, Preact, Node.js, Express, MySQL, Supabase/Postgres, SCSS, GSAP, WordPress, PHP, Responsive Design",
       },
       design: {
         title: "Design",
@@ -165,7 +177,7 @@ const en: Translations = {
       },
       tools: {
         title: "Tools & Workflow",
-        list: "Git, Claude Code, Cursor, MCP servers, Google Analytics, Agile, Jira",
+        list: "Git, Claude Code, Cursor, MCP servers, Google Analytics, PostHog, Agile, Jira",
       },
     },
     whatTitle: "What I Build",
@@ -276,6 +288,18 @@ const pt: Translations = {
           "Página de conversão principal da Certificação Nível 1 da PN, ao serviço de mais de 175 000 coaches em todo o mundo. Responsável por todo o layout, estrutura de conteúdos, design responsivo e desempenho, construída com Astro e ilhas Preact.",
         liveLabel: "Visitar Site",
       },
+      "pn-exit-popup": {
+        title: "Popup de Marketing Exit-Intent",
+        description:
+          "Popup de captação de leads para a página do Nível 1, construído nativamente em Astro. Um formulário protegido por Turnstile envia para endpoints WordPress, eventos PostHog medem impressões e submissões, e o lançamento foi alinhado com o calendário promocional da PN. Em produção.",
+        liveLabel: "Ver a Página",
+      },
+      "pn-flex-2026": {
+        title: "Flex 2026 – Construtor de Páginas de Vendas WordPress",
+        description:
+          "Um template de páginas de vendas com 18 blocos ACF modulares que permite à equipa de marketing da PN montar páginas de campanha completas sem programador. Traduz o design system Astro para WordPress — tipografia fluida, animações scroll-reveal, blocos de preços e contagem decrescente — com paridade de pixel entre duas stacks de CSS.",
+        liveLabel: "Visitar Site",
+      },
       "discloser-ios": {
         title: "Discloser - Aplicação Móvel",
         description:
@@ -300,7 +324,7 @@ const pt: Translations = {
     groups: {
       development: {
         title: "Desenvolvimento",
-        list: "React Native, React, TypeScript, JavaScript, Astro, Preact, Node.js, Express, MySQL, Supabase/Postgres, SCSS, GSAP, WordPress, Design Responsivo",
+        list: "React Native, React, TypeScript, JavaScript, Astro, Preact, Node.js, Express, MySQL, Supabase/Postgres, SCSS, GSAP, WordPress, PHP, Design Responsivo",
       },
       design: {
         title: "Design",
@@ -308,7 +332,7 @@ const pt: Translations = {
       },
       tools: {
         title: "Ferramentas & Fluxo de Trabalho",
-        list: "Git, Claude Code, Cursor, servidores MCP, Google Analytics, Agile, Jira",
+        list: "Git, Claude Code, Cursor, servidores MCP, Google Analytics, PostHog, Agile, Jira",
       },
     },
     whatTitle: "O Que Construo",

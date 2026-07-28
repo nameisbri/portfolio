@@ -46,6 +46,43 @@
     }
   }
 
+  // — Two-up tier: screenshot above info, side by side on desktop —
+  &__pair {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xxl;
+
+    @include respond-to(md) {
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-xl;
+      align-items: start;
+    }
+
+    .projects__item {
+      grid-template-columns: 1fr;
+      align-items: start;
+      gap: $spacing-md;
+
+      @include respond-to(md) {
+        grid-template-columns: 1fr;
+        gap: $spacing-md;
+      }
+    }
+
+    .projects__info {
+      @include respond-to(md) {
+        padding: 0;
+      }
+    }
+
+    // Equalize image heights so the pair's titles sit on the same line.
+    .projects__browser-img {
+      aspect-ratio: 1.9;
+      object-fit: cover;
+      object-position: top center;
+    }
+  }
+
   // — Phone-screen showcase —
   &__showcase {
     display: flex;
