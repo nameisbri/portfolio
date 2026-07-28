@@ -162,7 +162,7 @@ const en: Translations = {
     },
     neblina: {
       heading: "Neblina",
-      body: "I also run Neblina, a product studio. When a project needs more than one person's worth of strategy, design, and engineering, that's where it lives.",
+      body: "I also run Neblina, a product studio. When a project needs more than one person's worth of strategy, design, and engineering, that's where it lives. Completed client work includes Yellow Brolly Co. and Walkercraft.",
       link: "See client work at Neblina",
       imageAlt: "Neblina product studio — homepage",
     },
@@ -172,7 +172,7 @@ const en: Translations = {
     groups: {
       development: {
         title: "Development",
-        list: "React Native, React, TypeScript, JavaScript, Astro, Preact, Node.js, Express, MySQL, Supabase/Postgres, SCSS, GSAP, WordPress, PHP, Responsive Design",
+        list: "React, TypeScript, JavaScript, Astro, Preact, Node.js, Express, MySQL, Supabase/Postgres, SCSS, GSAP, WordPress, PHP, Responsive Design, React Native",
       },
       design: {
         title: "Design",
@@ -185,7 +185,7 @@ const en: Translations = {
     },
     whatTitle: "What I Build",
     whatBody:
-      "Mobile apps (iOS & Android) with React Native, responsive websites, and full-stack web applications. From initial design in Figma through deployment.",
+      "Landing pages, campaign sites, and marketing web experiences — built in Astro, React, and WordPress, instrumented for conversion, and fast. From the Figma file through deployment. I also build mobile apps with React Native.",
     howTitle: "How I Work",
     howBody:
       "Design and code under one roof. I start in Figma, build in React/React Native, and use AI-assisted tools (Claude Code, Cursor) to move faster without cutting corners.",
@@ -211,8 +211,30 @@ const en: Translations = {
         company: "Precision Nutrition",
         period: "Jul 2020 - Present",
         description: [
-          "Full-stack development including React application rebuilds and feature work",
-          "Focused on user experience, responsive design, and code quality",
+          "Build and optimize conversion-focused marketing pages and campaign experiences on a platform serving 100,000+ monthly visitors",
+          "Own front-end delivery of the Level 1 Certification landing page in Astro and Preact, from layout and content structure through performance and responsive behaviour",
+          "Instrument conversion tracking and analytics so the marketing team can measure funnel performance and act on it",
+          "Build authoring tooling that lets marketers assemble full campaign pages without developer involvement",
+        ],
+      },
+      {
+        title: "Web Marketing Coordinator",
+        company: "EF Educational Tours",
+        period: "Jul 2019 - Jun 2020",
+        description: [
+          "Built analytics dashboards tracking website effectiveness and user behaviour",
+          "Developed A/B testing strategies to improve conversion across marketing pages",
+          "Coordinated with global teams to build, test, and deploy email campaigns and web content across multiple markets",
+        ],
+      },
+      {
+        title: "e-Commerce Manager",
+        company: "BOXPT Equipment",
+        period: "Jan 2018 - Jun 2019",
+        description: [
+          "Owned website setup, customization, and ongoing digital presence",
+          "Built custom features and templates to improve product visibility and site functionality",
+          "Delivered analytics reporting with recommendations for improving performance",
         ],
       },
     ],
@@ -317,7 +339,7 @@ const pt: Translations = {
     },
     neblina: {
       heading: "Neblina",
-      body: "Também tenho a Neblina, um estúdio de produto. Quando um projeto precisa de mais do que uma pessoa em estratégia, design e engenharia, é aí que ele vive.",
+      body: "Também tenho a Neblina, um estúdio de produto. Quando um projeto precisa de mais do que uma pessoa em estratégia, design e engenharia, é aí que ele vive. O trabalho concluído para clientes inclui a Yellow Brolly Co. e a Walkercraft.",
       link: "Ver trabalho com clientes na Neblina",
       imageAlt: "Neblina estúdio de produto — página inicial",
     },
@@ -327,7 +349,7 @@ const pt: Translations = {
     groups: {
       development: {
         title: "Desenvolvimento",
-        list: "React Native, React, TypeScript, JavaScript, Astro, Preact, Node.js, Express, MySQL, Supabase/Postgres, SCSS, GSAP, WordPress, PHP, Design Responsivo",
+        list: "React, TypeScript, JavaScript, Astro, Preact, Node.js, Express, MySQL, Supabase/Postgres, SCSS, GSAP, WordPress, PHP, Design Responsivo, React Native",
       },
       design: {
         title: "Design",
@@ -340,7 +362,7 @@ const pt: Translations = {
     },
     whatTitle: "O Que Construo",
     whatBody:
-      "Aplicações móveis (iOS e Android) com React Native, sites responsivos e aplicações web full-stack. Do design inicial no Figma até à publicação.",
+      "Landing pages, sites de campanha e experiências web de marketing — construídas em Astro, React e WordPress, instrumentadas para conversão e rápidas. Do ficheiro Figma até à publicação. Também construo aplicações móveis com React Native.",
     howTitle: "Como Trabalho",
     howBody:
       "Design e código sob o mesmo teto. Começo no Figma, construo em React/React Native e uso ferramentas assistidas por IA (Claude Code, Cursor) para avançar mais depressa sem cortar caminho.",
@@ -366,8 +388,30 @@ const pt: Translations = {
         company: "Precision Nutrition",
         period: "Jul 2020 - Presente",
         description: [
-          "Desenvolvimento full-stack, incluindo reconstruções de aplicações em React e desenvolvimento de funcionalidades.",
-          "Foco na experiência do utilizador, design responsivo e qualidade do código.",
+          "Construo e otimizo páginas de marketing e experiências de campanha focadas em conversão, numa plataforma com mais de 100 000 visitantes mensais.",
+          "Responsável pela entrega front-end da landing page da Certificação Nível 1 em Astro e Preact, do layout e estrutura de conteúdos ao desempenho e comportamento responsivo.",
+          "Implemento tracking de conversão e analytics para que a equipa de marketing possa medir o desempenho do funil e agir sobre ele.",
+          "Construo ferramentas de edição que permitem à equipa de marketing montar páginas de campanha completas sem envolvimento de programadores.",
+        ],
+      },
+      {
+        title: "Coordenadora de Marketing Web",
+        company: "EF Educational Tours",
+        period: "Jul 2019 - Jun 2020",
+        description: [
+          "Construí dashboards de analytics para acompanhar a eficácia do site e o comportamento dos utilizadores.",
+          "Desenvolvi estratégias de testes A/B para melhorar a conversão nas páginas de marketing.",
+          "Coordenei com equipas globais a construção, teste e publicação de campanhas de email e conteúdos web em vários mercados.",
+        ],
+      },
+      {
+        title: "Gestora de e-Commerce",
+        company: "BOXPT Equipment",
+        period: "Jan 2018 - Jun 2019",
+        description: [
+          "Responsável pela configuração, personalização e presença digital contínua do site.",
+          "Construí funcionalidades e templates personalizados para melhorar a visibilidade dos produtos e a funcionalidade do site.",
+          "Entreguei relatórios de analytics com recomendações para melhorar o desempenho.",
         ],
       },
     ],
