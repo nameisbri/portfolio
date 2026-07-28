@@ -5,7 +5,7 @@ import {
   useEffect,
   ReactNode,
 } from "react";
-import { Lang, Translations, translations } from "../i18n/translations";
+import { Lang, Translations, translations, PT_ENABLED } from "../i18n/translations";
 
 interface LanguageContextType {
   lang: Lang;
@@ -14,6 +14,9 @@ interface LanguageContextType {
 }
 
 const detectLang = (): Lang => {
+  if (!PT_ENABLED) {
+    return "en";
+  }
   const saved = localStorage.getItem("lang");
   if (saved === "en" || saved === "pt") {
     return saved;

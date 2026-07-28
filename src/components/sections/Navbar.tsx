@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { List, X } from "@phosphor-icons/react";
 import { useLang } from "../../context/LanguageContext";
+import { PT_ENABLED } from "../../i18n/translations";
 import "./Navbar.scss";
 
 const Navbar = () => {
@@ -75,6 +76,7 @@ const Navbar = () => {
             </li>
           </ul>
 
+          {PT_ENABLED && (
           <div
             className="navbar__lang"
             role="group"
@@ -102,6 +104,7 @@ const Navbar = () => {
               PT
             </button>
           </div>
+          )}
 
           <button
             className="navbar__mobile-toggle"

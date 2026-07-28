@@ -1,5 +1,8 @@
 export type Lang = "en" | "pt";
 
+// Flip to re-enable the PT version and its navbar toggle.
+export const PT_ENABLED: boolean = false;
+
 interface ProjectCopy {
   title: string;
   description: string;
@@ -235,7 +238,7 @@ const en: Translations = {
     subtitle:
       "I help marketing and product teams ship websites and landing pages that actually convert, without sacrificing performance, accessibility, or QA. Most of my work sits at the intersection of marketing and engineering: fast iteration, AI-assisted workflows, and a habit of catching what gets missed under deadline pressure. Available for freelance and contract work through Neblina, alongside my role at Precision Nutrition.",
     orDirect: "Or reach me directly",
-    remote: "Portugal • Remote",
+    remote: "Working remotely",
     nameLabel: "Name *",
     namePlaceholder: "Your name",
     emailLabel: "Email *",
@@ -390,7 +393,7 @@ const pt: Translations = {
     subtitle:
       "Ajudo equipas de marketing e produto a lançar sites e landing pages que realmente convertem, sem sacrificar desempenho, acessibilidade ou QA. A maior parte do meu trabalho vive na interseção entre marketing e engenharia: iteração rápida, fluxos de trabalho assistidos por IA e o hábito de apanhar o que escapa sob a pressão dos prazos. Disponível para trabalho freelance e a contrato através da Neblina, em paralelo com o meu trabalho na Precision Nutrition.",
     orDirect: "Ou contacte-me diretamente",
-    remote: "Portugal • Remoto",
+    remote: "A trabalhar remotamente",
     nameLabel: "Nome *",
     namePlaceholder: "O seu nome",
     emailLabel: "Email *",
