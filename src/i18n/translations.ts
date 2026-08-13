@@ -121,7 +121,7 @@ const en: Translations = {
     titleMark: "landing pages",
     titleAfter: "that convert.",
     subtitle:
-      "Eight years of it — I take a campaign from the blank Figma file to the page that's live, measured, and converting.",
+      "Eight years of doing exactly that, from the first Figma frame to a live page that converts.",
     seeWork: "See my work",
     getInTouch: "Get in touch",
     portraitAlt: "Gabriela Barreira",
@@ -258,7 +258,7 @@ const en: Translations = {
   contact: {
     heading: "Get in Touch",
     subtitle:
-      "I help marketing and product teams ship websites and landing pages that actually convert, without sacrificing performance, accessibility, or QA. Most of my work sits at the intersection of marketing and engineering: fast iteration, AI-assisted workflows, and a habit of catching what gets missed under deadline pressure. Available for freelance and contract work through Neblina, alongside my role at Precision Nutrition.",
+      "I help marketing and product teams ship landing pages that convert, without giving up performance, accessibility, or QA. My work sits where marketing meets engineering: fast iteration, and a habit of catching what slips through under deadline pressure. Available for freelance and contract work through Neblina, alongside my role at Precision Nutrition.",
     orDirect: "Or reach me directly",
     remote: "Working remotely",
     nameLabel: "Name *",
@@ -298,7 +298,7 @@ const pt: Translations = {
     titleMark: "landing pages",
     titleAfter: "que convertem.",
     subtitle:
-      "Oito anos disto — pego numa campanha desde o ficheiro Figma em branco até à página no ar, medida e a converter.",
+      "Oito anos a fazer exatamente isto: do primeiro frame no Figma até uma página no ar a converter.",
     seeWork: "Ver o meu trabalho",
     getInTouch: "Falar comigo",
     portraitAlt: "Gabriela Barreira",
@@ -435,7 +435,7 @@ const pt: Translations = {
   contact: {
     heading: "Entre em Contacto",
     subtitle:
-      "Ajudo equipas de marketing e produto a lançar sites e landing pages que realmente convertem, sem sacrificar desempenho, acessibilidade ou QA. A maior parte do meu trabalho vive na interseção entre marketing e engenharia: iteração rápida, fluxos de trabalho assistidos por IA e o hábito de apanhar o que escapa sob a pressão dos prazos. Disponível para trabalho freelance e a contrato através da Neblina, em paralelo com o meu trabalho na Precision Nutrition.",
+      "Ajudo equipas de marketing e produto a lançar landing pages que convertem, sem sacrificar desempenho, acessibilidade ou QA. O meu trabalho vive onde o marketing encontra a engenharia: iteração rápida e o hábito de apanhar o que escapa sob a pressão dos prazos. Disponível para trabalho freelance e a contrato através da Neblina, em paralelo com o meu trabalho na Precision Nutrition.",
     orDirect: "Ou contacte-me diretamente",
     remote: "A trabalhar remotamente",
     nameLabel: "Nome *",
