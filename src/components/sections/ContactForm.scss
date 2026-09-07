@@ -24,27 +24,6 @@
     }
   }
 
-  &__status {
-    display: inline-flex;
-    align-items: center;
-    gap: $spacing-xs;
-    margin-bottom: $spacing-md;
-    font-family: $font-family-body;
-    font-size: 0.9rem;
-    font-weight: $font-weight-medium;
-    letter-spacing: 0;
-    color: $color-text-primary;
-  }
-
-  &__status-dot {
-    width: 9px;
-    height: 9px;
-    border-radius: $border-radius-full;
-    background: $color-accent;
-    box-shadow: 0 0 0 1px rgba($color-text-primary, 0.25);
-    flex-shrink: 0;
-  }
-
   &__subtitle {
     color: $color-text-secondary;
     font-size: 1.05rem;

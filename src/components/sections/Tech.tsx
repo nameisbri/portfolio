@@ -5,6 +5,7 @@ import "./Tech.scss";
 
 const GROUPS = [
   { key: "development", accent: "accent" },
+  { key: "analytics", accent: "quaternary" },
   { key: "design", accent: "secondary" },
   { key: "tools", accent: "tertiary" },
 ] as const;

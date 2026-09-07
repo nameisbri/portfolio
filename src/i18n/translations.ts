@@ -36,7 +36,6 @@ export interface Translations {
     portuguese: string;
   };
   hero: {
-    status: string;
     kicker: string;
     titleBefore: string;
     titleMark: string;
@@ -66,6 +65,7 @@ export interface Translations {
     heading: string;
     groups: {
       development: { title: string; list: string };
+      analytics: { title: string; list: string };
       design: { title: string; list: string };
       tools: { title: string; list: string };
     };
@@ -104,9 +104,9 @@ export interface Translations {
 }
 
 const en: Translations = {
-  docTitle: "Gabriela Barreira | Web Developer for Marketing & Product Teams",
+  docTitle: "Gabriela Barreira | Frontend Engineer for Marketing and Growth Teams",
   nav: {
-    projects: "Projects",
+    projects: "Work",
     about: "About",
     contact: "Contact",
     openMenu: "Open menu",
@@ -115,13 +115,12 @@ const en: Translations = {
     portuguese: "Portuguese",
   },
   hero: {
-    status: "Available for new work",
-    kicker: "Web Developer for Marketing Teams · Remote",
-    titleBefore: "I design and build",
-    titleMark: "landing pages",
-    titleAfter: "that convert.",
+    kicker: "Frontend Engineer · Marketing and Growth · Remote",
+    titleBefore: "I build the systems",
+    titleMark: "marketing teams",
+    titleAfter: "run on.",
     subtitle:
-      "Eight years of doing exactly that, from the first Figma frame to a live page that converts.",
+      "Eight years of it, most recently on a site with 100,000+ visitors a month. I also set up the analytics that shows whether any of it worked.",
     seeWork: "See my work",
     getInTouch: "Get in touch",
     portraitAlt: "Gabriela Barreira",
@@ -131,22 +130,22 @@ const en: Translations = {
     githubLabel: "GitHub",
     items: {
       "pn-level1-landing": {
-        title: "Precision Nutrition – Level 1 Certification Landing Page",
+        title: "Precision Nutrition, Level 1 Certification landing page",
         description:
-          "Flagship conversion page for PN's Level 1 Certification, serving 175,000+ coaches worldwide. Full ownership of layout, content structure, responsive design, and performance, built with Astro and Preact islands.",
-        liveLabel: "Visit Site",
-      },
-      "pn-exit-popup": {
-        title: "Exit-Intent Marketing Popup",
-        description:
-          "Lead-capture popup for the Level 1 page, built natively in Astro. A Turnstile-protected form posts to WordPress endpoints, PostHog events track impressions and submissions, and the rollout was timed around PN's promo calendar. Live in production.",
-        liveLabel: "See the Page",
+          "The main conversion page for PN's Level 1 Certification, which has 175,000+ coaches enrolled. Built in Astro with Preact islands, so the interactive parts ship as small islands and the rest of the page stays static. I own it end to end: layout, content structure, responsive behaviour, performance, and the tracking on it.",
+        liveLabel: "Visit site",
       },
       "pn-flex-2026": {
-        title: "Flex 2026 – WordPress Sales Page Builder",
+        title: "Flex 2026, a sales page builder in WordPress",
         description:
-          "A sales-page template of 18 modular ACF blocks that lets PN's marketing team assemble full campaign pages without a developer. Ports the Astro design system to WordPress — fluid type, scroll-reveal animations, pricing and countdown blocks — pixel-matched across two CSS stacks.",
-        liveLabel: "Visit Site",
+          "A template of 18 modular ACF blocks that lets the marketing team assemble a full campaign page on their own. Field groups are versioned in JSON and go through code review, required fields stop half-built sections reaching production, and the field notes are written for the person filling them in rather than for a developer. The blocks port the Astro design system across to WordPress, fluid type and scroll animations included, matched across two separate CSS stacks.",
+        liveLabel: "Visit site",
+      },
+      "pn-exit-popup": {
+        title: "Exit-intent lead capture",
+        description:
+          "Ported off a WordPress plugin and rebuilt natively in Astro. The form posts to WordPress endpoints behind Cloudflare Turnstile, with nonce retry handling for the case where a cached page carries a stale token. PostHog events track impressions and submissions separately, so marketing can see where people drop between the two. Live in production and timed around the promo calendar.",
+        liveLabel: "See the page",
       },
       "discloser-ios": {
         title: "Discloser - Mobile App",
@@ -162,9 +161,9 @@ const en: Translations = {
     },
     neblina: {
       heading: "Neblina",
-      body: "I also run Neblina, a product studio. When a project needs more than one person's worth of strategy, design, and engineering, that's where it lives. Completed client work includes Yellow Brolly Co. and Walkercraft.",
+      body: "I also run Neblina, a product studio, where I take on client work outside my role at Precision Nutrition. Delivered projects include Yellow Brolly Co., Walkercraft, and Maxc Solutions, each with a custom CMS and analytics set up so the client can see where their leads come from.",
       link: "See client work at Neblina",
-      imageAlt: "Neblina product studio — homepage",
+      imageAlt: "Neblina product studio, homepage",
     },
   },
   tech: {
@@ -172,23 +171,27 @@ const en: Translations = {
     groups: {
       development: {
         title: "Development",
-        list: "React, TypeScript, JavaScript, Astro, Preact, Node.js, Express, MySQL, Supabase/Postgres, SCSS, GSAP, WordPress, PHP, Responsive Design, React Native",
+        list: "React, TypeScript, JavaScript, Astro, Preact, Node.js, Express, WordPress, PHP, ACF, SCSS, GSAP, Supabase/Postgres, MySQL, React Native, Vite, Webpack",
+      },
+      analytics: {
+        title: "Analytics",
+        list: "Google Tag Manager, GA4, PostHog, Cookiebot and consent mode, data layer design, event schema and naming, conversion tracking",
       },
       design: {
         title: "Design",
-        list: "Figma, Product Design, UX/UI Design, Design Systems, Prototyping",
+        list: "Figma, design systems, UX/UI, prototyping, responsive and accessible interfaces",
       },
       tools: {
-        title: "Tools & Workflow",
-        list: "Git, Claude Code, Cursor, MCP servers, Google Analytics, PostHog, Agile, Jira",
+        title: "Tools and Workflow",
+        list: "Git, Claude Code, Cursor, MCP servers, Agile, Jira",
       },
     },
     whatTitle: "What I Build",
     whatBody:
-      "Landing pages, campaign sites, and marketing web experiences — built in Astro, React, and WordPress, instrumented for conversion, and fast. From the Figma file through deployment. I also build mobile apps with React Native.",
+      "Marketing sites and the tooling behind them. Astro, React, and WordPress on the front end, with the component systems and page templates that let a marketing team ship a campaign without waiting on a developer. Tracking set up in GA4, PostHog, and GTM so the results are measurable. I also build mobile apps in React Native.",
     howTitle: "How I Work",
     howBody:
-      "Design and code under one roof. I start in Figma, build in React/React Native, and use AI-assisted tools (Claude Code, Cursor) to move faster without cutting corners.",
+      "I start in Figma and build it myself, so nothing is lost between the design file and the code. Claude Code, Cursor, and MCP servers are part of my daily workflow, along with the internal tooling and documentation around them.",
   },
   experience: {
     heading: "Experience",
@@ -196,25 +199,25 @@ const en: Translations = {
     educationTitle: "Education",
     work: [
       {
+        title: "Web Developer & Content Manager",
+        company: "Precision Nutrition",
+        period: "Jul 2020 - Present",
+        description: [
+          "Build and maintain the marketing front end of a site with 100,000+ monthly visitors, including the Level 1 Certification page for a certification with 175,000+ coaches enrolled",
+          "Own the Astro and Preact islands build for the main conversion pages, from layout and content structure through performance and responsive behaviour",
+          "Build the authoring tooling the marketing team publishes with, including a template of 18 modular ACF blocks with versioned schemas and required-field guardrails",
+          "Set up and maintain conversion tracking across GA4, PostHog, and GTM, including the event schema and the queries the marketing team reads results from",
+        ],
+      },
+      {
         title: "Founder & Lead Developer",
         company: "Neblina",
         companyLink: "https://neblina.tech",
         period: "2026 - Present",
         description: [
-          "Run a product studio delivering strategy, design, and development for founders and small teams, from brand and UI through full-stack build and deployment.",
-          "Lead projects end to end, including the automation and AI integrations that keep them running after launch.",
-          "Build AI-assisted workflows (Claude Code, Cursor, MCP servers) into both client delivery and my own products.",
-        ],
-      },
-      {
-        title: "Web Developer & Content Manager",
-        company: "Precision Nutrition",
-        period: "Jul 2020 - Present",
-        description: [
-          "Build and optimize conversion-focused marketing pages and campaign experiences on a platform serving 100,000+ monthly visitors",
-          "Own front-end delivery of the Level 1 Certification landing page in Astro and Preact, from layout and content structure through performance and responsive behaviour",
-          "Instrument conversion tracking and analytics so the marketing team can measure funnel performance and act on it",
-          "Build authoring tooling that lets marketers assemble full campaign pages without developer involvement",
+          "Run a product studio delivering strategy, design, and development for founders and small teams, from brand and interface through full-stack build and deployment",
+          "Delivered sites and custom CMSs for Yellow Brolly Co., Walkercraft, and Maxc Solutions, each with analytics and search setup so the client can attribute their leads",
+          "Built an automated lead pipeline for Walkercraft in Astro and FastAPI, scoring inbound enquiries, drafting replies for approval, and running follow-ups on a schedule",
         ],
       },
       {
@@ -222,7 +225,7 @@ const en: Translations = {
         company: "EF Educational Tours",
         period: "Jul 2019 - Jun 2020",
         description: [
-          "Built analytics dashboards tracking website effectiveness and user behaviour",
+          "Built analytics dashboards tracking website performance and user behaviour",
           "Developed A/B testing strategies to improve conversion across marketing pages",
           "Coordinated with global teams to build, test, and deploy email campaigns and web content across multiple markets",
         ],
@@ -232,7 +235,7 @@ const en: Translations = {
         company: "BOXPT Equipment",
         period: "Jan 2018 - Jun 2019",
         description: [
-          "Owned website setup, customization, and ongoing digital presence",
+          "Owned the website end to end, including setup, customization, and ongoing digital presence",
           "Built custom features and templates to improve product visibility and site functionality",
           "Delivered analytics reporting with recommendations for improving performance",
         ],
@@ -244,36 +247,35 @@ const en: Translations = {
         institution: "BrainStation",
         period: "Nov 2024 - Feb 2025",
         description:
-          "Intensive software engineering program with 400+ hours of hands-on coding. Full-stack development including JavaScript, TypeScript, React, Node.js, Express, and MySQL.",
+          "Intensive software engineering program, 400+ hours of hands-on coding across JavaScript, TypeScript, React, Node.js, Express, and MySQL.",
       },
       {
-        degree: "Bachelors in Media and Communication Technologies",
+        degree: "BSc, Media and Communication Technologies",
         institution: "Aveiro University",
         period: "2010 - 2014",
         description:
-          "Technical program combining digital media, communication strategies, and web technologies. Coursework included programming, digital media production, and user experience principles.",
+          "Technical program across digital media, communication strategy, and web technologies, including programming, media production, and user experience.",
       },
     ],
   },
   contact: {
     heading: "Get in Touch",
     subtitle:
-      "I help marketing and product teams ship landing pages that convert, without giving up performance, accessibility, or QA. My work sits where marketing meets engineering: fast iteration, and a habit of catching what slips through under deadline pressure. Available for freelance and contract work through Neblina, alongside my role at Precision Nutrition.",
+      "I work on the front end of marketing platforms. The pages, the tooling the marketing team publishes with, and the tracking that measures both. Most of that has been at Precision Nutrition for the past six years. If you are hiring for something in that shape, or want to talk through a problem you are stuck on, send me a note.",
     orDirect: "Or reach me directly",
-    remote: "Working remotely",
+    remote: "Remote, based in Portugal",
     nameLabel: "Name *",
     namePlaceholder: "Your name",
     emailLabel: "Email *",
     emailPlaceholder: "your@email.com",
     messageLabel: "Message *",
-    messagePlaceholder:
-      "Tell me about what you're looking for, or just say hello.",
-    send: "Send Message",
+    messagePlaceholder: "Tell me what you are working on.",
+    send: "Send message",
     sending: "Sending...",
-    sent: "Message Sent!",
-    success: "Message sent! I'll get back to you soon.",
+    sent: "Message sent",
+    success: "Thanks. I will get back to you soon.",
     error:
-      "Something went wrong. Please try again or email me directly at",
+      "Something went wrong. Please try again, or email me directly at",
   },
   footer: {
     backToTop: "Back to top",
@@ -292,7 +294,6 @@ const pt: Translations = {
     portuguese: "Português",
   },
   hero: {
-    status: "Disponível para novos projetos",
     kicker: "Programadora Web para Equipas de Marketing · Remoto",
     titleBefore: "Desenho e construo",
     titleMark: "landing pages",
@@ -350,6 +351,10 @@ const pt: Translations = {
       development: {
         title: "Desenvolvimento",
         list: "React, TypeScript, JavaScript, Astro, Preact, Node.js, Express, MySQL, Supabase/Postgres, SCSS, GSAP, WordPress, PHP, Design Responsivo, React Native",
+      },
+      analytics: {
+        title: "Analytics",
+        list: "Google Tag Manager, GA4, PostHog, Cookiebot e consent mode, desenho da data layer, esquema e nomenclatura de eventos, tracking de conversão",
       },
       design: {
         title: "Design",

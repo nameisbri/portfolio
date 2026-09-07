@@ -3,7 +3,7 @@
 .tech {
   padding: $space-section 0;
 
-  // — Skill groups: three accent-coded pill clusters —
+  // — Skill groups: four accent-coded pill clusters —
   &__groups {
     display: grid;
     grid-template-columns: 1fr;
@@ -14,12 +14,12 @@
     }
 
     @include respond-to(lg) {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: clamp(1.6rem, 3vw, 3rem);
     }
   }
 
-  // Monochrome-plus-acid: three readable tonal markers, not three hues.
+  // Monochrome-plus-acid: four readable tonal markers rather than four hues.
   &__group {
     --group-accent: #{$color-accent-ink};
 
@@ -31,6 +31,9 @@
     }
     &--tertiary {
       --group-accent: #{$color-tertiary};
+    }
+    &--quaternary {
+      --group-accent: #{$color-accent-ink-hover};
     }
   }
 

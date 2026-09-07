@@ -39,10 +39,6 @@ const Hero = () => {
       >
         <div className="hero__lead">
           <motion.p className="hero__eyebrow" variants={item}>
-            <span className="hero__status-row">
-              <span className="hero__status" aria-hidden="true" />
-              <span className="hero__status-text">{t.hero.status}</span>
-            </span>
             <span className="hero__kicker">{t.hero.kicker}</span>
           </motion.p>
 

@@ -38,17 +38,17 @@ const leadProject: ProjectMeta = {
 
 const pairProjects: ProjectMeta[] = [
   {
+    id: "pn-flex-2026",
+    tech: "WordPress, PHP, ACF, SCSS, JavaScript",
+    image: flexImage,
+  },
+  {
     id: "pn-exit-popup",
     tech: "Astro, TypeScript, PostHog, Cloudflare",
     image: pnPopupImage,
     links: {
       live: "https://precisionnutrition.com/nutrition-certification-level-1-register-now",
     },
-  },
-  {
-    id: "pn-flex-2026",
-    tech: "WordPress, PHP, ACF, SCSS, JavaScript",
-    image: flexImage,
   },
 ];
 

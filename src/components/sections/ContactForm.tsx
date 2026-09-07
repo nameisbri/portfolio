@@ -70,11 +70,6 @@ const ContactForm = () => {
     <section className="contact-form" id="contact">
       <div className="contact-form__inner">
         <aside className="contact-form__aside">
-          <p className="contact-form__status">
-            <span className="contact-form__status-dot" aria-hidden="true" />
-            {t.hero.status}
-          </p>
-
           <h2 className="section__heading">{t.contact.heading}</h2>
           <p className="contact-form__subtitle">{t.contact.subtitle}</p>
 

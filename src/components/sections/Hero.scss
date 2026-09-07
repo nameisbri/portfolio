@@ -15,7 +15,7 @@
     }
   }
 
-  // — Eyebrow: live status + role/location, quiet sentence-case —
+  // — Eyebrow: role and location, quiet sentence-case —
   &__eyebrow {
     display: flex;
     flex-direction: column;
@@ -27,35 +27,6 @@
     font-weight: $font-weight-medium;
     letter-spacing: 0;
     color: $color-text-secondary;
-  }
-
-  &__status-row {
-    display: inline-flex;
-    align-items: center;
-    gap: $spacing-sm;
-  }
-
-  &__status {
-    width: 9px;
-    height: 9px;
-    border-radius: $border-radius-full;
-    background: $color-accent;
-    position: relative;
-    flex-shrink: 0;
-    box-shadow: 0 0 0 1px rgba($color-text-primary, 0.25);
-
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      background: $color-accent;
-      animation: hero-pulse 2.4s $ease-out-soft infinite;
-    }
-  }
-
-  &__status-text {
-    color: $color-text-primary;
   }
 
   &__kicker {
@@ -181,17 +152,5 @@
     border-radius: $border-radius-lg;
     border: 1px solid $color-border-warm;
     background: $color-surface;
-  }
-}
-
-@keyframes hero-pulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.55;
-  }
-  70%,
-  100% {
-    transform: scale(2.6);
-    opacity: 0;
   }
 }
