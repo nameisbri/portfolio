@@ -26,7 +26,7 @@ const Experience = () => {
               <div key={job.company} className="experience__item">
                 <div className="experience__header">
                   <span className="experience__role">{job.title}</span>
-                  <span className="experience__separator"> — </span>
+                  <span className="experience__separator"> · </span>
                   {job.companyLink ? (
                     <a
                       className="experience__company"
@@ -39,7 +39,7 @@ const Experience = () => {
                   ) : (
                     <span className="experience__company">{job.company}</span>
                   )}
-                  <span className="experience__separator"> — </span>
+                  <span className="experience__separator"> · </span>
                   <span className="experience__period">{job.period}</span>
                 </div>
                 <ul className="experience__description">
@@ -59,9 +59,9 @@ const Experience = () => {
               <div key={edu.institution} className="experience__item">
                 <div className="experience__header">
                   <span className="experience__role">{edu.degree}</span>
-                  <span className="experience__separator"> — </span>
+                  <span className="experience__separator"> · </span>
                   <span className="experience__company">{edu.institution}</span>
-                  <span className="experience__separator"> — </span>
+                  <span className="experience__separator"> · </span>
                   <span className="experience__period">{edu.period}</span>
                 </div>
                 <p className="experience__edu-text">{edu.description}</p>

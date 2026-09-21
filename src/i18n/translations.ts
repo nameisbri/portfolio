@@ -115,12 +115,12 @@ const en: Translations = {
     portuguese: "Portuguese",
   },
   hero: {
-    kicker: "Frontend Engineer · Marketing and Growth · Remote",
+    kicker: "Frontend Engineer · Marketing and Growth · Toronto",
     titleBefore: "I build the systems",
     titleMark: "marketing teams",
     titleAfter: "run on.",
     subtitle:
-      "Eight years of it, most recently on a site with 100,000+ visitors a month. I also set up the analytics that shows whether any of it worked.",
+      "Six years of it at Precision Nutrition, on a site with 100,000+ visitors a month. I also set up the analytics that shows whether any of it worked.",
     seeWork: "See my work",
     getInTouch: "Get in touch",
     portraitAlt: "Gabriela Barreira",
@@ -161,7 +161,7 @@ const en: Translations = {
     },
     neblina: {
       heading: "Neblina",
-      body: "I also run Neblina, a product studio, where I take on client work outside my role at Precision Nutrition. Delivered projects include Yellow Brolly Co., Walkercraft, and Maxc Solutions, each with a custom CMS and analytics set up so the client can see where their leads come from.",
+      body: "I also run Neblina, a small product studio. Client projects are on its site.",
       link: "See client work at Neblina",
       imageAlt: "Neblina product studio, homepage",
     },
@@ -263,7 +263,7 @@ const en: Translations = {
     subtitle:
       "I work on the front end of marketing platforms. The pages, the tooling the marketing team publishes with, and the tracking that measures both. Most of that has been at Precision Nutrition for the past six years. If you are hiring for something in that shape, or want to talk through a problem you are stuck on, send me a note.",
     orDirect: "Or reach me directly",
-    remote: "Remote, based in Portugal",
+    remote: "Toronto, ON · Hybrid or remote",
     nameLabel: "Name *",
     namePlaceholder: "Your name",
     emailLabel: "Email *",
@@ -294,7 +294,7 @@ const pt: Translations = {
     portuguese: "Português",
   },
   hero: {
-    kicker: "Programadora Web para Equipas de Marketing · Remoto",
+    kicker: "Programadora Web para Equipas de Marketing · Toronto",
     titleBefore: "Desenho e construo",
     titleMark: "landing pages",
     titleAfter: "que convertem.",
@@ -442,7 +442,7 @@ const pt: Translations = {
     subtitle:
       "Ajudo equipas de marketing e produto a lançar landing pages que convertem, sem sacrificar desempenho, acessibilidade ou QA. O meu trabalho vive onde o marketing encontra a engenharia: iteração rápida e o hábito de apanhar o que escapa sob a pressão dos prazos. Disponível para trabalho freelance e a contrato através da Neblina, em paralelo com o meu trabalho na Precision Nutrition.",
     orDirect: "Ou contacte-me diretamente",
-    remote: "A trabalhar remotamente",
+    remote: "Toronto, ON · Híbrido ou remoto",
     nameLabel: "Nome *",
     namePlaceholder: "O seu nome",
     emailLabel: "Email *",
